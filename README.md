@@ -1,0 +1,1 @@
+smart_bag_git
