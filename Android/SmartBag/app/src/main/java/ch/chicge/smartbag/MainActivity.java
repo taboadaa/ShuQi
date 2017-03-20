@@ -12,7 +12,7 @@ public abstract class MainActivity extends Activity implements iRcpEvent {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.base);
 
 		aretePop = new RcpApi();
 	}
