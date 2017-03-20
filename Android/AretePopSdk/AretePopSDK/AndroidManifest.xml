@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="phychips.arete.newver"
+	android:versionCode="18"
+	android:versionName="2.5" >
+
+	<uses-sdk
+		android:minSdkVersion="10"
+		android:targetSdkVersion="15" />
+
+	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+	<uses-permission android:name="android.permission.ACTION_HEADSET_PLUG" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+	<application
+		android:name="com.arete.custom.acra"
+		android:allowBackup="true"
+		android:icon="@drawable/arete_icon"
+		android:label="@string/app_name"
+		android:theme="@android:style/Theme.NoTitleBar" >
+		<activity
+			android:name="phychips.arete.newver.MainActivity"
+			android:screenOrientation="portrait" >
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity
+			android:name="phychips.arete.newverAppSettingActivity"
+			android:label="@string/title_activity_setting"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden" >
+		</activity>
+		<activity
+			android:name="phychips.arete.newver.SplashActivity"
+			android:label="@string/title_activity_splash"
+			android:screenOrientation="portrait" >
+		</activity>
+		<activity
+			android:name="phychips.arete.newver.TagMemoryActivity"
+			android:label="@string/title_activity_tag_memory"
+			android:screenOrientation="portrait" >
+		</activity>
+		<activity
+			android:name="phychips.arete.newver.OptionActivity"
+			android:label="@string/title_activity_option" >
+		</activity>
+		<activity
+			android:name="phychips.arete.newver.PopSettingActivity"
+			android:label="@string/title_activity_pop_settingctivity" >
+		</activity>
+		<activity
+			android:name="phychips.arete.newver.PopInformationActivity"
+			android:label="@string/title_activity_pop_information" >
+		</activity>
+		<activity
+			android:name="phychips.arete.newver.TagAccessActivity"
+			android:label="@string/title_activity_tag_access" >
+		</activity>
+		<activity
+			android:name="phychips.arete.newver.ReadActivity"
+			android:label="@string/title_activity_read" 
+			android:windowSoftInputMode="stateHidden" >
+		</activity>
+		<activity
+			android:name="phychips.arete.newver.OnOffTimeActivity"
+			android:label="@string/title_activity_on_off_time" >
+		</activity>
+		<activity
+			android:name="phychips.arete.newver.OutPutPowerActivity"
+			android:label="@string/title_activity_out_put_power" >
+		</activity>
+		<activity
+			android:name="phychips.arete.newver.StopCondisionsActivity"
+			android:label="@string/title_activity_stop_condisions" >
+		</activity>
+		<activity
+			android:name="phychips.arete.newver.LockActivity"
+			android:label="@string/title_activity_lock" >
+		</activity>
+		<activity
+			android:name="phychips.arete.newver.KillActivity"
+			android:label="@string/title_activity_kill" >
+		</activity>
+		<activity
+			android:name="phychips.arete.newver.TestActivity"
+			android:label="@string/title_activity_test" >
+		</activity>
+	</application>
+
+</manifest>

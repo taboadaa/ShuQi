@@ -1,0 +1,178 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context="com.arete.pop.MainActivity" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/titlebar_background"
+        android:orientation="horizontal" >
+  
+   
+	
+    <TextView
+        android:id="@+id/titlebar_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:shadowColor="#80000000"
+        android:shadowDy="-1.0"
+        android:shadowRadius="1.0"
+        android:text="ARETE POP"
+        android:textColor="#ffffffff"
+        android:textSize="20.0dip"
+        android:textStyle="bold" />
+
+    <Button
+    	android:id="@+id/option"
+    	android:layout_width="70dp"
+    	android:layout_height="32dp"
+    	android:layout_alignParentRight="true"
+    	android:layout_centerVertical="true"
+    	android:layout_marginRight="5dp"
+    	android:background="@drawable/title_btn"
+    	android:gravity="center_vertical|center_horizontal"
+    	android:text="Settings"
+    	android:textColor="#FFFFFF" />
+
+</RelativeLayout>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="#696969" >
+
+         <TextView
+             android:id="@+id/name"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginBottom="5dp"
+             android:layout_marginLeft="15dp"
+             android:layout_marginRight="10dp"
+             android:layout_marginTop="5dp"
+             android:layout_weight="1"
+             android:background="#A9A9A9"
+             android:gravity="center"
+             android:text="0 tags"
+             android:textColor="#000000"
+             android:textSize="20sp"
+             android:textStyle="bold" />
+
+         <TextView
+             android:id="@+id/aboutvalue"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginBottom="5dp"
+             android:layout_marginLeft="10dp"
+             android:layout_marginRight="10dp"
+             android:layout_marginTop="5dp"
+             android:layout_weight="0.8"
+             android:background="#A9A9A9"
+             android:gravity="center"
+             android:text="TextView"
+             android:textColor="#000000"
+             android:textSize="20sp"
+             android:textStyle="bold" />
+
+         <TextView
+             android:id="@+id/textView3"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginBottom="5dp"
+             android:layout_marginLeft="10dp"
+             android:layout_marginRight="15dp"
+             android:layout_marginTop="5dp"
+             android:layout_weight="1"
+             android:background="#A9A9A9"
+             android:gravity="center"
+             android:text="0%"
+             android:textColor="#000000"
+             android:textSize="20sp"
+             android:textStyle="bold" />
+
+     </LinearLayout>
+
+    <LinearLayout
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_weight="1.5" >
+
+        <ListView
+        	android:id="@+id/tag_list"
+        	android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_weight="0.5"
+        	android:divider="@drawable/divider_png"
+        	android:drawSelectorOnTop="false"
+        	android:textColor="#FF0000" >
+
+        </ListView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_weight="0"
+        android:background="@drawable/titlebar_background"
+        android:padding="3dp" >
+
+        <ToggleButton
+        	android:id="@+id/toggle_on"
+        	style="android:buttonStyle"
+        	android:layout_width="40dp"
+        	android:layout_height="34dp"
+        	android:layout_gravity="center_vertical"
+        	android:layout_marginLeft="10dp"
+        	android:layout_weight="1"
+        	android:background="@drawable/switchonoff"
+        	android:textOff=" "
+        	android:textOn=" "
+        	android:textSize="12sp" />
+
+        <Button
+        	android:id="@+id/btn_read"
+        	android:layout_width="30dp"
+        	android:layout_height="34dp"
+        	android:layout_gravity="center_vertical"
+        	android:layout_marginLeft="15dp"
+        	android:layout_marginRight="10dp"
+        	android:layout_weight="1"
+        	android:background="@drawable/title_btn"
+        	android:text="Read"
+        	android:textColor="#FFFFFF"
+        	android:textSize="13sp" />
+
+        <Button
+        	android:id="@+id/btn_clear"
+        	android:layout_width="30dp"
+        	android:layout_height="34dp"
+        	android:layout_gravity="center_vertical"
+        	android:layout_marginLeft="15dp"
+        	android:layout_marginRight="10dp"
+        	android:layout_weight="1"
+        	android:background="@drawable/title_btn"
+        	android:text="Clear"
+        	android:textColor="#FFFFFF"
+        	android:textSize="13sp" />
+
+        <Button
+        	android:id="@+id/btn_stop"
+        	android:layout_width="30dp"
+        	android:layout_height="34dp"
+        	android:layout_gravity="center_vertical"
+        	android:layout_marginLeft="15dp"
+        	android:layout_marginRight="13dp"
+        	android:layout_weight="1"
+        	android:background="@drawable/title_btn"
+        	android:text="Stop"
+        	android:textColor="#FFFFFF"
+        	android:textSize="13sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

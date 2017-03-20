@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tagmemory_tab_lock"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF" >
+
+    <TableRow>
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="@string/password"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/password2"
+            android:layout_weight="3"
+            android:hint="@string/longzero"
+            android:textSize="12sp" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="@string/mask"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_weight="3"
+            android:orientation="horizontal"
+            android:textSize="12sp" >
+
+            <CheckBox
+                android:id="@+id/mask1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/mask2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/mask3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/mask4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/mask5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="right"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_weight="3"
+            android:orientation="horizontal"
+            android:textSize="12sp" >
+
+            <CheckBox
+                android:id="@+id/mask6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/mask7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/mask8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/mask9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/mask10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="@string/action"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_weight="3"
+            android:orientation="horizontal"
+            android:textSize="12sp" >
+
+            <CheckBox
+                android:id="@+id/action1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/action2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/action3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/action4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/action5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="right"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_weight="3"
+            android:orientation="horizontal"
+            android:textSize="12sp" >
+
+            <CheckBox
+                android:id="@+id/action6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/action7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/action8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/action9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/action10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="right"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/lock_tag"
+            android:layout_weight="3"
+            android:text="@string/lock"
+            android:textSize="12sp" />
+    </TableRow>
+
+</TableLayout>
