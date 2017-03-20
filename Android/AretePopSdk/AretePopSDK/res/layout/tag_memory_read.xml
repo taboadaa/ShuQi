@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tagmemory_tab_read"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF" >
+
+    <TableRow>
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="@string/password"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/password1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:ems="10"
+            android:hint="@string/longzero"
+            android:textSize="12sp" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="@string/address"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/address"
+            android:layout_weight="3"
+            android:hint="@string/zero"
+            android:textSize="12sp" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="@string/memory"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/target_memory"
+            android:layout_weight="3"
+            android:prompt="@string/target_memory"
+            android:textSize="12sp" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="@string/length"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/length"
+            android:layout_weight="3"
+            android:hint="@string/zero"
+            android:textSize="12sp" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="@string/data"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/data1"
+            android:layout_weight="3"
+            android:hint="@string/longzero"
+            android:textSize="12sp" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/read_tag"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/read"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/write_tag"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/write"
+            android:textSize="12sp" />
+    </TableRow>
+
+</TableLayout>
