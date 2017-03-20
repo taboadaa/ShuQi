@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/RcpApi_08.06/RcpApi_08.06.iml" filepath="$PROJECT_DIR$/RcpApi_08.06/RcpApi_08.06.iml" />
       <module fileurl="file://$PROJECT_DIR$/SmartBag.iml" filepath="$PROJECT_DIR$/SmartBag.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
