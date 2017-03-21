@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.phychips.audio.*;
 import com.phychips.rcp.*;
 import com.phychips.utility.*;
+import android.R;
 
 public abstract class MainActivity extends Activity implements iRcpEvent {
 	RcpApi aretePop;

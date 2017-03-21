@@ -1,3 +1,16 @@
 <resources>
 	<string name="app_name">SmartBag</string>
+    <string name="stop">Stop</string>
+    <string name="retour">Retour</string>
+    <string name="liste_des_tiquettes">Liste des étiquettes</string>
+    <string name="scan_tiquettes">Scan étiquettes</string>
+    <string name="_0241551555151505111152353">0241551555151505111152353</string>
+    <string name="id">ID</string>
+    <string name="lundi_n_mardi_nmercredi_njeudi_nvendredi_nsamedi_ndimanche">Lundi   Mardi  Mercredi  Jeudi  Vendredi  Samedi  Dimanche</string>
+    <string name="retourm">Retour</string>
+    <string name="mon_super_nom">mon super nom</string>
+    <string name="name">name</string>
+    <string name="setcustomname">setCustomName</string>
+    <string name="lundi_nmardi_nmercredi_njeudi_nvendredi_nsamedi_ndimanche">lundi mardi mercredi jeudi vendredi samedi dimanche</string>
+    <string name="modifier_calendrier">modifier calendrier</string>
 </resources>
