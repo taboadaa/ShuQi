@@ -8,7 +8,6 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/RcpApi_08.06" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>

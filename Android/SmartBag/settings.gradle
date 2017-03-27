@@ -1,1 +1,1 @@
-include ':app', ':RcpApi_08.06'
+include ':app'
