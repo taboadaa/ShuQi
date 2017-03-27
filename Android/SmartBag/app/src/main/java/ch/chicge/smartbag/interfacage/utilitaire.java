@@ -17,18 +17,14 @@ public class utilitaire {
         listTag.add(t);
         t.setCustomName("mon nom custom");
         listTag.add(t);
-        t.setCustomName("mon nom custom2");
-        listTag.add(t);
         return listTag;
     }
 
-    public static ArrayList getAllKnowTags(){
+    public static ArrayList getAllKnownTags(){
         ArrayList<tag> listTag = new ArrayList<tag>();
         tag t = new tag("0141-5551-5508-2308-7357-4523");
         listTag.add(t);
         t.setCustomName("mon nom custom");
-        listTag.add(t);
-        t.setCustomName("mon nom custom2");
         listTag.add(t);
         return listTag;
     }
