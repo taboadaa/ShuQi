@@ -1,12 +1,14 @@
 package ch.chicge.smartbag.application;
 
 import android.app.Activity;
+import android.os.Bundle;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import ch.chicge.smartbag.R;
 import ch.chicge.smartbag.MainActivity;
 import ch.chicge.smartbag.interfacage.tag;
 import ch.chicge.smartbag.interfacage.utilitaire;
@@ -20,6 +22,14 @@ public class scan extends Activity {
     private ArrayList<tag> listTag = new ArrayList<tag>();
     private LinearLayout layout;
     private MainActivity t;
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.scan);
+       /* listTag = utilitaire.getProxiTags();
+        PrintListe(); */
+
+
 
     public scan(LinearLayout layout, MainActivity t){
         //layout = new LinearLayout(this);
