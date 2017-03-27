@@ -13,4 +13,5 @@
     <string name="setcustomname">setCustomName</string>
     <string name="lundi_nmardi_nmercredi_njeudi_nvendredi_nsamedi_ndimanche">lundi mardi mercredi jeudi vendredi samedi dimanche</string>
     <string name="modifier_calendrier">modifier calendrier</string>
+    <string name="retourscan">RetourScan</string>
 </resources>

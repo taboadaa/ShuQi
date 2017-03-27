@@ -2,6 +2,8 @@ package ch.chicge.smartbag.application;
 
 import android.app.Activity;
 
+import ch.chicge.smartbag.R;
+
 //import ch.chicge.smartbag.R;
 
 /**
@@ -10,9 +12,9 @@ import android.app.Activity;
 
 public class base extends Activity {
 
-    //public void setBaseView(){
-    //    setContentView(R.layout.base);
-   //}
+    public void setBaseView(){
+        setContentView(R.layout.listetag);
+   }
 
     public base(){
 
