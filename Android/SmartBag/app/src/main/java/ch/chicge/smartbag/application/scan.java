@@ -62,7 +62,7 @@ public class scan extends Activity {
 
     public void printKnowntag(){
         ArrayList<tag> listTag = utilitaire.getAllKnownTags();
-        ArrayList<String> listNearTags = utilitaire.getProxiTags();
+        ArrayList<tag> listNearTags = utilitaire.getProxiTags();
         unknowntag = false;
         for (tag t : listTag) {
             TextView tag = new TextView(this);

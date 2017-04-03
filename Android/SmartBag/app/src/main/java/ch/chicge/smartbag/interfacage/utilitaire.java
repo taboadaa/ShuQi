@@ -28,7 +28,7 @@ public class utilitaire {
         proxyTags = listTag;
     }
 
-    public static ArrayList getProxiTags(){
+    public static ArrayList<tag> getProxiTags(){
         return proxyTags;
     }
 
@@ -41,7 +41,7 @@ public class utilitaire {
         return new tag(id);
     }
 
-    public static ArrayList getAllKnownTags(){
+    public static ArrayList<tag> getAllKnownTags(){
         return allTags;
     }
 

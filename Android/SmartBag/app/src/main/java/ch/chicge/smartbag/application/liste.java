@@ -1,9 +1,11 @@
 package ch.chicge.smartbag.application;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -12,6 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 //import ch.chicge.smartbag.R;
+import ch.chicge.smartbag.MainActivity;
 import ch.chicge.smartbag.R;
 import ch.chicge.smartbag.interfacage.tag;
 import ch.chicge.smartbag.interfacage.utilitaire;
@@ -40,7 +43,16 @@ public class liste extends Activity {
         ListView listView = (ListView) findViewById(R.id.taglist);
         listView.setAdapter(adapter);
 
+        final Button retour = (Button) findViewById(R.id.retourListe);
 
+        retour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(liste.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
