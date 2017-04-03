@@ -10,17 +10,8 @@
         android:layout_height="wrap_content"
         android:text="@string/retour" />
 
-    <Button
-        android:id="@+id/button2"
+    <ListView
+        android:id="@+id/taglist"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="edit 15251515038636326"
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="edit cahier d'histoire"
-        tools:ignore="HardcodedText" />
+        android:layout_height="match_parent" />
 </LinearLayout>
