@@ -2,19 +2,14 @@ package ch.chicge.smartbag;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import ch.chicge.smartbag.application.liste;
 import ch.chicge.smartbag.application.scan;
-import ch.chicge.smartbag.application.base;
-import ch.chicge.smartbag.application.scan;
+import ch.chicge.smartbag.interfacage.utilitaire;
 
 public class MainActivity extends Activity {
 
@@ -26,8 +21,10 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 
         layout = new LinearLayout(this);
-        scan s = new scan(layout, this);
-        setContentView(s.getLayout());
+        utilitaire.setAllTags();
+        utilitaire.setProxyTags();
+        //scan s = new scan(layout, this);
+        //setContentView(s.getLayout());
 
 
 		//layout = new LinearLayout(this);

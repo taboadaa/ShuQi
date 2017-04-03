@@ -1,47 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tagView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+    android:id="@+id/tag"
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/retourTag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/retour" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/IDTag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ID: 15236326426436" />
+        android:text="@string/IDTag" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/CustomNameTag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Custom Name: cahier de math" />
+        android:text="@string/custom_name" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/editname"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="jour" />
+        android:text="@string/jour" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/jours"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lundi - Mardi - Vendredi" />
+        android:text="@string/lundi_mardi_vendredi" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/modifierCalendrier"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="modifier nom" />
+        android:text="@string/modifier_calendrier" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="modifier calendrier" />
 </LinearLayout>

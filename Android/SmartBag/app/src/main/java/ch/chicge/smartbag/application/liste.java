@@ -20,7 +20,7 @@ public class liste extends Activity {
 
     public void setBaseView(){
         //setContentView(R.layout.liste);
-        listTag = utilitaire.getAllKnowTags();
+        listTag = utilitaire.getAllKnownTags();
     }
 
     public liste(){
