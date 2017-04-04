@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/home/david/Documents/SYN/smart_bag/Android/AretePop/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/home/david/Documents/SYN/smart_bag/Android/AretePop/build-types/debug/shaders"/></dataSet></merger>

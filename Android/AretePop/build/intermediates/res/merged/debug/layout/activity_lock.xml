@@ -1,0 +1,290 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_setting_tab1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/view_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/nav_bg"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/lock_navigation_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5.0dip"
+            android:background="@drawable/nav_btn_back_bg"
+            android:contentDescription="@null"
+            android:gravity="center_vertical|center_horizontal"
+            android:paddingLeft="20dp"
+            android:singleLine="true"
+            android:text="TagAccess"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#007AFF" />
+
+        <TextView
+            android:id="@+id/titlebar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Lock"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/lock_done_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/nav_btn_bg"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Done"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@drawable/nav_btn_text_colors" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+         >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Target Tag"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"                 
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp" >
+
+            <EditText
+                android:id="@+id/lock_targetTag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:ems="10"
+                android:inputType="none|number" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"            
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"            >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:layout_weight="0.8"
+                android:text="Access Password(HEX)"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/lock_accessPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="none"
+                android:text="00000000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"                
+                android:text="Target Memory"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"            
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp" >
+
+            <com.makeramen.segmented.SegmentedRadioGroup
+                android:id="@+id/seg_group_three"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:checkedButton="@+id/segment_kill"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/segment_kill"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="kill"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/segment_radio_text_colors" />
+
+                <RadioButton
+                    android:id="@+id/segment_acs"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="Acs"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/segment_radio_text_colors" />
+
+                <RadioButton
+                    android:id="@+id/segment_epc"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="EPC"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/segment_radio_text_colors" />
+
+                <RadioButton
+                    android:id="@+id/segment_tid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="TID"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/segment_radio_text_colors" />
+
+                <RadioButton
+                    android:id="@+id/segment_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="USER"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/segment_radio_text_colors" />
+            </com.makeramen.segmented.SegmentedRadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp" >
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Action (P: Permanent)"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp" >
+
+            <com.makeramen.segmented.SegmentedRadioGroup
+                android:id="@+id/seg_group_four"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:checkedButton="@+id/segment_unlock"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/segment_unlock"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="Unlock"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/segment_radio_text_colors" />
+
+                <RadioButton
+                    android:id="@+id/segment_punlock"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="PUnlock"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/segment_radio_text_colors" />
+
+                <RadioButton
+                    android:id="@+id/segment_lock"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="Lock"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/segment_radio_text_colors" />
+
+                <RadioButton
+                    android:id="@+id/segment_plock"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="PLock"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/segment_radio_text_colors" />
+            </com.makeramen.segmented.SegmentedRadioGroup>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

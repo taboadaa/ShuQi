@@ -1,0 +1,7 @@
+#Tue Apr 04 15:11:00 CEST 2017
+base.0=/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_d0d764df8c92b9596bb464c8a1cf3f1480fc026c
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_f45c59aac71ed723cec9520db4d32af8b8abc7f3/classes.dex
+base.1=/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_f45c59aac71ed723cec9520db4d32af8b8abc7f3
+file.0=/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_d0d764df8c92b9596bb464c8a1cf3f1480fc026c/classes.dex

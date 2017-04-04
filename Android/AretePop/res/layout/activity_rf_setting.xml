@@ -1,0 +1,93 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/view_bg"
+    android:orientation="vertical"
+    tools:context=".OptionActivity" >
+
+     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/nav_bg"
+        android:orientation="horizontal" >
+
+        <Button
+    	android:id="@+id/navigation_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5.0dip"
+            android:background="@drawable/nav_btn_back_bg"
+            android:contentDescription="@null"            
+            android:gravity="center_vertical|center_horizontal"            
+            android:paddingLeft="-20dp"            
+            android:singleLine="true"
+            android:text="Back"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#007AFF" />
+
+        <TextView
+            android:id="@+id/titlebar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+          android:text="RF Settings"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+        <Button
+    	android:id="@+id/done_btn"
+            android:layout_width="70dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:gravity="center_vertical|center_horizontal"            
+            android:background="@drawable/nav_btn_bg"
+            android:text="Done"
+            android:textColor="@drawable/nav_btn_text_colors"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+             />
+    </RelativeLayout>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="20dp"
+         android:layout_marginRight="20dp"
+         android:layout_marginTop="20dp" >
+
+         <TextView
+             android:id="@+id/textView1"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_vertical"
+             android:layout_marginRight="30dp"
+             android:layout_weight="1"
+             android:gravity="center_vertical"
+             android:text="Channel"
+             android:textAppearance="?android:attr/textAppearanceMedium"
+             android:textColor="#000000" />
+
+         <EditText
+             android:id="@+id/channel"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_vertical"
+             android:layout_weight="1"
+             android:ems="10"
+             android:gravity="center"
+             android:inputType="number" >
+
+             <requestFocus />
+         </EditText>
+         
+         
+
+     </LinearLayout>
+
+     </LinearLayout>
+

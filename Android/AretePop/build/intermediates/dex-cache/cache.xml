@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/david/Documents/SYN/smart_bag/Android/AretePop/libs/android-support-v4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bd6479f5dd592790607e0504e66e0f31c2b4d308">
+        <dex dex="/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/transforms/dex/debug/folders/1000/2/android-support-v4_66148491b83541d5b68e7ee202039667c6edf899/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/david/Documents/SYN/smart_bag/Android/AretePop/libs/aretepoplib.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="02c56c217507a4806c0788c176beffd964e3c19b">
+        <dex dex="/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/pre-dexed/debug/aretepoplib_eb32fdd0af5fe5a7441ce1e533ad096e75ba6ac9.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_f45c59aac71ed723cec9520db4d32af8b8abc7f3/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/david/Documents/SYN/smart_bag/Android/AretePop/libs/android-support-v4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bd6479f5dd592790607e0504e66e0f31c2b4d308">
+        <dex dex="/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/pre-dexed/debug/android-support-v4_66148491b83541d5b68e7ee202039667c6edf899.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d0dfa650be91792727b20c5fd1b1732b7f664c60">
+        <dex dex="/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_d0d764df8c92b9596bb464c8a1cf3f1480fc026c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/david/Documents/SYN/smart_bag/Android/AretePop/libs/aretepoplib.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="02c56c217507a4806c0788c176beffd964e3c19b">
+        <dex dex="/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/transforms/dex/debug/folders/1000/2/aretepoplib_eb32fdd0af5fe5a7441ce1e533ad096e75ba6ac9/classes.dex" />
+    </item>
+
+</items>

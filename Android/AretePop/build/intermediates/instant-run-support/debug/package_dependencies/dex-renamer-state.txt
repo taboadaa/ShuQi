@@ -1,0 +1,7 @@
+#Tue Apr 04 11:03:00 CEST 2017
+base.0=/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/transforms/dex/debug/folders/1000/2/android-support-v4_66148491b83541d5b68e7ee202039667c6edf899
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/transforms/dex/debug/folders/1000/2/aretepoplib_eb32fdd0af5fe5a7441ce1e533ad096e75ba6ac9/classes.dex
+base.1=/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/transforms/dex/debug/folders/1000/2/aretepoplib_eb32fdd0af5fe5a7441ce1e533ad096e75ba6ac9
+file.0=/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/transforms/dex/debug/folders/1000/2/android-support-v4_66148491b83541d5b68e7ee202039667c6edf899/classes.dex

@@ -1,0 +1,76 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/activity_setting_tab1"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+    android:background="@drawable/view_bg"
+	android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/nav_bg"
+        android:orientation="horizontal" >
+
+        <Button
+    	android:id="@+id/navigation_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5.0dip"
+            android:background="@drawable/nav_btn_back_bg"
+            android:contentDescription="@null"            
+            android:gravity="center_vertical|center_horizontal"            
+            android:paddingLeft="-20dp"            
+            android:singleLine="true"
+            android:text="Back"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#007AFF" />
+
+        <TextView
+            android:id="@+id/titlebar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:shadowColor="#80000000"
+            android:shadowDy="-1.0"
+            android:shadowRadius="1.0"
+         android:text="Session"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+        <Button
+         	android:id="@+id/power_done_btn"
+            android:layout_width="70dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:gravity="center_vertical|center_horizontal"            
+            android:background="@drawable/nav_btn_bg"
+            android:text="Done"
+            android:textColor="@drawable/nav_btn_text_colors"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+             />
+    </RelativeLayout>
+
+    <LinearLayout
+   	android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical" >
+
+        <ListView
+       	android:id="@+id/type_listview1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/listview_bg"
+            android:divider="@drawable/listview_divider"
+            android:dividerHeight="1dp" >
+        </ListView>
+    </LinearLayout>
+
+
+
+</LinearLayout>

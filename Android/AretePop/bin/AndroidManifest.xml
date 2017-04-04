@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="phychips.arete.newver"
+    android:versionCode="46"
+    android:versionName="4.6" >
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="19" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+	<uses-feature android:name="android.hardware.telephony" android:required="false" />
+    	
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACTION_HEADSET_PLUG" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/arete_icon"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar" >
+        <activity
+            android:name="MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="rfid" android:host="com.phychips.aretepop.main"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="AppSettingActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_setting"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="SplashActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_splash"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="TagAccessActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_tag_memory"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="OptionActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_option"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="PopSettingActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_pop_settingctivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="PopInformationActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_pop_information"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="ReadWriteActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_read"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="OnOffTimeActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_on_off_time"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="OutPutPowerActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_out_put_power"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="StopCondisionsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_stop_condisions"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="LockActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_lock"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="KillActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_kill"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="EncodingTypeActivity"
+            android:configChanges="orientation|keyboardHidden"            
+            android:screenOrientation="portrait" >
+            >            
+        </activity>
+        <activity android:name="SessionActivity"
+            android:configChanges="orientation|keyboardHidden"            
+            android:screenOrientation="portrait">            
+        </activity>
+        <activity android:name="RfSettingActivity"
+            android:configChanges="orientation|keyboardHidden"            
+            android:screenOrientation="portrait">            
+        </activity>
+
+    </application>
+
+</manifest>

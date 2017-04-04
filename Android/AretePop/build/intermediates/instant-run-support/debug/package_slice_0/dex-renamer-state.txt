@@ -1,0 +1,4 @@
+#Tue Apr 04 11:03:00 CEST 2017
+base.0=/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0
+renamed.0=classes.dex
+file.0=/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex

@@ -1,0 +1,370 @@
+[
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/aboutlist.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/aboutlist.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/activity_lock.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/activity_lock.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/activity_out_put_power.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/activity_out_put_power.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/activity_pop_setting.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/activity_pop_setting.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/activity_pop_setting.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/activity_pop_setting.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/iphone_list.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/iphone_list.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/listbutton.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/listbutton.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/activity_kill.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/activity_kill.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/activity_pop_information.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/activity_pop_information.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/activity_stop_condisions.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/activity_stop_condisions.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/activity_tag_access.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/activity_tag_access.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/activity_out_put_power.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/activity_out_put_power.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/activity_out_put_power.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/activity_out_put_power.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/activity_pop_setting.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/activity_pop_setting.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/listview_cell2_disclosure_taglist.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/listview_cell2_disclosure_taglist.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/listview_cell1_checked.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/listview_cell1_checked.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/activity_out_put_power.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/activity_out_put_power.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/listview_cell1_checked.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/listview_cell1_checked.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/activity_lock.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/activity_lock.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/activity_on_off_time.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/activity_on_off_time.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/listbutton.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/listbutton.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/listbutton.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/listbutton.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/listview_cell2_disclosure.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/listview_cell2_disclosure.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/activity_session.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/activity_session.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/activity_session.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/activity_session.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/activity_rf_setting.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/activity_rf_setting.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/activity_tag_access.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/activity_tag_access.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/activity_session.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/activity_session.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/activity_option.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/activity_option.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/listview_cell2_disclosure_taglist.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/listview_cell2_disclosure_taglist.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/activity_readwrite.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/activity_readwrite.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/activity_option.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/activity_option.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/activity_pop_setting.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/activity_pop_setting.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/aboutlist.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/aboutlist.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/activity_kill.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/activity_kill.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/activity_session.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/activity_session.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/activity_lock.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/activity_lock.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/listview_cell2_disclosure_taglist.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/listview_cell2_disclosure_taglist.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/activity_tag_access.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/activity_tag_access.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/activity_stop_condisions.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/activity_stop_condisions.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/listview_cell2_disclosure_taglist_empty.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/listview_cell2_disclosure_taglist_empty.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/checklist.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/checklist.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/listbutton.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/listbutton.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/listview_cell1_checked.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/listview_cell1_checked.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/iphone_list.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/iphone_list.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/checklist.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/checklist.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/activity_readwrite.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/activity_readwrite.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/aboutlist.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/aboutlist.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/activity_lock.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/activity_lock.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/listview_cell2_disclosure_taglist.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/listview_cell2_disclosure_taglist.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/iphone_list.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/iphone_list.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/activity_encoding_type.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/activity_encoding_type.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/listview_cell2_disclosure.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/listview_cell2_disclosure.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/listview_cell2_disclosure_taglist_empty.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/listview_cell2_disclosure_taglist_empty.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/checklist.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/checklist.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/listview_cell2_disclosure.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/listview_cell2_disclosure.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/activity_stop_condisions.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/activity_stop_condisions.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/listview_cell2_disclosure.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/listview_cell2_disclosure.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/activity_kill.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/activity_kill.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/activity_kill.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/activity_kill.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/activity_encoding_type.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/activity_encoding_type.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/activity_stop_condisions.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/activity_stop_condisions.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/activity_readwrite.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/activity_readwrite.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/listview_cell1_checked.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/listview_cell1_checked.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/activity_on_off_time.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/activity_on_off_time.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/activity_splash.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/activity_splash.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/activity_on_off_time.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/activity_on_off_time.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/aboutlist.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/aboutlist.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/activity_encoding_type.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/activity_encoding_type.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/activity_rf_setting.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/activity_rf_setting.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/activity_rf_setting.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/activity_rf_setting.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/activity_tag_access.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/activity_tag_access.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/activity_splash.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/activity_splash.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/activity_encoding_type.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/activity_encoding_type.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/activity_option.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/activity_option.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/activity_splash.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/activity_splash.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/listview_cell2_disclosure_taglist_empty.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/listview_cell2_disclosure_taglist_empty.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/checklist.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/checklist.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/iphone_list.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/iphone_list.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/activity_pop_information.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/activity_pop_information.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/activity_splash.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/activity_splash.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/activity_readwrite.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/activity_readwrite.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/activity_pop_information.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/activity_pop_information.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/layout/listview_cell2_disclosure_taglist_empty.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/layout/listview_cell2_disclosure_taglist_empty.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/layout/activity_rf_setting.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/layout/activity_rf_setting.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/activity_option.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/activity_option.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/layout/activity_pop_information.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/layout/activity_pop_information.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/layout/activity_on_off_time.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/layout/activity_on_off_time.xml"
+    }
+]

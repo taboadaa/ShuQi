@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/build/intermediates/res/merged/debug/color/segment_radio_text_colors.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/App_AretePOP/res/color/segment_radio_text_colors.xml"
+    },
+    {
+        "merged": "/home/david/Documents/SYN/smart_bag/Android/AretePop/build/intermediates/res/merged/debug/color/segment_radio_text_colors.xml",
+        "source": "/home/david/Documents/SYN/smart_bag/Android/AretePop/res/color/segment_radio_text_colors.xml"
+    },
+    {
+        "merged": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/build/intermediates/res/merged/debug/color/segment_radio_text_colors.xml",
+        "source": "/home/miguel/Dropbox/Hepia_ITI_2014-XXXX/Hepia_3/SYN/SDK_AretePOP/AretePOP_AndroidStudio_20151105/res/color/segment_radio_text_colors.xml"
+    },
+    {
+        "merged": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/build/intermediates/res/merged/debug/color/segment_radio_text_colors.xml",
+        "source": "/home/taboadaa/Documents/hepia/ANDROID/AretePop/res/color/segment_radio_text_colors.xml"
+    }
+]
