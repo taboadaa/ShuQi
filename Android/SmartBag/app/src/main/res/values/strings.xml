@@ -11,7 +11,6 @@
     <string name="name">name</string>
     <string name="setcustomname">setCustomName</string>
     <string name="lundi_nmardi_nmercredi_njeudi_nvendredi_nsamedi_ndimanche">lundi mardi mercredi jeudi vendredi samedi dimanche</string>
-    <string name="modifier_calendrier">modifier calendrier</string>
     <string name="retourscan">RetourScan</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="main">Main</string>
@@ -20,4 +19,14 @@
     <string name="button">Button</string>
     <string name="enregistrer_1553632634">enregistrer 1553632634</string>
     <string name="retour">retour</string>
+    <string name="custom_name_cahier_de_math">Custom Name: cahier de math</string>
+    <string name="id_15236326426436">ID: 15236326426436</string>
+    <string name="lundi_mardi_vendredi">Lundi - Mardi - Vendredi</string>
+    <string name="jour">jour</string>
+    <string name="modifier_nom">modifier nom</string>
+    <string name="modifier_calendrier">modifier calendrier</string>
+    <string name="IDTag">id :</string>
+    <string name="custom_name">Custom Name:</string>
+    <string name="editname">editName</string>
+    <string name="valider">Valider</string>
 </resources>

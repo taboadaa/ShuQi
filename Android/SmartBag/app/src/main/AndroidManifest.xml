@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".application.scan" />
+        <activity android:name=".application.TagView" />
         <activity android:name=".application.liste" />
 	</application>
 
