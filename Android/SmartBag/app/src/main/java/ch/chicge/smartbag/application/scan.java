@@ -29,16 +29,14 @@ public class scan extends Activity {
 
     private ArrayList<tag> listTag = new ArrayList<tag>();
     private LinearLayout layout;
-    private MainActivity t;
     private boolean unknowntag = false;
+    private boolean alert = false;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scan);
         layout = (LinearLayout) findViewById(R.id.scanPage);
-        printKnowntag();
-        //addAlert();
-        //addUnknownTag("325235-325523-4325325");
+        //printKnowntag();
 
         final Button retour = (Button) findViewById(R.id.retourScan);
 
@@ -52,7 +50,14 @@ public class scan extends Activity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        printKnowntag();
+    }
+
     public void addAlert(){
+        alert = true;
         TextView alert = new TextView(this);
         alert.setTextColor(Color.RED);
         alert.setText("2 appareil inconnu, veulliez éloigner un appareil!");
@@ -61,34 +66,56 @@ public class scan extends Activity {
     }
 
     public void printKnowntag(){
-        ArrayList<tag> listTag = utilitaire.getAllKnownTags();
-        ArrayList<tag> listNearTags = utilitaire.getProxiTags();
+        listTag = utilitaire.getAllKnownTags();
+        ArrayList<String> listNearTags = utilitaire.getProxiTags();
         unknowntag = false;
+        alert = false;
         for (tag t : listTag) {
             TextView tag = new TextView(this);
             tag.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
-            if(listNearTags.contains(t.ID)){
-                tag.setTextColor(Color.GREEN);
-                if(t.hasCustomName()){
-                    tag.setText(t.CustomName);
-                }
-                else {
-                    tag.setText(t.ID);
-                }
+            if(listNearTags.contains(t.ID)){tag.setTextColor(Color.GREEN);}
+            else {tag.setTextColor(Color.RED);}
+
+            if(t.hasCustomName()){
+                tag.setText(t.CustomName);
             }
             else {
-                if(unknowntag){
-                    addAlert();
-                }
-                else {
-                    tag.setTextColor(Color.RED);
-                    tag.setText(t.ID);
-                    addUnknownTag(t.ID);
-                }
+                tag.setText(t.ID);
             }
+
             layout.addView(tag);
         }
+        //get the other tags
+        String tmp = "";
+        for (String t : listNearTags) {
+            if(!isKnown(t)) {
+                if (unknowntag) {
+                    addAlert();
+                } else {
+                    tmp = t;
+                    unknowntag = true;
+                }
+            }
+        }
+        if(unknowntag){
+            if(!alert){
+                TextView tag = new TextView(this);
+                tag.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                tag.setTextColor(Color.RED);
+                tag.setText(tmp);
+                addUnknownTag(tmp);
+            }
+        }
+    }
+
+    public boolean isKnown(String ID){
+        for (tag t : listTag) {
+            if(t.ID.equals(ID)){
+                return true;
+            }
+        }
+        return false;
     }
 
     public void addUnknownTag(String id){

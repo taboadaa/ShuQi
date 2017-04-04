@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import ch.chicge.smartbag.MainActivity;
@@ -23,7 +23,7 @@ public class TagView extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tag);
-        LinearLayout layout = (LinearLayout) findViewById(R.id.tagView);
+        //LinearLayout layout = (LinearLayout) findViewById(R.id.tagView);
 
         final Button retour = (Button) findViewById(R.id.retourTag);
         String id =this.getIntent().getStringExtra("myTag");
@@ -38,6 +38,16 @@ public class TagView extends Activity {
 
                 Intent intent = new Intent(TagView.this, MainActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        final EditText e = (EditText) findViewById(R.id.editName);
+        final Button valider = (Button) findViewById(R.id.ValiderName);
+        valider.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                t.setCustomName(e.getText().toString());
+                addCustomName();
             }
         });
     }

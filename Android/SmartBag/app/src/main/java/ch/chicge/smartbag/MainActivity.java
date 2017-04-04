@@ -23,53 +23,7 @@ public class MainActivity extends Activity {
         layout = new LinearLayout(this);
         utilitaire.setAllTags();
         utilitaire.setProxyTags();
-        //scan s = new scan(layout, this);
-        //setContentView(s.getLayout());
 
-
-		//layout = new LinearLayout(this);
-        //layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT));
-        //LinearLayout.LayoutParams lparams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-
-        /*Button b = new Button(this);
-        b.setText("mon boutton");
-        //b.setLayoutParams(lparams);
-        Button b2 = new Button(this);
-        b2.setLeft(800);
-        b2.setTop(800);
-        b2.setText("mon deuxième boutton");
-        //b2.setLayoutParams(lparams);
-        layout.addView(b);
-        layout.addView(b2);*/
-
-        /*TextView alert = new TextView(this);
-        alert.setText("2 appareil inconnu, veulliez éloigner un appareil!");
-        alert.setTextColor(Color.red(20));
-        alert.setHeight(200);
-        alert.se
-        layout.addView(alert);*/
-
-
-
-
-        /*for (int i = 0; i < 2; i++) {
-            LinearLayout row = new LinearLayout(this);
-            row.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-
-            for (int j = 0; j < 2; j++) {
-                Button btnTag = new Button(this);
-                btnTag.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                btnTag.setText("Button " + (j + 1 + (i * 4)));
-                btnTag.setId(j + 1 + (i * 4));
-                row.addView(btnTag);
-            }
-
-            layout.addView(row);
-        }*/
-
-        //
-		/*base b = new base();
-        b.setBaseView(); */
 		final Button scanButt = (Button) findViewById(R.id.button10);
 		final Button listButt = (Button) findViewById(R.id.button9);
 

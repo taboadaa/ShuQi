@@ -28,4 +28,5 @@
     <string name="IDTag">id :</string>
     <string name="custom_name">Custom Name:</string>
     <string name="editname">editName</string>
+    <string name="valider">Valider</string>
 </resources>
