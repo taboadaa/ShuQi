@@ -589,9 +589,15 @@ public class MainActivity extends Activity implements iRcpEvent2,
 		    tagCellList.add(ttag);	    
 		    tagStringList.add(str);
 			SharedPreferences.Editor editor = sharedPref.edit();
-			editor.putString("0294975479974", "cador _ new");
-			editor.commit();
-			String cador = sharedPref.getString("0294975479974", "pas trouvé");
+			String cador = sharedPref.getString(str, null);
+		System.out.println("null");
+			if (cador == null){
+
+				editor.putString(str, str+"test");
+				editor.commit();
+				cador = sharedPref.getString(str, "key not found");
+			}
+
 			ttag.setName(cador);
 			ttag.setValue("1");
 		    tagAdapter.notifyDataSetChanged();
