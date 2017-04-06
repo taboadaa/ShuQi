@@ -27,7 +27,7 @@ import ch.chicge.smartbag.interfacage.utilitaire;
 
 public class scan extends Activity {
 
-    private ArrayList<tag> listTag = new ArrayList<tag>();
+    private ArrayList<tag> listTag;
     private LinearLayout layout;
     private boolean unknowntag = false;
     private boolean alert = false;
@@ -35,15 +35,11 @@ public class scan extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scan);
-        layout = (LinearLayout) findViewById(R.id.scanPage);
-        //printKnowntag();
 
         final Button retour = (Button) findViewById(R.id.retourScan);
-
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(scan.this, MainActivity.class);
                 startActivity(intent);
             }
@@ -53,7 +49,30 @@ public class scan extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        layout = (LinearLayout) findViewById(R.id.scanPage);
         printKnowntag();
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+    }
+
+    protected void onRestart(){
+        super.onRestart();
+    }
+
+    protected void onPause(){
+        super.onPause();
+    }
+
+    protected void onStop(){
+        super.onStop();
+    }
+
+    protected void onDestroy(){
+        super.onDestroy();
     }
 
     public void addAlert(){

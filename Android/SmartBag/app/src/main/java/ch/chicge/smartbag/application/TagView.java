@@ -23,14 +23,7 @@ public class TagView extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tag);
-        //LinearLayout layout = (LinearLayout) findViewById(R.id.tagView);
-
         final Button retour = (Button) findViewById(R.id.retourTag);
-        String id =this.getIntent().getStringExtra("myTag");
-        this.t = utilitaire.getTagbyID(id);
-        addID();
-        addCalendrier();
-        addCustomName();
 
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +44,38 @@ public class TagView extends Activity {
             }
         });
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        String id =this.getIntent().getStringExtra("myTag");
+        this.t = utilitaire.getTagbyID(id);
+        addID();
+        addCalendrier();
+        addCustomName();
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+    }
+
+    protected void onRestart(){
+        super.onRestart();
+    }
+
+    protected void onPause(){
+        super.onPause();
+    }
+
+    protected void onStop(){
+        super.onStop();
+    }
+
+    protected void onDestroy(){
+        super.onDestroy();
+    }
+
 
     public void addID(){
         TextView text = (TextView) findViewById(R.id.IDTag);
