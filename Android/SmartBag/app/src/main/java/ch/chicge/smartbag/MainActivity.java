@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 
 import ch.chicge.smartbag.application.liste;
 import ch.chicge.smartbag.application.scan;
@@ -26,7 +25,6 @@ public class MainActivity extends Activity {
 		scanButt.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-
 				Intent intent = new Intent(MainActivity.this, scan.class);
 				startActivity(intent);
 			}
@@ -35,12 +33,15 @@ public class MainActivity extends Activity {
 		listButt.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-
 				Intent intent = new Intent(MainActivity.this, liste.class);
 				startActivity(intent);
 			}
 		});
 	}
 
+	@Override
+	protected void onResume() {
+		super.onResume();
+	}
 
 }

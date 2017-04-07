@@ -28,40 +28,29 @@ import ch.chicge.smartbag.interfacage.utilitaire;
 public class scan extends Activity {
 
     private ArrayList<tag> listTag;
+    private ArrayList<String> listNearTags;
     private LinearLayout layout;
     private boolean unknowntag = false;
     private boolean alert = false;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.scan);
         layout = (LinearLayout) findViewById(R.id.scanPage);
-        //layout = (LinearLayout) R.layout.scan;
-    }
-
-    private void create(){
-        layout.removeAllViews();
-        layout = null;
-        layout = new LinearLayout(this);
-        final Button retour = new Button(this);
-        retour.setText("Retour");
-        retour.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        final Button retour = (Button) findViewById(R.id.retourScan);
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(scan.this, MainActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
-        layout.addView(retour);
-        setContentView(layout);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        create();
         printKnowntag();
     }
 
@@ -105,13 +94,12 @@ public class scan extends Activity {
 
     public void printKnowntag(){
         listTag = utilitaire.getAllKnownTags();
-        ArrayList<String> listNearTags = utilitaire.getProxiTags();
+        listNearTags = utilitaire.getProxiTags();
         unknowntag = false;
         alert = false;
         for (tag t : listTag) {
             TextView tag = new TextView(this);
             tag.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-
             if(listNearTags.contains(t.ID)){tag.setTextColor(Color.GREEN);}
             else {tag.setTextColor(Color.RED);}
 
@@ -121,7 +109,6 @@ public class scan extends Activity {
             else {
                 tag.setText(t.ID);
             }
-
             layout.addView(tag);
         }
         //get the other tags
@@ -136,16 +123,8 @@ public class scan extends Activity {
             }
         }
         if(unknowntag){
-            if(!alert){
-                TextView tag = new TextView(this);
-                tag.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                tag.setTextColor(Color.RED);
-                tag.setText(tmp);
-                addUnknownTag(tmp);
-            }
-            else{
-                addAlert();
-            }
+            if(!alert){addUnknownTag(tmp);}
+            else{addAlert();}
         }
     }
 
