@@ -31,9 +31,7 @@ public class utilitaire {
 
     public static tag getTagbyID(String id){
         for (tag t: allTags) {
-            if(t.ID.equals(id)){
-                return t;
-            }
+            if(t.ID.equals(id)){return t;}
         }
         tag t = new tag(id);
         allTags.add(t);
