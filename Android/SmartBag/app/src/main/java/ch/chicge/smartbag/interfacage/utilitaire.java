@@ -7,26 +7,22 @@ import java.util.ArrayList;
  */
 
 public class utilitaire {
-    public static ArrayList<tag> allTags;
-    public static ArrayList<String> proxyTags;
+    public static ArrayList<tag> allTags = new ArrayList<tag>();
+    public static ArrayList<String> proxyTags = new ArrayList<String>();
 
     public static void setAllTags(){
-        ArrayList<tag> listTag = new ArrayList<tag>();
         tag t = new tag("0141-5551-5508-2308-7357-4523");
         t.setCustomName("mon nom custom");
-        listTag.add(t);
+        allTags.add(t);
         t = new tag("0141-5551-5508-2308-7357-4529");
         t.setCustomName("le truc que j'oublie tout le temps");
-        listTag.add(t);
-        allTags = listTag;
+        allTags.add(t);
     }
 
     public static void setProxyTags(){
-        ArrayList<String> listTag = new ArrayList<String>();
-        listTag.add("0141-5551-5508-2308-7357-4523");
+        proxyTags.add("0141-5551-5508-2308-7357-4523");
         //listTag.add("0141-5551-5508-2308-7357-4525");
-        listTag.add("0141-5551-5508-2308-7357-4527");
-        proxyTags = listTag;
+        proxyTags.add("0141-5551-5508-2308-7357-4527");
     }
 
     public static ArrayList<String> getProxiTags(){
@@ -35,9 +31,7 @@ public class utilitaire {
 
     public static tag getTagbyID(String id){
         for (tag t: allTags) {
-            if(t.ID.equals(id)){
-                return t;
-            }
+            if(t.ID.equals(id)){return t;}
         }
         tag t = new tag(id);
         allTags.add(t);

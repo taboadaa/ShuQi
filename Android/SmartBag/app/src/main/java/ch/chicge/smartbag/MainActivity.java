@@ -12,15 +12,11 @@ import ch.chicge.smartbag.application.scan;
 import ch.chicge.smartbag.interfacage.utilitaire;
 
 public class MainActivity extends Activity {
-
-
-    private LinearLayout layout;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-        layout = new LinearLayout(this);
         utilitaire.setAllTags();
         utilitaire.setProxyTags();
 

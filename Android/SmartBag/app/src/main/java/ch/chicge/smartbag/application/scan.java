@@ -27,7 +27,7 @@ import ch.chicge.smartbag.interfacage.utilitaire;
 
 public class scan extends Activity {
 
-    private ArrayList<tag> listTag = new ArrayList<tag>();
+    private ArrayList<tag> listTag;
     private LinearLayout layout;
     private boolean unknowntag = false;
     private boolean alert = false;
@@ -36,28 +36,66 @@ public class scan extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scan);
         layout = (LinearLayout) findViewById(R.id.scanPage);
-        //printKnowntag();
+        //layout = (LinearLayout) R.layout.scan;
+    }
 
-        final Button retour = (Button) findViewById(R.id.retourScan);
-
+    private void create(){
+        layout.removeAllViews();
+        layout = null;
+        layout = new LinearLayout(this);
+        final Button retour = new Button(this);
+        retour.setText("Retour");
+        retour.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(scan.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
+        layout.addView(retour);
+        setContentView(layout);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        create();
         printKnowntag();
     }
 
+    @Override
+    protected void onStart(){
+        super.onStart();
+    }
+
+    protected void onRestart(){
+        super.onRestart();
+        delete();
+    }
+
+    protected void onPause(){
+        super.onPause();
+        delete();
+    }
+
+    protected void onStop(){
+        super.onStop();
+        delete();
+    }
+
+    protected void onDestroy(){
+        super.onDestroy();
+        delete();
+    }
+
+    private void delete(){
+        layout.removeAllViewsInLayout();
+        layout.removeAllViews();
+    }
+
     public void addAlert(){
-        alert = true;
         TextView alert = new TextView(this);
         alert.setTextColor(Color.RED);
         alert.setText("2 appareil inconnu, veulliez éloigner un appareil!");
@@ -90,12 +128,11 @@ public class scan extends Activity {
         String tmp = "";
         for (String t : listNearTags) {
             if(!isKnown(t)) {
-                if (unknowntag) {
-                    addAlert();
-                } else {
+                if (!unknowntag) {
                     tmp = t;
                     unknowntag = true;
                 }
+                else{alert = true;}
             }
         }
         if(unknowntag){
@@ -105,6 +142,9 @@ public class scan extends Activity {
                 tag.setTextColor(Color.RED);
                 tag.setText(tmp);
                 addUnknownTag(tmp);
+            }
+            else{
+                addAlert();
             }
         }
     }
@@ -129,6 +169,7 @@ public class scan extends Activity {
                 Intent intent = new Intent(scan.this, TagView.class);
                 intent.putExtra("myTag", b.getText().toString().substring(14));
                 startActivity(intent);
+                finish();
             }
         });
 
