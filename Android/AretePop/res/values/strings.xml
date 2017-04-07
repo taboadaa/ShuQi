@@ -142,4 +142,11 @@
     <string name="custom_name">Custom Name:</string>
     <string name="editname">editName</string>
     <string name="valider">Valider</string>
+    <string name="dimanche">Dimanche</string>
+    <string name="jeudi">Jeudi</string>
+    <string name="lundi">Lundi</string>
+    <string name="mardi">Mardi</string>
+    <string name="mercredi">Mercredi</string>
+    <string name="samedi">Samedi</string>
+    <string name="vendredi">Vendredi</string>
 </resources>

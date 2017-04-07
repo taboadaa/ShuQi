@@ -13,9 +13,6 @@ import ch.chicge.smartbag.R;
 import ch.chicge.smartbag.interfacage.tag;
 import ch.chicge.smartbag.interfacage.utilitaire;
 
-/**
- * Created by Vince on 03.04.2017.
- */
 
 public class TagView extends Activity {
     tag t;
@@ -24,11 +21,9 @@ public class TagView extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tag);
         final Button retour = (Button) findViewById(R.id.retourTag);
-
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(TagView.this, MainActivity.class);
                 startActivity(intent);
             }
@@ -41,6 +36,7 @@ public class TagView extends Activity {
             public void onClick(View v) {
                 t.setCustomName(e.getText().toString());
                 addCustomName();
+                setCalendrier(t);
             }
         });
     }
@@ -93,7 +89,67 @@ public class TagView extends Activity {
     }
 
     public void addCalendrier(){
-        TextView text = (TextView) findViewById(R.id.jours);
-        text.setText(t.cal.toString());
+        calendrier cal = t.cal;
+
+        if(cal.Lundi) {
+            final CheckBox Lundi = (CheckBox) findViewById(R.id.Lundi);
+            Lundi.setChecked(true);
+        }
+        if(cal.Mardi) {
+            final CheckBox Mardi = (CheckBox) findViewById(R.id.Mardi);
+            Mardi.setChecked(true);
+        }
+        if(cal.Mercredi) {
+            final CheckBox Mercredi = (CheckBox) findViewById(R.id.Mercredi);
+            Mercredi.setChecked(true);
+        }
+        if(cal.Jeudi) {
+            final CheckBox Jeudi = (CheckBox) findViewById(R.id.Jeudi);
+            Jeudi.setChecked(true);
+        }
+        if(cal.Vendredi) {
+            final CheckBox Vendredi = (CheckBox) findViewById(R.id.Vendredi);
+            Vendredi.setChecked(true);
+        }
+        if(cal.Samedi) {
+            final CheckBox Samedi = (CheckBox) findViewById(R.id.Samedi);
+            Samedi.setChecked(true);
+        }
+        if(cal.Dimanche) {
+            final CheckBox Dimanche = (CheckBox) findViewById(R.id.Dimanche);
+            Dimanche.setChecked(true);
+        }
+    }
+
+    public void setCalendrier(tag t){
+        final CheckBox Lundi = (CheckBox) findViewById(R.id.Lundi);
+        final CheckBox Mardi = (CheckBox) findViewById(R.id.Mardi);
+        final CheckBox Mercredi = (CheckBox) findViewById(R.id.Mercredi);
+        final CheckBox Jeudi = (CheckBox) findViewById(R.id.Jeudi);
+        final CheckBox Vendredi = (CheckBox) findViewById(R.id.Vendredi);
+        final CheckBox Samedi = (CheckBox) findViewById(R.id.Samedi);
+        final CheckBox Dimanche = (CheckBox) findViewById(R.id.Dimanche);
+
+        if(Lundi.isChecked()){
+            t.cal.Lundi = true;
+        }
+        if(Mardi.isChecked()){
+            t.cal.Mardi = true;
+        }
+        if(Mercredi.isChecked()){
+            t.cal.Mercredi = true;
+        }
+        if(Jeudi.isChecked()){
+            t.cal.Jeudi = true;
+        }
+        if(Vendredi.isChecked()){
+            t.cal.Vendredi = true;
+        }
+        if(Samedi.isChecked()){
+            t.cal.Samedi = true;
+        }
+        if(Dimanche.isChecked()){
+            t.cal.Dimanche = true;
+        }
     }
 }

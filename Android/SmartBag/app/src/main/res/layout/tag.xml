@@ -35,28 +35,52 @@
         android:text="@string/editname"
         tools:ignore="LabelFor" />
 
+    <CheckBox
+        android:id="@+id/Lundi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lundi" />
+
+    <CheckBox
+        android:id="@+id/Mardi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mardi" />
+
+    <CheckBox
+        android:id="@+id/Mercredi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mercredi" />
+
+    <CheckBox
+        android:id="@+id/Jeudi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/jeudi" />
+
+    <CheckBox
+        android:id="@+id/Vendredi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/vendredi" />
+
+    <CheckBox
+        android:id="@+id/Samedi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/samedi" />
+
+    <CheckBox
+        android:id="@+id/Dimanche"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dimanche" />
+
     <Button
         android:id="@+id/ValiderName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/valider" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/jour" />
-
-    <TextView
-        android:id="@+id/jours"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/lundi_mardi_vendredi" />
-
-    <Button
-        android:id="@+id/modifierCalendrier"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/modifier_calendrier" />
 
 </LinearLayout>
