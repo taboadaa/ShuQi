@@ -1,7 +1,12 @@
 package phychips.arete.newver.interfacage;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import java.util.ArrayList;
+
+import phychips.arete.newver.R;
 
 /**
  * Created by Vince on 21.03.2017.
@@ -10,6 +15,7 @@ import java.util.ArrayList;
 public class utilitaire {
     public static ArrayList<tag> allTags = new ArrayList<tag>();
     public static ArrayList<String> proxyTags = new ArrayList<String>();
+    public static SharedPreferences sharedPref;
 
     public static void setAllTags(){
         tag t = new tag("0141-5551-5508-2308-7357-4523");
@@ -43,8 +49,7 @@ public class utilitaire {
         return allTags;
     }
 
-    public static void saveTags(){
-
+    public static void saveTags(Context context){
     }
 
     public static void saveAgenda(){

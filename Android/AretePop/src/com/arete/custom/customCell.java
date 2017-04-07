@@ -2,6 +2,7 @@ package com.arete.custom;
 
 public class customCell
 {
+    String id;
     String name;
     String value;
     
@@ -32,7 +33,8 @@ public class customCell
     {
         this.value = value;
     }
-    
+    public void setId(String id){this.id = id;}
+    public String getId(){return this.id;}
     
 
 }

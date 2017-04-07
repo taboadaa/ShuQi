@@ -2,6 +2,9 @@ package phychips.arete.newver;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.Map;
 
 import com.arete.custom.*;
 import android.media.AudioManager;
@@ -36,6 +39,8 @@ import android.content.SharedPreferences;
 
 import com.phychips.rcp.*;
 import com.phychips.utility.EpcConverter;
+
+import phychips.arete.newver.application.TagView;
 
 public class MainActivity extends Activity implements iRcpEvent2,
 	OnCompletionListener, IOnHandlerMessage
@@ -73,13 +78,15 @@ public class MainActivity extends Activity implements iRcpEvent2,
     private Vibrator vibe;
 
 	//Création fichier clé-valeur
-	//SharedPreferences sharedPref = this.getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_WORLD_READABLE);
+	Map<String, ?> weekTags;
 	SharedPreferences sharedPref;
+    Calendar rightNow = Calendar.getInstance();
 
 
 
 
-	@Override
+
+    @Override
     protected void onCreate(Bundle savedInstanceState)
     {
 	super.onCreate(savedInstanceState);
@@ -128,9 +135,9 @@ public class MainActivity extends Activity implements iRcpEvent2,
 		if (encoding_type == EpcConverter.HEX_STRING)
 		{
 		    Intent intent = new Intent(getBaseContext(),
-			    TagAccessActivity.class);
-		    intent.putExtra("tagitem",
-			    ((customCell)(tagCellList.toArray()[arg2])).getName());
+			    TagView.class);
+		    intent.putExtra("myTag",
+			    ((customCell)(tagCellList.toArray()[arg2])).getId());
 		    startActivity(intent);
 		}
 		else
@@ -467,11 +474,24 @@ public class MainActivity extends Activity implements iRcpEvent2,
 	tagDataList.clear();
 	tagAdapter.notifyDataSetChanged();
 	tvTagCount.setText("0  tags");
+
+    }
+
+    private void initWeekTags(){
+        weekTags = sharedPref.getAll();
+        String currDay = rightNow.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.ENGLISH);
+        for (String key : weekTags.keySet()) {
+            if(key.length() < 30){
+                if(sharedPref.getString(key+currDay, "F") == "T")
+                    listRefresh(Integer.parseInt(key), "rouge");
+            }
+        }
     }
 
     synchronized private void ListRefreshWithRssi(final int[] data,
 	    final int rssi)
     {
+
 	final String str = EpcConverter.toString(encoding_type, data);
 
 	boolean newTagReceived = true;
@@ -529,7 +549,8 @@ public class MainActivity extends Activity implements iRcpEvent2,
 
     }
 
-    synchronized private void ListRefresh(final int[] data)
+    // TODO Fonction copie de LIstRefresh à appeler avant
+    synchronized private void ListRefresh(final int[] data, String color)
     {
 
 	    runOnUiThread(new Runnable()
@@ -583,23 +604,26 @@ public class MainActivity extends Activity implements iRcpEvent2,
 //		public void run()
 //		{
 		    final customCell ttag = new customCell();
-			//ttag.setName(str);
+			ttag.setName(str);
 		//todo modifier
 
 		    tagCellList.add(ttag);	    
 		    tagStringList.add(str);
+
+
 			SharedPreferences.Editor editor = sharedPref.edit();
 			String cador = sharedPref.getString(str, null);
 		System.out.println("null");
 			if (cador == null){
 
-				editor.putString(str, str+"test");
+				editor.putString(str, "inconnu");
 				editor.commit();
 				cador = sharedPref.getString(str, "key not found");
 			}
 
 			ttag.setName(cador);
 			ttag.setValue("1");
+			ttag.setId(str);
 		    tagAdapter.notifyDataSetChanged();
 		    tvTagCount.setText(tagCellList.size() + " tags");
 //		}
@@ -634,36 +658,37 @@ public class MainActivity extends Activity implements iRcpEvent2,
     @Override
     protected void onResume()
     {
-	super.onResume();
+        super.onResume();
 
-	this.max_tag = mPrefs.getInt("MAX_TAG", 0);
-	this.max_time = mPrefs.getInt("MAX_TIME", 0);
-	this.repeat_cycle = mPrefs.getInt("REPEAT_CYCLE", 0);
-	this.speakerBeep = mPrefs.getBoolean("SPEAKER_BEEP", false);
-	this.readAfterPlugging = mPrefs
-		.getBoolean("READ_AFTER_PLUGGING", false);
-	
-	boolean newDisplayRssi = mPrefs.getBoolean("DISPLAY_RSSI", false);
-	int new_encoding_type = mPrefs.getInt("ENCODING_TYPE", 0);
-	
-	if (this.displayRssi != newDisplayRssi || this.encoding_type != new_encoding_type)
-	{
-	    ListClear();
-	    this.displayRssi = newDisplayRssi;
-	    this.encoding_type = new_encoding_type;
-	}
+        this.max_tag = mPrefs.getInt("MAX_TAG", 0);
+        this.max_time = mPrefs.getInt("MAX_TIME", 0);
+        this.repeat_cycle = mPrefs.getInt("REPEAT_CYCLE", 0);
+        this.speakerBeep = mPrefs.getBoolean("SPEAKER_BEEP", false);
+        this.readAfterPlugging = mPrefs
+            .getBoolean("READ_AFTER_PLUGGING", false);
 
-	RcpApi2.getInstance().setOnRcpEventListener(this);
-	if (RcpApi2.getInstance().isOpen())
-	{
-	    runOnUiThread(new Runnable()
-	    {
-		public void run()
-		{
-		    RcpApi2.getInstance().getReaderInfo((byte) 0xB0);
-		}
-	    });
-	}
+        boolean newDisplayRssi = mPrefs.getBoolean("DISPLAY_RSSI", false);
+        int new_encoding_type = mPrefs.getInt("ENCODING_TYPE", 0);
+
+        if (this.displayRssi != newDisplayRssi || this.encoding_type != new_encoding_type)
+        {
+            ListClear();
+            this.displayRssi = newDisplayRssi;
+            this.encoding_type = new_encoding_type;
+        }
+
+        RcpApi2.getInstance().setOnRcpEventListener(this);
+        if (RcpApi2.getInstance().isOpen())
+        {
+            runOnUiThread(new Runnable()
+            {
+            public void run()
+            {
+                RcpApi2.getInstance().getReaderInfo((byte) 0xB0);
+            }
+            });
+        }
+        ListClear();
     }
 
     // Stop - not need
@@ -739,7 +764,7 @@ public class MainActivity extends Activity implements iRcpEvent2,
     @Override
     public void onTagReceived(int[] data)
     {
-	ListRefresh(data);	
+	ListRefresh(data, "white");
 	vibe.vibrate(100);
 	
 	if (this.speakerBeep)
