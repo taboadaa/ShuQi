@@ -156,59 +156,59 @@ public class TagView extends Activity {
 
         if(Lundi.isChecked()){
             t.cal.Lundi = true;
-            editor.putString(t.ID+"Lundi", "T");
+            editor.putString(t.ID+"MONDAY", "T");
         }
         else{
             t.cal.Lundi = false;
-            editor.putString(t.ID+"Lundi", "F");
+            editor.putString(t.ID+"MONDAY", "F");
         }
         if(Mardi.isChecked()){
             t.cal.Mardi = true;
-            editor.putString(t.ID+"Mardi", "T");
+            editor.putString(t.ID+"TUESDAY", "T");
         }
         else{
             t.cal.Mardi = false;
-            editor.putString(t.ID+"Mardi", "F");
+            editor.putString(t.ID+"TUESDAY", "F");
         }
         if(Mercredi.isChecked()){
             t.cal.Mercredi = true;
-            editor.putString(t.ID+"Mercredi", "T");
+            editor.putString(t.ID+"WEDNESDAY", "T");
         }
         else{
             t.cal.Mercredi = false;
-            editor.putString(t.ID+"Mercredi", "F");
+            editor.putString(t.ID+"WEDNESDAY", "F");
         }
         if(Jeudi.isChecked()){
             t.cal.Jeudi = true;
-            editor.putString(t.ID+"Jeudi", "T");
+            editor.putString(t.ID+"THURSDAY", "T");
         }
         else{
             t.cal.Jeudi = false;
-            editor.putString(t.ID+"Jeudi", "F");
+            editor.putString(t.ID+"THURSDAY", "F");
         }
         if(Vendredi.isChecked()){
             t.cal.Vendredi = true;
-            editor.putString(t.ID+"Vendredi", "T");
+            editor.putString(t.ID+"FRIDAY", "T");
         }
         else{
             t.cal.Vendredi = false;
-            editor.putString(t.ID+"Vendredi", "F");
+            editor.putString(t.ID+"FRIDAY", "F");
         }
         if(Samedi.isChecked()){
             t.cal.Samedi = true;
-            editor.putString(t.ID+"Samedi", "T");
+            editor.putString(t.ID+"SATURDAY", "T");
         }
         else{
             t.cal.Samedi = false;
-            editor.putString(t.ID+"Samedi", "F");
+            editor.putString(t.ID+"SATURDAY", "F");
         }
         if(Dimanche.isChecked()){
             t.cal.Dimanche = true;
-            editor.putString(t.ID+"Dimanche", "T");
+            editor.putString(t.ID+"SUNDAY", "T");
         }
         else{
             t.cal.Dimanche = false;
-            editor.putString(t.ID+"Dimanche", "F");
+            editor.putString(t.ID+"SUNDAY", "F");
         }
     }
 }

@@ -1,10 +1,13 @@
 package com.arete.custom;
 
+import android.graphics.Color;
+
 public class customCell
 {
     String id;
     String name;
     String value;
+    int color = Color.RED;
     
     public customCell()
     {
@@ -35,6 +38,7 @@ public class customCell
     }
     public void setId(String id){this.id = id;}
     public String getId(){return this.id;}
-    
+    public void setColor(int color){this.color = color;}
+    public int getColor(){return this.color;}
 
 }
