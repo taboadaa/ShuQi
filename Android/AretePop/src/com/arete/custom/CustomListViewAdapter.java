@@ -30,17 +30,11 @@ public class CustomListViewAdapter extends ArrayAdapter<customCell>
 
     public View getView(int position, View convertView, ViewGroup parent)
     {
-		View row = super.getView(position, convertView, parent);
 	final customCell cell = mList.get(position);
-	if(cell.getColor() == Color.RED)
-		row.setBackgroundColor(Color.RED);
-	else if(cell.getColor() == Color.GREEN)
-		row.setBackgroundColor(Color.GREEN);
 	if (convertView == null)
 	{
 	    convertView = mInflater.inflate(mResource, null);
 	}
-
 	if (cell != null)
 	{
 	    TextView tTextView = (TextView) convertView
@@ -50,7 +44,11 @@ public class CustomListViewAdapter extends ArrayAdapter<customCell>
 //	    @SuppressWarnings("unused")
 //	    ImageView cImageView = (ImageView) convertView
 //	    .findViewById(R.id.listSelect);
-	    tTextView.setText(cell.getName());
+		if(cell.getColor() == Color.RED)
+			tTextView.setBackgroundColor(Color.RED);
+		else if(cell.getColor() == Color.GREEN)
+			tTextView.setBackgroundColor(Color.GREEN);
+		tTextView.setText(cell.getName());
 	    cTextView.setText(cell.getValue());
 
 	}

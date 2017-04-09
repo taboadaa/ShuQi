@@ -507,12 +507,12 @@ public class MainActivity extends Activity implements iRcpEvent2,
 		}
 		tagAdapter.notifyDataSetChanged();
 		tvTagCount.setText(tagCellList.size() + " tags");
-		for(int i = 0; i < tagAdapter.getCount(); i++){
+		/*for(int i = 0; i < tagAdapter.getCount(); i++){
 			if(tagAdapter.getItem(i).getColor() == Color.RED){
 
 				//epclist.getAdapter().getView(i, null, epclist).setBackgroundColor(Color.RED);
 			}
-		}
+		}*/
 
 	}
 
