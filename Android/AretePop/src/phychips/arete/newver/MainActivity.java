@@ -476,12 +476,18 @@ public class MainActivity extends Activity implements iRcpEvent2,
 		tagDataList.clear();
 		tagAdapter.notifyDataSetChanged();
 		tvTagCount.setText("0  tags");
-
+		initWeekTags();
 	}
 
 
 	private void initWeekTags()
 	{
+		System.out.print("test initWeekTags");
+		SharedPreferences.Editor editor = sharedPref.edit();
+		editor.clear();
+		editor.putString("01415551550823087357452343", "test");
+		editor.putString("01415551550823087357452343Sunday", "T");
+		editor.commit();
 		customCell ttag;
 		String str;
 		weekTags = sharedPref.getAll();
@@ -491,10 +497,11 @@ public class MainActivity extends Activity implements iRcpEvent2,
 				str = (String)weekTags.get(key);
 				ttag = new customCell();
 				ttag.setName(str);
-				ttag.setValue("1");
+				ttag.setValue("0");
 				ttag.setId(key);
-				if(weekTags.get(key+currDay) == "T")
+				if(weekTags.get(key+currDay) == "T") {
 					ttag.setColor(Color.RED);
+				}
 				tagCellList.add(ttag);
 			}
 		}
@@ -502,7 +509,8 @@ public class MainActivity extends Activity implements iRcpEvent2,
 		tvTagCount.setText(tagCellList.size() + " tags");
 		for(int i = 0; i < tagAdapter.getCount(); i++){
 			if(tagAdapter.getItem(i).getColor() == Color.RED){
-				epclist.getChildAt(i).setBackgroundColor(Color.RED);
+
+				//epclist.getAdapter().getView(i, null, epclist).setBackgroundColor(Color.RED);
 			}
 		}
 

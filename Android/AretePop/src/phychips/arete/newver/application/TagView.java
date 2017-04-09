@@ -105,13 +105,13 @@ public class TagView extends Activity {
     }
 
     public void addCalendrier(){
-        String Lundis = sharedPref.getString(t.ID+"MONDAY", "F");
-        String Mardis = sharedPref.getString(t.ID+"TUESDAY", "F");
-        String Mercredis = sharedPref.getString(t.ID+"WEDNESDAY", "F");
-        String Jeudis = sharedPref.getString(t.ID+"THURSDAY", "F");
-        String Vendredis = sharedPref.getString(t.ID+"FRIDAY", "F");
-        String Samedis = sharedPref.getString(t.ID+"SATURDAY", "F");
-        String Dimanches = sharedPref.getString(t.ID+"SUNDAY", "F");
+        String Lundis = sharedPref.getString(t.ID+"Monday", "F");
+        String Mardis = sharedPref.getString(t.ID+"Tuesday", "F");
+        String Mercredis = sharedPref.getString(t.ID+"Wednesday", "F");
+        String Jeudis = sharedPref.getString(t.ID+"Thursday", "F");
+        String Vendredis = sharedPref.getString(t.ID+"Friday", "F");
+        String Samedis = sharedPref.getString(t.ID+"Saturday", "F");
+        String Dimanches = sharedPref.getString(t.ID+"Sunday", "F");
 
         //calendrier cal = t.cal;
 
@@ -156,59 +156,59 @@ public class TagView extends Activity {
 
         if(Lundi.isChecked()){
             t.cal.Lundi = true;
-            editor.putString(t.ID+"MONDAY", "T");
+            editor.putString(t.ID+"Monday", "T");
         }
         else{
             t.cal.Lundi = false;
-            editor.putString(t.ID+"MONDAY", "F");
+            editor.putString(t.ID+"Monday", "F");
         }
         if(Mardi.isChecked()){
             t.cal.Mardi = true;
-            editor.putString(t.ID+"TUESDAY", "T");
+            editor.putString(t.ID+"Tuesday", "T");
         }
         else{
             t.cal.Mardi = false;
-            editor.putString(t.ID+"TUESDAY", "F");
+            editor.putString(t.ID+"Tuesday", "F");
         }
         if(Mercredi.isChecked()){
             t.cal.Mercredi = true;
-            editor.putString(t.ID+"WEDNESDAY", "T");
+            editor.putString(t.ID+"Wednesday", "T");
         }
         else{
             t.cal.Mercredi = false;
-            editor.putString(t.ID+"WEDNESDAY", "F");
+            editor.putString(t.ID+"Wednesday", "F");
         }
         if(Jeudi.isChecked()){
             t.cal.Jeudi = true;
-            editor.putString(t.ID+"THURSDAY", "T");
+            editor.putString(t.ID+"Thursday", "T");
         }
         else{
             t.cal.Jeudi = false;
-            editor.putString(t.ID+"THURSDAY", "F");
+            editor.putString(t.ID+"Thursday", "F");
         }
         if(Vendredi.isChecked()){
             t.cal.Vendredi = true;
-            editor.putString(t.ID+"FRIDAY", "T");
+            editor.putString(t.ID+"Friday", "T");
         }
         else{
             t.cal.Vendredi = false;
-            editor.putString(t.ID+"FRIDAY", "F");
+            editor.putString(t.ID+"Friday", "F");
         }
         if(Samedi.isChecked()){
             t.cal.Samedi = true;
-            editor.putString(t.ID+"SATURDAY", "T");
+            editor.putString(t.ID+"Saturday", "T");
         }
         else{
             t.cal.Samedi = false;
-            editor.putString(t.ID+"SATURDAY", "F");
+            editor.putString(t.ID+"Saturday", "F");
         }
         if(Dimanche.isChecked()){
             t.cal.Dimanche = true;
-            editor.putString(t.ID+"SUNDAY", "T");
+            editor.putString(t.ID+"Sunday", "T");
         }
         else{
             t.cal.Dimanche = false;
-            editor.putString(t.ID+"SUNDAY", "F");
+            editor.putString(t.ID+"Sunday", "F");
         }
     }
 }

@@ -18,7 +18,7 @@ public class utilitaire {
     public static SharedPreferences sharedPref;
 
     public static void setAllTags(){
-        tag t = new tag("0141-5551-5508-2308-7357-4523");
+        tag t = new tag("01415551550823087357452343");
         t.setCustomName("mon nom custom");
         allTags.add(t);
         t = new tag("0141-5551-5508-2308-7357-4529");

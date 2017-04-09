@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import phychips.arete.newver.R;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -29,8 +30,12 @@ public class CustomListViewAdapter extends ArrayAdapter<customCell>
 
     public View getView(int position, View convertView, ViewGroup parent)
     {
+		View row = super.getView(position, convertView, parent);
 	final customCell cell = mList.get(position);
-
+	if(cell.getColor() == Color.RED)
+		row.setBackgroundColor(Color.RED);
+	else if(cell.getColor() == Color.GREEN)
+		row.setBackgroundColor(Color.GREEN);
 	if (convertView == null)
 	{
 	    convertView = mInflater.inflate(mResource, null);
@@ -47,6 +52,7 @@ public class CustomListViewAdapter extends ArrayAdapter<customCell>
 //	    .findViewById(R.id.listSelect);
 	    tTextView.setText(cell.getName());
 	    cTextView.setText(cell.getValue());
+
 	}
 
 	return convertView;
