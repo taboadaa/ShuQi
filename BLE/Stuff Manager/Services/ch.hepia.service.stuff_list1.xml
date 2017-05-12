@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Service xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/service.xsd"
+  type="ch.hepia.service.stuff_list1"
+  uuid="e71a"
+  name="Stuff List">
+  <InformativeText>
+    <Abstract />
+    <InformativeDisclaimer>I like train!</InformativeDisclaimer>
+    <Summary>List of the stuff present.
+
+1) Read Stuff Number
+2) Repeat until Stuff Number reached
+    2.1) Write Stuff Entry
+    2.2) Read Stuff Value
+3) Write TRUE in Stuff Readed</Summary>
+    <Examples>
+      <Example />
+    </Examples>
+  </InformativeText>
+  <Transports>
+    <Classic>true</Classic>
+    <LowEnergy>true</LowEnergy>
+  </Transports>
+  <Characteristics>
+    <Characteristic
+      type="ch.hepia.characteristic.stuff_value"
+      name="Stuff Value">
+      <Requirement>Optional</Requirement>
+      <Properties>
+        <InformationText>Value of the selected Stuff.</InformationText>
+        <Read>Mandatory</Read>
+        <Write>Excluded</Write>
+        <WriteWithoutResponse>Excluded</WriteWithoutResponse>
+        <SignedWrite>Excluded</SignedWrite>
+        <ReliableWrite>Excluded</ReliableWrite>
+        <Notify>Excluded</Notify>
+        <Indicate>Excluded</Indicate>
+        <WritableAuxiliaries>Excluded</WritableAuxiliaries>
+        <Broadcast>Excluded</Broadcast>
+        <ExtendedProperties>Excluded</ExtendedProperties>
+      </Properties>
+    </Characteristic>
+    <Characteristic
+      type="ch.hepia.characteristic.stuff_entry"
+      name="Stuff Entry">
+      <Requirement>Optional</Requirement>
+      <Properties>
+        <InformationText>Set the Entry we want to read in Stuff Value.</InformationText>
+        <Read>Excluded</Read>
+        <Write>Mandatory</Write>
+        <WriteWithoutResponse>Excluded</WriteWithoutResponse>
+        <SignedWrite>Excluded</SignedWrite>
+        <ReliableWrite>Excluded</ReliableWrite>
+        <Notify>Excluded</Notify>
+        <Indicate>Excluded</Indicate>
+        <WritableAuxiliaries>Excluded</WritableAuxiliaries>
+        <Broadcast>Excluded</Broadcast>
+        <ExtendedProperties>Excluded</ExtendedProperties>
+      </Properties>
+    </Characteristic>
+    <Characteristic
+      type="ch.hepia.characteristic.stuff_readed"
+      name="Stuff Readed">
+      <Requirement>Optional</Requirement>
+      <Properties>
+        <Read>Excluded</Read>
+        <Write>Excluded</Write>
+        <WriteWithoutResponse>Mandatory</WriteWithoutResponse>
+        <SignedWrite>Excluded</SignedWrite>
+        <ReliableWrite>Excluded</ReliableWrite>
+        <Notify>Excluded</Notify>
+        <Indicate>Excluded</Indicate>
+        <WritableAuxiliaries>Excluded</WritableAuxiliaries>
+        <Broadcast>Excluded</Broadcast>
+        <ExtendedProperties>Excluded</ExtendedProperties>
+      </Properties>
+    </Characteristic>
+    <Characteristic
+      type="ch.hepia.characteristic.stuff_number"
+      name="Stuff Number">
+      <Requirement>Optional</Requirement>
+      <Properties>
+        <Read>Mandatory</Read>
+        <Write>Excluded</Write>
+        <WriteWithoutResponse>Excluded</WriteWithoutResponse>
+        <SignedWrite>Excluded</SignedWrite>
+        <ReliableWrite>Excluded</ReliableWrite>
+        <Notify>Excluded</Notify>
+        <Indicate>Excluded</Indicate>
+        <WritableAuxiliaries>Excluded</WritableAuxiliaries>
+        <Broadcast>Excluded</Broadcast>
+        <ExtendedProperties>Excluded</ExtendedProperties>
+      </Properties>
+    </Characteristic>
+  </Characteristics>
+</Service>

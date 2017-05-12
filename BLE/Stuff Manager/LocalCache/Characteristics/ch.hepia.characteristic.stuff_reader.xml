@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Characteristic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+  type="ch.hepia.characteristic.stuff_reader"
+  uuid="972ef66f-6ed9-4a89-bbbf-b19779b19a3f"
+  name="Stuff reader" />

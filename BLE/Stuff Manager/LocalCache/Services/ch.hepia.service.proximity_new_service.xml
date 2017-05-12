@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Service xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/service.xsd"
+  type="ch.hepia.service.proximity_new_service"
+  uuid="972e8d7a-6ed9-4a89-bbbf-b19779b19a3f"
+  name="Proximity new service">
+  <Characteristics />
+</Service>

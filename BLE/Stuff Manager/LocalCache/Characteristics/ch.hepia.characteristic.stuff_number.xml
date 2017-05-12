@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Characteristic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+  type="ch.hepia.characteristic.stuff_number"
+  uuid="e710"
+  name="Stuff Number">
+  <Value>
+    <Field
+      name="Entry Number">
+      <InformativeText>Number of Entry to read.</InformativeText>
+      <Requirement>Mandatory</Requirement>
+      <Format>uint16</Format>
+      <Unit>org.bluetooth.unit.unitless</Unit>
+      <Repeated>false</Repeated>
+    </Field>
+  </Value>
+</Characteristic>

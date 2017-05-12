@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Characteristic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+  type="org.bluetooth.characteristic.object_list_control_point"
+  uuid="2AC6"
+  name="Object List Control Point"
+  last-modified="2015-11-23"
+  approved="Yes">
+  <InformativeText />
+</Characteristic>

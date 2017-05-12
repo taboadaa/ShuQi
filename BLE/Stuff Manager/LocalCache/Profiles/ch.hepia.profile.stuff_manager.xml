@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/profile.xsd"
+  name="Stuff Manager"
+  type="ch.hepia.profile.stuff_manager"
+  uuid="972e2ab7-6ed9-4a89-bbbf-b19779b19a3f">
+  <InformativeText>
+    <Abstract>The Stuff Manager profile enables the monitoring of some stuff. It's derivated from the Proximity profile.</Abstract>
+    <Summary>	The Proximity profile defines the behavior when a device moves away from a peer device so that the connection is dropped or the path loss increases above a preset level, causing an immediate alert. This alert can be used to notify the user that the devices have become separated. As a consequence of this alert, a device may take further action, for example to lock one of the devices so that it is no longer usable.
+	The Proximity profile can also be used to define the behavior when the two devices come closer together such that a connection is made or the path loss decreases below a preset level.
+		</Summary>
+  </InformativeText>
+  <Role
+    name="STUFF MANAGER REPORTER">
+    <Service
+      type="org.bluetooth.service.link_loss">
+      <Declaration>Primary</Declaration>
+      <Requirement>Mandatory</Requirement>
+    </Service>
+    <Service
+      type="org.bluetooth.service.immediate_alert">
+      <Declaration>Primary</Declaration>
+      <Requirement>Mandatory</Requirement>
+    </Service>
+    <Service
+      type="ch.hepia.service.tx_power">
+      <Declaration>Primary</Declaration>
+      <Requirement>Optional</Requirement>
+    </Service>
+    <Service
+      type="ch.hepia.service.stuff_list1">
+      <Declaration>Primary</Declaration>
+      <Requirement>Mandatory</Requirement>
+      <Characteristic
+        type="ch.hepia.characteristic.stuff_value">
+        <Requirement>Mandatory</Requirement>
+      </Characteristic>
+      <Characteristic
+        type="ch.hepia.characteristic.stuff_entry">
+        <Requirement>Mandatory</Requirement>
+      </Characteristic>
+      <Characteristic
+        type="ch.hepia.characteristic.stuff_readed">
+        <Requirement>Mandatory</Requirement>
+      </Characteristic>
+      <Characteristic
+        type="ch.hepia.characteristic.stuff_number">
+        <Requirement>Mandatory</Requirement>
+      </Characteristic>
+    </Service>
+    <Conditional
+      condition="if_any_supported_all_must_be_supported">
+      <Type>org.bluetooth.service.immediate_alert</Type>
+      <Type>org.bluetooth.service.tx_power</Type>
+    </Conditional>
+  </Role>
+  <Role
+    name="STUFF MANAGER MONITOR">
+    <Client
+      type="org.bluetooth.service.link_loss">
+      <Requirement>Mandatory</Requirement>
+    </Client>
+    <Client
+      type="org.bluetooth.service.immediate_alert">
+      <Requirement>Mandatory</Requirement>
+    </Client>
+    <Client
+      type="ch.hepia.service.tx_power">
+      <Requirement>Mandatory</Requirement>
+    </Client>
+    <Client
+      type="ch.hepia.service.stuff_list1">
+      <Requirement>Mandatory</Requirement>
+    </Client>
+  </Role>
+</Profile>

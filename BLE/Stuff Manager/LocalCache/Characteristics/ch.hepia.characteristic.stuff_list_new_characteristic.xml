@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Characteristic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+  type="ch.hepia.characteristic.stuff_list_new_characteristic"
+  uuid="972e13c6-6ed9-4a89-bbbf-b19779b19a3f"
+  name="STUFF LIST new characteristic" />
