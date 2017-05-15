@@ -13,11 +13,6 @@
   <Role
     name="STUFF MANAGER REPORTER">
     <Service
-      type="org.bluetooth.service.link_loss">
-      <Declaration>Primary</Declaration>
-      <Requirement>Mandatory</Requirement>
-    </Service>
-    <Service
       type="org.bluetooth.service.immediate_alert">
       <Declaration>Primary</Declaration>
       <Requirement>Mandatory</Requirement>
@@ -51,10 +46,6 @@
   </Role>
   <Role
     name="STUFF MANAGER MONITOR">
-    <Client
-      type="org.bluetooth.service.link_loss">
-      <Requirement>Mandatory</Requirement>
-    </Client>
     <Client
       type="org.bluetooth.service.immediate_alert">
       <Requirement>Mandatory</Requirement>

@@ -1,15 +1,9 @@
 <?xml version="1.0"?>
-<BDSProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Stuff Manager" LastModified="2017-05-12T12:58:48.1935723+02:00">
+<BDSProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Stuff Manager" LastModified="2017-05-15T14:54:56.2186001+02:00">
   <Namespace>ch.hepia</Namespace>
   <BaseGuid>972e0000-6ed9-4a89-bbbf-b19779b19a3f</BaseGuid>
   <Profile Name="ch.hepia.profile.stuff_manager" XMLFile="Profiles\ch.hepia.profile.stuff_manager.xml" />
   <ServiceFiles>
-    <Service UID="d04f3e4c-686a-495d-a887-21b98d527e53" XMLFile="Services\org.bluetooth.service.link_loss.xml" UUIDMode="Short">
-      <UUIDDisplayMode>Short</UUIDDisplayMode>
-      <CharacteristicFiles>
-        <Characteristic UID="d44d913c-fa1d-4585-8b96-512e4872795b" XMLFile="Characteristics\org.bluetooth.characteristic.alert_level.xml" UUIDMode="Short" />
-      </CharacteristicFiles>
-    </Service>
     <Service UID="2293c905-7038-481a-b219-779fcbc1896c" XMLFile="Services\org.bluetooth.service.immediate_alert.xml" UUIDMode="Short">
       <UUIDDisplayMode>Short</UUIDDisplayMode>
       <CharacteristicFiles>

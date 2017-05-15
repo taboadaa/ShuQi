@@ -3,37 +3,13 @@
 #include "service_if.h"
 #include <stdint.h>
 #include "app_trace.h" 
-#include "ble_lls.h" 
 #include "ble_ias.h" 
 #include "ble_stuff_list.h" 
 
-static ble_lls_t    m_lls; 
 static ble_ias_t    m_ias; 
 static ble_stuff_list_t    m_stuff_list; 
 
 uint8_t m_stuff_list_stuff_value_initial_value_id_arr[1]; 
-
-
-/**@brief Function for handling the Link Loss events.
- *
- * @details This function will be called for all Link Loss events which are passed to
- *          the application.
- *
- * @param[in]   p_link_loss   Link Loss structure.
- * @param[in]   p_evt   Event received from the Link Loss.
- */
-static void on_lls_evt(ble_lls_t * p_lls, ble_lls_evt_t * p_evt)
-{
-    switch (p_evt->evt_type)
-    { 
-        case BLE_LLS_ALERT_LEVEL_EVT_WRITE:
-            app_trace_log("[Bluetooth_IF]: LLS_ALERT_LEVEL evt WRITE. \r\n");
-            break; 
-        default:
-            // No implementation needed.
-            break;
-    }
-}
 
 
 /**@brief Function for handling the Immediate Alert events.
@@ -91,22 +67,9 @@ static void on_stuff_list_evt(ble_stuff_list_t * p_stuff_list, ble_stuff_list_ev
 uint32_t bluetooth_init(void)
 {
     uint32_t    err_code; 
-    ble_lls_init_t    lls_init; 
     ble_ias_init_t    ias_init; 
     ble_stuff_list_init_t    stuff_list_init; 
     
-
-    // Initialize Link Loss.
-    memset(&lls_init, 0, sizeof(lls_init));
-
-    lls_init.evt_handler = on_lls_evt; 
-    lls_init.ble_lls_alert_level_initial_value.alert_level.alert_level = ALERT_LEVEL_NO_ALERT; 
-
-    err_code = ble_lls_init(&m_lls, &lls_init);
-    if (err_code != NRF_SUCCESS)
-    {
-        return err_code;
-    } 
 
     // Initialize Immediate Alert.
     memset(&ias_init, 0, sizeof(ias_init));
@@ -153,7 +116,6 @@ uint32_t bluetooth_init(void)
  */
 void bluetooth_on_ble_evt(ble_evt_t * p_ble_evt)
 { 
-    ble_lls_on_ble_evt(&m_lls, p_ble_evt); 
     ble_ias_on_ble_evt(&m_ias, p_ble_evt); 
     ble_stuff_list_on_ble_evt(&m_stuff_list, p_ble_evt); 
 }

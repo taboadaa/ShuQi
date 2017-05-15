@@ -13,19 +13,9 @@
   <Role
     name="STUFF MANAGER REPORTER">
     <Service
-      type="org.bluetooth.service.link_loss">
-      <Declaration>Primary</Declaration>
-      <Requirement>Mandatory</Requirement>
-    </Service>
-    <Service
       type="org.bluetooth.service.immediate_alert">
       <Declaration>Primary</Declaration>
       <Requirement>Mandatory</Requirement>
-    </Service>
-    <Service
-      type="ch.hepia.service.tx_power">
-      <Declaration>Primary</Declaration>
-      <Requirement>Optional</Requirement>
     </Service>
     <Service
       type="ch.hepia.service.stuff_list1">
@@ -57,15 +47,7 @@
   <Role
     name="STUFF MANAGER MONITOR">
     <Client
-      type="org.bluetooth.service.link_loss">
-      <Requirement>Mandatory</Requirement>
-    </Client>
-    <Client
       type="org.bluetooth.service.immediate_alert">
-      <Requirement>Mandatory</Requirement>
-    </Client>
-    <Client
-      type="ch.hepia.service.tx_power">
       <Requirement>Mandatory</Requirement>
     </Client>
     <Client
