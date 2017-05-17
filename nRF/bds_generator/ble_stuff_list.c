@@ -221,7 +221,16 @@ uint32_t ble_stuff_list_init(ble_stuff_list_t * p_stuff_list, const ble_stuff_li
     p_stuff_list->evt_handler = p_stuff_list_init->evt_handler;
     p_stuff_list->conn_handle = BLE_CONN_HANDLE_INVALID;
     
-    BLE_UUID_BLE_ASSIGN(ble_uuid, 0xE71A);
+    // Add a custom base UUID.
+    ble_uuid128_t bds_base_uuid = {{0x1A, 0xE7, 0xF5, 0x9D, 0xA2, 0x98, 0xBF, 0xBB, 0x89, 0x4A, 0xD9, 0x6E, 0x00, 0x00, 0x1A, 0xE7}};
+    uint8_t       uuid_type;
+    err_code = sd_ble_uuid_vs_add(&bds_base_uuid, &uuid_type);
+    if (err_code != NRF_SUCCESS)
+    {
+        return err_code;
+    }
+    ble_uuid.type = uuid_type;
+    ble_uuid.uuid = 0xE71A;
         
     // Add service
     err_code = sd_ble_gatts_service_add(BLE_GATTS_SRVC_TYPE_PRIMARY, &ble_uuid, &p_stuff_list->service_handle);
@@ -237,7 +246,8 @@ uint32_t ble_stuff_list_init(ble_stuff_list_t * p_stuff_list, const ble_stuff_li
     ble_add_char_params_t add_stuff_value_params;
     memset(&add_stuff_value_params, 0, sizeof(add_stuff_value_params));
     
-    add_stuff_value_params.uuid                = 0xE71D; 
+    add_stuff_value_params.uuid                = 0xE71D;
+    add_stuff_value_params.uuid_type           = ble_uuid.type; 
     add_stuff_value_params.max_len             = MAX_STUFF_VALUE_LEN;
     add_stuff_value_params.init_len            = stuff_value_encode(&stuff_value_initial_value, stuff_value_encoded_value);
     add_stuff_value_params.p_init_value        = stuff_value_encoded_value; 
@@ -259,7 +269,8 @@ uint32_t ble_stuff_list_init(ble_stuff_list_t * p_stuff_list, const ble_stuff_li
     ble_add_char_params_t add_stuff_entry_params;
     memset(&add_stuff_entry_params, 0, sizeof(add_stuff_entry_params));
     
-    add_stuff_entry_params.uuid                = 0xE71C; 
+    add_stuff_entry_params.uuid                = 0xE71C;
+    add_stuff_entry_params.uuid_type           = ble_uuid.type; 
     add_stuff_entry_params.max_len             = MAX_STUFF_ENTRY_LEN;
     add_stuff_entry_params.init_len            = stuff_entry_encode(&stuff_entry_initial_value, stuff_entry_encoded_value);
     add_stuff_entry_params.p_init_value        = stuff_entry_encoded_value; 
@@ -281,7 +292,8 @@ uint32_t ble_stuff_list_init(ble_stuff_list_t * p_stuff_list, const ble_stuff_li
     ble_add_char_params_t add_stuff_readed_params;
     memset(&add_stuff_readed_params, 0, sizeof(add_stuff_readed_params));
     
-    add_stuff_readed_params.uuid                = 0xE71F; 
+    add_stuff_readed_params.uuid                = 0xE71F;
+    add_stuff_readed_params.uuid_type           = ble_uuid.type; 
     add_stuff_readed_params.max_len             = MAX_STUFF_READED_LEN;
     add_stuff_readed_params.init_len            = stuff_readed_encode(&stuff_readed_initial_value, stuff_readed_encoded_value);
     add_stuff_readed_params.p_init_value        = stuff_readed_encoded_value; 
@@ -303,7 +315,8 @@ uint32_t ble_stuff_list_init(ble_stuff_list_t * p_stuff_list, const ble_stuff_li
     ble_add_char_params_t add_stuff_number_params;
     memset(&add_stuff_number_params, 0, sizeof(add_stuff_number_params));
     
-    add_stuff_number_params.uuid                = 0xE710; 
+    add_stuff_number_params.uuid                = 0xE710;
+    add_stuff_number_params.uuid_type           = ble_uuid.type; 
     add_stuff_number_params.max_len             = MAX_STUFF_NUMBER_LEN;
     add_stuff_number_params.init_len            = stuff_number_encode(&stuff_number_initial_value, stuff_number_encoded_value);
     add_stuff_number_params.p_init_value        = stuff_number_encoded_value; 

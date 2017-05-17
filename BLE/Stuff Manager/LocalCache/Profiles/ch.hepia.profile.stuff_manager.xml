@@ -38,6 +38,11 @@
         <Requirement>Mandatory</Requirement>
       </Characteristic>
     </Service>
+    <Service
+      type="ch.hepia.service.stuff_manager_new_service">
+      <Declaration>Primary</Declaration>
+      <Requirement>Mandatory</Requirement>
+    </Service>
     <Conditional
       condition="if_any_supported_all_must_be_supported">
       <Type>org.bluetooth.service.immediate_alert</Type>
@@ -52,6 +57,10 @@
     </Client>
     <Client
       type="ch.hepia.service.stuff_list1">
+      <Requirement>Mandatory</Requirement>
+    </Client>
+    <Client
+      type="ch.hepia.service.stuff_manager_new_service">
       <Requirement>Mandatory</Requirement>
     </Client>
   </Role>

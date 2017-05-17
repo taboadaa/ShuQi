@@ -2,7 +2,7 @@
 <Service xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/service.xsd"
   type="ch.hepia.service.stuff_list1"
-  uuid="e71a"
+  uuid="e71ae71a-6ed9-4a89-bbbf-98a29df5e71a"
   name="Stuff List">
   <InformativeText>
     <Abstract>List of the stuff present.</Abstract>

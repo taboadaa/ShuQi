@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<BDSProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Stuff Manager" LastModified="2017-05-15T14:54:56.2186001+02:00">
+<BDSProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Stuff Manager" LastModified="2017-05-17T14:02:59.2776558+02:00">
   <Namespace>ch.hepia</Namespace>
-  <BaseGuid>972e0000-6ed9-4a89-bbbf-b19779b19a3f</BaseGuid>
+  <BaseGuid>e71a0000-6ed9-4a89-bbbf-98a29df5e71a</BaseGuid>
   <Profile Name="ch.hepia.profile.stuff_manager" XMLFile="Profiles\ch.hepia.profile.stuff_manager.xml" />
   <ServiceFiles>
     <Service UID="2293c905-7038-481a-b219-779fcbc1896c" XMLFile="Services\org.bluetooth.service.immediate_alert.xml" UUIDMode="Short">
@@ -10,13 +10,13 @@
         <Characteristic UID="06ea5e43-acb6-49c5-b26d-7c2b287469a9" XMLFile="Characteristics\org.bluetooth.characteristic.alert_level.xml" UUIDMode="Short" />
       </CharacteristicFiles>
     </Service>
-    <Service UID="375bb7d3-aaa6-4bfd-8eb0-80bca728cee2" XMLFile="Services\ch.hepia.service.stuff_list1.xml" UUIDMode="Short">
+    <Service UID="375bb7d3-aaa6-4bfd-8eb0-80bca728cee2" XMLFile="Services\ch.hepia.service.stuff_list1.xml" UUIDMode="Full">
       <UUIDDisplayMode>Short</UUIDDisplayMode>
       <CharacteristicFiles>
-        <Characteristic UID="c45ad1d0-0ebf-4e18-9617-690c124816e7" XMLFile="Characteristics\ch.hepia.characteristic.stuff_value.xml" UUIDMode="Short" />
-        <Characteristic UID="2d45b0c6-2e0d-48cd-b1f3-c112f010c3f8" XMLFile="Characteristics\ch.hepia.characteristic.stuff_entry.xml" UUIDMode="Short" />
-        <Characteristic UID="417e1429-f0a9-4725-bc6f-d8692d68b84f" XMLFile="Characteristics\ch.hepia.characteristic.stuff_readed.xml" UUIDMode="Short" />
-        <Characteristic UID="081ceb1c-9f8a-4dd5-9c87-70657b788e8d" XMLFile="Characteristics\ch.hepia.characteristic.stuff_number.xml" UUIDMode="Short" />
+        <Characteristic UID="c45ad1d0-0ebf-4e18-9617-690c124816e7" XMLFile="Characteristics\ch.hepia.characteristic.stuff_value.xml" UUIDMode="Full" />
+        <Characteristic UID="2d45b0c6-2e0d-48cd-b1f3-c112f010c3f8" XMLFile="Characteristics\ch.hepia.characteristic.stuff_entry.xml" UUIDMode="Full" />
+        <Characteristic UID="417e1429-f0a9-4725-bc6f-d8692d68b84f" XMLFile="Characteristics\ch.hepia.characteristic.stuff_readed.xml" UUIDMode="Full" />
+        <Characteristic UID="081ceb1c-9f8a-4dd5-9c87-70657b788e8d" XMLFile="Characteristics\ch.hepia.characteristic.stuff_number.xml" UUIDMode="Full" />
       </CharacteristicFiles>
     </Service>
   </ServiceFiles>

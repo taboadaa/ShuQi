@@ -2,7 +2,7 @@
 <Characteristic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
   type="ch.hepia.characteristic.stuff_value"
-  uuid="e71d"
+  uuid="e71ae71d-6ed9-4a89-bbbf-98a29df5e71a"
   name="Stuff Value">
   <Value>
     <Field
