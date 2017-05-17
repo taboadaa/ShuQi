@@ -1,0 +1,6 @@
+16:53:48 **** Incremental Build of configuration Default for project shuQi ****
+make VERBOSE=1 all 
+make: rien à faire pour « all ».
+
+16:53:48 Build Finished (took 64ms)
+
