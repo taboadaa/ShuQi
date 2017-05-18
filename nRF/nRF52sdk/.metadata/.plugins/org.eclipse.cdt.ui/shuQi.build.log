@@ -1,6 +1,31 @@
-16:53:48 **** Incremental Build of configuration Default for project shuQi ****
-make VERBOSE=1 all 
-make: rien à faire pour « all ».
+14:01:50 **** Build of configuration Default for project shuQi ****
+make VERBOSE=1 flash 
+Flashing: _build/nrf52832_xxaa.hex
+nrfjprog --program _build/nrf52832_xxaa.hex -f nrf52 --sectorerase
+Parsing hex file.
+Erasing page at address 0x1F000.
+Erasing page at address 0x20000.
+Erasing page at address 0x21000.
+Erasing page at address 0x22000.
+Erasing page at address 0x23000.
+Erasing page at address 0x24000.
+Erasing page at address 0x25000.
+Erasing page at address 0x26000.
+Erasing page at address 0x27000.
+Erasing page at address 0x28000.
+Erasing page at address 0x29000.
+Erasing page at address 0x2A000.
+Erasing page at address 0x2B000.
+Erasing page at address 0x2C000.
+Erasing page at address 0x2D000.
+Erasing page at address 0x2E000.
+Erasing page at address 0x2F000.
+Applying system reset.
+Checking that the area to write is not protected.
+Programing device.
+nrfjprog --reset -f nrf52
+Applying system reset.
+Run.
 
-16:53:48 Build Finished (took 64ms)
+14:01:54 Build Finished (took 3s.191ms)
 

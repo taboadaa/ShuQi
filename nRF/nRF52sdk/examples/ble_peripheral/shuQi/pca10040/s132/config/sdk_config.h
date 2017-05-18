@@ -3548,7 +3548,7 @@
 // <e> NRF_LOG_ENABLED - nrf_log - Logging
 //==========================================================
 #ifndef NRF_LOG_ENABLED
-#define NRF_LOG_ENABLED 0
+#define NRF_LOG_ENABLED 1
 #endif
 #if  NRF_LOG_ENABLED
 // <e> NRF_LOG_USES_COLORS - If enabled then ANSI escape code for colors is prefixed to every string
@@ -3586,7 +3586,7 @@
 // <8=> White 
 
 #ifndef NRF_LOG_ERROR_COLOR
-#define NRF_LOG_ERROR_COLOR 0
+#define NRF_LOG_ERROR_COLOR 2
 #endif
 
 // <o> NRF_LOG_WARNING_COLOR  - ANSI escape code prefix.
@@ -3602,7 +3602,7 @@
 // <8=> White 
 
 #ifndef NRF_LOG_WARNING_COLOR
-#define NRF_LOG_WARNING_COLOR 0
+#define NRF_LOG_WARNING_COLOR 5
 #endif
 
 #endif //NRF_LOG_USES_COLORS
@@ -3670,7 +3670,7 @@
 // <e> NRF_LOG_BACKEND_SERIAL_USES_UART - If enabled data is printed over UART
 //==========================================================
 #ifndef NRF_LOG_BACKEND_SERIAL_USES_UART
-#define NRF_LOG_BACKEND_SERIAL_USES_UART 1
+#define NRF_LOG_BACKEND_SERIAL_USES_UART 0
 #endif
 #if  NRF_LOG_BACKEND_SERIAL_USES_UART
 // <o> NRF_LOG_BACKEND_SERIAL_UART_BAUDRATE  - Default Baudrate
@@ -3739,7 +3739,7 @@
 // <e> NRF_LOG_BACKEND_SERIAL_USES_RTT - If enabled data is printed using RTT
 //==========================================================
 #ifndef NRF_LOG_BACKEND_SERIAL_USES_RTT
-#define NRF_LOG_BACKEND_SERIAL_USES_RTT 0
+#define NRF_LOG_BACKEND_SERIAL_USES_RTT 1
 #endif
 #if  NRF_LOG_BACKEND_SERIAL_USES_RTT
 // <o> NRF_LOG_BACKEND_RTT_OUTPUT_BUFFER_SIZE - RTT output buffer size. 

@@ -113,10 +113,14 @@ void bluetooth_on_ble_evt(ble_evt_t * p_ble_evt) {
 	ble_stuff_list_on_ble_evt(&m_stuff_list, p_ble_evt);
 }
 
-//TODO it work!
-void stfnbset() {
+//Debug
+void debugdebug() {
 	ble_stuff_list_stuff_number_t * p_stuff_number = (ble_stuff_list_stuff_number_t *)malloc(sizeof(ble_stuff_list_stuff_number_t));
 	p_stuff_number->entry_number = 4;
 
 	ble_stuff_list_stuff_number_set(&m_stuff_list, p_stuff_number);
+
+	free(p_stuff_number);
 }
+
+

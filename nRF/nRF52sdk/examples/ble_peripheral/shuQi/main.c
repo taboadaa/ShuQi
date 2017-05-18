@@ -88,8 +88,8 @@
 #define CENTRAL_LINK_COUNT               0                                          /**< Number of central links used by the application. When changing this number remember to adjust the RAM settings*/
 #define PERIPHERAL_LINK_COUNT            1                                          /**< Number of peripheral links used by the application. When changing this number remember to adjust the RAM settings*/
 
-#define DEVICE_NAME                      "ShuQi"                               /**< Name of device. Will be included in the advertising data. */
-#define MANUFACTURER_NAME                "he-pia-ad-g"                      /**< Manufacturer. Will be passed to Device Information Service. */
+#define DEVICE_NAME                      "ShuQi"                                    /**< Name of device. Will be included in the advertising data. */
+#define MANUFACTURER_NAME                "he-pia-ad-g"                              /**< Manufacturer. Will be passed to Device Information Service. */
 #define APP_ADV_INTERVAL                 300                                        /**< The advertising interval (in units of 0.625 ms. This value corresponds to 187.5 ms). */
 #define APP_ADV_TIMEOUT_IN_SECONDS       180                                        /**< The advertising timeout in units of seconds. */
 
@@ -119,7 +119,7 @@
 static uint16_t m_conn_handle = BLE_CONN_HANDLE_INVALID; /**< Handle of the current connection. */
 static nrf_ble_qwr_t m_qwr; /**< Queued Writes structure.*/
 
-// YOUR_JOB: Use UUIDs for service(s) used in your application.
+// TODO YOUR_JOB: Use UUIDs for service(s) used in your application.
 static ble_uuid_t m_adv_uuids[] = { { BLE_UUID_DEVICE_INFORMATION_SERVICE,
 		BLE_UUID_TYPE_BLE } }; /**< Universally unique service identifiers. */
 
@@ -160,7 +160,7 @@ static void timers_init(void) {
 
 	// Create timers.
 
-	/* YOUR_JOB: Create any timers to be used by the application.
+	/* TODO YOUR_JOB: Create any timers to be used by the application.
 	 Below is an example of how to create a timer.
 	 uint32_t err_code;
 	 err_code = app_timer_create(&m_app_timer_id, APP_TIMER_MODE_REPEATED, timer_timeout_handler);
@@ -183,9 +183,8 @@ static void gap_params_init(void) {
 			(const uint8_t *) DEVICE_NAME, strlen(DEVICE_NAME));
 	APP_ERROR_CHECK(err_code);
 
-	/* TODO YOUR_JOB: Use an appearance value matching the application's use case.
-	 err_code = sd_ble_gap_appearance_set(BLE_APPEARANCE_);
-	 APP_ERROR_CHECK(err_code); */
+	err_code = sd_ble_gap_appearance_set(BLE_APPEARANCE_GENERIC_TAG);
+	APP_ERROR_CHECK(err_code);
 
 	memset(&gap_conn_params, 0, sizeof(gap_conn_params));
 
@@ -268,7 +267,7 @@ static void conn_params_init(void) {
 /**@brief Function for starting timers.
  */
 static void application_timers_start(void) {
-	/* YOUR_JOB: Start your timers. below is an example of how to start a timer.
+	/* TODO YOUR_JOB: Start your timers. below is an example of how to start a timer.
 	 uint32_t err_code;
 	 err_code = app_timer_start(m_app_timer_id, TIMER_INTERVAL, NULL);
 	 APP_ERROR_CHECK(err_code); */
@@ -620,8 +619,7 @@ static void advertising_init(void) {
 	advdata.name_type = BLE_ADVDATA_FULL_NAME;
 	advdata.include_appearance = true;
 	advdata.flags = BLE_GAP_ADV_FLAGS_LE_ONLY_GENERAL_DISC_MODE;
-	advdata.uuids_complete.uuid_cnt = sizeof(m_adv_uuids)
-			/ sizeof(m_adv_uuids[0]);
+	advdata.uuids_complete.uuid_cnt = sizeof(m_adv_uuids) / sizeof(m_adv_uuids[0]);
 	advdata.uuids_complete.p_uuids = m_adv_uuids;
 
 	ble_adv_modes_config_t options = { 0 };
@@ -658,7 +656,7 @@ static void power_manage(void) {
 }
 
 void fncdebug() {
-	stfnbset();
+	debugdebug();
 }
 
 /**@brief Function for application main entry.
@@ -676,7 +674,7 @@ int main(void) {
 	ble_stack_init();
 	peer_manager_init(erase_bonds);
 	if (erase_bonds == true) {
-		NRF_LOG_INFO("Bonds erased!\r\n");
+		NRF_LOG_INFO("Bonds erased!\n");
 	}
 	gap_params_init();
 	advertising_init();
@@ -685,7 +683,7 @@ int main(void) {
 
 	// Start execution.
 	application_timers_start();
-	NRF_LOG_INFO("Bluetooth Dev Studio Start Advertising \r\n");
+	NRF_LOG_INFO("Start Advertising\n");
 	err_code = ble_advertising_start(BLE_ADV_MODE_FAST);
 	APP_ERROR_CHECK(err_code);
 

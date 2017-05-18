@@ -31,7 +31,7 @@ uint32_t bluetooth_init(void);
  */
 void bluetooth_on_ble_evt(ble_evt_t * p_ble_evt);
 
-void stfnbset();
+void debugdebug();
 
 #endif // BLE_DS_IF_H__
 

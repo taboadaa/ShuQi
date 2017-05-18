@@ -1,0 +1,767 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head><title>Bluetooth Developer Studio - Profile Report</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+	<script language="javascript" type="text/javascript" src="functions.js"></script>
+</head>	
+
+<body onLoad="init()">
+
+<div id="id_container" class="container">
+
+	<div class="main_heading">
+	  <div id="id_date" class="date">The Date</div>
+	  <div class="heading_title">Bluetooth Developer Studio Level 3 Profile Report</div>
+	  <div class="icon"><a href="https://www.bluetooth.com/"><img src="https://www.bluetooth.com/~/media/bluetooth/homepage/smalllogo.ashx"/></a></div>
+	</div>
+
+<!-- Profile Block -->
+
+  <div class="section_hdg">
+   	<div class="profile_hdg_text"><p>PROFILE</p></div>
+  </div>
+    
+	<div class="profile_item">
+	  <div class="profile_label">Profile Name</div>
+	  <div class="profile_value">Stuff Manager</div>
+	</div>
+
+	<div class="profile_item">
+	  <div class="profile_label">Abstract:</div>
+	</div>
+	<div class="profile_item">
+	  <div class="text_block"><pre>The Stuff Manager profile enables the monitoring of some stuff. It's derivated from the Proximity profile.</pre></div>
+	</div>
+
+	<div class="profile_item">
+	  <div class="profile_label">Summary:</div>
+	</div>
+	<div class="profile_item">
+	  <div class="text_block"><pre>	The Proximity profile defines the behavior when a device moves away from a peer device so that the connection is dropped or the path loss increases above a preset level, causing an immediate alert. This alert can be used to notify the user that the devices have become separated. As a consequence of this alert, a device may take further action, for example to lock one of the devices so that it is no longer usable.
+	The Proximity profile can also be used to define the behavior when the two devices come closer together such that a connection is made or the path loss decreases below a preset level.
+		</pre></div>
+	</div>
+
+	<div class="profile_item">
+	  <div class="profile_label">Base UUID</div>
+	  <div class="profile_value">e71a00006ed94a89bbbf98a29df5e71a</div>
+	</div>
+
+	<div class="profile_item">
+	  <div class="profile_label">Server Role</div>
+	  <div class="profile_value"></div>
+	</div>
+
+	<div class="profile_item">
+	  <div class="profile_label">Client Role</div>
+	  <div class="profile_value"></div>
+	</div>
+
+<!-- End of Profile Block -->
+
+<!-- Services Section -->
+
+  <div class="services_section_hdg">
+   	<div class="services_hdg_text"><p>SERVICES</p></div>
+  </div>
+
+
+<!-- Service Block -->
+  <div class="service_hdg">
+   	<div class="service_hdg_text1"><p>Immediate Alert</p></div>
+  </div>
+
+<!-- Service Block -->
+
+	<div class="service_item">
+	  <div class="service_label">UUID</div>
+	  <div class="service_value">1802</div>
+	</div>
+
+	<div class="service_item">
+	  <div class="service_label">Declaration</div>
+	  <div class="service_value">Primary</div>
+	</div>
+
+	<div class="service_item">
+	  <div class="service_label">Requirement</div>
+		  <div class="mandatory_property">Mandatory</div>
+	</div>
+
+	<div class="service_item">
+	  <div class="service_label">Server Role</div>
+	  <div class="service_value"></div>
+	</div>
+
+	<div class="service_item">
+	  <div class="service_label">Client Role</div>
+	  <div class="service_value"></div>
+	</div>
+
+	<div class="service_item">
+	  <div class="service_label">Abstract:</div>
+	</div>
+	<div class="service_item">
+	  <div class="text_block"><pre>This service exposes a control point to allow a peer device to cause the device to immediately alert.</pre></div>
+	</div>
+
+	<div class="service_item">
+	  <div class="service_label">Summary:</div>
+	</div>
+	<div class="service_item">
+	  <div class="text_block"><pre>
+    The Immediate Alert service is instantiated as a Primary Service.
+    There is only one instance of the Immediate Alert service on a device.
+    There is only one instance of the Alert Level characteristic in an Immediate Alert service.
+    This alert continues until one of following conditions occurs:
+    - An implementation specific timeout
+    - User interaction on this device
+    - A new alert level is written
+    - The physical link is disconnected
+		</pre></div>
+	</div>
+
+	<div class="service_item">
+	  <div class="service_label">Examples:</div>
+	</div>
+	<div class="service_item">
+	  <div class="text_block"><pre>If the written alert level is "No Alert", no alerting is done on this device.If the written alert level is "Mild Alert", the device alerts.If the written alert level is "High Alert", the device alerts in the strongest possible way.</pre></div>
+	</div>
+
+  <div class="characteristics_section_hdg">
+   	<div class="characteristics_hdg_text"><p>Immediate Alert - CHARACTERISTICS</p></div>
+  </div>
+
+
+<!-- Characteristic Block -->
+	  <div class="characteristic_hdg">
+	   	<div class="characteristic_hdg_text"><p>Alert Level</p></div>
+	  </div>
+	  
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">UUID</div>
+		  <div class="characteristic_value">2A06</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Type</div>
+		  <div class="characteristic_value"></div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Requirement</div>
+		  <div class="mandatory_property">Mandatory</div>
+	  </div>
+	  
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Abstract:</div>
+    </div>
+  	<div class="characteristic_item">
+		  <div class="char_text_block"><pre>The level of an alert a device is to sound. If this level is changed while the alert is being sounded, the new level should take effect.</pre></div>
+    </div>
+
+	<div class="characteristic_item">
+		  <div class="characteristic_label">Summary:</div>
+	</div>
+	<div class="characteristic_item">
+		  <div class="char_text_block"><pre>            
+    The value of the characteristic shall be an unsigned 8 bit integer that has a fixed point exponent of 0.
+    The Alert Level characteristic defines the level of alert, and is one of the following three values:
+    - Value 0, meaning "No Alert"
+    - Value 1, meaning "Mild Alert"
+    - Value 2, meaning "High Alert"
+    </pre></div>
+	</div>
+
+   	<div class="characteristic_item">
+		  <div class="characteristic_label">Examples</div>
+	</div>
+   	<div class="characteristic_item">
+		  <div class="char_text_block"><pre>The value 0x01 is interpreted as "Mild Alert"</pre></div>
+	</div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Read</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Write</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Write Without Response</div>
+		  <div class="mandatory_property">Mandatory</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Signed Write</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Reliable Write</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Notify</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Indicate</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Broadcast</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Writable Auxiliaries</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Extended Properties</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div> 
+
+  <!-- Field Block -->
+	  <div class="characteristic_field">
+		  <div class="characteristic_field_label">Fields</div>
+	   	<div class="characteristic_field_value">
+<table>
+			<tr><td>1. Alert Level&nbsp;:&nbsp;uint8</td></tr>
+</table></div>
+	  </div>
+
+
+<!-- Descriptor Block -->
+	  <div class="characteristic_field">
+		  <div class="characteristic_field_label">Descriptors</div>
+	   	<div class="characteristic_field_value">
+<table>
+</table></div>
+	  </div>
+
+
+
+
+<!-- Service Block -->
+  <div class="service_hdg">
+   	<div class="service_hdg_text1"><p>Stuff List</p></div>
+  </div>
+
+<!-- Service Block -->
+
+	<div class="service_item">
+	  <div class="service_label">UUID</div>
+	  <div class="service_value">E71AE71A6ED94A89BBBF98A29DF5E71A</div>
+	</div>
+
+	<div class="service_item">
+	  <div class="service_label">Declaration</div>
+	  <div class="service_value">Primary</div>
+	</div>
+
+	<div class="service_item">
+	  <div class="service_label">Requirement</div>
+		  <div class="mandatory_property">Mandatory</div>
+	</div>
+
+	<div class="service_item">
+	  <div class="service_label">Server Role</div>
+	  <div class="service_value"></div>
+	</div>
+
+	<div class="service_item">
+	  <div class="service_label">Client Role</div>
+	  <div class="service_value"></div>
+	</div>
+
+	<div class="service_item">
+	  <div class="service_label">Abstract:</div>
+	</div>
+	<div class="service_item">
+	  <div class="text_block"><pre>List of the stuff present.</pre></div>
+	</div>
+
+	<div class="service_item">
+	  <div class="service_label">Summary:</div>
+	</div>
+	<div class="service_item">
+	  <div class="text_block"><pre>List of the stuff present.
+
+1) Read Stuff Number
+2) Repeat until Stuff Number reached
+    2.1) Write Stuff Entry
+    2.2) Read Stuff Value
+3) Write TRUE in Stuff Readed</pre></div>
+	</div>
+
+	<div class="service_item">
+	  <div class="service_label">Examples:</div>
+	</div>
+	<div class="service_item">
+	  <div class="text_block"><pre></pre></div>
+	</div>
+
+  <div class="characteristics_section_hdg">
+   	<div class="characteristics_hdg_text"><p>Stuff List - CHARACTERISTICS</p></div>
+  </div>
+
+
+<!-- Characteristic Block -->
+	  <div class="characteristic_hdg">
+	   	<div class="characteristic_hdg_text"><p>Stuff Value</p></div>
+	  </div>
+	  
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">UUID</div>
+		  <div class="characteristic_value">E71AE71D6ED94A89BBBF98A29DF5E71A</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Type</div>
+		  <div class="characteristic_value"></div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Requirement</div>
+		  <div class="mandatory_property">Mandatory</div>
+	  </div>
+	  
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Abstract:</div>
+    </div>
+  	<div class="characteristic_item">
+		  <div class="char_text_block"><pre></pre></div>
+    </div>
+
+	<div class="characteristic_item">
+		  <div class="characteristic_label">Summary:</div>
+	</div>
+	<div class="characteristic_item">
+		  <div class="char_text_block"><pre></pre></div>
+	</div>
+
+   	<div class="characteristic_item">
+		  <div class="characteristic_label">Examples</div>
+	</div>
+   	<div class="characteristic_item">
+		  <div class="char_text_block"><pre></pre></div>
+	</div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Read</div>
+		  <div class="mandatory_property">Mandatory</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Write</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Write Without Response</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Signed Write</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Reliable Write</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Notify</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Indicate</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Broadcast</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Writable Auxiliaries</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Extended Properties</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div> 
+
+  <!-- Field Block -->
+	  <div class="characteristic_field">
+		  <div class="characteristic_field_label">Fields</div>
+	   	<div class="characteristic_field_value">
+<table>
+			<tr><td>1. ID&nbsp;:&nbsp;uint128</td></tr>
+</table></div>
+	  </div>
+
+
+<!-- Descriptor Block -->
+	  <div class="characteristic_field">
+		  <div class="characteristic_field_label">Descriptors</div>
+	   	<div class="characteristic_field_value">
+<table>
+</table></div>
+	  </div>
+
+
+
+<!-- Characteristic Block -->
+	  <div class="characteristic_hdg">
+	   	<div class="characteristic_hdg_text"><p>Stuff Entry</p></div>
+	  </div>
+	  
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">UUID</div>
+		  <div class="characteristic_value">E71AE71C6ED94A89BBBF98A29DF5E71A</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Type</div>
+		  <div class="characteristic_value"></div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Requirement</div>
+		  <div class="mandatory_property">Mandatory</div>
+	  </div>
+	  
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Abstract:</div>
+    </div>
+  	<div class="characteristic_item">
+		  <div class="char_text_block"><pre></pre></div>
+    </div>
+
+	<div class="characteristic_item">
+		  <div class="characteristic_label">Summary:</div>
+	</div>
+	<div class="characteristic_item">
+		  <div class="char_text_block"><pre></pre></div>
+	</div>
+
+   	<div class="characteristic_item">
+		  <div class="characteristic_label">Examples</div>
+	</div>
+   	<div class="characteristic_item">
+		  <div class="char_text_block"><pre></pre></div>
+	</div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Read</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Write</div>
+		  <div class="mandatory_property">Mandatory</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Write Without Response</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Signed Write</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Reliable Write</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Notify</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Indicate</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Broadcast</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Writable Auxiliaries</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Extended Properties</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div> 
+
+  <!-- Field Block -->
+	  <div class="characteristic_field">
+		  <div class="characteristic_field_label">Fields</div>
+	   	<div class="characteristic_field_value">
+<table>
+			<tr><td>1. Entry Number&nbsp;:&nbsp;uint16</td></tr>
+</table></div>
+	  </div>
+
+
+<!-- Descriptor Block -->
+	  <div class="characteristic_field">
+		  <div class="characteristic_field_label">Descriptors</div>
+	   	<div class="characteristic_field_value">
+<table>
+</table></div>
+	  </div>
+
+
+
+<!-- Characteristic Block -->
+	  <div class="characteristic_hdg">
+	   	<div class="characteristic_hdg_text"><p>Stuff Readed</p></div>
+	  </div>
+	  
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">UUID</div>
+		  <div class="characteristic_value">E71AE71F6ED94A89BBBF98A29DF5E71A</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Type</div>
+		  <div class="characteristic_value"></div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Requirement</div>
+		  <div class="mandatory_property">Mandatory</div>
+	  </div>
+	  
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Abstract:</div>
+    </div>
+  	<div class="characteristic_item">
+		  <div class="char_text_block"><pre></pre></div>
+    </div>
+
+	<div class="characteristic_item">
+		  <div class="characteristic_label">Summary:</div>
+	</div>
+	<div class="characteristic_item">
+		  <div class="char_text_block"><pre></pre></div>
+	</div>
+
+   	<div class="characteristic_item">
+		  <div class="characteristic_label">Examples</div>
+	</div>
+   	<div class="characteristic_item">
+		  <div class="char_text_block"><pre></pre></div>
+	</div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Read</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Write</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Write Without Response</div>
+		  <div class="mandatory_property">Mandatory</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Signed Write</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Reliable Write</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Notify</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Indicate</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Broadcast</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Writable Auxiliaries</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Extended Properties</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div> 
+
+  <!-- Field Block -->
+	  <div class="characteristic_field">
+		  <div class="characteristic_field_label">Fields</div>
+	   	<div class="characteristic_field_value">
+<table>
+			<tr><td>1. All Readed&nbsp;:&nbsp;uint8</td></tr>
+</table></div>
+	  </div>
+
+
+<!-- Descriptor Block -->
+	  <div class="characteristic_field">
+		  <div class="characteristic_field_label">Descriptors</div>
+	   	<div class="characteristic_field_value">
+<table>
+</table></div>
+	  </div>
+
+
+
+<!-- Characteristic Block -->
+	  <div class="characteristic_hdg">
+	   	<div class="characteristic_hdg_text"><p>Stuff Number</p></div>
+	  </div>
+	  
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">UUID</div>
+		  <div class="characteristic_value">E71AE7106ED94A89BBBF98A29DF5E71A</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Type</div>
+		  <div class="characteristic_value"></div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Requirement</div>
+		  <div class="mandatory_property">Mandatory</div>
+	  </div>
+	  
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Abstract:</div>
+    </div>
+  	<div class="characteristic_item">
+		  <div class="char_text_block"><pre></pre></div>
+    </div>
+
+	<div class="characteristic_item">
+		  <div class="characteristic_label">Summary:</div>
+	</div>
+	<div class="characteristic_item">
+		  <div class="char_text_block"><pre></pre></div>
+	</div>
+
+   	<div class="characteristic_item">
+		  <div class="characteristic_label">Examples</div>
+	</div>
+   	<div class="characteristic_item">
+		  <div class="char_text_block"><pre></pre></div>
+	</div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Read</div>
+		  <div class="mandatory_property">Mandatory</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Write</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Write Without Response</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Signed Write</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Reliable Write</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Notify</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Indicate</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Broadcast</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Writable Auxiliaries</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div>
+
+  	<div class="characteristic_item">
+		  <div class="characteristic_label">Extended Properties</div>
+		  <div class="characteristic_value">Excluded</div>
+	  </div> 
+
+  <!-- Field Block -->
+	  <div class="characteristic_field">
+		  <div class="characteristic_field_label">Fields</div>
+	   	<div class="characteristic_field_value">
+<table>
+			<tr><td>1. Entry Number&nbsp;:&nbsp;uint16</td></tr>
+</table></div>
+	  </div>
+
+
+<!-- Descriptor Block -->
+	  <div class="characteristic_field">
+		  <div class="characteristic_field_label">Descriptors</div>
+	   	<div class="characteristic_field_value">
+<table>
+</table></div>
+	  </div>
+
+
+
+
+</div>
+
+</body>
+</html>
