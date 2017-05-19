@@ -7,6 +7,4 @@
 
 #include "app.h"
 
-void rfid_ids_set() {
 
-}

@@ -4,10 +4,12 @@
 	<item value="2" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.last_focus"/>
 	<item value="211" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_y"/>
 	<item value="0" key="org.eclipse.cdt.uiformatter_page.white_space_tab_page.node"/>
+	<item value="Default C++ source template" key="LastUsedSourceTemplate"/>
 	<item value="1165" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_width"/>
 	<item value="737" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_height"/>
 	<item value="0" key="org.eclipse.cdt.uiformatter_page.white_space.c_view.inner"/>
 	<item value="-1" key="formatter_page.modify_dialog_tab_page.last_focus_index"/>
+	<item value="Default C header template" key="LastUsedHeaderTemplate"/>
 	<item value="120" key="org.eclipse.cdt.ui.codeformatter.line_wrapping_tab_page.preview_line_width"/>
 	<item value="2" key="org.eclipse.cdt.uiformatter_page.line_wrapping_tab_page.last_category_index"/>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
