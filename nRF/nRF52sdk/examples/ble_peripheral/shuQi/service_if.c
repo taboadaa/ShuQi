@@ -39,8 +39,7 @@ static void on_ias_evt(ble_ias_t * p_ias, ble_ias_evt_t * p_evt) {
  * @param[in]   p_stuff_list   Stuff List structure.
  * @param[in]   p_evt   Event received from the Stuff List.
  */
-static void on_stuff_list_evt(ble_stuff_list_t * p_stuff_list,
-		ble_stuff_list_evt_t * p_evt) {
+static void on_stuff_list_evt(ble_stuff_list_t * p_stuff_list, ble_stuff_list_evt_t * p_evt) {
 	switch (p_evt->evt_type) {
 	case BLE_STUFF_LIST_STUFF_ENTRY_EVT_WRITE:
 		//app_trace_log("[Bluetooth_IF]: STUFF_LIST_STUFF_ENTRY evt WRITE. \r\n");
@@ -68,8 +67,7 @@ uint32_t bluetooth_init(void) {
 	memset(&ias_init, 0, sizeof(ias_init));
 
 	ias_init.evt_handler = on_ias_evt;
-	ias_init.ble_ias_alert_level_initial_value.alert_level.alert_level =
-			ALERT_LEVEL_NO_ALERT;
+	ias_init.ble_ias_alert_level_initial_value.alert_level.alert_level = ALERT_LEVEL_NO_ALERT;
 
 	err_code = ble_ias_init(&m_ias, &ias_init);
 	if (err_code != NRF_SUCCESS) {
@@ -81,17 +79,11 @@ uint32_t bluetooth_init(void) {
 
 	stuff_list_init.evt_handler = on_stuff_list_evt;
 	stuff_list_init.ble_stuff_list_stuff_value_initial_value.id.size = 1;
-	stuff_list_init.ble_stuff_list_stuff_value_initial_value.id.p_data =
-			m_stuff_list_stuff_value_initial_value_id_arr;
-	memset(
-			&stuff_list_init.ble_stuff_list_stuff_entry_initial_value.entry_number,
-			0x00,
+	stuff_list_init.ble_stuff_list_stuff_value_initial_value.id.p_data = m_stuff_list_stuff_value_initial_value_id_arr;
+	memset(&stuff_list_init.ble_stuff_list_stuff_entry_initial_value.entry_number, 0x00,
 			sizeof(stuff_list_init.ble_stuff_list_stuff_entry_initial_value.entry_number));
-	stuff_list_init.ble_stuff_list_stuff_readed_initial_value.all_readed.all_readed =
-			ALL_READED_FALSE;
-	memset(
-			&stuff_list_init.ble_stuff_list_stuff_number_initial_value.entry_number,
-			0x00,
+	stuff_list_init.ble_stuff_list_stuff_readed_initial_value.all_readed.all_readed = ALL_READED_FALSE;
+	memset(&stuff_list_init.ble_stuff_list_stuff_number_initial_value.entry_number, 0x00,
 			sizeof(stuff_list_init.ble_stuff_list_stuff_number_initial_value.entry_number));
 
 	err_code = ble_stuff_list_init(&m_stuff_list, &stuff_list_init);
@@ -115,7 +107,8 @@ void bluetooth_on_ble_evt(ble_evt_t * p_ble_evt) {
 
 //Debug
 void debugdebug() {
-	ble_stuff_list_stuff_number_t * p_stuff_number = (ble_stuff_list_stuff_number_t *)malloc(sizeof(ble_stuff_list_stuff_number_t));
+	ble_stuff_list_stuff_number_t * p_stuff_number = (ble_stuff_list_stuff_number_t *) malloc(
+			sizeof(ble_stuff_list_stuff_number_t));
 	p_stuff_number->entry_number = 4;
 
 	ble_stuff_list_stuff_number_set(&m_stuff_list, p_stuff_number);
@@ -123,4 +116,47 @@ void debugdebug() {
 	free(p_stuff_number);
 }
 
+/**
+ *
+ */
+void stuff_list_number_write(uint16_t value) {
+	ble_stuff_list_stuff_number_t * p_stuff_number = (ble_stuff_list_stuff_number_t *) malloc(
+			sizeof(ble_stuff_list_stuff_number_t));
+	p_stuff_number->entry_number = value;
+
+	ble_stuff_list_stuff_number_set(&m_stuff_list, p_stuff_number);
+
+	free(p_stuff_number);
+}
+
+/**
+ *
+ */
+void stuff_list_value_write(uint8_array_t value) {
+	ble_stuff_list_stuff_value_t * p_value_number = (ble_stuff_list_stuff_value_t *) malloc(
+			sizeof(ble_stuff_list_stuff_value_t));
+	p_value_number->id = value;
+
+	ble_stuff_list_stuff_value_set(&m_stuff_list, p_value_number);
+
+	free(p_value_number);
+}
+
+/**
+ *
+ * @return
+ */
+uint16_t stuff_list_entry_read() {
+	uint16_t result = m_stuff_list.stuff_entry_handles.value_handle;
+	return result;
+}
+
+/**
+ *
+ * @return
+ */
+uint8_t stuff_list_readed_read() {
+	uint8_t result = m_stuff_list.stuff_readed_handles.value_handle;
+	return result;
+}
 

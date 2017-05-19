@@ -71,7 +71,6 @@
 #include "fds.h"
 #include "fstorage.h"
 #include "ble_conn_state.h"
-#include "bsp.h"
 #include "bsp_btn_ble.h"
 #include "service_if.h"
 #define NRF_LOG_MODULE_NAME "APP"
@@ -116,12 +115,17 @@
 
 #define DEAD_BEEF                        0xDEADBEEF                                 /**< Value used as error code on stack dump, can be used to identify stack location on stack unwind. */
 
+#define RFID_ID_SIZE                     96/8                                       /**< Size of rfid id. */
+#define RFID_ID_ARRAY_SIZE               20                                         /**< Size of rfid array. */
+
+static uint8_array_t* rfid_ids;
+
 static uint16_t m_conn_handle = BLE_CONN_HANDLE_INVALID; /**< Handle of the current connection. */
 static nrf_ble_qwr_t m_qwr; /**< Queued Writes structure.*/
 
 // TODO YOUR_JOB: Use UUIDs for service(s) used in your application.
 static ble_uuid_t m_adv_uuids[] = { { BLE_UUID_DEVICE_INFORMATION_SERVICE,
-		BLE_UUID_TYPE_BLE } }; /**< Universally unique service identifiers. */
+BLE_UUID_TYPE_BLE } }; /**< Universally unique service identifiers. */
 
 /**@brief Callback function for asserts in the SoftDevice.
  *
@@ -179,8 +183,7 @@ static void gap_params_init(void) {
 
 	BLE_GAP_CONN_SEC_MODE_SET_OPEN(&sec_mode);
 
-	err_code = sd_ble_gap_device_name_set(&sec_mode,
-			(const uint8_t *) DEVICE_NAME, strlen(DEVICE_NAME));
+	err_code = sd_ble_gap_device_name_set(&sec_mode, (const uint8_t *) DEVICE_NAME, strlen(DEVICE_NAME));
 	APP_ERROR_CHECK(err_code);
 
 	err_code = sd_ble_gap_appearance_set(BLE_APPEARANCE_GENERIC_TAG);
@@ -230,7 +233,7 @@ static void on_conn_params_evt(ble_conn_params_evt_t * p_evt) {
 
 	if (p_evt->evt_type == BLE_CONN_PARAMS_EVT_FAILED) {
 		err_code = sd_ble_gap_disconnect(m_conn_handle,
-				BLE_HCI_CONN_INTERVAL_UNACCEPTABLE);
+		BLE_HCI_CONN_INTERVAL_UNACCEPTABLE);
 		APP_ERROR_CHECK(err_code);
 	}
 }
@@ -356,9 +359,8 @@ static void on_ble_evt(ble_evt_t * p_ble_evt) {
 
 #if (NRF_SD_BLE_API_VERSION == 3)
 	case BLE_GATTS_EVT_EXCHANGE_MTU_REQUEST:
-		err_code = sd_ble_gatts_exchange_mtu_reply(
-				p_ble_evt->evt.gatts_evt.conn_handle,
-				NRF_BLE_MAX_MTU_SIZE);
+		err_code = sd_ble_gatts_exchange_mtu_reply(p_ble_evt->evt.gatts_evt.conn_handle,
+		NRF_BLE_MAX_MTU_SIZE);
 		APP_ERROR_CHECK(err_code);
 		break; // BLE_GATTS_EVT_EXCHANGE_MTU_REQUEST
 #endif
@@ -454,7 +456,7 @@ void bsp_event_handler(bsp_event_t event) {
 
 	case BSP_EVENT_DISCONNECT:
 		err_code = sd_ble_gap_disconnect(m_conn_handle,
-				BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
+		BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
 		if (err_code != NRF_ERROR_INVALID_STATE) {
 			APP_ERROR_CHECK(err_code);
 		}
@@ -488,10 +490,8 @@ static void pm_evt_handler(pm_evt_t const * p_evt) {
 		break;
 
 	case PM_EVT_CONN_SEC_SUCCEEDED: {
-		NRF_LOG_INFO(
-				"Connection secured. Role: %d. conn_handle: %d, Procedure: %d\r\n",
-				ble_conn_state_role(p_evt->conn_handle), p_evt->conn_handle,
-				p_evt->params.conn_sec_succeeded.procedure);
+		NRF_LOG_INFO("Connection secured. Role: %d. conn_handle: %d, Procedure: %d\r\n",
+				ble_conn_state_role(p_evt->conn_handle), p_evt->conn_handle, p_evt->params.conn_sec_succeeded.procedure);
 	}
 		break;
 
@@ -515,8 +515,7 @@ static void pm_evt_handler(pm_evt_t const * p_evt) {
 	case PM_EVT_STORAGE_FULL: {
 		// Run garbage collection on the flash.
 		err_code = fds_gc();
-		if (err_code == FDS_ERR_BUSY
-				|| err_code == FDS_ERR_NO_SPACE_IN_QUEUES) {
+		if (err_code == FDS_ERR_BUSY || err_code == FDS_ERR_NO_SPACE_IN_QUEUES) {
 			// Retry.
 		} else {
 			APP_ERROR_CHECK(err_code);
@@ -638,8 +637,8 @@ static void advertising_init(void) {
 static void buttons_leds_init(bool * p_erase_bonds) {
 	bsp_event_t startup_event;
 
-	uint32_t err_code = bsp_init(BSP_INIT_LED | BSP_INIT_BUTTONS,
-			APP_TIMER_TICKS(100, APP_TIMER_PRESCALER), bsp_event_handler);
+	uint32_t err_code = bsp_init(BSP_INIT_LED | BSP_INIT_BUTTONS, APP_TIMER_TICKS(100, APP_TIMER_PRESCALER),
+			bsp_event_handler);
 	APP_ERROR_CHECK(err_code);
 
 	err_code = bsp_btn_ble_init(NULL, &startup_event);
@@ -655,8 +654,24 @@ static void power_manage(void) {
 	APP_ERROR_CHECK(err_code);
 }
 
+/**
+ *
+ */
+void app_init() {
+	//Init rfid array
+	rfid_ids = calloc(sizeof(uint8_array_t)*RFID_ID_ARRAY_SIZE, 1);
+	for (int ii = 0; ii < RFID_ID_ARRAY_SIZE; ++ii) {
+		rfid_ids[ii].size = RFID_ID_SIZE;
+		rfid_ids[ii].p_data = calloc(sizeof(uint8_t)*rfid_ids->size, 1);
+	}
+}
+
 void fncdebug() {
-	debugdebug();
+	//debugdebug();
+
+	stuff_list_number_write(15);
+
+	//stuff_list_value_write();
 }
 
 /**@brief Function for application main entry.
@@ -680,6 +695,7 @@ int main(void) {
 	advertising_init();
 	services_init();
 	conn_params_init();
+	app_init();
 
 	// Start execution.
 	application_timers_start();

@@ -20,9 +20,7 @@ typedef enum {
 typedef struct ble_ias_s ble_ias_t;
 
 typedef enum {
-	ALERT_LEVEL_NO_ALERT = 0,
-	ALERT_LEVEL_MILD_ALERT = 1,
-	ALERT_LEVEL_HIGH_ALERT = 2,
+	ALERT_LEVEL_NO_ALERT = 0, ALERT_LEVEL_MILD_ALERT = 1, ALERT_LEVEL_HIGH_ALERT = 2,
 } enum_alert_level_t;
 typedef struct {
 	enum_alert_level_t alert_level;

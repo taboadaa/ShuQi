@@ -61,8 +61,7 @@ typedef struct {
 } ble_stuff_list_evt_t;
 
 /**@brief Stuff List Service event handler type. */
-typedef void (*ble_stuff_list_evt_handler_t)(ble_stuff_list_t * p_stuff_list,
-		ble_stuff_list_evt_t * p_evt);
+typedef void (*ble_stuff_list_evt_handler_t)(ble_stuff_list_t * p_stuff_list, ble_stuff_list_evt_t * p_evt);
 
 /**@brief Stuff List Service init structure. This contains all options and data needed for initialization of the service */
 typedef struct {
@@ -93,12 +92,10 @@ struct ble_stuff_list_s {
  *
  * @return      NRF_SUCCESS on successful initialization of service, otherwise an error code.
  */
-uint32_t ble_stuff_list_init(ble_stuff_list_t * p_stuff_list,
-		const ble_stuff_list_init_t * p_stuff_list_init);
+uint32_t ble_stuff_list_init(ble_stuff_list_t * p_stuff_list, const ble_stuff_list_init_t * p_stuff_list_init);
 
 /**@brief Function for handling the Application's BLE Stack events.*/
-void ble_stuff_list_on_ble_evt(ble_stuff_list_t * p_stuff_list,
-		ble_evt_t * p_ble_evt);
+void ble_stuff_list_on_ble_evt(ble_stuff_list_t * p_stuff_list, ble_evt_t * p_ble_evt);
 
 /**@brief Function for setting the Stuff Value.
  *
@@ -111,8 +108,7 @@ void ble_stuff_list_on_ble_evt(ble_stuff_list_t * p_stuff_list,
  *
  * @return      NRF_SUCCESS on success, otherwise an error code.
  */
-uint32_t ble_stuff_list_stuff_value_set(ble_stuff_list_t * p_stuff_list,
-		ble_stuff_list_stuff_value_t * p_stuff_value);
+uint32_t ble_stuff_list_stuff_value_set(ble_stuff_list_t * p_stuff_list, ble_stuff_list_stuff_value_t * p_stuff_value);
 
 /**@brief Function for setting the Stuff Number.
  *

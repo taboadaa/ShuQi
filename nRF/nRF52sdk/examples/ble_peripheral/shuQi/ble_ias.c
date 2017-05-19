@@ -20,8 +20,7 @@
  *
  * @return      Size of encoded data.
  */
-static uint8_t alert_level_alert_level_encode(
-		alert_level_alert_level_t * p_alert_level, uint8_t * encoded_buffer) {
+static uint8_t alert_level_alert_level_encode(alert_level_alert_level_t * p_alert_level, uint8_t * encoded_buffer) {
 	uint8_t alert_level;
 	alert_level = p_alert_level->alert_level;
 	encoded_buffer[0] = alert_level;
@@ -35,11 +34,9 @@ static uint8_t alert_level_alert_level_encode(
  *
  * @return      Size of encoded data.
  */
-static uint8_t alert_level_encode(ble_ias_alert_level_t * p_alert_level,
-		uint8_t * encoded_buffer) {
+static uint8_t alert_level_encode(ble_ias_alert_level_t * p_alert_level, uint8_t * encoded_buffer) {
 	uint8_t len = 0;
-	len += alert_level_alert_level_encode(&p_alert_level->alert_level,
-			&encoded_buffer[len]);
+	len += alert_level_alert_level_encode(&p_alert_level->alert_level, &encoded_buffer[len]);
 	return len;
 }
 
@@ -51,8 +48,8 @@ static uint8_t alert_level_encode(ble_ias_alert_level_t * p_alert_level,
  *
  * @return      Length of the decoded field.
  */
-static uint8_t alert_level_alert_level_decode(uint8_t data_len,
-		uint8_t * p_data, alert_level_alert_level_t * p_write_val) {
+static uint8_t alert_level_alert_level_decode(uint8_t data_len, uint8_t * p_data,
+		alert_level_alert_level_t * p_write_val) {
 	uint8_t pos = 0;
 	p_write_val->alert_level = (enum_alert_level_t) p_data[pos++];
 	return pos;
@@ -66,11 +63,9 @@ static uint8_t alert_level_alert_level_decode(uint8_t data_len,
  *
  * @return      Length of the decoded field.
  */
-static uint8_t alert_level_decode(uint8_t data_len, uint8_t * p_data,
-		ble_ias_alert_level_t * p_write_val) {
+static uint8_t alert_level_decode(uint8_t data_len, uint8_t * p_data, ble_ias_alert_level_t * p_write_val) {
 	uint8_t pos = 0;
-	pos += alert_level_alert_level_decode((data_len - pos), &p_data[pos],
-			&p_write_val->alert_level);
+	pos += alert_level_alert_level_decode((data_len - pos), &p_data[pos], &p_write_val->alert_level);
 
 	return pos;
 }
@@ -105,8 +100,7 @@ static void on_write(ble_ias_t * p_ias, ble_gatts_evt_write_t * p_ble_evt) {
 		if (p_ias->evt_handler != NULL) {
 			ble_ias_evt_t evt;
 			evt.evt_type = BLE_IAS_ALERT_LEVEL_EVT_WRITE;
-			alert_level_decode(p_ble_evt->len, p_ble_evt->data,
-					&evt.params.alert_level);
+			alert_level_decode(p_ble_evt->len, p_ble_evt->data, &evt.params.alert_level);
 			p_ias->evt_handler(p_ias, &evt);
 		}
 	}
@@ -120,17 +114,12 @@ static void on_write(ble_ias_t * p_ias, ble_gatts_evt_write_t * p_ble_evt) {
  * @param[in]   p_gatts_evt  GATTS Event received from the BLE stack.
  *
  */
-static void on_rw_authorize_request(ble_ias_t * p_ias,
-		ble_gatts_evt_t * p_gatts_evt) {
-	ble_gatts_evt_rw_authorize_request_t * p_auth_req =
-			&p_gatts_evt->params.authorize_request;
+static void on_rw_authorize_request(ble_ias_t * p_ias, ble_gatts_evt_t * p_gatts_evt) {
+	ble_gatts_evt_rw_authorize_request_t * p_auth_req = &p_gatts_evt->params.authorize_request;
 	if (p_auth_req->type == BLE_GATTS_AUTHORIZE_TYPE_WRITE) {
-		if ((p_gatts_evt->params.authorize_request.request.write.op
-				!= BLE_GATTS_OP_PREP_WRITE_REQ)
-				&& (p_gatts_evt->params.authorize_request.request.write.op
-						!= BLE_GATTS_OP_EXEC_WRITE_REQ_NOW)
-				&& (p_gatts_evt->params.authorize_request.request.write.op
-						!= BLE_GATTS_OP_EXEC_WRITE_REQ_CANCEL)) {
+		if ((p_gatts_evt->params.authorize_request.request.write.op != BLE_GATTS_OP_PREP_WRITE_REQ)
+				&& (p_gatts_evt->params.authorize_request.request.write.op != BLE_GATTS_OP_EXEC_WRITE_REQ_NOW)
+				&& (p_gatts_evt->params.authorize_request.request.write.op != BLE_GATTS_OP_EXEC_WRITE_REQ_CANCEL)) {
 
 		}
 	}
@@ -173,15 +162,13 @@ uint32_t ble_ias_init(ble_ias_t * p_ias, const ble_ias_init_t * p_ias_init) {
 	BLE_UUID_BLE_ASSIGN(ble_uuid, 0x1802);
 
 	// Add service
-	err_code = sd_ble_gatts_service_add(BLE_GATTS_SRVC_TYPE_PRIMARY, &ble_uuid,
-			&p_ias->service_handle);
+	err_code = sd_ble_gatts_service_add(BLE_GATTS_SRVC_TYPE_PRIMARY, &ble_uuid, &p_ias->service_handle);
 	if (err_code != NRF_SUCCESS) {
 		return err_code;
 	}
 
 	// Add Alert Level characteristic
-	ble_ias_alert_level_t alert_level_initial_value =
-			p_ias_init->ble_ias_alert_level_initial_value;
+	ble_ias_alert_level_t alert_level_initial_value = p_ias_init->ble_ias_alert_level_initial_value;
 
 	uint8_t alert_level_encoded_value[MAX_ALERT_LEVEL_LEN];
 	ble_add_char_params_t add_alert_level_params;
@@ -189,16 +176,14 @@ uint32_t ble_ias_init(ble_ias_t * p_ias, const ble_ias_init_t * p_ias_init) {
 
 	add_alert_level_params.uuid = 0x2A06;
 	add_alert_level_params.max_len = MAX_ALERT_LEVEL_LEN;
-	add_alert_level_params.init_len = alert_level_encode(
-			&alert_level_initial_value, alert_level_encoded_value);
+	add_alert_level_params.init_len = alert_level_encode(&alert_level_initial_value, alert_level_encoded_value);
 	add_alert_level_params.p_init_value = alert_level_encoded_value;
 	add_alert_level_params.char_props.write_wo_resp = 1;
 	add_alert_level_params.write_access = SEC_OPEN;
 	// 1 for variable length and 0 for fixed length.
 	add_alert_level_params.is_var_len = 1;
 
-	err_code = characteristic_add(p_ias->service_handle,
-			&add_alert_level_params, &(p_ias->alert_level_handles));
+	err_code = characteristic_add(p_ias->service_handle, &add_alert_level_params, &(p_ias->alert_level_handles));
 	if (err_code != NRF_SUCCESS) {
 		return err_code;
 	}

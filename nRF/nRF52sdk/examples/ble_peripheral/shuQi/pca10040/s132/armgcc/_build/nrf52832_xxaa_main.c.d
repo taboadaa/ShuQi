@@ -105,10 +105,10 @@ _build/nrf52832_xxaa_main.c.o: ../../../main.c \
  ../../../../../../components/libraries/experimental_section_vars/section_vars.h \
  ../../../../../../components/ble/common/ble_conn_state.h \
  ../../../../../../components/libraries/util/sdk_mapped_flags.h \
+ ../../../../../../components/libraries/bsp/bsp_btn_ble.h \
  ../../../../../../components/libraries/bsp/bsp.h \
  ../../../../../../components/libraries/button/app_button.h \
- ../../../../../../components/libraries/bsp/bsp_btn_ble.h \
- ../../../../../../components/libraries/bsp/bsp.h ../../../service_if.h \
+ ../../../service_if.h \
  ../../../../../../components/libraries/log/nrf_log.h \
  ../../../../../../components/libraries/log/src/nrf_log_internal.h \
  ../../../../../../components/libraries/log/nrf_log_ctrl.h \
@@ -327,13 +327,11 @@ _build/nrf52832_xxaa_main.c.o: ../../../main.c \
 
 ../../../../../../components/libraries/util/sdk_mapped_flags.h:
 
-../../../../../../components/libraries/bsp/bsp.h:
-
-../../../../../../components/libraries/button/app_button.h:
-
 ../../../../../../components/libraries/bsp/bsp_btn_ble.h:
 
 ../../../../../../components/libraries/bsp/bsp.h:
+
+../../../../../../components/libraries/button/app_button.h:
 
 ../../../service_if.h:
 

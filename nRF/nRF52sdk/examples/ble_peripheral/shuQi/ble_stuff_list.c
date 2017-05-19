@@ -23,8 +23,7 @@
  *
  * @return      Size of encoded data.
  */
-static uint8_t stuff_value_encode(ble_stuff_list_stuff_value_t * p_stuff_value,
-		uint8_t * encoded_buffer) {
+static uint8_t stuff_value_encode(ble_stuff_list_stuff_value_t * p_stuff_value, uint8_t * encoded_buffer) {
 	uint8_t len = 0;
 	len += bds_uint8_array_encode(&p_stuff_value->id, &encoded_buffer[len]);
 	return len;
@@ -37,11 +36,9 @@ static uint8_t stuff_value_encode(ble_stuff_list_stuff_value_t * p_stuff_value,
  *
  * @return      Size of encoded data.
  */
-static uint8_t stuff_entry_encode(ble_stuff_list_stuff_entry_t * p_stuff_entry,
-		uint8_t * encoded_buffer) {
+static uint8_t stuff_entry_encode(ble_stuff_list_stuff_entry_t * p_stuff_entry, uint8_t * encoded_buffer) {
 	uint8_t len = 0;
-	len += bds_uint16_encode(&p_stuff_entry->entry_number,
-			&encoded_buffer[len]);
+	len += bds_uint16_encode(&p_stuff_entry->entry_number, &encoded_buffer[len]);
 	return len;
 }
 
@@ -53,11 +50,9 @@ static uint8_t stuff_entry_encode(ble_stuff_list_stuff_entry_t * p_stuff_entry,
  *
  * @return      Length of the decoded field.
  */
-static uint8_t stuff_entry_decode(uint8_t data_len, uint8_t * p_data,
-		ble_stuff_list_stuff_entry_t * p_write_val) {
+static uint8_t stuff_entry_decode(uint8_t data_len, uint8_t * p_data, ble_stuff_list_stuff_entry_t * p_write_val) {
 	uint8_t pos = 0;
-	pos += bds_uint16_decode((data_len - pos), &p_data[pos],
-			&p_write_val->entry_number);
+	pos += bds_uint16_decode((data_len - pos), &p_data[pos], &p_write_val->entry_number);
 
 	return pos;
 }
@@ -68,8 +63,7 @@ static uint8_t stuff_entry_decode(uint8_t data_len, uint8_t * p_data,
  *
  * @return      Size of encoded data.
  */
-static uint8_t stuff_readed_all_readed_encode(
-		stuff_readed_all_readed_t * p_all_readed, uint8_t * encoded_buffer) {
+static uint8_t stuff_readed_all_readed_encode(stuff_readed_all_readed_t * p_all_readed, uint8_t * encoded_buffer) {
 	uint8_t all_readed;
 	all_readed = p_all_readed->all_readed;
 	encoded_buffer[0] = all_readed;
@@ -83,12 +77,9 @@ static uint8_t stuff_readed_all_readed_encode(
  *
  * @return      Size of encoded data.
  */
-static uint8_t stuff_readed_encode(
-		ble_stuff_list_stuff_readed_t * p_stuff_readed,
-		uint8_t * encoded_buffer) {
+static uint8_t stuff_readed_encode(ble_stuff_list_stuff_readed_t * p_stuff_readed, uint8_t * encoded_buffer) {
 	uint8_t len = 0;
-	len += stuff_readed_all_readed_encode(&p_stuff_readed->all_readed,
-			&encoded_buffer[len]);
+	len += stuff_readed_all_readed_encode(&p_stuff_readed->all_readed, &encoded_buffer[len]);
 	return len;
 }
 
@@ -100,8 +91,8 @@ static uint8_t stuff_readed_encode(
  *
  * @return      Length of the decoded field.
  */
-static uint8_t stuff_readed_all_readed_decode(uint8_t data_len,
-		uint8_t * p_data, stuff_readed_all_readed_t * p_write_val) {
+static uint8_t stuff_readed_all_readed_decode(uint8_t data_len, uint8_t * p_data,
+		stuff_readed_all_readed_t * p_write_val) {
 	uint8_t pos = 0;
 	p_write_val->all_readed = (enum_all_readed_t) p_data[pos++];
 	return pos;
@@ -115,11 +106,9 @@ static uint8_t stuff_readed_all_readed_decode(uint8_t data_len,
  *
  * @return      Length of the decoded field.
  */
-static uint8_t stuff_readed_decode(uint8_t data_len, uint8_t * p_data,
-		ble_stuff_list_stuff_readed_t * p_write_val) {
+static uint8_t stuff_readed_decode(uint8_t data_len, uint8_t * p_data, ble_stuff_list_stuff_readed_t * p_write_val) {
 	uint8_t pos = 0;
-	pos += stuff_readed_all_readed_decode((data_len - pos), &p_data[pos],
-			&p_write_val->all_readed);
+	pos += stuff_readed_all_readed_decode((data_len - pos), &p_data[pos], &p_write_val->all_readed);
 
 	return pos;
 }
@@ -130,12 +119,9 @@ static uint8_t stuff_readed_decode(uint8_t data_len, uint8_t * p_data,
  *
  * @return      Size of encoded data.
  */
-static uint8_t stuff_number_encode(
-		ble_stuff_list_stuff_number_t * p_stuff_number,
-		uint8_t * encoded_buffer) {
+static uint8_t stuff_number_encode(ble_stuff_list_stuff_number_t * p_stuff_number, uint8_t * encoded_buffer) {
 	uint8_t len = 0;
-	len += bds_uint16_encode(&p_stuff_number->entry_number,
-			&encoded_buffer[len]);
+	len += bds_uint16_encode(&p_stuff_number->entry_number, &encoded_buffer[len]);
 	return len;
 }
 
@@ -153,8 +139,7 @@ static void on_connect(ble_stuff_list_t * p_stuff_list, ble_evt_t * p_ble_evt) {
  * @param[in]   p_stuff_list       Stuff List Service structure.
  * @param[in]   p_ble_evt   Event received from the BLE stack.
  */
-static void on_disconnect(ble_stuff_list_t * p_stuff_list,
-		ble_evt_t * p_ble_evt) {
+static void on_disconnect(ble_stuff_list_t * p_stuff_list, ble_evt_t * p_ble_evt) {
 	UNUSED_PARAMETER(p_ble_evt);
 	p_stuff_list->conn_handle = BLE_CONN_HANDLE_INVALID;
 }
@@ -164,15 +149,13 @@ static void on_disconnect(ble_stuff_list_t * p_stuff_list,
  * @param[in]   p_stuff_list       Stuff List Service structure.
  * @param[in]   p_ble_evt   Event received from the BLE stack.
  */
-static void on_write(ble_stuff_list_t * p_stuff_list,
-		ble_gatts_evt_write_t * p_ble_evt) {
+static void on_write(ble_stuff_list_t * p_stuff_list, ble_gatts_evt_write_t * p_ble_evt) {
 
 	if (p_ble_evt->handle == p_stuff_list->stuff_entry_handles.value_handle) {
 		if (p_stuff_list->evt_handler != NULL) {
 			ble_stuff_list_evt_t evt;
 			evt.evt_type = BLE_STUFF_LIST_STUFF_ENTRY_EVT_WRITE;
-			stuff_entry_decode(p_ble_evt->len, p_ble_evt->data,
-					&evt.params.stuff_entry);
+			stuff_entry_decode(p_ble_evt->len, p_ble_evt->data, &evt.params.stuff_entry);
 			p_stuff_list->evt_handler(p_stuff_list, &evt);
 		}
 	}
@@ -180,8 +163,7 @@ static void on_write(ble_stuff_list_t * p_stuff_list,
 		if (p_stuff_list->evt_handler != NULL) {
 			ble_stuff_list_evt_t evt;
 			evt.evt_type = BLE_STUFF_LIST_STUFF_READED_EVT_WRITE;
-			stuff_readed_decode(p_ble_evt->len, p_ble_evt->data,
-					&evt.params.stuff_readed);
+			stuff_readed_decode(p_ble_evt->len, p_ble_evt->data, &evt.params.stuff_readed);
 			p_stuff_list->evt_handler(p_stuff_list, &evt);
 		}
 	}
@@ -195,20 +177,14 @@ static void on_write(ble_stuff_list_t * p_stuff_list,
  * @param[in]   p_gatts_evt  GATTS Event received from the BLE stack.
  *
  */
-static void on_rw_authorize_request(ble_stuff_list_t * p_stuff_list,
-		ble_gatts_evt_t * p_gatts_evt) {
-	ble_gatts_evt_rw_authorize_request_t * p_auth_req =
-			&p_gatts_evt->params.authorize_request;
+static void on_rw_authorize_request(ble_stuff_list_t * p_stuff_list, ble_gatts_evt_t * p_gatts_evt) {
+	ble_gatts_evt_rw_authorize_request_t * p_auth_req = &p_gatts_evt->params.authorize_request;
 	if (p_auth_req->type == BLE_GATTS_AUTHORIZE_TYPE_WRITE) {
-		if ((p_gatts_evt->params.authorize_request.request.write.op
-				!= BLE_GATTS_OP_PREP_WRITE_REQ)
-				&& (p_gatts_evt->params.authorize_request.request.write.op
-						!= BLE_GATTS_OP_EXEC_WRITE_REQ_NOW)
-				&& (p_gatts_evt->params.authorize_request.request.write.op
-						!= BLE_GATTS_OP_EXEC_WRITE_REQ_CANCEL)) {
+		if ((p_gatts_evt->params.authorize_request.request.write.op != BLE_GATTS_OP_PREP_WRITE_REQ)
+				&& (p_gatts_evt->params.authorize_request.request.write.op != BLE_GATTS_OP_EXEC_WRITE_REQ_NOW)
+				&& (p_gatts_evt->params.authorize_request.request.write.op != BLE_GATTS_OP_EXEC_WRITE_REQ_CANCEL)) {
 
-			if (p_auth_req->request.write.handle
-					== p_stuff_list->stuff_entry_handles.value_handle) {
+			if (p_auth_req->request.write.handle == p_stuff_list->stuff_entry_handles.value_handle) {
 				on_write(p_stuff_list, &p_auth_req->request.write);
 			}
 		}
@@ -220,8 +196,7 @@ static void on_rw_authorize_request(ble_stuff_list_t * p_stuff_list,
  * @param[in]   p_stuff_list       Stuff List Service structure.
  * @param[in]   p_ble_evt   Event received from the BLE stack.
  */
-void ble_stuff_list_on_ble_evt(ble_stuff_list_t * p_stuff_list,
-		ble_evt_t * p_ble_evt) {
+void ble_stuff_list_on_ble_evt(ble_stuff_list_t * p_stuff_list, ble_evt_t * p_ble_evt) {
 	switch (p_ble_evt->header.evt_id) {
 	case BLE_GAP_EVT_CONNECTED:
 		on_connect(p_stuff_list, p_ble_evt);
@@ -242,8 +217,7 @@ void ble_stuff_list_on_ble_evt(ble_stuff_list_t * p_stuff_list,
 }
 
 /**@brief Function for initializing the Stuff List. */
-uint32_t ble_stuff_list_init(ble_stuff_list_t * p_stuff_list,
-		const ble_stuff_list_init_t * p_stuff_list_init) {
+uint32_t ble_stuff_list_init(ble_stuff_list_t * p_stuff_list, const ble_stuff_list_init_t * p_stuff_list_init) {
 	uint32_t err_code;
 	ble_uuid_t ble_uuid;
 
@@ -252,8 +226,8 @@ uint32_t ble_stuff_list_init(ble_stuff_list_t * p_stuff_list,
 	p_stuff_list->conn_handle = BLE_CONN_HANDLE_INVALID;
 
 	// Add a custom base UUID.
-	ble_uuid128_t bds_base_uuid = { { 0x1A, 0xE7, 0xF5, 0x9D, 0xA2, 0x98, 0xBF,
-			0xBB, 0x89, 0x4A, 0xD9, 0x6E, 0x00, 0x00, 0x1A, 0xE7 } };
+	ble_uuid128_t bds_base_uuid = { { 0x1A, 0xE7, 0xF5, 0x9D, 0xA2, 0x98, 0xBF, 0xBB, 0x89, 0x4A, 0xD9, 0x6E, 0x00,
+			0x00, 0x1A, 0xE7 } };
 	uint8_t uuid_type;
 	err_code = sd_ble_uuid_vs_add(&bds_base_uuid, &uuid_type);
 	if (err_code != NRF_SUCCESS) {
@@ -263,15 +237,13 @@ uint32_t ble_stuff_list_init(ble_stuff_list_t * p_stuff_list,
 	ble_uuid.uuid = 0xE71A;
 
 	// Add service
-	err_code = sd_ble_gatts_service_add(BLE_GATTS_SRVC_TYPE_PRIMARY, &ble_uuid,
-			&p_stuff_list->service_handle);
+	err_code = sd_ble_gatts_service_add(BLE_GATTS_SRVC_TYPE_PRIMARY, &ble_uuid, &p_stuff_list->service_handle);
 	if (err_code != NRF_SUCCESS) {
 		return err_code;
 	}
 
 	// Add Stuff Value characteristic
-	ble_stuff_list_stuff_value_t stuff_value_initial_value =
-			p_stuff_list_init->ble_stuff_list_stuff_value_initial_value;
+	ble_stuff_list_stuff_value_t stuff_value_initial_value = p_stuff_list_init->ble_stuff_list_stuff_value_initial_value;
 
 	uint8_t stuff_value_encoded_value[MAX_STUFF_VALUE_LEN];
 	ble_add_char_params_t add_stuff_value_params;
@@ -280,23 +252,21 @@ uint32_t ble_stuff_list_init(ble_stuff_list_t * p_stuff_list,
 	add_stuff_value_params.uuid = 0xE71D;
 	add_stuff_value_params.uuid_type = ble_uuid.type;
 	add_stuff_value_params.max_len = MAX_STUFF_VALUE_LEN;
-	add_stuff_value_params.init_len = stuff_value_encode(
-			&stuff_value_initial_value, stuff_value_encoded_value);
+	add_stuff_value_params.init_len = stuff_value_encode(&stuff_value_initial_value, stuff_value_encoded_value);
 	add_stuff_value_params.p_init_value = stuff_value_encoded_value;
 	add_stuff_value_params.char_props.read = 1;
 	add_stuff_value_params.read_access = SEC_OPEN;
 	// 1 for variable length and 0 for fixed length.
 	add_stuff_value_params.is_var_len = 1;
 
-	err_code = characteristic_add(p_stuff_list->service_handle,
-			&add_stuff_value_params, &(p_stuff_list->stuff_value_handles));
+	err_code = characteristic_add(p_stuff_list->service_handle, &add_stuff_value_params,
+			&(p_stuff_list->stuff_value_handles));
 	if (err_code != NRF_SUCCESS) {
 		return err_code;
 	}
 
 	// Add Stuff Entry characteristic
-	ble_stuff_list_stuff_entry_t stuff_entry_initial_value =
-			p_stuff_list_init->ble_stuff_list_stuff_entry_initial_value;
+	ble_stuff_list_stuff_entry_t stuff_entry_initial_value = p_stuff_list_init->ble_stuff_list_stuff_entry_initial_value;
 
 	uint8_t stuff_entry_encoded_value[MAX_STUFF_ENTRY_LEN];
 	ble_add_char_params_t add_stuff_entry_params;
@@ -305,16 +275,15 @@ uint32_t ble_stuff_list_init(ble_stuff_list_t * p_stuff_list,
 	add_stuff_entry_params.uuid = 0xE71C;
 	add_stuff_entry_params.uuid_type = ble_uuid.type;
 	add_stuff_entry_params.max_len = MAX_STUFF_ENTRY_LEN;
-	add_stuff_entry_params.init_len = stuff_entry_encode(
-			&stuff_entry_initial_value, stuff_entry_encoded_value);
+	add_stuff_entry_params.init_len = stuff_entry_encode(&stuff_entry_initial_value, stuff_entry_encoded_value);
 	add_stuff_entry_params.p_init_value = stuff_entry_encoded_value;
 	add_stuff_entry_params.char_props.write = 1;
 	add_stuff_entry_params.write_access = SEC_OPEN;
 	// 1 for variable length and 0 for fixed length.
 	add_stuff_entry_params.is_var_len = 1;
 
-	err_code = characteristic_add(p_stuff_list->service_handle,
-			&add_stuff_entry_params, &(p_stuff_list->stuff_entry_handles));
+	err_code = characteristic_add(p_stuff_list->service_handle, &add_stuff_entry_params,
+			&(p_stuff_list->stuff_entry_handles));
 	if (err_code != NRF_SUCCESS) {
 		return err_code;
 	}
@@ -330,16 +299,15 @@ uint32_t ble_stuff_list_init(ble_stuff_list_t * p_stuff_list,
 	add_stuff_readed_params.uuid = 0xE71F;
 	add_stuff_readed_params.uuid_type = ble_uuid.type;
 	add_stuff_readed_params.max_len = MAX_STUFF_READED_LEN;
-	add_stuff_readed_params.init_len = stuff_readed_encode(
-			&stuff_readed_initial_value, stuff_readed_encoded_value);
+	add_stuff_readed_params.init_len = stuff_readed_encode(&stuff_readed_initial_value, stuff_readed_encoded_value);
 	add_stuff_readed_params.p_init_value = stuff_readed_encoded_value;
 	add_stuff_readed_params.char_props.write_wo_resp = 1;
 	add_stuff_readed_params.write_access = SEC_OPEN;
 	// 1 for variable length and 0 for fixed length.
 	add_stuff_readed_params.is_var_len = 1;
 
-	err_code = characteristic_add(p_stuff_list->service_handle,
-			&add_stuff_readed_params, &(p_stuff_list->stuff_readed_handles));
+	err_code = characteristic_add(p_stuff_list->service_handle, &add_stuff_readed_params,
+			&(p_stuff_list->stuff_readed_handles));
 	if (err_code != NRF_SUCCESS) {
 		return err_code;
 	}
@@ -355,16 +323,15 @@ uint32_t ble_stuff_list_init(ble_stuff_list_t * p_stuff_list,
 	add_stuff_number_params.uuid = 0xE710;
 	add_stuff_number_params.uuid_type = ble_uuid.type;
 	add_stuff_number_params.max_len = MAX_STUFF_NUMBER_LEN;
-	add_stuff_number_params.init_len = stuff_number_encode(
-			&stuff_number_initial_value, stuff_number_encoded_value);
+	add_stuff_number_params.init_len = stuff_number_encode(&stuff_number_initial_value, stuff_number_encoded_value);
 	add_stuff_number_params.p_init_value = stuff_number_encoded_value;
 	add_stuff_number_params.char_props.read = 1;
 	add_stuff_number_params.read_access = SEC_OPEN;
 	// 1 for variable length and 0 for fixed length.
 	add_stuff_number_params.is_var_len = 1;
 
-	err_code = characteristic_add(p_stuff_list->service_handle,
-			&add_stuff_number_params, &(p_stuff_list->stuff_number_handles));
+	err_code = characteristic_add(p_stuff_list->service_handle, &add_stuff_number_params,
+			&(p_stuff_list->stuff_number_handles));
 	if (err_code != NRF_SUCCESS) {
 		return err_code;
 	}
@@ -373,8 +340,7 @@ uint32_t ble_stuff_list_init(ble_stuff_list_t * p_stuff_list,
 }
 
 /**@brief Function for setting the Stuff Value. */
-uint32_t ble_stuff_list_stuff_value_set(ble_stuff_list_t * p_stuff_list,
-		ble_stuff_list_stuff_value_t * p_stuff_value) {
+uint32_t ble_stuff_list_stuff_value_set(ble_stuff_list_t * p_stuff_list, ble_stuff_list_stuff_value_t * p_stuff_value) {
 	ble_gatts_value_t gatts_value;
 	uint8_t encoded_value[MAX_STUFF_VALUE_LEN];
 
@@ -385,8 +351,8 @@ uint32_t ble_stuff_list_stuff_value_set(ble_stuff_list_t * p_stuff_list,
 	gatts_value.offset = 0;
 	gatts_value.p_value = encoded_value;
 
-	return sd_ble_gatts_value_set(p_stuff_list->conn_handle,
-			p_stuff_list->stuff_value_handles.value_handle, &gatts_value);
+	return sd_ble_gatts_value_set(p_stuff_list->conn_handle, p_stuff_list->stuff_value_handles.value_handle,
+			&gatts_value);
 }
 
 /**@brief Function for setting the Stuff Number. */
@@ -402,6 +368,6 @@ uint32_t ble_stuff_list_stuff_number_set(ble_stuff_list_t * p_stuff_list,
 	gatts_value.offset = 0;
 	gatts_value.p_value = encoded_value;
 
-	return sd_ble_gatts_value_set(p_stuff_list->conn_handle,
-			p_stuff_list->stuff_number_handles.value_handle, &gatts_value);
+	return sd_ble_gatts_value_set(p_stuff_list->conn_handle, p_stuff_list->stuff_number_handles.value_handle,
+			&gatts_value);
 }
