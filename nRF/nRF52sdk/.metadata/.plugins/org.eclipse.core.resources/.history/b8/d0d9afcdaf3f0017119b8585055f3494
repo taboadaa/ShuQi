@@ -1,0 +1,36 @@
+/*
+ * app.c
+ *
+ *  Created on: 19 mai 2017
+ *      Author: tab
+ */
+
+#include "app.h"
+
+void rfid_id_init(uint8_array_t** rfidId, ) {
+	rfidId = calloc(sizeof(uint8_array_t)*RFID_ID_ARRAY_SIZE, 1);
+}
+
+void rfid_ids_add(uint8_array_t idTag) {
+	// 96 bits idTag (96/8=12)
+	if(idTag.size == RFID_ID_SIZE) {
+		uint32_t ii = 0;
+		uint8_array_t* temp = rfid_ids[ii];
+
+		while (temp != NULL) {
+			temp = rfid_ids[ii];
+
+			bool same = true;
+			for (int jj = 0; jj < RFID_ID_SIZE; ++jj) {
+
+				if (temp->p_data[jj] != idTag.p_data[ii]) {
+					same = false;
+				}
+			}
+
+			ii++;
+		}
+		rfid_ids.size++;
+	}
+}
+
