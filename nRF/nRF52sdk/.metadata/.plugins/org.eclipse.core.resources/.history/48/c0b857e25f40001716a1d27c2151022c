@@ -77,7 +77,6 @@
 #include "nrf_log.h"
 #include "nrf_log_ctrl.h"
 #include "nrf_ble_qwr.h"
-#include "app.h"
 
 #define IS_SRVC_CHANGED_CHARACT_PRESENT  0                                          /**< Include or not the service_changed characteristic. if not enabled, the server's database cannot be changed for the lifetime of the device*/
 
@@ -119,7 +118,7 @@
 #define RFID_ID_SIZE                     96/8                                       /**< Size of rfid id. */
 #define RFID_ID_ARRAY_SIZE               20                                         /**< Size of rfid array. */
 
-//static uint8_array_t* rfid_ids;
+static uint8_array_t* rfid_ids;
 
 static uint16_t m_conn_handle = BLE_CONN_HANDLE_INVALID; /**< Handle of the current connection. */
 static nrf_ble_qwr_t m_qwr; /**< Queued Writes structure.*/
@@ -484,8 +483,6 @@ void bsp_event_handler(bsp_event_t event) {
 static void pm_evt_handler(pm_evt_t const * p_evt) {
 	ret_code_t err_code;
 
-	NRF_LOG_INFO("Function for handling Peer Manager events (483)");//debug
-
 	switch (p_evt->evt_id) {
 	case PM_EVT_BONDED_PEER_CONNECTED: {
 		NRF_LOG_INFO("Connected to a previously bonded device.\r\n");
@@ -660,14 +657,14 @@ static void power_manage(void) {
 /**
  *
  */
-//void app_init() {
-//	//Init rfid array
-//	rfid_ids = calloc(sizeof(uint8_array_t)*RFID_ID_ARRAY_SIZE, 1);
-//	for (int ii = 0; ii < RFID_ID_ARRAY_SIZE; ++ii) {
-//		rfid_ids[ii].size = RFID_ID_SIZE;
-//		rfid_ids[ii].p_data = calloc(sizeof(uint8_t)*rfid_ids->size, 1);
-//	}
-//}
+void app_init() {
+	//Init rfid array
+	rfid_ids = calloc(sizeof(uint8_array_t)*RFID_ID_ARRAY_SIZE, 1);
+	for (int ii = 0; ii < RFID_ID_ARRAY_SIZE; ++ii) {
+		rfid_ids[ii].size = RFID_ID_SIZE;
+		rfid_ids[ii].p_data = calloc(sizeof(uint8_t)*rfid_ids->size, 1);
+	}
+}
 
 void fncdebug() {
 	//debugdebug();

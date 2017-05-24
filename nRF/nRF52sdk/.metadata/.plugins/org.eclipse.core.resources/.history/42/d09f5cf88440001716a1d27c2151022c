@@ -27,14 +27,14 @@ int rfid_ids_add(uint8_array_t** rfidIds, uint8_array_t* idTag) {
 	uint8_array_t* temp = rfidIds[ii];
 
 	// 96 bits idTag (96/8=12)
-	if (idTag->size == RFID_ID_SIZE) {
+	if (idTag.size == RFID_ID_SIZE) {
 		// Check every entry if tag is already here
 		while (temp != NULL) {
 			temp = rfidIds[ii];
 
 			// Check every byte of tag
 			for (int jj = 0; jj < RFID_ID_SIZE; ++jj) {
-				if (temp->p_data[jj] != idTag->p_data[ii]) {
+				if (temp->p_data[jj] != idTag.p_data[ii]) {
 					same = false;
 					break;
 				}
@@ -65,9 +65,9 @@ void app_init() {
 	tag->size = RFID_ID_SIZE; tag->p_data = malloc(sizeof(uint8_t)*RFID_ID_SIZE);
 	int echo = rfid_ids_add(rfid_ids, tag);
 
-	char* str = NULL;
+	char str = NULL;
 	sprintf(str, "retour rfid_add %d\n", echo);
-	NRF_LOG_INFO("todo comment log un printf?");
+	NRF_LOG(str);
 }
 
 

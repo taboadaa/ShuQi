@@ -65,9 +65,9 @@ void app_init() {
 	tag->size = RFID_ID_SIZE; tag->p_data = malloc(sizeof(uint8_t)*RFID_ID_SIZE);
 	int echo = rfid_ids_add(rfid_ids, tag);
 
-	char* str = NULL;
+	char str = NULL;
 	sprintf(str, "retour rfid_add %d\n", echo);
-	NRF_LOG_INFO("todo comment log un printf?");
+	NRF_LOG(str);
 }
 
 
