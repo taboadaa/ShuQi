@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>Keil</vendor>
+  <url>http://www.keil.com/pack/</url>
+  <name>TXZ3_DFP</name>
+  <description>Toshiba TXZ3 Series Device Support</description>
+
+  <releases>
+    <release version="1.0.0" date="2016-06-27">
+      First Release version of TXZ3 Series Device Family Pack.
+    </release>
+  </releases>
+
+  <keywords>
+    <!-- keywords for indexing -->
+    <keyword>Toshiba</keyword>
+    <keyword>Device Support</keyword>
+    <keyword>Device Family Package Toshiba</keyword>
+    <keyword>TMPM3</keyword>
+    <keyword>TXZ3</keyword>
+  </keywords>
+
+  <devices>
+    <family Dfamily="TXZ3 Series" Dvendor="Toshiba:92">
+      <processor Dcore="Cortex-M3" DcoreVersion="r2p1" Dfpu="0" Dmpu="1" Dendian="Little-endian"/>
+      <book name="Documents/dui0552a_cortex_m3_dgug.pdf" title="Cortex-M3 Generic User Guide"/>
+      <description>
+The TXZ3 microcontroller series embeds an ARM Cortex-M3 core, which provides high code density and fast interrupt response times required for real-time applications.
+      </description>
+
+      <!-- ************************  Subfamily 'M3H'  **************************** -->
+      <subFamily DsubFamily="M3H">
+
+        <!-- ***********************  Device 'TMPM3H6FWFG'  ************************* -->
+        <device Dname="TMPM3H6FWFG">
+          <processor Dclock="40000000"/>
+          <compile header="Device/Include/TMPM3H6.h" define="TMPM3H6FWFG"/>
+          <debug svd="SVD/M3H6.svd"/>
+          <memory id="IROM1"                           start="0x00000000" size="0x00020000" startup="1" default="1"/>
+          <memory id="IRAM1"                           start="0x20000000" size="0x00004000" init   ="0" default="1"/>
+          <algorithm name="Flash/TMPM3Hx_code_128.FLM" start="0x00000000" size="0x00020000"             default="1"/>
+          <algorithm name="Flash/TMPM3Hx_data_32.FLM"  start="0x30000000" size="0x00008000"             default="1"/>
+
+          <!--book name=""/-->
+
+          <feature type="WDT"           n="1"/>
+          <feature type="Timer"         n="6"      m="32"/>
+          <feature type="DMA"           n="4"                           name="DMA"/>
+          <feature type="UART"          n="3"/>
+          <feature type="I2C"           n="3"                           name="I2C"/>
+          <feature type="ADC"           n="16"     m="12"               name="AD converter"/>
+          <feature type="ExtInt"        n="16"/>
+          <feature type="IOs"           n="87"/>
+          <feature type="VCC"           n="2.70"    m="5.50"/>
+          <feature type="Temp"          n="-40"     m="85"/>
+          <feature type="QFP"           n="100"/>
+        </device>
+      </subFamily>
+
+    </family>
+  </devices>
+
+  <conditions>
+    <!-- Compiler Conditions -->
+    <condition id="Compiler ARMCC">
+      <require Tcompiler="ARMCC"/>
+    </condition>
+
+    <!-- Device + CMSIS Conditions -->
+    <condition id="TMPM3H6 CMSIS">
+      <description>Toshiba TMPM3H6 Devices and CMSIS-CORE</description>
+      <require Dvendor="Toshiba:92" Dname="TMPM3H6*"/>
+      <require Cclass="CMSIS" Cgroup="CORE"/>
+    </condition>
+
+  </conditions>
+
+  <components>
+    <!-- Startup TMPM3H6 -->
+    <component Cclass="Device" Cgroup="Startup" Cversion="0.0.1" condition="TMPM3H6 CMSIS">
+      <description>System Startup for Toshiba TMPM3H6 Devices</description>
+      <files>
+        <file category="include" name="Device/Include/"/>
+        <file category="source"  name="Device/Source/ARM/startup_TMPM3H6.s" attr="config" version="0.0.1" condition="Compiler ARMCC"/>
+        <file category="source"  name="Device/Source/system_TMPM3H6.c"      attr="config" version="0.0.1"/>
+      </files>
+    </component>
+
+  </components>
+
+</package>

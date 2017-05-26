@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>Keil</vendor>
+  <url>http://www.keil.com/pack/</url>
+  <name>SAMHA1_DFP</name>
+  <description>Atmel SAM H Series Device Support and Examples</description>
+
+  <releases>
+    <release version="1.0.0" date="2017-01-12">
+      Initial Release Version of SAM HA1 Device Family Pack (supporting SAMHA1).
+    </release>
+  </releases>
+
+  <keywords>
+  <!-- keywords for indexing -->
+    <keyword>Atmel</keyword>
+    <keyword>SAM H</keyword>
+    <keyword>SAM HA1</keyword>
+  </keywords>
+
+  <devices>
+    <family Dfamily="SAM H Series" Dvendor="Atmel:3">
+      <book name="Documents/DUI0662B_cortex_m0p_r0p1_dgug.pdf" title="Cortex-M0+ Generic User Guide"/>
+      <description>
+The Atmel | SAM H family of microcontrollers (MCUs) is ...
+      </description>
+
+      <!-- ************************  Subfamily 'SAM HA1'  **************************** -->
+      <subFamily DsubFamily="SAM HA1">
+        <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dfpu="NO_FPU" Dmpu="NO_MPU" Dendian="Little-endian" Dclock="48000000"/>
+
+        <book name="Documents/Atmel-9354_LIN-Networking-SAMHA1A_Datasheet.pdf" title="SAM HA1 A Datasheet"/>
+        <description>
+The Atmel SAM HA1 A is a low-power automotive system-in-package (SiP) product series using the 32-bit ARM Cortex M0+ processor featuring 48 pins with up to 64KB of Flash, up to 2KB of read-while-write data flash, and up to 8KB of SRAM.
+The SAM HA1 devices operate at a maximum frequency of 48MHz and reach 2.46 Coremark/MHz.
+They also include a LIN system basis chip (SBC) with a fully integrated LIN transceiver designed in compliance with the LIN specifications 2.0, 2.1, 2.2, 2.2A and SAEJ2602-2, and a 3.3V/85mA voltage regulator.
+        </description>
+
+        <feature type="Timer"         n="3"       m="32"          name="Timer/Counter for Control"/>
+        <feature type="DMA"           n="8"/>
+        <feature type="DAC"           n="1"       m="10"/>
+        <feature type="RTC"           n="32768"/>
+        <feature type="WDT"           n="1"/>
+        <feature type="CoreOther"     n="12"                      name="Event System channels"/>
+        <feature type="VCC"           n="2.70"    m="3.63"/>
+        <feature type="Temp"          n="-40"     m="105"/>
+
+        <!-- ******************************  ATSAMHA1G14A  ****************************** -->
+        <device Dname="ATSAMHA1G14A">
+          <compile header="Device/SAMHA1/Include/samha1.h" define="__SAMHA1G14A__"/>
+          <debug svd="SVD/SAMHA1/ATSAMHA1G14A.svd"/>
+          <memory id="IROM1"                            start="0x00000000" size="0x00004000" startup="1" default="1"/>
+          <memory id="IROM2"                            start="0x00400000" size="0x00000200"/>
+          <memory id="IRAM1"                            start="0x20000000" size="0x00001000" init   ="0" default="1"/>
+          <algorithm name="Flash/ATSAMH_16.FLM"         start="0x00000000" size="0x00004000"             default="1"/>
+          <algorithm name="Flash/ATSAMH_16_EEPROM.FLM"  start="0x00010000" size="0x00000200"             default="1"/>
+
+          <feature type="Timer"         n="5"       m="32"          name="Timer/Counter"/>
+          <feature type="ComOther"      n="5"                       name="SERCOMM (I2C, USART, SPI, Lin slave)"/>
+          <feature type="ADC"           n="13"      m="12"/>
+          <feature type="AnalogOther"   n="2"                       name="Analog Comparator"/>
+          <feature type="ExtInt"        n="14"/>
+          <feature type="Touch"         n="1"                       name="Peripheral Touch Controller"/>
+          <feature type="IOs"           n="32"                      name="General Purpose I/Os"/>
+          <feature type="QFN"           n="48"                      name="QFN Package"/>
+        </device>
+
+        <!-- ******************************  ATSAMHA1G15A  ****************************** -->
+        <device Dname="ATSAMHA1G15A">
+          <compile header="Device/SAMHA1/Include/samha1.h" define="__SAMHA1G15A__"/>
+          <debug svd="SVD/SAMHA1/ATSAMHA1G15A.svd"/>
+          <memory id="IROM1"                            start="0x00000000" size="0x00008000" startup="1" default="1"/>
+          <memory id="IROM2"                            start="0x00400000" size="0x00000400"/>
+          <memory id="IRAM1"                            start="0x20000000" size="0x00001000" init   ="0" default="1"/>
+          <algorithm name="Flash/ATSAMH_32.FLM"         start="0x00000000" size="0x00008000"             default="1"/>
+          <algorithm name="Flash/ATSAMH_32_EEPROM.FLM"  start="0x00010000" size="0x00000400"             default="1"/>
+
+          <feature type="Timer"         n="5"       m="32"          name="Timer/Counter"/>
+          <feature type="ComOther"      n="5"                       name="SERCOMM (I2C, USART, SPI, Lin slave)"/>
+          <feature type="ADC"           n="13"      m="12"/>
+          <feature type="AnalogOther"   n="2"                       name="Analog Comparator"/>
+          <feature type="ExtInt"        n="14"/>
+          <feature type="Touch"         n="1"                       name="Peripheral Touch Controller"/>
+          <feature type="IOs"           n="32"                      name="General Purpose I/Os"/>
+          <feature type="QFN"           n="48"                      name="QFN Package"/>
+        </device>
+
+        <!-- ******************************  ATSAMHA1G16A  ****************************** -->
+        <device Dname="ATSAMHA1G16A">
+          <compile header="Device/SAMHA1/Include/samha1.h" define="__SAMHA1G16A__"/>
+          <debug svd="SVD/SAMHA1/ATSAMHA1G16A.svd"/>
+          <memory id="IROM1"                            start="0x00000000" size="0x00010000" startup="1" default="1"/>
+          <memory id="IROM2"                            start="0x00400000" size="0x00000800"/>
+          <memory id="IRAM1"                            start="0x20000000" size="0x00002000" init   ="0" default="1"/>
+          <algorithm name="Flash/ATSAMH_64.FLM"         start="0x00000000" size="0x00010000"             default="1"/>
+          <algorithm name="Flash/ATSAMH_64_EEPROM.FLM"  start="0x00010000" size="0x00000800"             default="1"/>
+
+          <feature type="Timer"         n="5"       m="32"          name="Timer/Counter"/>
+          <feature type="ComOther"      n="5"                       name="SERCOMM (I2C, USART, SPI, Lin slave)"/>
+          <feature type="ADC"           n="13"      m="12"/>
+          <feature type="AnalogOther"   n="2"                       name="Analog Comparator"/>
+          <feature type="ExtInt"        n="14"/>
+          <feature type="Touch"         n="1"                       name="Peripheral Touch Controller"/>
+          <feature type="IOs"           n="32"                      name="General Purpose I/Os"/>
+          <feature type="QFN"           n="48"                      name="QFN Package"/>
+        </device>
+
+      </subFamily>
+
+    </family>
+  </devices>
+
+  <conditions>
+    <!-- Compiler Conditions -->
+    <condition id="ARMCC">
+      <require Tcompiler="ARMCC"/>
+    </condition>
+
+    <!-- Device + CMSIS Conditions -->
+    <condition id="SAMHA1 CMSIS">
+      <description>Atmel SAM HA1 devices and CMSIS-CORE</description>
+      <require Dvendor="Atmel:3"  Dname="ATSAMHA1*"/>
+      <require Cclass="CMSIS" Cgroup="CORE"/>
+    </condition>
+  </conditions>
+
+  <components>
+    <!-- Startup SAMHA1 -->
+    <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="SAMHA1 CMSIS">
+      <description>System Startup for Atmel SAM HA1 Devices</description>
+      <files>
+        <file category="include" name="Device/SAMHA1/Include/"/>
+        <file category="source" name="Device/SAMHA1/Source/ARM/startup_SAMHA1.s" attr="config" version="1.0.0" condition="ARMCC"/>
+        <file category="source" name="Device/SAMHA1/Source/system_samha1.c"      attr="config" version="1.0.0"/>
+      </files>
+    </component>
+
+    <!-- SAMHA1G16A-XPRO Board Support -->
+    <bundle Cbundle="SAMHA1G16A-XPRO" Cclass="Board Support" Cversion="1.0.0">
+      <description>Atmel SAMHA1G16A-XPRO Board Support</description>
+      <doc></doc>
+      <component Cgroup="LED" Capiversion="1.00" condition="SAMHA1 CMSIS">
+      <description>LED driver for Atmel SAMHA1G16A-XPRO Board</description>
+        <files>
+          <file category="source" name="Boards/Atmel/SAMHA1G16A-XPRO/Common/LED_SAMHA1G16A-XPRO.c"/>
+        </files>
+      </component>
+      <component Cgroup="Buttons" Capiversion="1.00" condition="SAMHA1 CMSIS">
+      <description>Button driver for Atmel SAMHA1G16A-XPRO Board</description>
+        <files>
+          <file category="source" name="Boards/Atmel/SAMHA1G16A-XPRO/Common/Buttons_SAMHA1G16A-XPRO.c"/>
+        </files>
+      </component>
+    </bundle>
+
+  </components>
+
+  <boards>
+    <board vendor="Atmel" name="SAMHA1G16A-XPRO" revision="Rev.1" salesContact="http://www.atmel.com/buy/contact_us.aspx?contactType=Sales%20Representative" orderForm="http://www.atmel.com/buy/inventory/default.aspx?parts=ATSAMHA1G16A-XPRO">
+      <description>Atmel SAM HA1 Xplained Pro Evaluation Kit</description>
+      <image small="Boards/Atmel/SAMHA1G16A-XPRO/Documents/SAMHA1G16A-XPRO_small.jpg"
+             large="Boards/Atmel/SAMHA1G16A-XPRO/Documents/SAMHA1G16A-XPRO_large.jpg"/>
+      <book category="overview"  name="http://www.atmel.com/tools/ATSAMHA1G16A-XPRO.aspx" title="ATSAMHA1G16A Xplained Pro Web Page"/>
+      <book category="manual"    name="Boards/Atmel/SAMHA1G16A-XPRO/Documents/Atmel-9426-SAM-HA1G16A-Xplained-Pro_User-Guide.pdf" title="User Guide"/>
+      <!--book category="other"     name="Boards/Atmel/SAMHA1G16A-XPRO/Documents/Atmel-42102-SAMD20-Xplained-Pro_User-Guide.zip" title="Schematics and Gerber files"/-->
+      <mountedDevice    deviceIndex="0" Dvendor="Atmel:3" Dname="ATSAMHA1G16A"/>
+      <compatibleDevice deviceIndex="0" Dvendor="Atmel:3" Dfamily="SAM HA1"/>
+	    <feature type="ODbg"      n="1"              name="Embedded Debugger USB"/>
+	    <feature type="PWR"       n="5"              name="USB Powered (from the Debugger)"/>
+	    <feature type="PWR"       n="5"              name="External Power"/>
+	    <feature type="DIO"       n="3"              name="Xplained Pro Extension headers"/>
+	    <feature type="Button"    n="2"              name="Push-buttons: User and Reset"/>
+	    <feature type="LED"       n="1"              name="Yellow User LED"/>
+	    <feature type="CustomFF"  n="60" m="100"/>
+      <debugInterface adapter="Embedded Debugger" connector="Micro-USB"/>
+    </board>
+  </boards>
+
+  <examples>
+    <!-- SAMD20-XPRO Board -->
+    <example name="CMSIS-RTOS Blinky" doc="Abstract.txt" folder="Boards/Atmel/SAMHA1G16A-XPRO/Blinky">
+      <description>CMSIS-RTOS based Blinky example</description>
+      <board name="SAMHA1G16A-XPRO" vendor="Atmel"/>
+      <project>
+        <environment name="uv" load="Blinky.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX</category>
+      </attributes>
+    </example>
+  </examples>
+
+</package>

@@ -660,15 +660,6 @@ static void power_manage(void) {
 /**
  *
  */
-//void app_init() {
-//	//Init rfid array
-//	rfid_ids = calloc(sizeof(uint8_array_t)*RFID_ID_ARRAY_SIZE, 1);
-//	for (int ii = 0; ii < RFID_ID_ARRAY_SIZE; ++ii) {
-//		rfid_ids[ii].size = RFID_ID_SIZE;
-//		rfid_ids[ii].p_data = calloc(sizeof(uint8_t)*rfid_ids->size, 1);
-//	}
-//}
-
 void fncdebug() {
 	//debugdebug();
 

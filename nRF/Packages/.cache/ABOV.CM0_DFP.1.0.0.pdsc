@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package schemaVersion="1.4" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>ABOV</vendor>
+  <name>CM0_DFP</name>
+  <description>ABOV Semiconductor CM0 Device Support, Drivers and Examples</description>
+  <url>http://www.abov.co.kr/data/mds/PACK/</url>
+  <supportContact>seungduk.ha@abov.co.kr</supportContact>
+  <!-- optional license file -->
+  <!-- 
+  <license>
+  </license>
+  -->
+  <releases>
+    <release version="1.0.0" date="2016-06-17">
+       First Release version of ABOV CM0 Device Family Pack.
+            - Added device : AC30M1464, AC30M1364, AC30M1432, AC30M1332
+    </release>
+  </releases>
+  <keywords>
+    <!-- keywords for indexing -->
+    <keyword>ABOV</keyword>
+    <keyword>AC3</keyword>
+  </keywords>
+  <!-- apis section (optional - for Application Programming Interface descriptions) -->
+  <!-- 
+  <apis>
+  </apis>
+  -->
+  <!-- boards section (mandatory for Board Support Packs) -->
+  <!-- 
+  <boards>
+  </boards>
+  -->
+  <boards>
+    <!-- board : AC30M1464 ************************************************************-->
+    <board vendor="ABOV" name="AC30M1464 MINI B/D" revision="V0.2">
+      <description>ABOV AC30M1464 mini board</description>
+      <mountedDevice deviceIndex="0" Dvendor="ABOV Semiconductor:126" Dname="AC30M1464" />
+      <book category="schematic" name="AC30M1x64/Doc/160308_AC30M1464_MINI_V0.2.pdf" title="AC30M1464 MINI B/D Schematics" />
+      <feature type="XTAL" n="8000000" />
+      <feature type="PWR" n="5" name="USB Powered" />
+      <feature type="PWR" n="3" m="5" name="External Supply" />
+      <feature type="Button" n="2" name="Push-buttons: User and Reset" />
+      <feature type="LED" n="3" name="LEDs: Power, Two user" />
+    </board>
+  </boards>
+  <!-- devices section (mandatory for Device Family Packs) -->
+  <!--
+  <devices>
+  </devices>
+  -->
+  <devices>
+    <family Dfamily="AC30 Series" Dvendor="ABOV Semiconductor:126">
+      <processor Dcore="Cortex-M0" DcoreVersion="r0p0" Dfpu="0" Dmpu="0" Dendian="Little-endian" />
+      <description>The ABOV AC30 device family contains an ARM Cortex-M0 processor with a versatile set of on-chip peripherals
+          </description>
+      <!-- Subfamily : AC30M1x64 *********************************************************-->
+      <subFamily DsubFamily="AC30M1x64">
+        <processor Dclock="40000000" />
+        <compile header="AC30M1x64/Core/include/AC30M1x64.h" />
+        <debug svd="AC30M1x64/SVD/AC30M1x64.svd" />
+        <book name="AC30M1x64/Doc/UM_AC30M1x64_v1.1.0_EN.pdf" title="AC30M1x64 Series User Manual" />
+        <feature type="VCC" n="2.2" m="5.5" />
+        <feature type="Temp" n="-40" m="105" />
+        <feature type="WDT" n="1" m="32" name="Watchdog Timer" />
+        <feature type="Timer" n="4" m="16" name="Timer" />
+        <feature type="UART" n="2" name="UART" />
+        <feature type="SPI" n="1" name="SPI" />
+        <feature type="I2C" n="1" name="I2C" />
+        <feature type="PWM" n="1" m="16" name="PWM" />
+        <feature type="Other" n="1" m="32" name="FRT" />
+        <!-- Device : AC30M1464 -->
+        <device Dname="AC30M1464">
+          <description>Package type 48LQFP</description>
+          <algorithm name="AC30M1x64/Flashloader/AC30M1x64_64.FLM" start="0x00000000" size="0x10000" default="1" />
+          <memory id="IROM1" start="0x00000000" size="0x10000" startup="1" default="1" />
+          <memory id="IRAM1" start="0x20000000" size="0x1000" init="0" default="1" />
+          <feature type="IOs" n="44" name="Inputs/Outputs" />
+          <feature type="ADC" n="1" m="12" name="ADC" />
+          <feature type="QFP" n="48" name="LQFP" />
+        </device>
+        <!-- Device : AC30M1364 -->
+        <device Dname="AC30M1364">
+          <description>Package type 32LQFP, 32QFN</description>
+          <algorithm name="AC30M1x64/Flashloader/AC30M1x64_64.FLM" start="0x00000000" size="0x10000" default="1" />
+          <memory id="IROM1" start="0x00000000" size="0x10000" startup="1" default="1" />
+          <memory id="IRAM1" start="0x20000000" size="0x1000" init="0" default="1" />
+          <feature type="IOs" n="28" name="Inputs/Outputs" />
+          <feature type="ADC" n="1" m="8" name="ADC" />
+          <feature type="QFP" n="32" name="LQFP" />
+          <feature type="QFN" n="32" name="QFN" />
+        </device>
+        <!-- Device : AC30M1432 -->
+        <device Dname="AC30M1432">
+          <description>Package type 48LQFP</description>
+          <algorithm name="AC30M1x64/Flashloader/AC30M1x64_64.FLM" start="0x00000000" size="0x8000" default="1" />
+          <memory id="IROM1" start="0x00000000" size="0x8000" startup="1" default="1" />
+          <memory id="IRAM1" start="0x20000000" size="0x1000" init="0" default="1" />
+          <feature type="IOs" n="44" name="Inputs/Outputs" />
+          <feature type="ADC" n="1" m="12" name="ADC" />
+          <feature type="QFP" n="48" name="LQFP" />
+        </device>
+        <!-- Device : AC30M1332 -->
+        <device Dname="AC30M1332">
+          <description>Package type 32LQFP, 32QFN</description>
+          <algorithm name="AC30M1x64/Flashloader/AC30M1x64_64.FLM" start="0x00000000" size="0x8000" default="1" />
+          <memory id="IROM1" start="0x00000000" size="0x8000" startup="1" default="1" />
+          <memory id="IRAM1" start="0x20000000" size="0x1000" init="0" default="1" />
+          <feature type="IOs" n="28" name="Inputs/Outputs" />
+          <feature type="ADC" n="1" m="8" name="ADC" />
+          <feature type="QFP" n="32" name="LQFP" />
+          <feature type="QFN" n="32" name="QFN" />
+        </device>
+      </subFamily>
+    </family>
+  </devices>
+  <!-- examples section (optional for all Software Packs)-->
+  <!--
+  <examples>
+  </examples>
+  -->
+  <examples>
+    <!-- example : AC30M1464/1364/1432/1332 **********************************************************-->
+    <example name="ABOV ADC burst" doc="Abstract.txt" folder="AC30M1x64/Examples/ADC/Adc_Burst">
+      <description>ADC burst example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Adc_Burst.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV ADC interrupt" doc="Abstract.txt" folder="AC30M1x64/Examples/ADC/Adc_Interrupt">
+      <description>ADC interrupt example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Adc_Interrupt.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV ADC polling" doc="Abstract.txt" folder="AC30M1x64/Examples/ADC/Adc_Polling">
+      <description>ADC polling example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Adc_Polling.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV ADC sequence" doc="Abstract.txt" folder="AC30M1x64/Examples/ADC/Adc_Seq">
+      <description>ADC sequence example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Adc_Seq.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV Clock Change" doc="Abstract.txt" folder="AC30M1x64/Examples/ClkChange/ClkChange_test">
+      <description>Clock Change example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/ClkChange_test.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV DIV" doc="Abstract.txt" folder="AC30M1x64/Examples/DIV64/DIV64_test">
+      <description>Privilege example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/div64_test.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV Flash memory control" doc="Abstract.txt" folder="AC30M1x64/Examples/FMC/FMC_WriteErase">
+      <description>Flash memory write/erase example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/FMC_WriteErase.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV Flash memory control" doc="Abstract.txt" folder="AC30M1x64/Examples/FMC/FMC_WriteErase">
+      <description>Flash memory write/erase example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/FMC_WriteErase.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV FRT" doc="Abstract.txt" folder="AC30M1x64/Examples/FRT/Frt_test">
+      <description>Free Run Timer example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Frt_test.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV GPIO Ext. INT." doc="Abstract.txt" folder="AC30M1x64/Examples/GPIO/Gpio_ExtInt">
+      <description>GPIO external interrupt example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Gpio_ExtInt.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV GPIO input" doc="Abstract.txt" folder="AC30M1x64/Examples/GPIO/Gpio_Input">
+      <description>GPIO input example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Gpio_Input.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV GPIO LED blinky" doc="Abstract.txt" folder="AC30M1x64/Examples/GPIO/Gpio_LedBlinky">
+      <description>GPIO LED blinky example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Gpio_LedBlinky.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV I2C" doc="Abstract.txt" folder="AC30M1x64/Examples/I2C/I2c_MasterSlave">
+      <description>I2C example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/I2c_MasterSlave.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV MPWM" doc="Abstract.txt" folder="AC30M1x64/Examples/MPWM/Mpwm_Test">
+      <description>MPWM example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Mpwm_Test.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV LVD" doc="Abstract.txt" folder="AC30M1x64/Examples/PWR/LVD">
+      <description>Low Voltage detector (LVD) example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/LVD.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV Power down mode" doc="Abstract.txt" folder="AC30M1x64/Examples/PWR/Pwr_PowerDown">
+      <description>Power down mode example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Pwr_PowerDown.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV sleep mode" doc="Abstract.txt" folder="AC30M1x64/Examples/PWR/Pwr_Sleep">
+      <description>Sleep mode example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Pwr_Sleep.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV SPI master" doc="Abstract.txt" folder="AC30M1x64/Examples/SPI/Spi_Master">
+      <description>SPI master example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Spi_Master.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV SPI slave" doc="Abstract.txt" folder="AC30M1x64/Examples/SPI/Spi_Slave">
+      <description>SPI slave example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Spi_Slave.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV timer capture" doc="Abstract.txt" folder="AC30M1x64/Examples/TIMER/Timer_Capture">
+      <description>Timer capture example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Timer_Capture.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV timer INT." doc="Abstract.txt" folder="AC30M1x64/Examples/TIMER/Timer_MatchInterrupt">
+      <description>Timer interrupt example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Timer_MatchInterrupt.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV timer polling" doc="Abstract.txt" folder="AC30M1x64/Examples/TIMER/Timer_MatchPolling">
+      <description>Timer polling example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Timer_MatchPolling.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV timer one shot" doc="Abstract.txt" folder="AC30M1x64/Examples/TIMER/Timer_OneShot">
+      <description>Timer one shot example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Timer_OneShot.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV timer PWM" doc="Abstract.txt" folder="AC30M1x64/Examples/TIMER/Timer_PWM">
+      <description>Timer PWM example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Timer_PWM.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV UART INT." doc="Abstract.txt" folder="AC30M1x64/Examples/UART/Uart_Interrupt">
+      <description>UART interrupt example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Uart_Interrupt.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV UART polling" doc="Abstract.txt" folder="AC30M1x64/Examples/UART/Uart_Polling">
+      <description>UART polling example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Uart_Polling.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV WDT INT." doc="Abstract.txt" folder="AC30M1x64/Examples/WDT/Wdt_Interrupt">
+      <description>WDT interrupt example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Wdt_Interrupt.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="ABOV WDT reset" doc="Abstract.txt" folder="AC30M1x64/Examples/WDT/Wdt_Reset">
+      <description>WDT reset example (AC30M1464/1364/1432/1332)</description>
+      <board name="AC30M1464 MINI B/D" vendor="ABOV" />
+      <project>
+        <environment name="uv" load="Keil/Wdt_Reset.uvprojx" />
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE" />
+        <component Cclass="Device" Cgroup="Startup" />
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+  </examples>
+  <!-- conditions section (optional for all Software Packs)-->
+  <!--
+  <conditions>
+  </conditions>
+  -->
+  <conditions>
+    <!-- condition : AC30M1464/1364/1432/1332 ********************************************************-->
+    <condition id="AC30M1x64 CMSIS">
+      <description>AC30M1464/1364/1432/1332  device and CMSIS-Core</description>
+      <require Tcompiler="ARMCC" />
+      <require Cclass="CMSIS" Cgroup="CORE" />
+      <accept Dvendor="ABOV Semiconductor:126" Dname="AC30M1464" />
+      <accept Dvendor="ABOV Semiconductor:126" Dname="AC30M1364" />
+      <accept Dvendor="ABOV Semiconductor:126" Dname="AC30M1432" />
+      <accept Dvendor="ABOV Semiconductor:126" Dname="AC30M1332" />
+    </condition>
+  </conditions>
+  <!-- component section (optional for all Software Packs)-->
+  <!--
+  <components>
+  </components>
+  -->
+  <components>
+    <!-- component : AC30M1464/1364/1432/1332 ********************************************************-->
+    <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="AC30M1x64 CMSIS">
+      <description>System Startup for ABOV AC30M1464/1364/1432/1332 devices</description>
+      <files>
+        <file category="include" name="AC30M1x64/Core/include/" />
+        <file category="include" name="AC30M1x64/Drivers/include/" />
+        <file category="header" version="1.0.0" name="AC30M1x64/Core/include/AC30M1x64.h" attr="config" />
+        <file category="source" version="1.0.0" name="AC30M1x64/Core/source/ARM/startup_AC30M1x64.s" attr="config" />
+        <file category="source" version="1.0.0" name="AC30M1x64/Core/source/system_AC30M1x64.c" attr="config" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Drivers" Csub="Debug_frameWork" Cversion="1.0.0" condition="AC30M1x64 CMSIS">
+      <description>AC30M1x64 debug framework</description>
+      <files>
+        <file category="header" name="AC30M1x64/Drivers/include/slib.h" />
+        <file category="header" name="AC30M1x64/Drivers/include/debug_frmwrk.h" />
+        <file category="source" name="AC30M1x64/Drivers/source/slib.c" />
+        <file category="source" name="AC30M1x64/Drivers/source/debug_frmwrk.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Drivers" Csub="ADC" Cversion="1.0.0" condition="AC30M1x64 CMSIS">
+      <description>AC30M1x64 ADC control</description>
+      <files>
+        <file category="header" name="AC30M1x64/Drivers/include/ac30m1x64_adc.h" />
+        <file category="source" name="AC30M1x64/Drivers/source/ac30m1x64_adc.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Drivers" Csub="FRT" Cversion="1.0.0" condition="AC30M1x64 CMSIS">
+      <description>AC30M1x64 FRT control</description>
+      <files>
+        <file category="header" name="AC30M1x64/Drivers/include/ac30m1x64_frt.h" />
+        <file category="source" name="AC30M1x64/Drivers/source/ac30m1x64_frt.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Drivers" Csub="GPIO" Cversion="1.0.0" condition="AC30M1x64 CMSIS">
+      <description>AC30M1x64 GPIO control</description>
+      <files>
+        <file category="header" name="AC30M1x64/Drivers/include/ac30m1x64_gpio.h" />
+        <file category="source" name="AC30M1x64/Drivers/source/ac30m1x64_gpio.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Drivers" Csub="I2C" Cversion="1.0.0" condition="AC30M1x64 CMSIS">
+      <description>AC30M1x64 I2C control</description>
+      <files>
+        <file category="header" name="AC30M1x64/Drivers/include/ac30m1x64_i2c.h" />
+        <file category="source" name="AC30M1x64/Drivers/source/ac30m1x64_i2c.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Drivers" Csub="MPWM" Cversion="1.0.0" condition="AC30M1x64 CMSIS">
+      <description>AC30M1x64 MPWM control</description>
+      <files>
+        <file category="header" name="AC30M1x64/Drivers/include/ac30m1x64_mpwm.h" />
+        <file category="source" name="AC30M1x64/Drivers/source/ac30m1x64_mpwm.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Drivers" Csub="PCU" Cversion="1.0.0" condition="AC30M1x64 CMSIS">
+      <description>AC30M1x64 PCU control</description>
+      <files>
+        <file category="header" name="AC30M1x64/Drivers/include/ac30m1x64_pcu.h" />
+        <file category="source" name="AC30M1x64/Drivers/source/ac30m1x64_pcu.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Drivers" Csub="Power" Cversion="1.0.0" condition="AC30M1x64 CMSIS">
+      <description>AC30M1x64 Power control</description>
+      <files>
+        <file category="header" name="AC30M1x64/Drivers/include/ac30m1x64_pwr.h" />
+        <file category="source" name="AC30M1x64/Drivers/source/ac30m1x64_pwr.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Drivers" Csub="SCU" Cversion="1.0.0" condition="AC30M1x64 CMSIS">
+      <description>AC30M1x64 SCU control</description>
+      <files>
+        <file category="header" name="AC30M1x64/Drivers/include/ac30m1x64_scu.h" />
+        <file category="source" name="AC30M1x64/Drivers/source/ac30m1x64_scu.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Drivers" Csub="SPI" Cversion="1.0.0" condition="AC30M1x64 CMSIS">
+      <description>AC30M1x64 SPI control</description>
+      <files>
+        <file category="header" name="AC30M1x64/Drivers/include/ac30m1x64_spi.h" />
+        <file category="source" name="AC30M1x64/Drivers/source/ac30m1x64_spi.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Drivers" Csub="Timer" Cversion="1.0.0" condition="AC30M1x64 CMSIS">
+      <description>AC30M1x64 Timer control</description>
+      <files>
+        <file category="header" name="AC30M1x64/Drivers/include/ac30m1x64_timer.h" />
+        <file category="source" name="AC30M1x64/Drivers/source/ac30m1x64_timer.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Drivers" Csub="UART" Cversion="1.0.0" condition="AC30M1x64 CMSIS">
+      <description>AC30M1x64 UART control</description>
+      <files>
+        <file category="header" name="AC30M1x64/Drivers/include/ac30m1x64_uart.h" />
+        <file category="source" name="AC30M1x64/Drivers/source/ac30m1x64_uart.c" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Drivers" Csub="WDT" Cversion="1.0.0" condition="AC30M1x64 CMSIS">
+      <description>AC30M1x64 WDT control</description>
+      <files>
+        <file category="header" name="AC30M1x64/Drivers/include/ac30m1x64_wdt.h" />
+        <file category="source" name="AC30M1x64/Drivers/source/ac30m1x64_wdt.c" />
+      </files>
+    </component>
+  </components>
+  <!-- optional taxonomy section for defining new component Class and Group names -->
+  <!--
+  <taxonomy>
+  </taxonomy>
+  -->
+</package>

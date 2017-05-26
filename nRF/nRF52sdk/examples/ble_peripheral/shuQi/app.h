@@ -20,7 +20,7 @@
 #define RFID_ID_ARRAY_SIZE               20                                         /**< Size of rfid array. */
 
 uint8_array_t** rfid_ids;
-//static uint32_t doublon;
+int doublon;
 
 
 void rfid_id_init(uint8_array_t** rfidIds);

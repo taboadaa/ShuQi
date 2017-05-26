@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<package schemaVersion="1.4" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>Keil</vendor>
+  <url>http://www.keil.com/pack/</url>
+  <name>LPC800_DFP</name>
+  <description>NXP LPC800 Series Device Support</description>
+
+  <releases>
+    <release version="1.5.0" date="2017-05-23">
+      Added LPC84x device support.
+      Updated LPC84x SVD file.
+      Updated documentation.
+      Updated LPC84x-LPCXpresso RTX5_Blinky example:
+      - Removed RAM target.
+    </release>
+    <release version="1.4.0" date="2016-10-04">
+      Updated LPC83x SVD file.
+    </release>
+    <release version="1.3.0" date="2016-09-05">
+      Added LPC83x device support.
+      Updated documentation.
+      Corrected doxy comments is system file.
+    </release>
+    <release version="1.2.0" date="2015-06-26">
+      Updated LPC8xx.h fixing wrong address offset for IRQ_FLAG in struct LPC_MRT_TypeDef.
+    </release>
+    <release version="1.1.0" date="2014-10-13">
+      Added LPC82x device support.
+      Added Board description, examples for LPC824-Xpresso and LPC812-Xpresso development boards.
+    </release>
+    <release version="1.0.1">
+      Updated: Device description with features
+    </release>
+    <release version="1.0.0">
+      First Release version of LPC800 Device Family Pack.
+    </release>
+  </releases>
+
+  <keywords>
+    <!-- keywords for indexing -->
+    <keyword>NXP</keyword>
+    <keyword>Device Support</keyword>
+    <keyword>Device Family Package NXP</keyword>
+    <keyword>LPC800</keyword>
+    <keyword>LPC8xx</keyword>
+  </keywords>
+
+  <devices>
+    <family Dfamily="LPC800 Series" Dvendor="NXP:11">
+      <processor Dcore="Cortex-M0+" DcoreVersion="r0p0" Dfpu="0" Dmpu="0" Dendian="Little-endian"/>
+      <book    name="Documents/dui0662a_cortex_m0p_r0p0_dgug.pdf"     title="Cortex-M0+ Generic User Guide"/>
+
+      <!-- ************************  Subfamily 'LPC81x'  **************************** -->
+      <subFamily DsubFamily="LPC81x">
+        <processor Dclock="30000000"/>
+
+        <book name="Documents/UM10601.pdf" title="LPC81x User manual"/>
+        <book name="Documents/LPC81XM.pdf" title="LPC81x Datasheet"/>
+        <description>
+The LPC81x are an ARM Cortex-M0+ based, low-cost 32-bit MCU family operating at CPU frequencies of up to 30 MHz.
+The LPC81x support up to 16 kB of flash memory and 4 kB of SRAM.
+The peripheral complement of the LPC81x includes a CRC engine, one I2C-bus interface, up to three USARTs, up to two SPI interfaces, one multi-rate timer, self wake-up timer, and state-configurable timer, one comparator, function-configurable I/O ports through a switch matrix, an input pattern match engine, and up to 18 general-purpose I/O pins.
+        </description>
+
+        <feature type="I2C"           n="1"/>
+        <feature type="WDT"           n="1"                           name="Windowed Watchdog timer"/>
+        <feature type="Timer"         n="4"                           name="32-Bit Timer with Input Capture, Output Compare and PWM"/>
+        <feature type="AnalogOther"   n="1"                           name="Comparator"/>
+        <feature type="CoreOther"     n="1"                           name="CRC engine"/>
+        <feature type="CoreOther"     n="1"                           name="Unique device serial number"/>
+
+        <!-- *************************  Device 'LPC810M021FN8'  ***************************** -->
+        <device Dname="LPC810M021FN8">
+          <compile header="Device/Include/LPC8xx.h"  define="LPC810M021FN8"/>
+          <debug svd="SVD/LPC800.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00001000" startup="1" default="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00000400" init   ="0" default="1"/>
+          <algorithm name="Flash/LPC8xx_4.FLM"  start="0x00000000" size="0x00001000" RAMstart="0x10000000" RAMsize="0x03E0" default="1"/>
+
+          <feature type="USART"         n="2"/>
+          <feature type="SPI"           n="1"/>
+          <feature type="IOs"           n="6"/>
+          <feature type="DIP"           n="9"         name="Dual In-Line Package"/>
+        </device>
+
+        <!-- *************************  Device 'LPC811M001JDH16'  ***************************** -->
+        <device Dname="LPC811M001JDH16">
+          <compile header="Device/Include/LPC8xx.h"  define="LPC811M001JDH16"/>
+          <debug svd="SVD/LPC800.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00002000" startup="1" default="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00000800" init   ="0" default="1"/>
+          <algorithm name="Flash/LPC8xx_8.FLM"  start="0x00000000" size="0x00002000" RAMstart="0x10000000" RAMsize="0x07E0" default="1"/>
+
+          <feature type="USART"         n="2"/>
+          <feature type="SPI"           n="1"/>
+          <feature type="IOs"           n="14"/>
+          <feature type="SOP"           n="16"        name="SSOP Package"/>
+        </device>
+
+        <!-- *************************  Device 'LPC812M101JDH16'  ***************************** -->
+        <device Dname="LPC812M101JDH16">
+          <compile header="Device/Include/LPC8xx.h"  define="LPC812M101JDH16"/>
+          <debug svd="SVD/LPC800.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00004000" startup="1" default="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00001000" init   ="0" default="1"/>
+          <algorithm name="Flash/LPC8xx_16.FLM" start="0x00000000" size="0x00004000" RAMstart="0x10000000" RAMsize="0x0FE0" default="1"/>
+
+          <feature type="USART"         n="3"/>
+          <feature type="SPI"           n="2"/>
+          <feature type="IOs"           n="14"/>
+          <feature type="SOP"           n="16"        name="SSOP Package"/>
+        </device>
+
+        <!-- *************************  Device 'LPC812M101JD20'  ***************************** -->
+        <device Dname="LPC812M101JD20">
+          <compile header="Device/Include/LPC8xx.h"  define="LPC812M101JD20"/>
+          <debug svd="SVD/LPC800.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00004000" startup="1" default="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00001000" init   ="0" default="1"/>
+          <algorithm name="Flash/LPC8xx_16.FLM" start="0x00000000" size="0x00004000" RAMstart="0x10000000" RAMsize="0x0FE0" default="1"/>
+
+          <feature type="USART"         n="2"/>
+          <feature type="SPI"           n="1"/>
+          <feature type="IOs"           n="18"/>
+          <feature type="PackageOther"  n="20"        name="SO Package"/>
+        </device>
+
+        <!-- *************************  Device 'LPC812M101JDH20'  ***************************** -->
+        <device Dname="LPC812M101JDH20">
+          <compile header="Device/Include/LPC8xx.h"  define="LPC812M101JDH20"/>
+          <debug svd="SVD/LPC800.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00004000" startup="1" default="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00001000" init   ="0" default="1"/>
+          <algorithm name="Flash/LPC8xx_16.FLM" start="0x00000000" size="0x00004000" RAMstart="0x10000000" RAMsize="0x0FE0" default="1"/>
+
+          <feature type="USART"         n="3"/>
+          <feature type="SPI"           n="2"/>
+          <feature type="IOs"           n="18"/>
+          <feature type="SOP"           n="20"        name="SSOP Package"/>
+        </device>
+
+        <!-- *************************  Device 'LPC812M101JTB16'  ***************************** -->
+        <device Dname="LPC812M101JTB16">
+          <compile header="Device/Include/LPC8xx.h"  define="LPC812M101JTB16"/>
+          <debug svd="SVD/LPC800.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00004000" startup="1" default="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00001000" init   ="0" default="1"/>
+          <algorithm name="Flash/LPC8xx_16.FLM" start="0x00000000" size="0x00004000" RAMstart="0x10000000" RAMsize="0x0FE0" default="1"/>
+
+          <feature type="USART"         n="3"/>
+          <feature type="SPI"           n="2"/>
+          <feature type="IOs"           n="14"/>
+          <feature type="PackageOther"  n="16"        name="SON Package"/>
+        </device>
+      </subFamily>
+
+      <!-- ************************  Subfamily 'LPC82x'  **************************** -->
+      <subFamily DsubFamily="LPC82x">
+        <processor Dclock="30000000"/>
+
+        <book name="Documents/UM10800.pdf" title="LPC82x User manual"/>
+        <book name="Documents/LPC82X.pdf"  title="LPC82x Datasheet"/>
+        <description>
+The LPC82x are an ARM Cortex-M0+ based, low-cost 32-bit MCU family operating at CPU frequencies of up to 30 MHz.
+The LPC82x support up to 32 KB of flash memory and 8 KB of SRAM.
+The peripheral complement of the LPC82x includes a CRC engine, four I2C-bus interfaces, up to three USARTs, up to two SPI interfaces, one multi-rate timer, self-wake-up timer, and state-configurable timer with PWM function (SCTimer/PWM), a DMA, one 12-bit ADC and one analog comparator, function-configurable I/O ports through a switch matrix, an input pattern match engine, and up to 29 general-purpose I/O pins.
+        </description>
+
+        <feature type="I2C"           n="4"/>
+        <feature type="USART"         n="3"/>
+        <feature type="SPI"           n="2"/>
+        <feature type="WDT"           n="1"                           name="Windowed Watchdog timer"/>
+        <feature type="Timer"         n="4"                           name="32-Bit Timer with Input Capture, Output Compare and PWM"/>
+        <feature type="ADC"           n="1"       m="12"              name="ADC"/>
+        <feature type="AnalogOther"   n="1"                           name="Comparator"/>
+        <feature type="CoreOther"     n="1"                           name="CRC engine"/>
+        <feature type="CoreOther"     n="1"                           name="Unique device serial number"/>
+
+        <!-- *************************  Device 'LPC824M201JHI33'  ***************************** -->
+        <device Dname="LPC824M201JHI33">
+          <compile header="Device/Include/LPC8xx.h"  define="LPC824M201JHI33"/>
+          <debug svd="SVD/LPC82x.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00008000" startup="1" default="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00002000" init   ="0" default="1"/>
+          <algorithm name="Flash/LPC8xx_32.FLM" start="0x00000000" size="0x00008000" RAMstart="0x10000000" RAMsize="0x0FE0" default="1"/>
+
+          <feature type="IOs"           n="29"/>
+          <feature type="QFN"           n="33"        name="QFN Package"/>
+        </device>
+
+        <!-- *************************  Device 'LPC824M201JDH20'  ***************************** -->
+        <device Dname="LPC824M201JDH20">
+          <compile header="Device/Include/LPC8xx.h"  define="LPC824M201JDH20"/>
+          <debug svd="SVD/LPC82x.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00008000" startup="1" default="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00002000" init   ="0" default="1"/>
+          <algorithm name="Flash/LPC8xx_32.FLM" start="0x00000000" size="0x00008000" RAMstart="0x10000000" RAMsize="0x0FE0" default="1"/>
+
+          <feature type="IOs"           n="18"/>
+          <feature type="SOP"           n="20"        name="SSOP Package"/>
+        </device>
+
+        <!-- *************************  Device 'LPC822M101JHI33'  ***************************** -->
+        <device Dname="LPC822M101JHI33">
+          <compile header="Device/Include/LPC8xx.h"  define="LPC822M101JHI33"/>
+          <debug svd="SVD/LPC82x.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00004000" startup="1" default="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00001000" init   ="0" default="1"/>
+          <algorithm name="Flash/LPC8xx_16.FLM" start="0x00000000" size="0x00004000" RAMstart="0x10000000" RAMsize="0x0FE0" default="1"/>
+
+          <feature type="IOs"           n="29"/>
+          <feature type="QFN"           n="33"        name="QFN Package"/>
+        </device>
+
+        <!-- *************************  Device 'LPC822M101JDH20'  ***************************** -->
+        <device Dname="LPC822M101JDH20">
+          <compile header="Device/Include/LPC8xx.h"  define="LPC822M101JDH20"/>
+          <debug svd="SVD/LPC82x.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00004000" startup="1" default="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00001000" init   ="0" default="1"/>
+          <algorithm name="Flash/LPC8xx_16.FLM" start="0x00000000" size="0x00004000" RAMstart="0x10000000" RAMsize="0x0FE0" default="1"/>
+
+          <feature type="IOs"           n="18"/>
+          <feature type="SOP"           n="20"        name="SSOP Package"/>
+        </device>
+
+      </subFamily>
+
+      <!-- ************************  Subfamily 'LPC83x'  **************************** -->
+      <subFamily DsubFamily="LPC83x">
+        <processor Dclock="30000000"/>
+
+        <book name="Documents/UM11021.pdf" title="LPC83x User manual"/>
+        <book name="Documents/LPC83X.pdf"  title="LPC83x Datasheet"/>
+        <description>
+The LPC83x are an ARM Cortex-M0+ based, low-cost 32-bit MCU family operating at CPU frequencies of up to 30 MHz.
+The LPC83x support up to 32 KB of flash memory and 8 KB of SRAM.
+The peripheral complement of the LPC83x includes a CRC engine, one I2C-bus interface, one USART, up to two SPI interfaces, one multi-rate timer, self-wake-up timer, and SCTimer/PWM, a DMA, one 12-bit ADC, function-configurable I/O ports through a switch matrix, an input pattern match engine, and up to 29 general-purpose I/O pins.
+        </description>
+
+        <feature type="I2C"           n="1"/>
+        <feature type="USART"         n="1"/>
+        <feature type="SPI"           n="2"/>
+        <feature type="WDT"           n="1"                           name="Windowed Watchdog timer"/>
+        <feature type="Timer"         n="4"                           name="32-Bit Timer with Input Capture, Output Compare and PWM"/>
+        <feature type="ADC"           n="1"       m="12"              name="ADC"/>
+        <feature type="CoreOther"     n="1"                           name="CRC engine"/>
+        <feature type="CoreOther"     n="1"                           name="Unique device serial number"/>
+
+        <!-- *************************  Device 'LPC834M101FHI33'  ***************************** -->
+        <device Dname="LPC834M101FHI33">
+          <compile header="Device/Include/LPC8xx.h" define="LPC834M101FHI33"/>
+          <debug svd="SVD/LPC83x.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00008000" startup="1" default="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00001000" init   ="0" default="1"/>
+          <algorithm name="Flash/LPC8xx_32.FLM" start="0x00000000" size="0x00008000" RAMstart="0x10000000" RAMsize="0x0FE0" default="1"/>
+
+          <feature type="IOs"           n="29"/>
+          <feature type="QFN"           n="33"        name="QFN Package"/>
+        </device>
+
+        <!-- *************************  Device 'LPC832M101FDH20'  ***************************** -->
+        <device Dname="LPC832M101FDH20">
+          <compile header="Device/Include/LPC8xx.h" define="LPC832M101FDH20"/>
+          <debug svd="SVD/LPC83x.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00004000" startup="1" default="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00001000" init   ="0" default="1"/>
+          <algorithm name="Flash/LPC8xx_16.FLM" start="0x00000000" size="0x00004000" RAMstart="0x10000000" RAMsize="0x0FE0" default="1"/>
+
+          <feature type="IOs"           n="16"/>
+          <feature type="SOP"           n="20"        name="SSOP Package"/>
+        </device>
+
+      </subFamily>
+
+      <!-- ************************  Subfamily 'LPC84x'  **************************** -->
+      <subFamily DsubFamily="LPC84x">
+        <processor Dclock="30000000"/>
+
+        <debugconfig default="swd" clock="5000000"/>
+
+        <!--book name="Documents/?.pdf" title="LPC84x User manual"/-->
+        <!--book name="Documents/?.pdf"  title="LPC84x Datasheet"/-->
+        <description>
+The LPC84x are an ARM Cortex-M0+ based, low-cost 32-bit MCU family operating at CPU frequencies of up to 30 MHz.
+The LPC84x support up to 64 KB of flash memory and 16 KB of SRAM.
+The peripheral complement of the LPC84x includes a CRC engine, four I2C-bus interfaces, up to five USARTs, up to two SPI interfaces, Capacitive Touch Interface (CAPT), one multi-rate timer, self-wake-up timer, SCTimer/PWM, one general purpose 32-bit counter/timer, a DMA, one 12-bit ADC, two 10-bit DACs, one analog comparator, function-configurable I/O ports through a switch matrix, an input pattern match engine, and up to 54 general-purpose I/O pins.
+        </description>
+
+        <debugvars configfile="Debug/LPC84x.dbgconf">
+          // Debug Access Variables, can be modified by user via copies of DBGCONF files as created by uVision. Also see sub-family level.
+          __var Dbg_CR                = 0x00000000;           // DBG_CR
+        </debugvars>      
+
+        <sequences>
+          <sequence name="DebugDeviceUnlock">
+            <block>
+              __var value = 0;
+
+              value  = Read32(0x40048080);                    // Read SYSAHBCLKCTRL0
+              value |= (1 &lt;&lt; 26);                       // Enable MTB Control Register Clock
+              Write32(0x40048080, value);                     // Write modified value to SYSAHBCLKCTRL0
+            </block>
+          </sequence>
+
+          <!-- ResetCatchSet Sequence LPC84x -->
+          <sequence name="ResetCatchSet">
+            <block>
+              __var SCS_Addr   = 0xE000E000;
+              __var DHCSR_Addr = SCS_Addr + 0xDF0;
+              __var DEMCR_Addr = SCS_Addr + 0xDFC;
+              __var value      = 0;
+              __var FPB_BKPT_H = 0x80000000;
+              __var FPB_BKPT_L = 0x40000000;
+              __var FPB_COMP_M = 0x1FFFFFFC;
+              __var FPB_KEY = 0x00000002;
+              __var FPB_ENABLE = 0x00000001;
+            </block>
+
+            <control if="Dbg_CR == 0x00000000" info="Stop after bootloader disabled">
+              <block>
+                // Enable Reset Vector Catch in DEMCR
+                value = Read32(DEMCR_Addr);
+                Write32(DEMCR_Addr, (value | 0x00000001));
+              </block>
+            </control>
+
+            <control if="Dbg_CR == 0x00000001" info="Stop after bootloader enabled">
+              <block>
+                // Run over Bootloader
+                Write32(DEMCR_Addr, 0x00000000);                // Disable Reset Vector Catch
+                Write32(0x40048000, 0x00000002);                // Map Flash to Vectors
+                value = Read32 (0x00000004);                    // Read Reset Vector
+              </block>
+
+              <control if="value &lt; 0x20000000" info="Set and enable breakpoint">
+                <block>
+                  value = ((value &amp; 0x02) ? FPB_BKPT_H : FPB_BKPT_L) | (value &amp; FPB_COMP_M) | FPB_ENABLE ;
+                  Write32(0xE0002008, value);                   // Set BP0 to Reset Vector
+                  value = FPB_KEY | FPB_ENABLE;
+                  Write32(0xe0002000, value);                   // Enable FPB
+                </block>
+              </control>
+
+              <control if="value &gt;= 0x20000000" info="Enable reset vector catch">
+                <block>
+                // Enable Reset Vector Catch in DEMCR
+                value = Read32(DEMCR_Addr);
+                Write32(DEMCR_Addr, (value | 0x00000001));
+                </block>
+              </control>
+            </control>
+
+            <block>
+              Read32(DHCSR_Addr);                               // Read DHCSR to clear potentially set DHCSR.S_RESET_ST bit
+            </block>
+          </sequence>
+
+          <!-- ResetCatchClear Sequence LPC84x -->
+          <sequence name="ResetCatchClear">
+            <block>
+              // System Control Space (SCS) offset as defined in ARMv6-M/ARMv7-M. 
+              // Reimplement this sequence if the SCS is located at a different offset.
+              __var SCS_Addr   = 0xE000E000;
+              __var DEMCR_Addr = SCS_Addr + 0xDFC;
+              __var value      = 0;
+
+              // Disable Reset Vector Catch in DEMCR
+              value = Read32(DEMCR_Addr);
+              Write32(DEMCR_Addr, (value &amp; (~0x00000001)));
+
+              //Clear BP0 and FPB
+              Write32(0xE0002008, 0);                           // Clear BP0
+              Write32(0xE0002000, 0x00000002);                  // Disable FPB
+            </block>
+          </sequence>
+
+        </sequences>
+
+        <feature type="SPI"           n="2"/>
+        <feature type="WDT"           n="1"                           name="Windowed Watchdog timer"/>
+        <feature type="Timer"         n="4"                           name="32-Bit Timer with Input Capture, Output Compare and PWM"/>
+        <feature type="ADC"           n="1"       m="12"/>
+        <feature type="CoreOther"     n="1"                           name="CRC engine"/>
+        <feature type="CoreOther"     n="1"                           name="Unique device serial number"/>
+
+        <!-- *************************  Device 'LPC844M201JBD48'  ***************************** -->
+        <device Dname="LPC844M201JBD48">
+          <compile header="Device/Include/LPC84x.h" define="LPC844M201JBD48"/>
+          <debug svd="SVD/LPC84x.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00010000" default="1" startup="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00002000" default="1" init   ="0"/>
+          <algorithm name="Flash/LPC84x_64.FLM" start="0x00000000" size="0x00010000" default="1"/>
+
+          <feature type="I2C"           n="2"/>
+          <feature type="USART"         n="2"/>
+          <feature type="IOs"           n="42"/>
+          <feature type="QFP"           n="48"                        name="QFP Package"/>
+        </device>
+
+        <!-- *************************  Device 'LPC844M201JBD64'  ***************************** -->
+        <device Dname="LPC844M201JBD64">
+          <compile header="Device/Include/LPC84x.h" define="LPC844M201JBD64"/>
+          <debug svd="SVD/LPC84x.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00010000" default="1" startup="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00002000" default="1" init   ="0"/>
+          <algorithm name="Flash/LPC84x_64.FLM" start="0x00000000" size="0x00010000" default="1"/>
+
+          <feature type="I2C"           n="2"/>
+          <feature type="USART"         n="2"/>
+          <feature type="IOs"           n="54"/>
+          <feature type="QFP"           n="64"                        name="QFP Package"/>
+        </device>
+
+        <!-- *************************  Device 'LPC844M201JHI33'  ***************************** -->
+        <device Dname="LPC844M201JHI33">
+          <compile header="Device/Include/LPC84x.h" define="LPC844M201JHI33"/>
+          <debug svd="SVD/LPC84x.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00010000" default="1" startup="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00002000" default="1" init   ="0"/>
+          <algorithm name="Flash/LPC84x_64.FLM" start="0x00000000" size="0x00010000" default="1"/>
+
+          <feature type="I2C"           n="2"/>
+          <feature type="USART"         n="2"/>
+          <feature type="IOs"           n="29"/>
+          <feature type="QFN"           n="33"                        name="QFN Package"/>
+        </device>
+
+        <!-- *************************  Device 'LPC844M201JHI48'  ***************************** -->
+        <device Dname="LPC844M201JHI48">
+          <compile header="Device/Include/LPC84x.h" define="LPC844M201JHI48"/>
+          <debug svd="SVD/LPC84x.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00010000" default="1" startup="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00002000" default="1" init   ="0"/>
+          <algorithm name="Flash/LPC84x_64.FLM" start="0x00000000" size="0x00010000" default="1"/>
+
+          <feature type="I2C"           n="2"/>
+          <feature type="USART"         n="2"/>
+          <feature type="IOs"           n="42"/>
+          <feature type="QFN"           n="48"                        name="QFN Package"/>
+        </device>
+
+        <!-- *************************  Device 'LPC845M301JBD48'  ***************************** -->
+        <device Dname="LPC845M301JBD48">
+          <compile header="Device/Include/LPC84x.h" define="LPC845M301JBD48"/>
+          <debug svd="SVD/LPC84x.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00010000" default="1" startup="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00004000" default="1" init   ="0"/>
+          <algorithm name="Flash/LPC84x_64.FLM" start="0x00000000" size="0x00010000" default="1"/>
+
+          <feature type="I2C"           n="4"/>
+          <feature type="USART"         n="5"/>
+          <feature type="DAC"           n="2"       m="10"/>
+          <feature type="CoreOther"     n="1"                         name="Capacitive Touch Interface"/>
+          <feature type="IOs"           n="42"/>
+          <feature type="QFP"           n="48"                        name="QFP Package"/>
+        </device>
+
+        <!-- *************************  Device 'LPC845M301JBD64'  ***************************** -->
+        <device Dname="LPC845M301JBD64">
+          <compile header="Device/Include/LPC84x.h" define="LPC845M301JBD64"/>
+          <debug svd="SVD/LPC84x.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00010000" default="1" startup="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00004000" default="1" init   ="0"/>
+          <algorithm name="Flash/LPC84x_64.FLM" start="0x00000000" size="0x00010000" default="1"/>
+
+          <feature type="I2C"           n="4"/>
+          <feature type="USART"         n="5"/>
+          <feature type="DAC"           n="2"       m="10"/>
+          <feature type="CoreOther"     n="1"                         name="Capacitive Touch Interface"/>
+          <feature type="IOs"           n="54"/>
+          <feature type="QFP"           n="64"                        name="QFP Package"/>
+        </device>
+
+        <!-- *************************  Device 'LPC845M301JHI33'  ***************************** -->
+        <device Dname="LPC845M301JHI33">
+          <compile header="Device/Include/LPC84x.h" define="LPC845M301JHI33"/>
+          <debug svd="SVD/LPC84x.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00010000" default="1" startup="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00004000" default="1" init   ="0"/>
+          <algorithm name="Flash/LPC84x_64.FLM" start="0x00000000" size="0x00010000" default="1"/>
+
+          <feature type="I2C"           n="4"/>
+          <feature type="USART"         n="5"/>
+          <feature type="DAC"           n="2"       m="10"/>
+          <feature type="CoreOther"     n="1"                         name="Capacitive Touch Interface"/>
+          <feature type="IOs"           n="29"/>
+          <feature type="QFN"           n="33"                        name="QFN Package"/>
+        </device>
+
+        <!-- *************************  Device 'LPC845M301JHI48'  ***************************** -->
+        <device Dname="LPC845M301JHI48">
+          <compile header="Device/Include/LPC84x.h" define="LPC845M301JHI48"/>
+          <debug svd="SVD/LPC84x.svd"/>
+          <memory id="IROM1"                    start="0x00000000" size="0x00010000" default="1" startup="1"/>
+          <memory id="IRAM1"                    start="0x10000000" size="0x00004000" default="1" init   ="0"/>
+          <algorithm name="Flash/LPC84x_64.FLM" start="0x00000000" size="0x00010000" default="1"/>
+
+          <feature type="I2C"           n="4"/>
+          <feature type="USART"         n="5"/>
+          <feature type="DAC"           n="2"       m="10"/>
+          <feature type="CoreOther"     n="1"                         name="Capacitive Touch Interface"/>
+          <feature type="IOs"           n="42"/>
+          <feature type="QFN"           n="48"                        name="QFN Package"/>
+        </device>
+
+      </subFamily>
+
+    </family>
+  </devices>
+
+  <conditions>
+    <!-- Compiler Conditions -->
+    <condition id="Compiler ARMCC">
+      <require Tcompiler="ARMCC"/>
+    </condition>
+
+    <!-- Device Conditions -->
+    <condition id="LPC81x">
+      <description>NXP LPC81x Devices</description>
+      <require Dvendor="NXP:11" Dname="LPC81*"/>
+    </condition>
+
+    <condition id="LPC82x">
+      <description>NXP LPC82x Devices</description>
+      <require Dvendor="NXP:11" Dname="LPC82*"/>
+    </condition>
+
+    <condition id="LPC83x">
+      <description>NXP LPC83x Devices</description>
+      <require Dvendor="NXP:11" Dname="LPC83*"/>
+    </condition>
+
+    <condition id="LPC84x">
+      <description>NXP LPC84x Devices</description>
+      <require Dvendor="NXP:11" Dname="LPC84*"/>
+    </condition>
+
+    <!-- Device + CMSIS Conditions -->
+    <condition id="LPC81x CMSIS">
+      <description>NXP LPC81x Devices and CMSIS-CORE</description>
+      <require condition="LPC81x"/>
+      <require Cclass="CMSIS" Cgroup="CORE"/>
+    </condition>
+
+    <condition id="LPC82x CMSIS">
+      <description>NXP LPC82x Devices and CMSIS-CORE</description>
+      <require condition="LPC82x"/>
+      <require Cclass="CMSIS" Cgroup="CORE"/>
+    </condition>
+
+    <condition id="LPC83x CMSIS">
+      <description>NXP LPC83x Devices and CMSIS-CORE</description>
+      <require condition="LPC83x"/>
+      <require Cclass="CMSIS" Cgroup="CORE"/>
+    </condition>
+
+    <condition id="LPC84x CMSIS">
+      <description>NXP LPC84x Devices and CMSIS-CORE</description>
+      <require condition="LPC84x"/>
+      <require Cclass="CMSIS" Cgroup="CORE"/>
+    </condition>
+  </conditions>
+
+  <components>
+    <!-- Startup LPC81x -->
+    <component Cclass="Device" Cgroup="Startup" Cversion="1.0.1" condition="LPC81x CMSIS">
+      <description>System Startup for NXP LPC81x Devices</description>
+      <files>
+        <!-- include folder / file -->
+        <file category="include" name="Device/Include/"/>
+        <!-- startup / system file -->
+        <file category="source"  name="Device/Source/ARM/startup_LPC8xx.s" attr="config" version="1.0.1" condition="Compiler ARMCC"/>
+        <file category="source"  name="Device/Source/system_LPC8xx.c"      attr="config" version="1.0.1"/>
+      </files>
+    </component>
+
+    <!-- Startup LPC82x -->
+    <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="LPC82x CMSIS">
+      <description>System Startup for NXP LPC82x Devices</description>
+      <files>
+        <!-- include folder / file -->
+        <file category="include" name="Device/Include/"/>
+        <!-- startup / system file -->
+        <file category="source"  name="Device/Source/ARM/startup_LPC82x.s" attr="config" version="1.0.0" condition="Compiler ARMCC"/>
+        <file category="source"  name="Device/Source/system_LPC82x.c"      attr="config" version="1.0.0"/>
+      </files>
+    </component>
+
+    <!-- Startup LPC83x -->
+    <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="LPC83x CMSIS">
+      <description>System Startup for NXP LPC83x Devices</description>
+      <files>
+        <!-- include folder / file -->
+        <file category="include" name="Device/Include/"/>
+        <!-- startup / system file -->
+        <file category="source"  name="Device/Source/ARM/startup_LPC83x.s" attr="config" version="1.0.0" condition="Compiler ARMCC"/>
+        <file category="source"  name="Device/Source/system_LPC83x.c"      attr="config" version="1.0.0"/>
+      </files>
+    </component>
+
+    <!-- Startup LPC84x -->
+    <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="LPC84x CMSIS">
+      <description>System Startup for NXP LPC83x Devices</description>
+      <files>
+        <!-- include folder / file -->
+        <file category="include" name="Device/Include/"/>
+        <!-- startup / system file -->
+        <file category="source"  name="Device/Source/ARM/startup_LPC84x.s" attr="config" version="1.0.0" condition="Compiler ARMCC"/>
+        <file category="source"  name="Device/Source/system_LPC84x.c"      attr="config" version="1.0.0"/>
+      </files>
+    </component>
+
+    <!-- LPC812 LPCXpresso Board Support -->
+    <bundle Cbundle="LPC812 LPCXpresso" Cclass="Board Support" Cversion="1.0.0">
+      <description>NXP LPC812 LPCXpresso Board</description>
+      <doc></doc>
+      <component Cgroup="LED" Capiversion="1.00" condition="LPC81x CMSIS">
+      <description>LED driver for NXP LPC812 LPCXpresso Board</description>
+        <files>
+          <file category="source" name="Boards/NXP/LPC812-LPCXpresso/Common/LED_LPC812-LPCXpresso.c"/>
+        </files>
+      </component>
+      <component Cgroup="Comparator" condition="LPC81x CMSIS">
+      <description>Comparator driver for NXP LPC812 LPCXpresso Board</description>
+        <files>
+          <file category="source" name="Boards/NXP/LPC812-LPCXpresso/Common/Comparator_LPC812-LPCXpresso.c"/>
+          <file category="header" name="Boards/NXP/LPC812-LPCXpresso/Common/Comparator_LPC812-LPCXpresso.h"/>
+        </files>
+      </component>
+    </bundle>
+
+    <!-- LPC824 LPCXpresso Board Support -->
+    <bundle Cbundle="LPC824 LPCXpresso" Cclass="Board Support" Cversion="1.0.0">
+      <description>NXP LPC824 LPCXpresso Board</description>
+      <doc></doc>
+      <component Cgroup="LED" Capiversion="1.00" condition="LPC82x CMSIS">
+      <description>LED driver for NXP LPC824 LPCXpresso Board</description>
+        <files>
+          <file category="source" name="Boards/NXP/LPC824-LPCXpresso/Common/LED_LPC824-LPCXpresso.c"/>
+        </files>
+      </component>
+    </bundle>
+
+    <!-- LPC84x LPCXpresso Board Support -->
+    <bundle Cbundle="LPC84x LPCXpresso" Cclass="Board Support" Cversion="1.0.0">
+      <description>NXP LPC84x LPCXpresso Board</description>
+      <doc></doc>
+      <component Cgroup="LED" Capiversion="1.0.0" condition="LPC84x CMSIS">
+      <description>LED driver for NXP LPC84x LPCXpresso Board</description>
+        <files>
+          <file category="source" name="Boards/NXP/LPC84x-LPCXpresso/Common/LED_LPC84x-LPCXpresso.c"/>
+        </files>
+      </component>
+      <component Cgroup="Buttons" Capiversion="1.0.0" condition="LPC84x CMSIS">
+      <description>Button driver for NXP LPC84x LPCXpresso Board Board</description>
+        <files>
+        <file category="sourceC" name="Boards/NXP/LPC84x-LPCXpresso/Common/Buttons_LPC84x-LPCXpresso.c"/>
+        </files>
+      </component>
+    </bundle>
+
+  </components>
+
+  <boards>
+    <board vendor="NXP" name="LPC812 LPCXpresso" revision="Rev. A" salesContact="http://www.nxp.com/support.html" orderForm="http://www.nxp.com/demoboard/OM13053.html#ordering">
+      <description>NXP LPC812 LPCXpresso Board</description>
+      <book category="overview"  name="http://www.nxp.com/demoboard/OM13053.html"  title="LPC812 LPCXpresso Board"/>
+      <mountedDevice    deviceIndex="0" Dvendor="NXP:11" Dname="LPC812M101JDH20"/>
+      <compatibleDevice deviceIndex="0" Dvendor="NXP:11" DsubFamily="LPC81x"/>
+      <feature type="XTAL"            n="12000000"/>
+      <feature type="PWR"             n="5"              name="USB Powered"/>
+      <feature type="Poti"            n="1"              name="Potentiometer for ADC Input"/>
+      <feature type="LED"             n="1"              name="I/O Port RGB LED"/>
+      <feature type="ODbg"            n="1"              name="LPC-Link"/>
+    </board>
+
+    <board vendor="NXP" name="LPC824 LPCXpresso" revision="Rev. A" salesContact="http://www.nxp.com/support.html">
+      <description>NXP LPC824 LPCXpresso Board</description>
+      <!--book category="overview"  name="http://www.nxp.com/demoboard/OM13053.html"  title="LPC812 LPCXpresso Board"/-->
+      <mountedDevice    deviceIndex="0" Dvendor="NXP:11" Dname="LPC824M201JHI33"/>
+      <compatibleDevice deviceIndex="0" Dvendor="NXP:11" DsubFamily="LPC82x"/>
+      <book category="setup" name="Documents/NXP824_Blinky_Lab.pdf" title="LPCXpresso824-MAX: Blinky Lab"/>
+      <feature type="XTAL"            n="12000000"/>
+      <feature type="PWR"             n="5"              name="USB Powered"/>
+      <feature type="LED"             n="1"              name="I/O Port RGB LED"/>
+      <feature type="Button"          n="3"              name="Reset, Wake, User button"/>
+      <feature type="ODbg"            n="1"              name="LPC-Link"/>
+      <debugInterface adapter="JTAG/SW" connector="10 pin Cortex debug (0.05 inch connector)"/>
+    </board>
+
+    <board vendor="NXP" name="LPC84x LPCXpresso" revision="Rev. A" salesContact="http://www.nxp.com/support.html">
+      <description>NXP LPC84x LPCXpresso Board</description>
+      <!--book category="overview"  name="http://www.nxp.com/demoboard/OM13053.html"  title="LPC812 LPCXpresso Board"/-->
+      <mountedDevice    deviceIndex="0" Dvendor="NXP:11" Dname="LPC845M301JBD64"/>
+      <compatibleDevice deviceIndex="0" Dvendor="NXP:11" DsubFamily="LPC84x"/>
+      <!--book category="setup" name="Documents/NXP824_Blinky_Lab.pdf" title="LPCXpresso824-MAX: Blinky Lab"/-->
+      <feature type="XTAL"            n="12000000"/>
+      <feature type="PWR"             n="5"              name="USB Powered"/>
+      <feature type="LED"             n="1"              name="I/O Port RGB LED"/>
+      <feature type="Button"          n="3"              name="Reset, Wake, ISP"/>
+      <feature type="ODbg"            n="1"              name="LPC-Link"/>
+      <debugInterface adapter="JTAG/SW" connector="10 pin Cortex debug (0.05 inch connector)"/>
+    </board>
+  </boards>
+
+  <examples>
+    <!-- LPC812 LPCXpresso Board -->
+    <example name="CMSIS-RTOS Blinky" doc="Abstract.txt" folder="Boards/NXP/LPC812-LPCXpresso/RTX_Blinky">
+      <description>CMSIS-RTOS based Blinky example</description>
+      <board name="LPC812 LPCXpresso" vendor="NXP"/>
+      <project>
+        <environment name="uv" load="Blinky.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX</category>
+      </attributes>
+    </example>
+    <example name="Blinky" doc="Abstract.txt" folder="Boards/NXP/LPC812-LPCXpresso/Blinky">
+      <description>Blinky example</description>
+      <board name="LPC812 LPCXpresso" vendor="NXP"/>
+      <project>
+        <environment name="uv" load="Blinky.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
+    <!-- LPC824 LPCXpresso Board -->
+    <example name="CMSIS-RTOS Blinky" doc="Abstract.txt" folder="Boards/NXP/LPC824-LPCXpresso/RTX_Blinky">
+      <description>CMSIS-RTOS based Blinky example</description>
+      <board name="LPC824 LPCXpresso" vendor="NXP"/>
+      <project>
+        <environment name="uv" load="Blinky.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX</category>
+      </attributes>
+    </example>
+    <example name="Blinky" doc="Abstract.txt" folder="Boards/NXP/LPC824-LPCXpresso/Blinky">
+      <description>Blinky example</description>
+      <board name="LPC824 LPCXpresso" vendor="NXP"/>
+      <project>
+        <environment name="uv" load="Blinky.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
+    <!-- LPC84x LPCXpresso Board -->
+    <example name="CMSIS-RTOS2 Blinky" doc="Abstract.txt" folder="Boards/NXP/LPC84x-LPCXpresso/RTX5_Blinky">
+      <description>CMSIS-RTOS2 based Blinky example</description>
+      <board name="LPC84x LPCXpresso" vendor="NXP"/>
+      <project>
+        <environment name="uv" load="Blinky.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX</category>
+      </attributes>
+    </example>
+  </examples>
+
+</package>

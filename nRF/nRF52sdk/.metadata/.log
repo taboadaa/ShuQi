@@ -50,3 +50,173 @@ org.apache.http.conn.ConnectTimeoutException: Connect to download.eclipse.org:80
 	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:259)
 	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SESSION 2017-05-26 10:41:33.377 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_131
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_CH
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2017-05-26 11:48:25.204
+!MESSAGE /opt/SEGGER/JLink_V614g/JLinkGDBServer -if swd -device nRF52832_xxAA -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0 -nogui
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2017-05-26 11:48:25.680
+!MESSAGE arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnuarmeclipse.packs.data 4 1 2017-05-26 11:48:34.403
+!MESSAGE File .repos.xml does not exist, using defaults.
+
+!ENTRY ilg.gnuarmeclipse.packs.data 4 1 2017-05-26 11:48:34.406
+!MESSAGE There are no peripherals descriptions available, install the required packs.
+
+!ENTRY ilg.gnuarmeclipse.packs.data 4 1 2017-05-26 11:49:31.046
+!MESSAGE There are no peripherals descriptions available, install the required packs.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2017-05-26 12:06:08.141
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIRunControl$9@4c99550b): Status ERROR: org.eclipse.cdt.dsf.gdb code=10001 Context cannot be suspended. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10001 2017-05-26 12:06:08.141
+!MESSAGE Context cannot be suspended.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2017-05-26 12:06:18.733
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIRunControl$9@4954d00d): Status ERROR: org.eclipse.cdt.dsf.gdb code=10001 Context cannot be suspended. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10001 2017-05-26 12:06:18.733
+!MESSAGE Context cannot be suspended.
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 12:06:49.792
+!MESSAGE /opt/SEGGER/JLink_V614g/JLinkGDBServer -if swd -device nRF52832_xxAA -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0 -nogui
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 12:06:50.145
+!MESSAGE arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag 4 0 2017-05-26 12:06:56.322
+!MESSAGE Debug session 'shuQi Default' already started. Terminate the first one before restarting.
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 12:11:12.617
+!MESSAGE /opt/SEGGER/JLink_V614g/JLinkGDBServer -if swd -device nRF52832_xxAA -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0 -nogui
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 12:11:12.965
+!MESSAGE arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2017-05-26 12:11:26.260
+!MESSAGE Error in final launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+tbreak main
+Error message from debugger back end:
+Cannot access memory at address 0x2665e
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at ilg.gnuarmeclipse.debug.gdbjtag.jlink.dsf.LaunchConfigurationDelegate.launchDebugSession(LaunchConfigurationDelegate.java:451)
+	at ilg.gnuarmeclipse.debug.gdbjtag.jlink.dsf.LaunchConfigurationDelegate.launchDebugger(LaunchConfigurationDelegate.java:179)
+	at ilg.gnuarmeclipse.debug.gdbjtag.jlink.dsf.LaunchConfigurationDelegate.launch(LaunchConfigurationDelegate.java:152)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Contains: Failed to execute MI command:
+tbreak main
+Error message from debugger back end:
+Cannot access memory at address 0x2665e
+java.lang.Exception: Cannot access memory at address 0x2665e
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:927)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:756)
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10004 2017-05-26 12:11:26.278
+!MESSAGE Failed to execute MI command:
+tbreak main
+Error message from debugger back end:
+Cannot access memory at address 0x2665e
+!SUBENTRY 2 org.eclipse.cdt.dsf.gdb 4 10004 2017-05-26 12:11:26.278
+!MESSAGE Failed to execute MI command:
+tbreak main
+Error message from debugger back end:
+Cannot access memory at address 0x2665e
+!STACK 0
+java.lang.Exception: Cannot access memory at address 0x2665e
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:927)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:756)
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 12:14:00.370
+!MESSAGE /opt/SEGGER/JLink_V614g/JLinkGDBServer -if swd -device nRF52832_xxAA -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0 -nogui
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag 4 0 2017-05-26 12:14:08.455
+!MESSAGE Debug session 'shuQi Debug' already started. Terminate the first one before restarting.
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag 4 0 2017-05-26 12:14:12.614
+!MESSAGE J-Link GDB Server failed: 
+Could not connect to J-Link. Please check if plugged into USB port or Ethernet switch.
+
+For more details, see the JLinkGDBServer console.
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 12:14:21.989
+!MESSAGE /opt/SEGGER/JLink_V614g/JLinkGDBServer -if swd -device nRF52832_xxAA -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0 -nogui
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag 4 0 2017-05-26 12:14:34.233
+!MESSAGE J-Link GDB Server failed: 
+Could not connect to J-Link. Please check if plugged into USB port or Ethernet switch.
+
+For more details, see the JLinkGDBServer console.
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 12:15:28.305
+!MESSAGE /opt/SEGGER/JLink_V614g/JLinkGDBServer -if swd -device nRF52832_xxAA -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0 -nogui
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 12:15:28.651
+!MESSAGE arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 12:22:42.518
+!MESSAGE /opt/SEGGER/JLink_V614g/JLinkGDBServer -if swd -device nRF52832_xxAA -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0 -nogui
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 12:22:42.837
+!MESSAGE arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag 4 0 2017-05-26 12:26:05.496
+!MESSAGE Debug session 'shuQi Debug' already started. Terminate the first one before restarting.
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 12:26:10.022
+!MESSAGE /opt/SEGGER/JLink_V614g/JLinkGDBServer -if swd -device nRF52832_xxAA -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0 -nogui
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 12:26:10.346
+!MESSAGE arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 12:28:21.686
+!MESSAGE /opt/SEGGER/JLink_V614g/JLinkGDBServer -if swd -device nRF52832_xxAA -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0 -nogui
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 12:28:22.035
+!MESSAGE arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 12:29:30.118
+!MESSAGE /opt/SEGGER/JLink_V614g/JLinkGDBServer -if swd -device nRF52832_xxAA -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0 -nogui
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 12:29:30.438
+!MESSAGE arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 13:35:35.690
+!MESSAGE /opt/SEGGER/JLink_V614g/JLinkGDBServer -if swd -device nRF52832_xxAA -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0 -nogui
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 13:35:36.015
+!MESSAGE arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 13:41:14.389
+!MESSAGE /opt/SEGGER/JLink_V614g/JLinkGDBServer -if swd -device nRF52832_xxAA -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0 -nogui
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 13:41:14.716
+!MESSAGE arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag 4 0 2017-05-26 13:42:47.033
+!MESSAGE Debug session 'shuQi Debug' already started. Terminate the first one before restarting.
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 13:42:52.572
+!MESSAGE /opt/SEGGER/JLink_V614g/JLinkGDBServer -if swd -device nRF52832_xxAA -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0 -nogui
+
+!ENTRY ilg.gnuarmeclipse.packs 4 1 2017-05-26 13:42:52.891
+!MESSAGE arm-none-eabi-gdb --interpreter=mi2 --nx
+!SESSION 2017-05-26 14:11:57.617 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_131
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_CH
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-05-26 14:12:04.686
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.

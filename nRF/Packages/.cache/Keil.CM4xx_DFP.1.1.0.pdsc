@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>Keil</vendor>
+  <url>http://www.keil.com/pack/</url>
+  <name>CM4xx_DFP</name>
+  <description>Analog Devices ARM Cortex-M4 CM4xx Family Device Support</description>
+
+  <releases>
+    <release version="1.1.0" date="2016-06-28">
+      Support for Revision H devices only (Rev 0.0 devices are deprecated)!
+      Added ADSP-CM40X Enablement Software Package V2.1.0.
+      Added ADSP-CM403F EZ-Board examples.
+      Added ResetClearCatch sequence and debug sequence for security provisions to device description
+    </release>
+    <release version="1.0.2">
+      Migrated library projects from uvproj to uvprojx.
+    </release>
+    <release version="1.0.1">
+      added SVD file.
+    </release>
+    <release version="1.0.0">
+      First Release version of CM4xx Device Family Pack.
+    </release>
+  </releases>
+
+  <keywords>
+    <!-- keywords for indexing -->
+    <keyword>Analog Devices</keyword>
+    <keyword>Device Support</keyword>
+    <keyword>Device Family Package Analog Devices</keyword>
+    <keyword>CM4xx</keyword>
+  </keywords>
+
+  <devices>
+    <family Dfamily="CM4xx Mixed Signal Control Processors" Dvendor="Analog Devices:1">
+      <processor Dcore="Cortex-M4" DcoreVersion="r0p1" Dfpu="1" Dmpu="1" Dendian="Little-endian"/>
+      <book name="addon_mdk/Documents/dui0553a_cortex_m4_dgug.pdf" title="Cortex-M4 Generic User Guide"/>
+      <book name="http://www.analog.com/en/products/processors-dsp/cm4xx-mixed-signal-control-processors.html#cm4xx-mixed-signal-control-processors" title="CM4xx Datasheets"/>
+      <book name="http://www.analog.com/en/processors-dsp/cm4xx/products/manuals/resources/index.html" title="CM4xx Manuals"/>
+      <description>
+The ADSP-CM4xx Mixed Signal Control Processors utilize the ARM Cortex M4 processor core
+integrated with high precision ADCs, digital accelerators and filters, SRAM and flash
+memories and a rich set of peripherals.
+      </description>
+
+      <environment name="uv">
+        <CMisc>--C99</CMisc>
+      </environment>
+
+      <!-- ************************  Subfamily 'CM40x'  **************************** -->
+      <subFamily DsubFamily="CM40x">
+
+        <!-- User Security Key Debug Variables -->
+        <debugvars configfile="addon_mdk/Debug/CM4xx.dbgconf">
+          __var SDBKEY0     = 0xA4B8E4A5;
+          __var SDBKEY1     = 0xD2041DD7;
+          __var SDBKEY2     = 0x18839DF8;
+          __var SDBKEY3     = 0x8392C1FE;
+        </debugvars>
+
+        <sequences>
+          <!-- SecurityUnlock -->
+          <sequence name="SecurityUnlock">
+            <block>
+              __var SDBKEY3_HB = (0x7FFFFFFF &amp; SDBKEY3);          //Bits 0-31
+              __var SDBKEY3_LB = (0x80000000 &amp; SDBKEY3) >> 31;    //Bit 32 - Last Bit
+
+              // Send Security Key
+              DAP_JTAG_Sequence(2, 1, 0x00);                          // -> Select-DR -> Select-IR
+              DAP_JTAG_Sequence(2, 0, 0x00);                          // -> Capture-IR -> Shift-IR
+              DAP_JTAG_Sequence(4, 0, 0x0A);                          // Shift-IR (ADI IR[0..3])
+              DAP_JTAG_Sequence(2, 1, 0x00);                          // -> Exit1-IR (ADI IR[4]) -> Update-IR
+
+              DAP_JTAG_Sequence(1, 1, 0x00);                          // Select-DR
+              DAP_JTAG_Sequence(2, 0, 0x00);                          // -> Capture-DR -> Shift-DR
+              DAP_JTAG_Sequence(32, 0, SDBKEY0);                      // Shift 32-bits data SDBKEY 0
+              DAP_JTAG_Sequence(32, 0, SDBKEY1);                      // Shift 32-bits data SDBKEY 1
+              DAP_JTAG_Sequence(32, 0, SDBKEY2);                      // Shift 32-bits data SDBKEY 2
+              DAP_JTAG_Sequence(31, 0, SDBKEY3_HB);                   // Shift 31-bits data SDBKEY 3
+              DAP_JTAG_Sequence(2, 1, SDBKEY3_LB);                    // -> Exit2-DR -> Update-DR
+              DAP_JTAG_Sequence(4, 0, 0x00);                          // Make sure that we go through Idle state in TAP controller
+            </block>
+          </sequence>
+
+          <!-- Set_JTAG_CTL -->
+          <!-- Set bit 0 in JTAG_CTL to enable access to CPU core -->
+          <sequence name="Set_JTAG_CTL">
+            <block>
+              DAP_JTAG_Sequence(2, 1, 0x00);                          // -> Select-DR -> Select-IR
+              DAP_JTAG_Sequence(2, 0, 0x00);                          // -> Capture-IR -> Shift-IR
+              DAP_JTAG_Sequence(4, 0, 0x05);                          // Shift-IR (ADI IR[0..3])
+              DAP_JTAG_Sequence(2, 1, 0x00);                          // -> Exit1-IR (ADI IR[4]) -> Update-IR
+
+              DAP_JTAG_Sequence(1, 1, 0x00);                          // Select-DR
+              DAP_JTAG_Sequence(2, 0, 0x00);                          // -> Capture-DR -> Shift-DR
+              DAP_JTAG_Sequence(7, 0, 0x00000001);                    // Shift 7-bits data
+              DAP_JTAG_Sequence(2, 1, 0x00);                          // -> Exit2-DR -> Update-DR
+              DAP_JTAG_Sequence(4, 0, 0x00);                          // Make sure that we go through Idle state in TAP controller
+            </block>
+          </sequence>
+
+          <!-- WaitIdleState  -->
+          <sequence name="WaitIdleState">
+            <block>
+              DAP_JTAG_Sequence(10, 0, 0x00);                         // Make sure that we go through Idle state in TAP controller in 10 clock
+            </block>
+          </sequence>
+
+          <!-- SetIDCODES  -->
+          <sequence name="SetIDCODES">
+            <block>
+              // Set both TAP IRs to IDCODE to fulfill requirements for JTAG chain auto-detection by debugger
+              DAP_JTAG_Sequence(2, 1, 0x00);                          // -> Select-DR -> Select-IR
+              DAP_JTAG_Sequence(2, 0, 0x00);                          // -> Capture-IR -> Shift-IR
+              DAP_JTAG_Sequence(8, 0, 0x2E);                          // Shift-IR (CoreSight IR[0..3]: IDCODE, ADI IR[0..3]: IDCODE)
+              DAP_JTAG_Sequence(2, 1, 0x00);                          // -> Exit1-IR (Cortex IR[3]) -> Update-IR
+              DAP_JTAG_Sequence(4, 0, 0x00);                          // Make sure that we go through Idle state in TAP controller
+            </block>
+          </sequence>
+
+          <!-- DebugPortSetup  -->
+          <sequence name="DebugPortSetup">
+            <block>
+              __var isSWJ    = ((__protocol &amp; 0x00010000) != 0);
+              __var protType = __protocol &amp; 0x0000FFFF;
+            </block> 
+
+            <!-- JTAG Protocol -->
+            <control if="protType == 1">
+              <control if="isSWJ">
+                <block>
+                  // Ensure current debug interface is in reset state
+                  DAP_SWJ_Sequence(51, 0x0007FFFFFFFFFFFF);
+
+                  // Execute SWJ-DP Switch Sequence SWD to JTAG (0xE73C)
+                  // Change if SWJ-DP uses deprecated switch code (0xAEAE)
+                  DAP_SWJ_Sequence(16, 0xE73C);
+
+                  // Ensure JTAG interface is reset
+                  DAP_SWJ_Sequence(6, 0x3F);
+                </block>
+              </control>
+
+              <block>
+                // JTAG "Soft" Reset
+                DAP_JTAG_Sequence(6, 1, 0x3F);
+                DAP_JTAG_Sequence(1, 0, 0x01);
+              </block>
+
+              <block>
+                __var siliconRevision = 0;
+                __var TAP_ID = 0x00000000;
+
+                DAP_JTAG_Sequence(4, 0, 0x00);                          // 4*Run-Test/Idle
+
+                // 4a-Check the SiliconRevision
+                DAP_JTAG_Sequence(2, 1, 0x00);                          // -> Select-DR -> Select-IR
+                DAP_JTAG_Sequence(2, 0, 0x00);                          // -> Capture-IR -> Shift-IR
+                DAP_JTAG_Sequence(4, 0, 0x02);                          // Shift-IR (ADI IR[0..3])
+                DAP_JTAG_Sequence(2, 1, 0x00);                          // -> Exit1-IR (ADI IR[4]) -> Update-IR
+
+                DAP_JTAG_Sequence(1, 1, 0x00);                          // Select-DR
+                DAP_JTAG_Sequence(2, 0, 0x00);                          // -> Capture-DR -> Shift-DR
+                TAP_ID = DAP_JTAG_Sequence(31, 0, 0x00000000);          // Shift 31-bits data
+                DAP_JTAG_Sequence(2, 1, 0x00);                          // -> Exit2-DR -> Update-DR
+                DAP_JTAG_Sequence(4, 0, 0x00);                          // Make sure that we go through Idle state in TAP controller
+                siliconRevision = (TAP_ID >> 28) &amp; 0x0F;
+              </block>
+
+              <control if="siliconRevision &gt;= 2" >
+                <block>                                                 
+                  Sequence("SecurityUnlock");                           // Execute TAP Sequence according to SiliconRevision
+                  Sequence("Set_JTAG_CTL");
+                  Sequence("WaitIdleState");
+                  Sequence("SetIDCODES");
+                </block>
+              </control>
+              <control if="siliconRevision &lt; 2" >
+                <block>
+                  Sequence("Set_JTAG_CTL");
+                  Sequence("WaitIdleState");
+                  Sequence("SetIDCODES");
+                </block>
+              </control>
+
+              <block>
+                DAP_JTAG_Sequence(2, 0, 0x00);                          // 2*Run-Test/Idle
+              </block>
+            </control>
+
+            <!-- SWD Protocol -->
+            <control if="protType == 2">
+              <control if="isSWJ">
+                <block>
+                  // Ensure current debug interface is in reset state
+                  DAP_SWJ_Sequence(51, 0x0007FFFFFFFFFFFF);
+
+                  // Execute SWJ-DP Switch Sequence JTAG to SWD (0xE79E)
+                  // Change if SWJ-DP uses deprecated switch code (0xEDB6)
+                  DAP_SWJ_Sequence(16, 0xE79E);
+
+                  // Enter SWD Line Reset State
+                  DAP_SWJ_Sequence(51, 0x0007FFFFFFFFFFFF);           // &gt; 50 cycles SWDIO/TMS High
+                  DAP_SWJ_Sequence(3,  0x00);                         // At least 2 idle cycles (SWDIO/TMS Low)
+                </block>
+              </control>        
+
+              <control if="!isSWJ">
+                <block>
+                  // Enter SWD Line Reset State
+                  DAP_SWJ_Sequence(51, 0x0007FFFFFFFFFFFF);           // &gt; 50 cycles SWDIO/TMS High
+                  DAP_SWJ_Sequence(3,  0x00);                         // At least 2 idle cycles (SWDIO/TMS Low)
+                </block>
+              </control>
+
+              <block>
+                ReadDP(0x00);                                         // Read DPIDR to enable SWD interface (SW-DPv1 and SW-DPv2)
+              </block>
+            </control>
+          </sequence>
+
+          <!-- ResetCatchSet -->
+          <sequence name="ResetCatchSet">
+            <block>
+              // System Control Space (SCS) offset as defined
+              // in ARMv6-M/ARMv7-M. Reimplement this sequence
+              // if the SCS is located at a different offset.
+              __var SCS_Addr   = 0xE000E000;
+              __var DHCSR_Addr = SCS_Addr + 0xDF0;
+              __var DEMCR_Addr = SCS_Addr + 0xDFC;
+              __var value      = 0;
+              __var value2      = 0;
+              __var FPB_BKPT_H = 0x80000000;
+              __var FPB_BKPT_L = 0x40000000;
+              __var FPB_COMP_M = 0x1FFFFFFC;
+              __var FPB_KEY = 0x00000002;
+              __var FPB_ENABLE = 0x00000001;
+              __var siliconRevision = 0;
+
+              // Clear S_RESET_ST
+              Read32(DHCSR_Addr);
+
+              // Disable Reset Vector Catch in DEMCR
+              value = Read32(DEMCR_Addr);
+              Write32(DEMCR_Addr, (value &amp; (~0x00000001)));
+
+              // Read RCU_STAT
+              value = Read32 (0x40014004);
+            </block>
+
+            <control if="(value &amp; 0x00000F00) == 0x00000100">
+              <block>                                                     
+                siliconRevision = Read32 (0x40029000);                    // Check the SiliconRevision: Read TAPC0_IDCODE -> Get SiliconRevision
+                siliconRevision = (siliconRevision >> 28) &amp; 0x0F;
+              </block>
+
+              <control if="siliconRevision &gt;= 2" >
+                <block>                                                   
+                  value2 = Read32 (0x4001402C);                           // Read RCU0_SVECT0 according to SiliconRevision
+                </block>
+              </control>
+              <control if="siliconRevision &lt; 2" >
+                <block>
+                  value2 = Read32 (0x40014010);
+                </block>
+              </control>
+
+              <block>                 
+                // Set BP0 to Reset Vector
+                value = Read32 (value2 + 0x4);                           // Read Reset Vector
+                value = ((value &amp; 0x02) ? FPB_BKPT_H : FPB_BKPT_L) | (value &amp; FPB_COMP_M) | FPB_ENABLE ;
+                Write32(0xe0002008, value);								               // Set BP0
+                value = FPB_KEY | FPB_ENABLE;
+                Write32(0xe0002000, value);								               // Enable FPB
+              </block>
+            </control>
+          </sequence>
+          
+          <!-- ResetCatchClear -->
+          <sequence name="ResetCatchClear">
+            <block>
+              // System Control Space (SCS) offset as defined
+              // in ARMv6-M/ARMv7-M. Reimplement this sequence
+              // if the SCS is located at a different offset.	  
+              __var SCS_Addr   = 0xE000E000;
+              __var DEMCR_Addr = SCS_Addr + 0xDFC;
+              __var value      = 0;
+
+              //Clear BP0 and FPB
+              Write32(0xE0002008, 0);      						        // Clear BP0
+              Write32(0xE0002000, 0x00000002);  			        // Disable FPB			  
+            </block>
+          </sequence>             
+          
+        </sequences>
+
+	    <description>
+The ADSP-CM40x family of mixed-signal control processors is based on the ARM Cortex-M4TM processor core with floatingpoint unit operating at frequencies up to 240 MHz and integrating up to 384KB of SRAM memory, 2MB of flash memory, accelerators and peripherals optimized for motor control and photo-voltaic (PV) inverter control and an analog module consisting of two 16-bit SAR-type ADCs and two 12-bit DACs.
+The ADSP-CM40x family operates from a single voltage supply (VDD_EXT/VDD_ANA), generating its own internal voltage supplies using internal voltage regulators and an external pass transistor.
+This family of mixed-signal control processors offers low static power consumption and is produced with a low-power and lowvoltage design methodology, delivering world class processor and ADC performance with lower power consumption.
+		</description>
+
+        <compile header="inc/device.h"/>
+        <debug svd="addon_mdk/SVD/CM40x.svd"/>
+
+        <feature type="Timer"        n="8"      m="32"         name="General-Purpose Timer"/>
+        <feature type="PWM"          n="2"      m="16"         name="3-Phase PWM unit"/>
+        <feature type="UART"         n="3"                     name="UART Interface"/>
+        <feature type="CAN"          n="2"                     name="CAN module"/>
+        <feature type="ComOther"     n="1"                     name="two-wire interface (TWI)"/>
+        <feature type="VCC"          n="3.13"   m="3.47"/>
+        <feature type="Temp"         n="-40"    m="105"        name="Extended Operating Temperature Range"/>
+
+		 <!-- *************************  Device 'ADSP-CM402BSWZ-EF'  ***************************** -->
+          <device Dname="ADSP-CM402BSWZ-EF">
+          <processor Dclock="150000000"/>
+          <memory id="IROM1"                    start="0x18000000" size="0x00080000" startup="1" default="1"/>
+          <memory id="IRAM1"                    start="0x20010000" size="0x00010000" init   ="0" default="1"/>
+          <algorithm name="addon_mdk/Flash/CM40x_512.FLM" start="0x18000000" size="0x00080000" RAMstart="0x10000000" RAMsize="0x1000" default="1"/>
+
+          <feature type="ExtBus"       n="16"                    name="External Bus Interface"/>
+          <feature type="ADC"          n="24"     m="16"         name="SAR-type ADC"/>
+          <feature type="DAC"          n="2"      m="12"         name="DAC"/>
+          <feature type="ComOther"     n="3"                     name="Serial Port"/>
+          <feature type="SPI"          n="1"                     name="SPI Interface"/>
+          <feature type="TimerOther"   n="2"                     name="General-Purpose Counter"/>
+          <feature type="IOs"          n="40"                    name="General Purpose I/Os"/>
+          <feature type="QFP"          n="120"                   name="Low-Profile QFP Package"/>
+        </device>
+
+		 <!-- *************************  Device 'ADSP-CM402BSWZ-FF'  ***************************** -->
+          <device Dname="ADSP-CM402BSWZ-FF">
+          <processor Dclock="100000000"/>
+          <memory id="IROM1"                    start="0x18000000" size="0x00040000" startup="1" default="1"/>
+          <memory id="IRAM1"                    start="0x20010000" size="0x00010000" init   ="0" default="1"/>
+          <algorithm name="addon_mdk/Flash/CM40x_256.FLM" start="0x18000000" size="0x00040000" RAMstart="0x10000000" RAMsize="0x1000" default="1"/>
+
+          <feature type="ExtBus"       n="16"                    name="External Bus Interface"/>
+          <feature type="ADC"          n="24"     m="16"         name="SAR-type ADC"/>
+          <feature type="DAC"          n="2"      m="12"         name="DAC"/>
+          <feature type="ComOther"     n="3"                     name="Serial Port"/>
+          <feature type="SPI"          n="1"                     name="SPI Interface"/>
+          <feature type="TimerOther"   n="2"                     name="General-Purpose Counter"/>
+          <feature type="IOs"          n="40"                    name="General Purpose I/Os"/>
+          <feature type="QFP"          n="120"                   name="Low-Profile QFP Package"/>
+        </device>
+
+		 <!-- *************************  Device 'ADSP-CM403BSWZ-CF'  ***************************** -->
+          <device Dname="ADSP-CM403BSWZ-CF">
+          <processor Dclock="240000000"/>
+          <memory id="IROM1"                     start="0x18000000" size="0x00200000" startup="1" default="1"/>
+          <memory id="IRAM1"                     start="0x20030000" size="0x00030000" init   ="0" default="1"/>
+          <algorithm name="addon_mdk/Flash/CM40x_2048.FLM" start="0x18000000" size="0x00200000" RAMstart="0x10000000" RAMsize="0x1000" default="1"/>
+
+          <feature type="ExtBus"       n="16"                    name="External Bus Interface"/>
+          <feature type="ADC"          n="24"     m="16"         name="SAR-type ADC"/>
+          <feature type="DAC"          n="2"      m="12"         name="DAC"/>
+          <feature type="ComOther"     n="3"                     name="Serial Port"/>
+          <feature type="SPI"          n="1"                     name="SPI Interface"/>
+          <feature type="TimerOther"   n="2"                     name="General-Purpose Counter"/>
+          <feature type="IOs"          n="40"                    name="General Purpose I/Os"/>
+          <feature type="QFP"          n="120"                   name="Low-Profile QFP Package"/>
+        </device>
+
+		 <!-- *************************  Device 'ADSP-CM403BSWZ-EF'  ***************************** -->
+          <device Dname="ADSP-CM403BSWZ-EF">
+          <processor Dclock="150000000"/>
+          <memory id="IROM1"                     start="0x18000000" size="0x00080000" startup="1" default="1"/>
+          <memory id="IRAM1"                     start="0x20010000" size="0x00010000" init   ="0" default="1"/>
+          <algorithm  name="addon_mdk/Flash/CM40x_512.FLM" start="0x18000000" size="0x00080000" RAMstart="0x10000000" RAMsize="0x1000" default="1"/>
+
+          <feature type="ExtBus"       n="16"                    name="External Bus Interface"/>
+          <feature type="ADC"          n="24"     m="16"         name="SAR-type ADC"/>
+          <feature type="DAC"          n="2"      m="12"         name="DAC"/>
+          <feature type="ComOther"     n="3"                     name="Serial Port"/>
+          <feature type="SPI"          n="1"                     name="SPI Interface"/>
+          <feature type="TimerOther"   n="2"                     name="General-Purpose Counter"/>
+          <feature type="IOs"          n="40"                    name="General Purpose I/Os"/>
+          <feature type="QFP"          n="120"                   name="Low-Profile QFP Package"/>
+        </device>
+
+		 <!-- *************************  Device 'ADSP-CM403BSWZ-FF'  ***************************** -->
+          <device Dname="ADSP-CM403BSWZ-FF">
+          <processor Dclock="100000000"/>
+          <memory id="IROM1"                    start="0x18000000" size="0x00040000" startup="1" default="1"/>
+          <memory id="IRAM1"                    start="0x20010000" size="0x00010000" init   ="0" default="1"/>
+          <algorithm name="addon_mdk/Flash/CM40x_256.FLM" start="0x18000000" size="0x00040000" RAMstart="0x10000000" RAMsize="0x1000" default="1"/>
+
+          <feature type="ExtBus"       n="16"                    name="External Bus Interface"/>
+          <feature type="ADC"          n="24"     m="16"         name="SAR-type ADC"/>
+          <feature type="DAC"          n="2"      m="12"         name="DAC"/>
+          <feature type="ComOther"     n="3"                     name="Serial Port"/>
+          <feature type="SPI"          n="1"                     name="SPI Interface"/>
+          <feature type="TimerOther"   n="2"                     name="General-Purpose Counter"/>
+          <feature type="IOs"          n="40"                    name="General Purpose I/Os"/>
+          <feature type="QFP"          n="120"                   name="Low-Profile QFP Package"/>
+        </device>
+
+		 <!-- *************************  Device 'ADSP-CM407BSWZ-AF'  ***************************** -->
+          <device Dname="ADSP-CM407BSWZ-AF">
+          <processor Dclock="240000000"/>
+          <memory id="IROM1"                     start="0x18000000" size="0x00200000" startup="1" default="1"/>
+          <memory id="IRAM1"                     start="0x20030000" size="0x00030000" init   ="0" default="1"/>
+          <algorithm name="addon_mdk/Flash/CM40x_2048.FLM" start="0x18000000" size="0x00200000" RAMstart="0x10000000" RAMsize="0x1000" default="1"/>
+
+          <feature type="ExtBus"       n="16"                    name="External Bus Interface"/>
+          <feature type="ADC"          n="16"     m="16"         name="SAR-type ADC"/>
+          <feature type="ComOther"     n="4"                     name="Serial Port"/>
+          <feature type="ETH"          n="1"      m="10000000"   name="Ethernet MAC"/>
+          <feature type="USBOTG"       n="1"                     name="USB OTG"/>
+          <feature type="SPI"          n="2"                     name="SPI Interface"/>
+          <feature type="TimerOther"   n="4"                     name="General-Purpose Counter"/>
+          <feature type="IOs"          n="91"                    name="General Purpose I/Os"/>
+          <feature type="QFP"          n="176"                   name="Low-Profile QFP Package"/>
+        </device>
+
+		 <!-- *************************  Device 'ADSP-CM407BSWZ-BF'  ***************************** -->
+          <device Dname="ADSP-CM407BSWZ-BF">
+          <processor Dclock="240000000"/>
+          <memory id="IROM1"                     start="0x18000000" size="0x00200000" startup="1" default="1"/>
+          <memory id="IRAM1"                     start="0x20030000" size="0x00030000" init   ="0" default="1"/>
+          <algorithm name="addon_mdk/Flash/CM40x_2048.FLM" start="0x18000000" size="0x00200000" RAMstart="0x10000000" RAMsize="0x1000" default="1"/>
+
+          <feature type="ExtBus"       n="16"                    name="External Bus Interface"/>
+          <feature type="ADC"          n="16"     m="16"         name="SAR-type ADC"/>
+          <feature type="ComOther"     n="4"                     name="Serial Port"/>
+          <feature type="USBOTG"       n="1"                     name="USB OTG"/>
+          <feature type="SPI"          n="2"                     name="SPI Interface"/>
+          <feature type="TimerOther"   n="4"                     name="General-Purpose Counter"/>
+          <feature type="IOs"          n="91"                    name="General Purpose I/Os"/>
+          <feature type="QFP"          n="176"                   name="Low-Profile QFP Package"/>
+        </device>
+
+		 <!-- *************************  Device 'ADSP-CM407BSWZ-DF'  ***************************** -->
+          <device Dname="ADSP-CM407BSWZ-DF">
+          <processor Dclock="150000000"/>
+          <memory id="IROM1"                     start="0x18000000" size="0x00100000" startup="1" default="1"/>
+          <memory id="IRAM1"                     start="0x20010000" size="0x00010000" init   ="0" default="1"/>
+          <algorithm name="addon_mdk/Flash/CM40x_1024.FLM" start="0x18000000" size="0x00100000" RAMstart="0x10000000" RAMsize="0x1000" default="1"/>
+
+          <feature type="ExtBus"       n="16"                    name="External Bus Interface"/>
+          <feature type="ADC"          n="16"     m="16"         name="SAR-type ADC"/>
+          <feature type="ComOther"     n="4"                     name="Serial Port"/>
+          <feature type="SPI"          n="2"                     name="SPI Interface"/>
+          <feature type="TimerOther"   n="4"                     name="General-Purpose Counter"/>
+          <feature type="IOs"          n="91"                    name="General Purpose I/Os"/>
+          <feature type="QFP"          n="176"                   name="Low-Profile QFP Package"/>
+        </device>
+
+		 <!-- *************************  Device 'ADSP-CM408BSWZ-AF'  ***************************** -->
+          <device Dname="ADSP-CM408BSWZ-AF">
+          <processor Dclock="240000000"/>
+          <memory id="IROM1"                     start="0x18000000" size="0x00200000" startup="1" default="1"/>
+          <memory id="IRAM1"                     start="0x20030000" size="0x00030000" init   ="0" default="1"/>
+          <algorithm name="addon_mdk/Flash/CM40x_2048.FLM" start="0x18000000" size="0x00200000" RAMstart="0x10000000" RAMsize="0x1000" default="1"/>
+
+          <feature type="ExtBus"       n="16"                    name="External Bus Interface"/>
+          <feature type="ADC"          n="16"     m="16"         name="SAR-type ADC"/>
+          <feature type="ComOther"     n="4"                     name="Serial Port"/>
+          <feature type="ETH"          n="1"      m="10000000"   name="Ethernet MAC"/>
+          <feature type="USBOTG"       n="1"                     name="USB OTG"/>
+          <feature type="SPI"          n="2"                     name="SPI Interface"/>
+          <feature type="TimerOther"   n="4"                     name="General-Purpose Counter"/>
+          <feature type="IOs"          n="91"                    name="General Purpose I/Os"/>
+          <feature type="QFP"          n="176"                   name="Low-Profile QFP Package"/>
+        </device>
+
+		 <!-- *************************  Device 'ADSP-CM408BSWZ-BF'  ***************************** -->
+          <device Dname="ADSP-CM408BSWZ-BF">
+          <processor Dclock="240000000"/>
+          <memory id="IROM1"                     start="0x18000000" size="0x00200000" startup="1" default="1"/>
+          <memory id="IRAM1"                     start="0x20030000" size="0x00030000" init   ="0" default="1"/>
+          <algorithm name="addon_mdk/Flash/CM40x_2048.FLM" start="0x18000000" size="0x00200000" RAMstart="0x10000000" RAMsize="0x1000" default="1"/>
+
+          <feature type="ExtBus"       n="16"                    name="External Bus Interface"/>
+          <feature type="ADC"          n="16"     m="16"         name="SAR-type ADC"/>
+          <feature type="ComOther"     n="4"                     name="Serial Port"/>
+          <feature type="USBOTG"       n="1"                     name="USB OTG"/>
+          <feature type="SPI"          n="2"                     name="SPI Interface"/>
+          <feature type="TimerOther"   n="4"                     name="General-Purpose Counter"/>
+          <feature type="IOs"          n="91"                    name="General Purpose I/Os"/>
+          <feature type="QFP"          n="176"                   name="Low-Profile QFP Package"/>
+        </device>
+      </subFamily>
+    </family>
+  </devices>
+
+  <conditions>
+    <condition id="Compiler ARM">
+      <!-- conditions selecting ARM Compiler -->
+      <require Tcompiler="ARMCC"/>
+    </condition>
+
+    <!-- Device Conditions -->
+    <condition id="CM40x">
+      <description>Analog Devices CM40x devices</description>
+      <require Dvendor="Analog Devices:1"  Dname="ADSP-CM40*"/>
+    </condition>
+
+    <!-- Device + CMSIS Conditions -->
+    <condition id="CM4xx CMSIS">
+      <description>Analog Devices CM4xx devices and CMSIS-CORE</description>
+      <require Cclass="CMSIS" Cgroup="CORE"/>
+      <accept condition="CM40x"/>
+    </condition>
+
+	<condition id="CM40x OS">
+	  <require condition="CM4xx CMSIS"/>
+	  <require Cclass="Device" Cgroup="CM40x ESP" Csub="OS"/>
+	</condition>
+
+	<condition id="CM40x Services">
+	  <require condition="CM4xx CMSIS"/>
+	  <require Cclass="Device" Cgroup="CM40x ESP" Csub="Services"/>
+	</condition>
+  </conditions>
+
+  <taxonomy>
+    <description Cclass="Device" Cgroup="CM40x ESP" doc="doc/ADSP-CM40x_Software_Users_Guide.pdf">ADSP-CM40X Eablement Sofware User's guide</description>
+  </taxonomy>
+
+  <components>
+    <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="CM4xx CMSIS">
+      <description>System Startup for Analog Devices CM4xx device series</description>
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->
+      </RTE_Components_h>
+
+      <files>
+        <file category="include" name="inc/"/>
+        <file category="source"  name="src/arm_stackheap.s" attr="config" version="1.0.0" condition="Compiler ARM"/>
+        <file category="source"  name="src/startup.c"       attr="config" version="2.1.0"/>
+        <file category="source"  name="src/system.c"        attr="config" version="2.1.0"/>
+        <file category="header"  name="inc/adi_ecc.h"       attr="config" version="2.1.0"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="Retarget" Cversion="1.0.0" condition="CM40x">
+      <description>Retargeting for CM40x Devices (except I/O)</description>
+      <files>
+        <file category="source" name="src/arm_retarget.c"/>
+      </files>
+    </component>
+
+    <!-- CM40x ESP (Enablement SW Package) Drivers -->
+    <component Cclass="Device" Cgroup="CM40x ESP" Csub="Drivers" Cversion="2.1.0" condition="CM40x Services">
+      <description>CM40x Enablement SW Package Drivers library</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_DRIVERS_LIB
+      </RTE_Components_h>
+      <files>
+        <file category="doc"     name="doc/html/index.html"/>
+        <file category="library" name="lib/mdk/libdrv40z.lib" condition="Compiler ARM"/>
+      </files>
+    </component>
+
+    <!-- CM40x ESP (Enablement SW Package) Services -->
+    <component Cclass="Device" Cgroup="CM40x ESP" Csub="Services" Cversion="2.1.0" condition="CM40x OS">
+      <description>CM40x Enablement SW Package Services library</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_SERVICES_LIB
+      </RTE_Components_h>
+      <files>
+        <file category="doc"     name="doc/html/index.html"/>
+        <file category="library" name="lib/mdk/libssl40z.lib" condition="Compiler ARM"/>
+      </files>
+    </component>
+
+    <!-- CM40x ESP (Enablement SW Package) OS -->
+    <component Cclass="Device" Cgroup="CM40x ESP" Csub="OS" Cvariant="Bare Metal" Cversion="2.1.0" condition="CM40x">
+      <description>Bare Metal Abstraction Layer (no OS)</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_OS_BM
+      </RTE_Components_h>
+      <files>
+        <file category="library" name="lib/mdk/libosal40z_noos.lib" condition="Compiler ARM"/>
+      </files>
+    </component>
+  </components>
+
+  <boards>
+    <board vendor="Analog Devices" name="ADSP-CM408F EZ-Board" revision="Ver 1.1" salesContact="http://www.analog.com/en/content/contact_customer_service/fca.html" orderForm="http://www.analog.com/en/evaluation/cm40x-ez/eb.html#buy">
+      <description>Analog Devices CM408F_EZ-KIT Evaluation Board</description>
+      <image small="addon_mdk/Boards/AnalogDevices/CM408F_EZ-KIT/Documents/ADSP-CM408F_ez-kit_small.jpg"
+             large="addon_mdk/Boards/AnalogDevices/CM408F_EZ-KIT/Documents/ADSP-CM408F_ez-kit_large.jpg"/>
+      <book category="overview" name="http://www.analog.com/en/evaluation/cm40x-ez/eb.html#DOCUMENTATION" title="ADZS-CM408F EZ-Board Documentation"/>
+      <book category="manual"   name="doc/ADSP-CM408F_ezkit_rev.1.1.pdf" title="ADSP-CM408F EZ-KIT Lite Evaluation System Manual"/>
+      <mountedDevice    deviceIndex="0" Dvendor="Analog Devices:1" Dname="ADSP-CM408BSWZ-BF"/>
+      <compatibleDevice deviceIndex="0" Dvendor="Analog Devices:1" DsubFamily="CM40x"/>
+      <feature type="PWR"             n="5"              name="External 5.0VDC/3.6A power supply"/>
+      <feature type="RAM"             n="1"              name="4 Mb asynchronous SRAM"/>
+      <feature type="LCD"             n="1"              name="IDC 5x2 SMT"/>
+      <feature type="USB"             n="1"              name="USB mini-B"/>
+      <feature type="CAN"             n="2"              name="RJ11 vertical Connector"/>
+      <feature type="RS485"           n="1"              name="DB9 Female Connector"/>
+      <feature type="RS232"           n="1"              name="DB9 Female Connector"/>
+      <feature type="ETH"             n="1"              name="10/100 Ethernet Port"/>
+      <feature type="Button"          n="4"              name="Push-Buttons for Reset, Wakeup and User"/>
+      <feature type="LED"             n="4"              name="LEDs directly connected to port pins"/>
+      <feature type="ConnOther"       n="1"              name="PWM Connector (180-pin high speed socket)"/>
+      <feature type="ConnOther"       n="1"              name="Analog Connector (120-pin high speed socket)"/>
+      <feature type="ConnOther"       n="1"              name="Asynch or Memory Connector (180-pin high speed socket)"/>
+      <debugInterface adapter="JTAG/SW" connector="20 pin JTAG (0.1 inch connector)"/>
+      <debugInterface adapter="JTAG/SW" connector="20-pin Cortex debug + ETM Trace (0.05 inch connector)"/>
+    </board>
+
+    <board vendor="Analog Devices" name="ADSP-CM403F EZ-Board" revision="Ver 1.1" salesContact="http://www.analog.com/en/content/contact_customer_service/fca.html" orderForm="http://www.analog.com/en/evaluation/cm40x-ez/eb.html#buy">
+      <description>Analog Devices CM403F_EZ-KIT Evaluation Board</description>
+      <image small="addon_mdk/Boards/AnalogDevices/CM403F_EZ-KIT/Documents/ADSP-CM403F_ez-kit_small.jpg"
+             large="addon_mdk/Boards/AnalogDevices/CM403F_EZ-KIT/Documents/ADSP-CM403F_ez-kit_large.jpg"/>
+      <book category="overview" name="http://www.analog.com/en/evaluation/cm40x-ez/eb.html#DOCUMENTATION" title="ADZS-CM403F EZ-Board Documentation"/>
+      <book category="manual"   name="doc/ADSP-CM403F_ezkit_rev.1.0.pdf" title="ADSP-CM403F EZ-KIT Lite Evaluation System Manual"/>
+      <mountedDevice    deviceIndex="0" Dvendor="Analog Devices:1" Dname="ADSP-CM403BSWZ-CF"/>
+      <compatibleDevice deviceIndex="0" Dvendor="Analog Devices:1" DsubFamily="CM40x"/>
+      <feature type="PWR"             n="5"              name="External 5.0VDC/3.6A power supply"/>
+      <feature type="RAM"             n="1"              name="4 Mb asynchronous SRAM"/>
+      <feature type="LCD"             n="1"              name="IDC 5x2 SMT"/>
+      <feature type="USB"             n="1"              name="USB mini-B"/>
+      <feature type="CAN"             n="1"              name="RJ11 vertical Connector"/>
+      <feature type="RS232"           n="1"              name="DB9 Female Connector"/>
+      <feature type="Button"          n="4"              name="Push-Buttons for Reset, Wakeup and User"/>
+      <feature type="LED"             n="4"              name="LEDs directly connected to port pins"/>
+      <feature type="ConnOther"       n="1"              name="PWM Connector (180-pin high speed socket)"/>
+      <feature type="ConnOther"       n="1"              name="Analog Connector (120-pin high speed socket)"/>
+      <feature type="ConnOther"       n="1"              name="Asynch or Memory Connector (180-pin high speed socket)"/>
+      <debugInterface adapter="JTAG/SW" connector="20 pin JTAG (0.1 inch connector)"/>
+      <debugInterface adapter="JTAG/SW" connector="20-pin Cortex debug + ETM Trace (0.05 inch connector)"/>
+    </board>
+  </boards>
+
+
+  <examples>
+    <!-- ADSP-CM408F EZ-Board -->
+    <example name="Button_LED_GPIO" doc="Readme_Button_LED_GPIO.txt" folder="addon_mdk/Boards/AnalogDevices/CM408F_EZ-KIT/Button_LED_GPIO">
+      <description>Blinky example using buttons and interrupts</description>
+      <board name="ADSP-CM408F EZ-Board" vendor="Analog Devices"/>
+      <project>
+        <environment name="uv" load="Button_LED_GPIO.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
+    <example name="Boot_Optimization_Single_App" doc="Readme_Boot_Optimization_Single_App.txt" folder="addon_mdk/Boards/AnalogDevices/CM408F_EZ-KIT/Boot_Optimization_Single_App">
+      <description>Boot Optimization example Single Application</description>
+      <board name="ADSP-CM408F EZ-Board" vendor="Analog Devices"/>
+      <project>
+        <environment name="uv" load="blink.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
+    <example name="Boot_Optimization_Multi_App" doc="Readme_Boot_Optimization_Multi_App.txt" folder="addon_mdk/Boards/AnalogDevices/CM408F_EZ-KIT/Boot_Optimization_Multi_App">
+      <description>Boot Optimization example Multiple Applications</description>
+      <board name="ADSP-CM408F EZ-Board" vendor="Analog Devices"/>
+      <project>
+        <environment name="uv" load="multi_app.uvmpw"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
+    <!-- ADSP-CM403F EZ-Board -->
+    <example name="Button_LED_GPIO" doc="Readme_Button_LED_GPIO.txt" folder="addon_mdk/Boards/AnalogDevices/CM403F_EZ-KIT/Button_LED_GPIO">
+      <description>Blinky example using buttons and interrupts</description>
+      <board name="ADSP-CM403F EZ-Board" vendor="Analog Devices"/>
+      <project>
+        <environment name="uv" load="Button_LED_GPIO.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
+    <example name="Boot_Optimization_Single_App" doc="Readme_Boot_Optimization_Single_App.txt" folder="addon_mdk/Boards/AnalogDevices/CM403F_EZ-KIT/Boot_Optimization_Single_App">
+      <description>Boot Optimization example Single Application</description>
+      <board name="ADSP-CM403F EZ-Board" vendor="Analog Devices"/>
+      <project>
+        <environment name="uv" load="blink.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
+    <example name="Boot_Optimization_Multi_App" doc="Readme_Boot_Optimization_Multi_App.txt" folder="addon_mdk/Boards/AnalogDevices/CM403F_EZ-KIT/Boot_Optimization_Multi_App">
+      <description>Boot Optimization example Multiple Applications</description>
+      <board name="ADSP-CM403F EZ-Board" vendor="Analog Devices"/>
+      <project>
+        <environment name="uv" load="multi_app.uvmpw"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+  </examples>
+
+</package>
+

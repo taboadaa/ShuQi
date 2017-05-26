@@ -1,0 +1,1242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<package schemaVersion="1.4.9" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>Keil</vendor>
+  <url>http://www.keil.com/pack/</url>
+  <name>iMX7D_DFP</name>
+  <description>NXP i.MX 7Dual Family Device Support and Examples</description>
+
+  <requirements>
+    <packages>
+      <package vendor="ARM" name="CMSIS" version="5.0.1"/>
+      <package vendor="Keil" name="ARM_Compiler" version="1.3.0"/>
+    </packages>
+  </requirements>
+
+  <releases>
+    <release version="1.5.1" date="2017-04-13">
+      Updated example for MCIMX7D-SABRE board: Frequency Bin.
+    </release>
+    <release version="1.5.0" date="2017-04-13">
+      Added devices into iMX7Solo and iMX7Dual sub-families.
+      Added board support for NOVPEK-iMX7.
+    </release>
+    <release version="1.4.1" date="2016-12-07">
+      Added QSPI flash programming algorithm.
+      Updated device header files' #pragma push/pop statements to support ARMClang 6.
+      Updated SDF file for iMX7Solo to block reset capability.
+    </release>
+    <release version="1.4.0" date="2016-11-23">
+      Added board support for Embedded Artists iMX7 Dual COM.
+    </release>
+    <release version="1.3.0" date="2016-10-24">
+      Added support for i.MX 7Solo devices.
+    </release>
+    <release version="1.2.0" date="2016-10-17">
+      Added board support for Toradex Colibri iMX7.
+    </release>
+    <release version="1.1.0" date="2016-08-24">
+      Added Phytec phyBOARD-i.MX7 Zeta board description and examples.
+    </release>
+    <release version="1.0.0" date="2016-07-22">
+      Initial release of the device family pack for the i.MX7 dual device
+    </release>
+  </releases>
+
+  <keywords>
+  <!-- keywords for indexing -->
+    <keyword>NXP</keyword>
+    <keyword>Device Support</keyword>
+    <keyword>Device Family Package NXP</keyword>
+    <keyword>iMX7</keyword>
+    <keyword>i.MX7</keyword>
+    <keyword>iMX7D</keyword>
+    <keyword>iMX7S</keyword>
+  </keywords>
+
+  <devices>
+    <family Dfamily="i.MX 7 Series" Dvendor="NXP:11">
+      <environment name="uv">
+        <CMisc>--C99</CMisc>
+      </environment>
+      <subFamily DsubFamily="i.MX 7Dual">
+        
+        <!-- ******************************  i.MX 7Dual  ****************************** -->
+
+        <processor Dcore="Cortex-A7" DcoreVersion="r0p5" Dfpu="DP_FPU" Dmpu="MPU" Pname="Cortex-A7" Punits="2"/>  <!-- Based on MP020-MS-28610-r0p5-00rel0 -->
+        <processor Dcore="Cortex-M4" DcoreVersion="r0p1" Dfpu="SP_FPU" Dmpu="MPU" Pname="Cortex-M4"/>
+
+        <debugconfig default="swd" swj="true" clock="10000000" sdf="Debug/iMX7D.sdf"/>
+
+        <!--algorithm name="Flash/MCIMX7_QSPI1A_32.FLM" start="0x60000000"  size="0x02000000"  RAMstart="0x20000000"  RAMsize="0x2000"  default="1"/-->
+
+        <description>
+          The i.MX 7Dual family of processors features an advanced implementation of the ARM Cortex-A7 core, which operates at speeds of up to 1 GHz, as well as the ARM Cortex-M4 core.
+          - Heterogeneous Multicore Processing Architecture, up to Dual Cortex-A7 and Cortex-M4 configuration
+          - External Memory Support: DDR3/DDR3L/LPDDR2/LPDDR3
+          - Flash Memory Support: NAND (60-bit ECC), Managed NAND (eMMC, eSD)
+          - Eletrophoretic Display (EPD) Controller
+          - Dual Gigabit ETH controllers supporting AVB
+          - Parallel RGB and MIPI DSI Display Interfaces
+          - Parallel and MIPI CSI Camera Interfaces
+          - 256KB SRAM
+          - Quad SPI
+          - Communication Ports (I2C, SAI, UART, SPI, SDIO, USB, PCIe)
+        </description>
+        <book name="Documents/dui0553a_cortex_m4_dgug.pdf" title="Cortex-M4 Generic User Guide"/>
+        <book name="Documents/iMX7D_RM_Rev_B.pdf" title="i.MX 7Dual Applications Processor Reference Manual"/>
+          
+        <!-- Cortex-A7: AP 1 for CoreSight access, AP 0 for system AHB access -->
+        <debug   Pname="Cortex-A7" Punit="0" svd="SVD/iMX7D_A7.svd" __dp="0" __ap="1" address="0x80070000"/>
+        <debug   Pname="Cortex-A7" Punit="1" svd="SVD/iMX7D_A7.svd" __dp="0" __ap="1" address="0x80072000"/>
+        <!-- Cortex-M4: AP 4 for AHB-AP access -->
+        <debug   Pname="Cortex-M4" svd="SVD/iMX7D_M4.svd" __dp="0" __ap="4" address="0xE000ED00"/>
+        <!-- MDM-AP is AP 3 -->
+
+        <compile Pname="Cortex-M4" header="Device/Include/iMX7D_M4.h"  define="iMX7D_M4"/>
+        <memory  Pname="Cortex-M4" id="IROM1" start="0x00000000" size="0x00008000" startup="1" default="1"/> <!-- CM4 ALIAS CODE -->
+        <memory  Pname="Cortex-M4" id="IRAM1" start="0x20000000" size="0x00008000" init   ="0" default="1"/> <!-- TCMU (SRAM_U) -->
+        <memory  Pname="Cortex-M4" id="IRAM2" start="0x1FFF0000" size="0x00008000" init   ="0" default="0"/> <!-- TCML (SRAM_L) -->
+        <!-- <memory     id="IROM2"         start="0x00008000"  size="0x10000"    startup="1"   default="0"/> --> <!-- Boot ROM -->
+
+        <debugvars Pname="Cortex-M4" configfile="Debug/iMX7D_M4.dbgconf">
+          __var ReleaseM4 = 0x00000001;   // Enable &amp; Release Cortex-M4 from Reset
+        </debugvars>
+
+        <sequences>
+          <sequence name="DebugCoreStart" Pname="Cortex-M4">
+            <block>
+              __var DHCSR_Addr = 0xE000EDF0;
+              __var A7_AHB_CSW = 0x43000002;
+              __var value = 0;
+            </block>
+            <control if="__ap == 4 &amp;&amp; ReleaseM4" info="Debugger releases M4 from reset during target connection.">
+              <block>
+                __ap = 0;                        // Switch to System AHB AP (M4 AP not usable yet)
+
+                WriteAP(0x4,  0x00000000);       // Init Cortex-A7 AP
+
+                // SRC: Enable M4
+                WriteAP(0x00, A7_AHB_CSW);       // CSW
+                WriteAP(0x04, 0x3039000C);       // TAR
+                value = ReadAP(0x0C);            // DRW
+
+                value &amp;= ~0x00000001;        // Deassert Non-Self-Clearing M4 Reset
+                value     |=  0x00000058;        // Mask WDOG3 RST, Enable M4
+
+                WriteAP(0x00, A7_AHB_CSW);       // CSW
+                WriteAP(0x04, 0x3039000C);       // TAR
+                WriteAP(0x0C, value);            // DRW
+                __ap = 4;                        // Switch back to Cortex-M4 AP
+              </block>
+            </control>
+            <block>
+              // Enable Core Debug via DHCSR
+              Write32(DHCSR_Addr, 0xA05F0001);
+            </block>
+          </sequence>
+
+          <sequence name="DebugCoreStart" Pname="Cortex-A7"/>
+
+          <sequence name="ResetSystem" Pname="Cortex-M4">
+            <block>
+              __var value = 0x00000000;
+
+              // Write SRC_M4RCR[SW_M4P_RST|SW_M4C_RST] (Self-Clearing M4 Core + Platform Reset)
+              value  = Read32(0x3039000C);
+              value |= 0x00000006;
+              Write32(0x3039000C, value);
+            </block>
+            <control while="Read32(0x3039000C) &amp; 0x00000006" timeout="1000000" info="Wait for Self-Clearing M4 Core + Platform Reset to finish"/>
+          </sequence>
+        </sequences>
+
+        <device Dname="MCIMX7D3"> </device>
+        <device Dname="MCIMX7D5"> </device>
+        <device Dname="MCIMX7D7"> </device>
+        
+      </subFamily>
+      
+      <subFamily DsubFamily="i.MX 7Solo">
+
+        <!-- ******************************  i.MX 7Solo  ****************************** -->
+
+        <processor Dcore="Cortex-A7" DcoreVersion="r0p5" Dfpu="DP_FPU" Dmpu="MPU" Pname="Cortex-A7"/>
+        <processor Dcore="Cortex-M4" DcoreVersion="r0p1" Dfpu="SP_FPU" Dmpu="MPU" Pname="Cortex-M4"/>
+
+        <debugconfig default="swd" swj="true" clock="10000000" sdf="Debug/iMX7.sdf"/>
+
+        <description>
+          The i.MX 7Solo family of processors represents our latest achievement in high-performance processing for low-power requirements with a high degree of functional integration.
+          - Heterogeneous Multicore Processing Architecture, up to Dual Cortex-A7 and Cortex-M4 configuration
+          - External Memory Support: DDR3/DDR3L/LPDDR2/LPDDR3
+          - Flash Memory Support: NAND (60-bit ECC), Managed NAND (eMMC, eSD)
+          - Single Gigabit ETH controllers supporting AVB
+          - Parallel RGB and MIPI DSI Display Interfaces
+          - Parallel and MIPI CSI Camera Interfaces
+          - 256KB SRAM
+          - Quad SPI
+          - Communication Ports (I2C, SAI, UART, SPI, SDIO, USB)
+        </description>
+        <book name="Documents/dui0553a_cortex_m4_dgug.pdf" title="Cortex-M4 Generic User Guide"/>
+        <book name="Documents/IMX7SRM.pdf" title="i.MX 7Solo Applications Processor Reference Manual"/>
+
+        <!-- Cortex-A7: AP 1 for CoreSight access, AP 0 for system AHB access -->
+        <debug   Pname="Cortex-A7" svd="SVD/iMX7S_A7.svd" __dp="0" __ap="1" address="0x80070000"/>
+        <!-- Cortex-M4: AP 4 for AHB-AP access -->
+        <debug   Pname="Cortex-M4" svd="SVD/iMX7S_M4.svd" __dp="0" __ap="4" address="0xE000ED00"/>
+        <!-- MDM-AP is AP 3 -->
+
+        <compile Pname="Cortex-M4" header="Device/Include/iMX7D_M4.h"  define="iMX7D_M4"/>
+        <memory  Pname="Cortex-M4" id="IROM1" start="0x00000000" size="0x00008000" startup="1" default="1"/>
+        <!-- CM4 ALIAS CODE -->
+        <memory  Pname="Cortex-M4" id="IRAM1" start="0x20000000" size="0x00008000" init   ="0" default="1"/>
+        <!-- TCMU (SRAM_U) -->
+        <memory  Pname="Cortex-M4" id="IRAM2" start="0x1FFF0000" size="0x00008000" init   ="0" default="0"/>
+        <!-- TCML (SRAM_L) -->
+        <!-- <memory     id="IROM2"         start="0x00008000"  size="0x10000"    startup="1"   default="0"/> -->
+        <!-- Boot ROM -->
+
+        <debugvars Pname="Cortex-M4" configfile="Debug/iMX7D_M4.dbgconf">
+          __var ReleaseM4 = 0x00000001;   // Enable &amp; Release Cortex-M4 from Reset
+        </debugvars>
+
+        <sequences>
+          <sequence name="DebugCoreStart" Pname="Cortex-M4">
+            <block>
+              __var DHCSR_Addr = 0xE000EDF0;
+              __var A7_AHB_CSW = 0x43000002;
+              __var value = 0;
+            </block>
+            <control if="__ap == 4 &amp;&amp; ReleaseM4" info="Debugger releases M4 from reset during target connection.">
+              <block>
+                __ap = 0;                        // Switch to System AHB AP (M4 AP not usable yet)
+        
+                WriteAP(0x4,  0x00000000);       // Init Cortex-A7 AP
+
+                // SRC: Enable M4
+                WriteAP(0x00, A7_AHB_CSW);       // CSW
+                WriteAP(0x04, 0x3039000C);       // TAR
+                value = ReadAP(0x0C);            // DRW
+
+                value &amp;= ~0x00000001;        // Deassert Non-Self-Clearing M4 Reset
+                value     |=  0x00000058;        // Mask WDOG3 RST, Enable M4
+
+                WriteAP(0x00, A7_AHB_CSW);       // CSW
+                WriteAP(0x04, 0x3039000C);       // TAR
+                WriteAP(0x0C, value);            // DRW
+                __ap = 4;                        // Switch back to Cortex-M4 AP
+              </block>
+            </control>
+            <block>
+              // Enable Core Debug via DHCSR
+              Write32(DHCSR_Addr, 0xA05F0001);
+            </block>
+          </sequence>
+
+          <sequence name="DebugCoreStart" Pname="Cortex-A7"/>
+
+          <sequence name="ResetSystem" Pname="Cortex-M4">
+            <block>
+              __var value = 0x00000000;
+
+              // Write SRC_M4RCR[SW_M4P_RST|SW_M4C_RST] (Self-Clearing M4 Core + Platform Reset)
+              value  = Read32(0x3039000C);
+              value |= 0x00000006;
+              Write32(0x3039000C, value);
+            </block>
+            <control while="Read32(0x3039000C) &amp; 0x00000006" timeout="1000000" info="Wait for Self-Clearing M4 Core + Platform Reset to finish"/>
+          </sequence>
+        </sequences>
+        
+        <device Dname="MCIMX7S3"> </device>
+        <device Dname="MCIMX7S5"> </device>
+        
+      </subFamily>
+
+    </family>
+  </devices>
+
+  <conditions>
+    <!-- Compiler Conditions -->
+    <condition id="Compiler ARMCC">
+      <require Tcompiler="ARMCC"/>
+    </condition>
+
+    <!-- Device + Core + CMSIS Conditions -->
+    <condition id="iMX7D M4 CMSIS">
+      <description>NXP iMX7D devices and CMSIS-CORE</description>
+      <require Cclass="CMSIS" Cgroup="CORE"/>
+      <require Dvendor="NXP:11"/>
+      <accept  Dname="MCIMX7D*"/>
+      <accept  Dname="MCIMX7S*"/>
+      <require Dcore="Cortex-M4"/>
+    </condition>
+    
+    <!-- Device + Core + CMSIS + MU -->
+    <condition id="iMX7D M4 CMSIS MU">
+      <description>NXP iMX7D CM4 devices, CMSIS-CORE and MU</description>
+      <require condition="iMX7D M4 CMSIS"/>
+      <require Cclass="Device" Cgroup="iMX7D HAL" Csub="MU"/>
+    </condition>
+
+    <!-- Device + Core + CMSIS + MU + CMSIS-RTOS Conditions -->
+    <condition id="iMX7D M4 CMSIS MU CMSIS-RTOS">
+      <description>NXP iMX7D CM4 devices, CMSIS-CORE, MU and CMSIS-RTOS</description>
+      <require condition="iMX7D M4 CMSIS MU"/>
+      <require Cclass="CMSIS" Cgroup="RTOS"/>
+    </condition>
+	
+	<!-- Device + Core + CMSIS + MU + CMSIS-RTOS2 Conditions -->
+    <condition id="iMX7D M4 CMSIS MU CMSIS-RTOS2">
+      <description>NXP iMX7D CM4 devices, CMSIS-CORE, MU and CMSIS-RTOS2</description>
+      <require condition="iMX7D M4 CMSIS MU"/>
+      <require Cclass="CMSIS" Cgroup="RTOS2"/>
+    </condition>
+
+    <!-- Device + Core + CMSIS + HW Initialization -->
+    <condition id="iMX7D M4 CMSIS HW">
+      <description>NXP iMX7D CM4 devices, CMSIS-CORE and HW INIT</description>
+      <require condition="iMX7D M4 CMSIS"/>
+      <accept Cclass="Board Support" Cgroup="NOVPEK iMX7 Board" Csub="HW INIT"/>
+	  <accept Cclass="Board Support" Cgroup="iMX7D SABRE Board" Csub="HW INIT"/>
+      <accept Cclass="Board Support" Cgroup="Colibri iMX7 Board" Csub="HW INIT"/>
+      <require Cclass="Device" Cgroup="Startup"/>
+      <require Cclass="Device" Cgroup="iMX7D HAL" Csub="CCM"/>
+      <require Cclass="Device" Cgroup="iMX7D HAL" Csub="RDC"/>
+    </condition>
+
+    <condition id="iMX7D M4 CMSIS HW UART">
+      <description>NXP iMX7D CM4 devices, CMSIS-CORE and HW INIT</description>
+      <require condition="iMX7D M4 CMSIS"/>
+      <accept Cclass="Board Support" Cgroup="iMX7D SABRE Board" Csub="HW INIT"/>
+      <accept Cclass="Board Support" Cgroup="Colibri iMX7 Board" Csub="HW INIT"/>
+      <require Cclass="Device" Cgroup="Startup"/>
+      <require Cclass="Device" Cgroup="iMX7D HAL" Csub="CCM"/>
+      <require Cclass="Device" Cgroup="iMX7D HAL" Csub="RDC"/>
+      <require Cclass="Device" Cgroup="iMX7D HAL" Csub="UART"/>
+    </condition>
+  </conditions>
+
+  <components>
+    <!-- Startup iMX7D-M4 -->
+    <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="iMX7D M4 CMSIS">
+      <description>NXP iMX7D CM4 devices</description>
+      <files>
+        <file category="include" name="Device/Include/"/>    
+        <file category="source"  name="Device/Source/ARM/startup_iMX7D_M4.s" attr="config" version="1.0.0" condition="Compiler ARMCC"/>
+        <file category="source"  name="Device/Source/system_iMX7D_M4.c"      attr="config" version="1.0.0"/>
+        <file category="header"  name="Device/Include/system_iMX7D_M4.h"     attr="config" version="1.0.0"/>
+      </files>
+    </component>
+
+    <!-- Board Support -->
+    <bundle Cbundle="MCIMX7D-SABRE" Cclass="Board Support" Cversion="1.0.0">
+      <description>iMX7D SABRE Board</description>
+      <doc></doc>
+      <component Cgroup="iMX7D SABRE Board" Csub="User I/O Redirect" condition="iMX7D M4 CMSIS HW UART">
+        <description>User I/O Redirect to UART</description>
+        <files>
+          <file category="header" name="Common/retarget_io_user.h"/>
+          <file category="source" name="Common/retarget_io_user.c"/>
+        </files>
+      </component>
+      
+      <component Cgroup="iMX7D SABRE Board" Csub="HW INIT" condition="iMX7D M4 CMSIS HW">
+        <description>Board specific settings for hardware initialization</description>
+        <files>
+          <file category="source" name="SDK/examples/imx7d_sdb_m4/board.c"/>
+          <file category="header" name="SDK/examples/imx7d_sdb_m4/board.h"/>
+          <file category="source" name="SDK/examples/imx7d_sdb_m4/clock_freq.c"/>
+          <file category="header" name="SDK/examples/imx7d_sdb_m4/clock_freq.h"/>
+          <file category="source" name="SDK/examples/imx7d_sdb_m4/pin_mux.c"/>
+          <file category="header" name="SDK/examples/imx7d_sdb_m4/pin_mux.h"/>
+        </files>
+      </component>
+    </bundle>
+    
+    <bundle Cbundle="Colibri-iMX7" Cclass="Board Support" Cversion="1.0.0">
+      <description>Colibri iMX7 Board</description>
+      <doc></doc>
+      <component Cgroup="Colibri iMX7 Board" Csub="User I/O Redirect" condition="iMX7D M4 CMSIS HW UART">
+        <description>User I/O Redirect to UART</description>
+        <files>
+          <file category="header" name="Common/retarget_io_user.h"/>
+          <file category="source" name="Common/retarget_io_user.c"/>
+        </files>
+      </component>
+
+      <component Cgroup="Colibri iMX7 Board" Csub="HW INIT" condition="iMX7D M4 CMSIS HW">
+        <description>Board specific settings for hardware initialization</description>
+        <files>
+          <file category="source" name="SDK/examples/colibri_imx7_m4/board.c"/>
+          <file category="header" name="SDK/examples/colibri_imx7_m4/board.h"/>
+          <file category="source" name="SDK/examples/colibri_imx7_m4/clock_freq.c"/>
+          <file category="header" name="SDK/examples/colibri_imx7_m4/clock_freq.h"/>
+          <file category="source" name="SDK/examples/colibri_imx7_m4/pin_mux.c"/>
+          <file category="header" name="SDK/examples/colibri_imx7_m4/pin_mux.h"/>
+        </files>
+      </component>
+    </bundle>
+    
+    <bundle Cbundle="NOVPEK-iMX7" Cclass="Board Support" Cversion="1.0.0">
+      <description>NOVPEK iMX7 Board</description>
+      <doc></doc>
+      <component Cgroup="NOVPEK iMX7 Board" Csub="User I/O Redirect" condition="iMX7D M4 CMSIS HW">
+        <description>User I/O Redirect to UART</description>
+        <files>
+          <file category="header" name="Common/retarget_io_user.h"/>
+          <file category="source" name="Common/retarget_io_user.c"/>
+        </files>
+      </component>
+
+      <component Cgroup="NOVPEK iMX7 Board" Csub="HW INIT" condition="iMX7D M4 CMSIS HW">
+        <description>Board specific settings for hardware initialization</description>
+        <files>
+          <file category="source" name="SDK/examples/novpek_imx7d_m4/board.c"/>
+          <file category="header" name="SDK/examples/novpek_imx7d_m4/board.h"/>
+        </files>
+      </component>
+    </bundle>
+    
+    <!-- iMX7D HAL Drivers -->
+    <component Cclass="Device" Cgroup="iMX7D HAL" Csub="UART" Cversion="1.0.0" condition="iMX7D M4 CMSIS">
+      <description>Universal Asynchronous Receiver/Transmitter</description>
+      <files>
+        <file category="source"  name="SDK/platform/drivers/src/uart_imx.c"/>
+        <file category="header"  name="SDK/platform/drivers/inc/uart_imx.h"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="iMX7D HAL" Csub="MU" Cversion="1.0.0" condition="iMX7D M4 CMSIS">
+      <description>Messaging Unit</description>
+      <files>
+        <file category="source"  name="SDK/platform/drivers/src/mu_imx.c"/>
+        <file category="header"  name="SDK/platform/drivers/inc/mu_imx.h"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="iMX7D HAL" Csub="GPIO" Cversion="1.0.0" condition="iMX7D M4 CMSIS">
+      <description>General Purpose Input/Output</description>
+      <files>
+        <file category="source"  name="SDK/platform/drivers/src/gpio_imx.c"/>
+        <file category="header"  name="SDK/platform/drivers/inc/gpio_imx.h"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="iMX7D HAL" Csub="CCM" Cversion="1.0.0" condition="iMX7D M4 CMSIS">
+      <description>Clock Control Module</description>
+      <files>
+        <file category="source"  name="SDK/platform/drivers/src/ccm_imx7d.c"/>
+        <file category="source"  name="SDK/platform/drivers/src/ccm_analog_imx7d.c"/>
+        <file category="header"  name="SDK/platform/drivers/inc/ccm_imx7d.h"/>
+        <file category="header"  name="SDK/platform/drivers/inc/ccm_analog_imx7d.h"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="iMX7D HAL" Csub="RDC" Cversion="1.0.0" condition="iMX7D M4 CMSIS">
+      <description>Resource Domain Controller</description>
+      <files>
+        <file category="source"  name="SDK/platform/drivers/src/rdc.c"/>
+        <file category="header"  name="SDK/platform/drivers/inc/rdc.h"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="iMX7D HAL" Csub="ADC" Cversion="1.0.0" condition="iMX7D M4 CMSIS">
+      <description>Analog to Digital Converter</description>
+      <files>
+        <file category="source"  name="SDK/platform/drivers/src/adc_imx7d.c"/>
+        <file category="header"  name="SDK/platform/drivers/inc/adc_imx7d.h"/>
+      </files>
+    </component>
+
+    <!-- RPMSG -->
+    <component Cclass="OpenAMP" Cgroup="RPMSG"  Cvariant="Bare-Metal" Cversion="1.0.0" condition="iMX7D M4 CMSIS MU">
+      <description>Remote Processor Messaging - Bare-Metal</description>
+      <files>     
+        <file category="source"  name="SDK/middleware/multicore/open-amp/porting/imx7d_m4/platform.c"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/porting/imx7d_m4/platform_info.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/porting/imx7d_m4/platform.h"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/porting/imx7d_m4/rpmsg_platform_porting.h"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/porting/config/config.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/porting/config/config.h"/>
+
+        <file category="source"  name="SDK/middleware/multicore/open-amp/common/hil/hil.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/common/hil/hil.h"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/common/llist/llist.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/common/llist/llist.h"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/common/shm/sh_mem.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/common/shm/sh_mem.h"/>
+
+        <file category="source"  name="SDK/middleware/multicore/open-amp/rpmsg/remote_device.c"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg.c"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg_core.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg.h"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg_core.h"/>
+
+        <file category="source"  name="SDK/middleware/multicore/open-amp/virtio/virtio.c"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/virtio/virtqueue.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/virtio/virtio.h"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/virtio/virtio_ring.h"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/virtio/virtqueue.h"/>
+
+        <!-- Bare-metal porting -->
+        <file category="source"  name="SDK/middleware/multicore/open-amp/porting/env/bm/rpmsg_porting.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/porting/env/bm/rpmsg_porting.h"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/porting/env/env.h"/>
+
+      </files>
+    </component>
+
+    <component Cclass="OpenAMP" Cgroup="RPMSG"  Cvariant="CMSIS-RTOS" Cversion="1.0.0" condition="iMX7D M4 CMSIS MU CMSIS-RTOS">
+      <description>Remote Processor Messaging - CMSIS-RTOS</description>
+      <files>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/porting/imx7d_m4/platform.c"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/porting/imx7d_m4/platform_info.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/porting/imx7d_m4/platform.h"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/porting/imx7d_m4/rpmsg_platform_porting.h"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/porting/config/config.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/porting/config/config.h"/>
+
+        <file category="source"  name="SDK/middleware/multicore/open-amp/common/hil/hil.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/common/hil/hil.h"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/common/llist/llist.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/common/llist/llist.h"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/common/shm/sh_mem.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/common/shm/sh_mem.h"/>
+
+        <file category="source"  name="SDK/middleware/multicore/open-amp/rpmsg/remote_device.c"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg.c"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg_core.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg.h"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg_core.h"/>
+
+        <file category="source"  name="SDK/middleware/multicore/open-amp/virtio/virtio.c"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/virtio/virtqueue.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/virtio/virtio.h"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/virtio/virtio_ring.h"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/virtio/virtqueue.h"/>
+
+        <!-- CMSIS-RTOS porting -->
+        <file category="source"  name="SDK/middleware/multicore/open-amp/porting/env/cmsis-rtos/rpmsg_porting.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/porting/env/cmsis-rtos/rpmsg_porting.h"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/porting/env/env.h"/>
+
+        <!-- RTOS extension -->
+        <file category="source"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg_ext.c"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg_rtos.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg_ext.h"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg_rtos.h"/>
+      </files>
+    </component>
+	
+	<component Cclass="OpenAMP" Cgroup="RPMSG"  Cvariant="CMSIS-RTOS2" Cversion="1.0.0" condition="iMX7D M4 CMSIS MU CMSIS-RTOS2">
+      <description>Remote Processor Messaging - CMSIS-RTOS2</description>
+      <files>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/porting/imx7d_m4/platform.c"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/porting/imx7d_m4/platform_info.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/porting/imx7d_m4/platform.h"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/porting/imx7d_m4/rpmsg_platform_porting.h"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/porting/config/config.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/porting/config/config.h"/>
+
+        <file category="source"  name="SDK/middleware/multicore/open-amp/common/hil/hil.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/common/hil/hil.h"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/common/llist/llist.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/common/llist/llist.h"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/common/shm/sh_mem.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/common/shm/sh_mem.h"/>
+
+        <file category="source"  name="SDK/middleware/multicore/open-amp/rpmsg/remote_device.c"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg.c"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg_core.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg.h"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg_core.h"/>
+
+        <file category="source"  name="SDK/middleware/multicore/open-amp/virtio/virtio.c"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/virtio/virtqueue.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/virtio/virtio.h"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/virtio/virtio_ring.h"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/virtio/virtqueue.h"/>
+
+        <!-- CMSIS-RTOS2 porting -->
+        <file category="source"  name="SDK/middleware/multicore/open-amp/porting/env/cmsis_rtos2/rpmsg_porting.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/porting/env/cmsis_rtos2/rpmsg_porting.h"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/porting/env/env.h"/>
+
+        <!-- RTOS extension -->
+        <file category="source"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg_ext.c"/>
+        <file category="source"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg_rtos.c"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg_ext.h"/>
+        <file category="header"  name="SDK/middleware/multicore/open-amp/rpmsg/rpmsg_rtos.h"/>
+      </files>
+    </component>
+	
+  </components>
+
+  <boards>
+    <board name="MCIMX7D-SABRE" vendor="NXP" revision="Rev B" orderForm="http://www.nxp.com/products/software-and-tools/hardware-development-tools/sabre-development-system/sabre-board-for-smart-devices-based-on-the-i.mx-7dual-applications-processors:RDIMX7DSABREBRD">
+      <description>Development board for iMX7D Application Processors.</description>
+      <mountedDevice deviceIndex="0" Dvendor="NXP:11" Dname="MCIMX7D7"/>
+      <compatibleDevice deviceIndex="0" Dvendor="NXP:11" Dname="MCIMX7D*"/>
+      <compatibleDevice deviceIndex="0" Dvendor="NXP:11" Dname="MCIMX7S*"/>
+      <image small="Images/MCIMX7SABRE_small.jpg" large="Images/MCIMX7SABRE_large.jpg"/>
+      <debugInterface adapter="JTAG/SW" connector="10-pin Cortex Debug Connector (0.05 inch)"/>
+      <book category="overview" name="http://www.nxp.com/products/software-and-tools/hardware-development-tools/sabre-development-system/sabre-board-for-smart-devices-based-on-the-i.mx-7dual-applications-processors:RDIMX7DSABREBRD" title="Overview Page"/>
+      <book category="overview" name="http://www.nxp.com/products/software-and-tools/hardware-development-tools/sabre-development-system/sabre-board-for-smart-devices-based-on-the-i.mx-7dual-applications-processors:RDIMX7DSABREBRD?tab=In-Depth_Tab" title="Getting Started Page"/>
+      <feature type="RAM" n="1" name="1GB, DDR3 533 MHz"/>
+      <feature type="MemCard" n="1" name="SD Card Holder"/>
+      <feature type="ETH" n="2" m="1000000000" name="RJ45"/>
+      <feature type="USB" n="1" name="USB Host connector"/>
+      <feature type="USB" n="1" name="micro USB OTG connector"/>
+      <feature type="Other" n="1" name="Full Mini PCIe socket"/>
+      <feature type="Other" n="1" name="SIM Card slot"/>
+      <feature type="CAN" n="1" name="DB9 Male Connector"/>
+      <feature type="Accelerometer" n="1" name="3-axis digital Accelerometer"/>
+      <feature type="Gyro" n="1" name="3-axis digital Gyroscope"/>
+      <feature type="Compass" n="1" name="Digital Magnetometer"/>
+      <feature type="Other" n="1" name="Barometer"/>
+      <feature type="Other" n="1" name="Altimeter"/>
+      <feature type="Other" n="1" name="802.11 a/b/g/n/ac WiFi"/>
+      <feature type="Other" n="1" name="Bluetooth V4.0 + EDR"/>
+      <feature type="ConnOther" n="1" name="Expansion port for EPDC"/>
+      <feature type="ConnOther" n="1" name="Parallel LCD"/>
+      <feature type="ConnOther" n="1" name="HDMI"/>
+      <feature type="ConnOther" n="1" name="MIPI DSI"/>
+      <feature type="ConnOther" n="1" name="MIPI CSI CMOS sensor (Camera)"/>
+    </board>
+
+    <board name="IMX7-PHYBOARD-ZETA" vendor="PHYTEC" orderForm="http://phytec.com/get-a-quote.php">
+      <description>The phyBOARD-i.MX7 Zeta SBC is a two-PCB counterpart to the phyCORE-i.MX7 SOM. The SOM itself serves as the CPU core of the SBC. The SBC is formed by interfacing the SOM to a second Carrier Board PCB via high density connectors. </description>
+      <mountedDevice deviceIndex="0" Dvendor="NXP:11" Dname="MCIMX7D7"/>
+      <compatibleDevice deviceIndex="0" Dvendor="NXP:11" Dname="MCIMX7D*"/>
+      <compatibleDevice deviceIndex="0" Dvendor="NXP:11" Dname="MCIMX7S*"/>
+      <image small="Images/IMX7-PHYBOARD-ZETA_small.jpg" large="Images/IMX7-PHYBOARD-ZETA_large.jpg"/>
+      <book category="overview" name="http://phytec.com/products/single-board-computers/phyboard-i.mx7" title="Overview Page"/>
+      <feature type="RAM" n="1" name="1GB DDR3"/>
+      <feature type="ROM" n="1" name="4GB eMMC"/>
+      <feature type="Memory" n="4096" name="EEPROM"/>
+      <feature type="MemCard" n="1" name="Micro SD Card slot"/>
+      <feature type="ETH" n="2" m="1000000000" name="RJ45"/>
+      <feature type="USB" n="1" name="USB Host Standard-A connector"/>
+      <feature type="USB" n="1" name="USB-OTG Micro-AB connector"/>
+      <feature type="CAN" n="1" name="2x5 header"/>
+      <feature type="LED" n="1" name="User LED"/>
+      <feature type="RS232" n="1" name="2x5 header"/>
+      <feature type="Other" n="1" name="Mini PCIe socket"/>
+      <feature type="Other" n="1" name="RTC"/>
+      <feature type="I2C" n="2" name="Expansion Bus - I2C"/>
+      <feature type="AIO" n="4" name="Expansion Bus - ADC"/>
+      <feature type="ConnOther" n="1" name="Expansion Bus - USB 2.0 Host HSIC"/>
+      <feature type="ConnOther" n="5" name="Expansion Bus - UART"/>
+      <feature type="ConnOther" n="1" name="Expansion Bus - CAN"/>
+      <feature type="ConnOther" n="1" name="Expansion Bus - SDIO/SD/MMC"/>
+      <feature type="ConnOther" n="2" name="Expansion Bus - eCSPI"/>
+      <feature type="ConnOther" n="3" name="Expansion Bus - Tamper"/>
+      <feature type="ConnOther" n="2" name="Expansion Bus - PWM"/>
+      <feature type="ConnOther" n="1" name="Expansion Bus - GPIO"/>
+      <feature type="ConnOther" n="1" name="Expansion Bus - 3x3 Keypad"/>
+      <feature type="ConnOther" n="1" name="Expansion Bus - MIPI CSI"/>
+      <feature type="ConnOther" n="1" name="Expansion Bus - MIPI DSI"/>
+      <feature type="ConnOther" n="1" name="Expansion Bus - JTAG"/>
+      <feature type="ConnOther" n="1" name="HDMI - requires PEB-AV-01 adapter"/>
+      <feature type="ConnOther" n="1" name="Display and Touch - requires PEB-AV-02 adapter"/>
+      <feature type="CustomFF"  n="100" m="72"/>
+    </board>
+
+    <board name="Colibri-iMX7" vendor="Toradex" orderForm="https://www.toradex.com/order-now/computer-on-module/nxp-freescale-imx-7">
+      <description>The Colibri iMX7 comprehends a Carrier Board and a System on Module with NXP/Freescale i.MX 7Dual Cortex-A7 (alternately i.MX 7Solo) and Cortex-M4 </description>
+      <mountedDevice deviceIndex="0" Dvendor="NXP:11" Dname="MCIMX7D7"/>
+      <compatibleDevice deviceIndex="0" Dvendor="NXP:11" Dname="MCIMX7D*"/>
+      <compatibleDevice deviceIndex="0" Dvendor="NXP:11" Dname="MCIMX7S*"/>
+      <image small="Images/colibri_iMX7_small.png" large="Images/colibri_iMX7_large.png"/>
+      <debugInterface adapter="JTAG/SW" connector="20-Pin ARM Standard JTAG Connector (0.1 inch)"/>
+      <book category="overview" name="http://developer.toradex.com/products/colibri-imx7" title="Overview Page"/>
+      <feature type="RAM" n="1" name="512MB DDR3"/>
+      <feature type="ROM" n="1" name="512MB NAND Flash"/>
+      <feature type="MemCard" n="1" name="Micro SD Card slot"/>
+      <feature type="ETH" n="1" m="1000000000" name="RJ45"/>
+      <feature type="USB" n="4" name="USB Host Standard-A connector"/>
+      <feature type="USB" n="1" name="USB Device Standard-B connector"/>
+      <feature type="USB" n="1" name="USB-OTG Standard-B connector"/>
+      <feature type="LED" n="4" name="User LED"/>
+      <feature type="RS232" n="2"/>
+      <feature type="RS485" n="1"/>
+      <feature type="CAN" n="1"/>
+      <feature type="I2C" n="4"/>
+      <feature type="SPI" n="4"/>
+      <feature type="AIO" n="4"/>
+      <feature type="LineIn" n="1" name="Analog Audio Line in"/>
+      <feature type="LineIn" n="1" name="Analog Audio Mic in"/>
+      <feature type="LineOut" n="1" name="Analog Audio Headphone out"/>
+      <feature type="Other" n="1" name="RTC"/>
+      <feature type="ConnOther" n="1" name="Resistive Touch"/>
+      <feature type="ConnOther" n="1" name="LVDS"/>
+      <feature type="ConnOther" n="1" name="HDMI"/>
+      <feature type="ConnOther" n="1" name="VGA"/>
+      <feature type="ConnOther" n="1" name="RGB 24/18 Bit"/>
+    </board>
+    
+    <board name="iMX7-Dual-COM" vendor="Embedded Artists" orderForm="http://embeddedartists.com/products/kits/imx7dual_kit.php">
+      <description>The iMX7 Dual COM Developer's Kit contains the iMX7 Dual COM Board, the COM Adapter Board and the COM Carrier Board. </description>
+      <mountedDevice deviceIndex="0" Dvendor="NXP:11" Dname="MCIMX7D7"/>
+      <compatibleDevice deviceIndex="0" Dvendor="NXP:11" Dname="MCIMX7D*"/>
+      <compatibleDevice deviceIndex="0" Dvendor="NXP:11" Dname="MCIMX7S*"/>
+      <image small="Images/iMX7DualCOM_small.jpg" large="Images/iMX7DualCOM_large.jpg"/>      
+      <book category="overview" name="http://embeddedartists.com/products/kits/imx7dual_kit.php" title="Overview Page"/>
+      <feature type="RAM" n="1" name="1GB DDR3"/>
+      <feature type="ROM" n="1" name="4GB eMMC"/>
+      <feature type="MemCard" n="1" name="Micro SD Card slot"/>
+      <feature type="ETH" n="2" m="1000000000" name="RJ45"/>
+      <feature type="USB" n="2" name="USB Host Standard-A connector"/>
+      <feature type="USB" n="1" name="USB-OTG Micro-AB connector"/>
+      <feature type="CAN" n="2"/>
+      <feature type="I2C" n="4"/>
+      <feature type="SPI" n="4"/>
+      <feature type="AIO" n="2"/>
+      <feature type="LineOut" n="1" name="Analog Audio Line out"/>
+      <feature type="Other" n="1" name="Mini PCIe socket"/>
+      <feature type="Other" n="1" name="RTC"/>     
+      <feature type="ConnOther" n="1" name="LVDS"/>
+      <feature type="ConnOther" n="1" name="Parallel 24-bit RGB display interface"/>
+      <feature type="ConnOther" n="3" name="UART FTDI compatible connector"/>
+      <feature type="ConnOther" n="1" name="XBee compatible interface connector"/>
+      <feature type="ConnOther" n="1" name="FPC connector for camera interface"/>
+      <feature type="ConnOther" n="1" name="FPC connector for JTAG adapter"/>
+      <feature type="CustomFF"  n="165" m="104"/>
+    </board>
+
+    <board name="NOVPEK-iMX7" vendor="Novtech" orderForm="http://www.novtech.com/novpekimx7">
+      <description>The NOVPEK-iMX7 board with a 96Boards form factor. </description>
+      <mountedDevice deviceIndex="0" Dvendor="NXP:11" Dname="MCIMX7D7"/>
+      <compatibleDevice deviceIndex="0" Dvendor="NXP:11" Dname="MCIMX7D*"/>
+      <compatibleDevice deviceIndex="0" Dvendor="NXP:11" Dname="MCIMX7S*"/>
+	  <debugInterface adapter="JTAG/SW" connector="10-pin Cortex Debug Connector (0.05 inch)"/>
+      <book category="overview" name="http://www.novtech.com/novpekimx7" title="Overview Page"/>
+      <feature type="RAM" n="1" name="256MB, DDR3 533 MHz"/>
+      <feature type="MemCard" n="1" name="Micro SD Card slot"/>
+      <feature type="USB" n="2" name="USB Host Standard-A connector"/>
+      <feature type="USB" n="1" name="micro USB OTG connector"/>
+      <feature type="Other" n="1" name="WiFi"/>
+      <feature type="Other" n="1" name="Bluetooth"/>
+    </board>
+	
+  </boards>
+
+  <examples>
+    <example name="CMSIS-RTOS Blinky" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/Blinky_M4">
+      <description>CMSIS-RTOS RTX Blinky example for Cortex-M4</description>
+      <board name="MCIMX7D-SABRE" vendor="NXP"/>
+      <project>
+        <environment name="uv"  load="MDK/Blinky_M4.uvprojx"/>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX</category>
+      </attributes>
+    </example>
+	
+	<example name="CMSIS-RTOS2 Blinky" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/Blinky_M4_RTX5">
+      <description>CMSIS-RTOS2 RTX5 Blinky example for Cortex-M4</description>
+      <board name="MCIMX7D-SABRE" vendor="NXP"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS2"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX5</category>
+      </attributes>
+    </example>
+    
+    <example name="RPMSG PingPong BM" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/RPMSG_PingPong_BM_M4">
+      <description>Bare-Metal RPMSG PingPong example for Cortex-M4</description>
+      <board name="MCIMX7D-SABRE" vendor="NXP"/>
+      <project>
+        <environment name="uv"  load="MDK/RPMSG_PingPong_BM.uvprojx"/>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="OpenAMP" Cgroup="RPMSG" Cvariant="Bare-Metal"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
+    <example name="RPMSG PingPong RTX" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/RPMSG_PingPong_RTX_M4">
+      <description>CMSIS-RTOS RTX RPMSG PingPong example for Cortex-M4</description>
+      <board name="MCIMX7D-SABRE" vendor="NXP"/>
+      <project>
+        <environment name="uv"  load="MDK/RPMSG_PingPong_RTX.uvprojx"/>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <component Cclass="OpenAMP" Cgroup="RPMSG" Cvariant="CMSIS-RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX</category>
+      </attributes>
+    </example>
+
+    <example name="RPMSG TTY CMSIS-RTOS" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/RPMSG_TTY_CMSIS-RTOS_M4">
+      <description>CMSIS-RTOS RTX TTY example for Cortex-M4</description>
+      <board name="MCIMX7D-SABRE" vendor="NXP"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <component Cclass="OpenAMP" Cgroup="RPMSG" Cvariant="CMSIS-RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX</category>
+      </attributes>
+    </example>
+	
+	<example name="RPMSG TTY CMSIS-RTOS2" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/RPMSG_TTY_CMSIS-RTOS2_M4">
+      <description>CMSIS-RTOS2 RTX5 TTY example for Cortex-M4</description>
+      <board name="MCIMX7D-SABRE" vendor="NXP"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS2"/>
+        <component Cclass="OpenAMP" Cgroup="RPMSG" Cvariant="CMSIS-RTOS2"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX5</category>
+      </attributes>
+    </example>
+
+    <example name="Frequency Bin" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/Frequency_Bin_M4">
+      <description>CMSIS-RTOS RTX, CMSIS-DSP Lib, ADC and RPMSG TTY example for Cortex-M4</description>
+      <board name="MCIMX7D-SABRE" vendor="NXP"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <component Cclass="Device" Cgroup="iMX7D HAL" Csub="ADC"/>
+        <component Cclass="OpenAMP" Cgroup="RPMSG" Cvariant="RTX"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX</category>
+      </attributes>
+    </example>
+
+    <example name="Linux Application TTY" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/Linux_Application_TTY">
+      <description>Linux Application TTY example</description>
+      <board name="MCIMX7D-SABRE" vendor="NXP"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+	
+    <example name="CMSIS-RTOS Blinky" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/Blinky_M4">
+      <description>CMSIS-RTOS RTX Blinky example for Cortex-M4</description>
+      <board name="IMX7-PHYBOARD-ZETA" vendor="PHYTEC"/>
+      <project>
+        <environment name="uv"  load="MDK/Blinky_M4.uvprojx"/>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX</category>
+      </attributes>
+    </example>
+	
+	<example name="CMSIS-RTOS2 Blinky" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/Blinky_M4_RTX5">
+      <description>CMSIS-RTOS2 RTX5 Blinky example for Cortex-M4</description>
+      <board name="IMX7-PHYBOARD-ZETA" vendor="PHYTEC"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS2"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX5</category>
+      </attributes>
+    </example>
+    
+    <example name="RPMSG PingPong BM" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/RPMSG_PingPong_BM_M4">
+      <description>Bare-Metal RPMSG PingPong example for Cortex-M4</description>
+      <board name="IMX7-PHYBOARD-ZETA" vendor="PHYTEC"/>
+      <project>
+        <environment name="uv"  load="MDK/RPMSG_PingPong_BM.uvprojx"/>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="OpenAMP" Cgroup="RPMSG" Cvariant="Bare-Metal"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
+    <example name="RPMSG PingPong RTX" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/RPMSG_PingPong_RTX_M4">
+      <description>CMSIS-RTOS RTX RPMSG PingPong example for Cortex-M4</description>
+      <board name="IMX7-PHYBOARD-ZETA" vendor="PHYTEC"/>
+      <project>
+        <environment name="uv"  load="MDK/RPMSG_PingPong_RTX.uvprojx"/>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <component Cclass="OpenAMP" Cgroup="RPMSG" Cvariant="CMSIS-RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX</category>
+      </attributes>
+    </example>
+    
+    <example name="RPMSG TTY CMSIS-RTOS" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/RPMSG_TTY_CMSIS-RTOS_M4">
+      <description>CMSIS-RTOS RTX TTY example for Cortex-M4</description>
+      <board name="IMX7-PHYBOARD-ZETA" vendor="PHYTEC"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <component Cclass="OpenAMP" Cgroup="RPMSG" Cvariant="CMSIS-RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX</category>
+      </attributes>
+    </example>
+	
+	<example name="RPMSG TTY CMSIS-RTOS2" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/RPMSG_TTY_CMSIS-RTOS2_M4">
+      <description>CMSIS-RTOS2 RTX5 TTY example for Cortex-M4</description>
+      <board name="IMX7-PHYBOARD-ZETA" vendor="PHYTEC"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS2"/>
+        <component Cclass="OpenAMP" Cgroup="RPMSG" Cvariant="CMSIS-RTOS2"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX5</category>
+      </attributes>
+    </example>
+    
+    <example name="Linux Application TTY" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/Linux_Application_TTY">
+      <description>Linux Application TTY example</description>
+      <board name="IMX7-PHYBOARD-ZETA" vendor="PHYTEC"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
+    <example name="CMSIS-RTOS Blinky" doc="Abstract.txt" folder="Boards/Toradex/Colibri-iMX7/Blinky_M4">
+      <description>CMSIS-RTOS RTX Blinky example for Cortex-M4</description>
+      <board name="Colibri-iMX7" vendor="Toradex"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX</category>
+      </attributes>
+    </example>
+	
+	<example name="CMSIS-RTOS2 Blinky" doc="Abstract.txt" folder="Boards/Toradex/Colibri-iMX7/Blinky_M4">
+      <description>CMSIS-RTOS2 RTX5 Blinky example for Cortex-M4</description>
+      <board name="Colibri-iMX7" vendor="Toradex"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS2"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX5</category>
+      </attributes>
+    </example>
+
+    <example name="RPMSG PingPong BM" doc="Abstract.txt" folder="Boards/Toradex/Colibri-iMX7/RPMSG_PingPong_BM_M4">
+      <description>Bare-Metal RPMSG PingPong example for Cortex-M4</description>
+      <board name="Colibri-iMX7" vendor="Toradex"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="OpenAMP" Cgroup="RPMSG" Cvariant="Bare-Metal"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
+    <example name="RPMSG PingPong RTX" doc="Abstract.txt" folder="Boards/Toradex/Colibri-iMX7/RPMSG_PingPong_RTX_M4">
+      <description>CMSIS-RTOS RTX RPMSG PingPong example for Cortex-M4</description>
+      <board name="Colibri-iMX7" vendor="Toradex"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <component Cclass="OpenAMP" Cgroup="RPMSG" Cvariant="CMSIS-RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTOS</category>
+      </attributes>
+    </example>
+ 
+    <example name="RPMSG TTY CMSIS-RTOS" doc="Abstract.txt" folder="Boards/Toradex/Colibri-iMX7/RPMSG_TTY_CMSIS-RTOS_M4">
+      <description>CMSIS-RTOS RTX TTY example for Cortex-M4</description>
+      <board name="Colibri-iMX7" vendor="Toradex"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <component Cclass="OpenAMP" Cgroup="RPMSG" Cvariant="CMSIS-RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX</category>
+      </attributes>
+    </example>
+	
+	<example name="RPMSG TTY CMSIS-RTOS2" doc="Abstract.txt" folder="Boards/Toradex/Colibri-iMX7/RPMSG_TTY_CMSIS-RTOS2_M4">
+      <description>CMSIS-RTOS2 RTX5 TTY example for Cortex-M4</description>
+      <board name="Colibri-iMX7" vendor="Toradex"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS2"/>
+        <component Cclass="OpenAMP" Cgroup="RPMSG" Cvariant="CMSIS-RTOS2"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX5</category>
+      </attributes>
+    </example>
+
+    <example name="Linux Application TTY" doc="Abstract.txt" folder="Boards/Toradex/Colibri-iMX7/Linux_Application_TTY">
+      <description>Linux Application TTY example</description>
+      <board name="Colibri-iMX7" vendor="Toradex"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
+    <example name="CMSIS-RTOS Blinky" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/Blinky_M4">
+      <description>CMSIS-RTOS RTX Blinky example for Cortex-M4</description>
+      <board name="iMX7-Dual-COM" vendor="Embedded Artists"/>
+      <project>
+        <environment name="uv"  load="MDK/Blinky_M4.uvprojx"/>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX</category>
+      </attributes>
+    </example>
+	
+	<example name="CMSIS-RTOS2 Blinky" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/Blinky_M4_RTX5">
+      <description>CMSIS-RTOS2 RTX5 Blinky example for Cortex-M4</description>
+      <board name="iMX7-Dual-COM" vendor="Embedded Artists"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS2"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX5</category>
+      </attributes>
+    </example>
+
+    <example name="RPMSG PingPong BM" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/RPMSG_PingPong_BM_M4">
+      <description>Bare-Metal RPMSG PingPong example for Cortex-M4</description>
+      <board name="iMX7-Dual-COM" vendor="Embedded Artists"/>
+      <project>
+        <environment name="uv"  load="MDK/RPMSG_PingPong_BM.uvprojx"/>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="OpenAMP" Cgroup="RPMSG" Cvariant="Bare-Metal"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
+    <example name="RPMSG PingPong RTX" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/RPMSG_PingPong_RTX_M4">
+      <description>CMSIS-RTOS RTX RPMSG PingPong example for Cortex-M4</description>
+      <board name="iMX7-Dual-COM" vendor="Embedded Artists"/>
+      <project>
+        <environment name="uv"  load="MDK/RPMSG_PingPong_RTX.uvprojx"/>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <component Cclass="OpenAMP" Cgroup="RPMSG" Cvariant="CMSIS-RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTOS</category>
+      </attributes>
+    </example>
+
+    <example name="RPMSG TTY CMSIS-RTOS" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/RPMSG_TTY_CMSIS-RTOS_M4">
+      <description>CMSIS-RTOS RTX TTY example for Cortex-M4</description>
+      <board name="iMX7-Dual-COM" vendor="Embedded Artists"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <component Cclass="OpenAMP" Cgroup="RPMSG" Cvariant="CMSIS-RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX</category>
+      </attributes>
+    </example>
+	
+	<example name="RPMSG TTY CMSIS-RTOS2" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/RPMSG_TTY_CMSIS-RTOS2_M4">
+      <description>CMSIS-RTOS2 RTX5 TTY example for Cortex-M4</description>
+      <board name="iMX7-Dual-COM" vendor="Embedded Artists"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS2"/>
+        <component Cclass="OpenAMP" Cgroup="RPMSG" Cvariant="CMSIS-RTOS2"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX5</category>
+      </attributes>
+    </example>
+    
+
+    <example name="Linux Application TTY" doc="Abstract.txt" folder="Boards/NXP/MCIMX7D-SABRE/Linux_Application_TTY">
+      <description>Linux Application TTY example</description>
+      <board name="iMX7-Dual-COM" vendor="Embedded Artists"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
+    <example name="CMSIS-RTOS Blinky" doc="Abstract.txt" folder="Boards/Novtech/NOVPEK-iMX7/Blinky_M4">
+      <description>CMSIS-RTOS RTX Blinky example for Cortex-M4</description>
+      <board name="NOVPEK-iMX7" vendor="Novtech"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX</category>
+      </attributes>
+    </example>
+
+    <example name="CMSIS-RTOS2 Blinky" doc="Abstract.txt" folder="Boards/Novtech/NOVPEK-iMX7/Blinky_M4_RTX5">
+      <description>CMSIS-RTOS2 RTX5 Blinky example for Cortex-M4</description>
+      <board name="NOVPEK-iMX7" vendor="Novtech"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS2"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX5</category>
+      </attributes>
+    </example>
+
+    <example name="Linux Application TTY" doc="Abstract.txt" folder="Boards/Novtech/NOVPEK-iMX7/Linux_Application_TTY">
+      <description>Linux Application TTY example</description>
+      <board name="NOVPEK-iMX7" vendor="Novtech"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
+    <example name="RPMSG TTY CMSIS-RTOS" doc="Abstract.txt" folder="Boards/Novtech/NOVPEK-iMX7/RPMSG_TTY_CMSIS-RTOS_M4">
+      <description>CMSIS-RTOS RTX TTY example for Cortex-M4</description>
+      <board name="NOVPEK-iMX7" vendor="Novtech"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <component Cclass="OpenAMP" Cgroup="RPMSG" Cvariant="CMSIS-RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX</category>
+      </attributes>
+    </example>
+	
+	<example name="RPMSG TTY CMSIS-RTOS2" doc="Abstract.txt" folder="Boards/Novtech/NOVPEK-iMX7/RPMSG_TTY_CMSIS-RTOS2_M4">
+      <description>CMSIS-RTOS2 RTX5 TTY example for Cortex-M4</description>
+     <board name="NOVPEK-iMX7" vendor="Novtech"/>
+      <project>
+        <environment name="ds5" load="DS-MDK/.project"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS2"/>
+        <component Cclass="OpenAMP" Cgroup="RPMSG" Cvariant="CMSIS-RTOS2"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX5</category>
+      </attributes>
+    </example>
+	
+  </examples>
+
+</package>
+
