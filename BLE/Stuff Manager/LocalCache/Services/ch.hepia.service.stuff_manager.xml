@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Service xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/service.xsd"
-  type="ch.hepia.service.stuff_list1"
+  type="ch.hepia.service.stuff_manager"
   uuid="e71ae71a-6ed9-4a89-bbbf-98a29df5e71a"
-  name="Stuff List">
+  name="Stuff Manager">
   <InformativeText>
     <Abstract>List of the stuff present.</Abstract>
     <InformativeDisclaimer />
-    <Summary>List of the stuff present.
-
-1) Read Stuff Number
-2) Repeat until Stuff Number reached
-    2.1) Write Stuff Entry
-    2.2) Read Stuff Value
-3) Write TRUE in Stuff Readed</Summary>
+    <Summary>This is a list that we can access from the Master. It's basically used for retrievieng the stuff present.</Summary>
     <Examples>
+      <Example>1) Write on Manager Mode "1" for "Read"</Example>
+      <Example>2) Wait for Entry Number to be different to "0"</Example>
+      <Example>3) Iterate on i from 0 to Entry Number</Example>
+      <Example>  3.1) Write i to Entry Selection</Example>
+      <Example>  3.2) Read Stuff ID from Entry Value</Example>
+      <Example>4) Write on Manager Mode "0" for going to sleep</Example>
       <Example />
     </Examples>
   </InformativeText>
@@ -24,8 +24,8 @@
   </Transports>
   <Characteristics>
     <Characteristic
-      type="ch.hepia.characteristic.stuff_value"
-      name="Stuff Value">
+      type="ch.hepia.characteristic.entry_value"
+      name="Entry Value">
       <Requirement>Optional</Requirement>
       <Properties>
         <InformationText>Value of the selected Stuff.</InformationText>
@@ -42,8 +42,8 @@
       </Properties>
     </Characteristic>
     <Characteristic
-      type="ch.hepia.characteristic.stuff_entry"
-      name="Stuff Entry">
+      type="ch.hepia.characteristic.entry_selection"
+      name="Entry Selection">
       <Requirement>Optional</Requirement>
       <Properties>
         <InformationText>Set the Entry we want to read in Stuff Value.</InformationText>
@@ -60,13 +60,13 @@
       </Properties>
     </Characteristic>
     <Characteristic
-      type="ch.hepia.characteristic.stuff_readed"
-      name="Stuff Readed">
+      type="ch.hepia.characteristic.manager_mode"
+      name="Manager Mode">
       <Requirement>Optional</Requirement>
       <Properties>
         <Read>Excluded</Read>
-        <Write>Excluded</Write>
-        <WriteWithoutResponse>Mandatory</WriteWithoutResponse>
+        <Write>Mandatory</Write>
+        <WriteWithoutResponse>Excluded</WriteWithoutResponse>
         <SignedWrite>Excluded</SignedWrite>
         <ReliableWrite>Excluded</ReliableWrite>
         <Notify>Excluded</Notify>
@@ -77,8 +77,8 @@
       </Properties>
     </Characteristic>
     <Characteristic
-      type="ch.hepia.characteristic.stuff_number"
-      name="Stuff Number">
+      type="ch.hepia.characteristic.entry_number"
+      name="Entry Number">
       <Requirement>Optional</Requirement>
       <Properties>
         <Read>Mandatory</Read>

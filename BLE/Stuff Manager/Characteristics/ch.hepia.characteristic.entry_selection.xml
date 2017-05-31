@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Characteristic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
-  type="ch.hepia.characteristic.stuff_number"
-  uuid="e71ae710-6ed9-4a89-bbbf-98a29df5e71a"
-  name="Stuff Number">
+  type="ch.hepia.characteristic.entry_selection"
+  uuid="e71ae71c-6ed9-4a89-bbbf-98a29df5e71a"
+  name="Entry Selection">
   <Value>
     <Field
       name="Entry Number">
-      <InformativeText>Number of Entry to read.</InformativeText>
+      <InformativeText>Number of the Entry.</InformativeText>
       <Requirement>Mandatory</Requirement>
       <Format>uint16</Format>
       <Unit>org.bluetooth.unit.unitless</Unit>
