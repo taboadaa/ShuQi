@@ -46,16 +46,24 @@ _build/nrf52832_xxaa_service_if.c.o: ../../../service_if.c \
  /opt/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/include/sys/lock.h \
  /opt/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/include/sys/cdefs.h \
  /opt/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/include/machine/stdlib.h \
+ ../../../../../../components/libraries/log/nrf_log.h \
+ ../config/sdk_config.h \
+ ../../../../../../components/libraries/log/src/nrf_log_internal.h \
+ ../../../../../../components/libraries/util/sdk_common.h \
+ /opt/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/include/string.h \
+ /opt/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/include/sys/string.h \
+ ../../../../../../components/libraries/util/nordic_common.h \
+ ../../../../../../components/libraries/util/sdk_os.h \
+ ../../../../../../components/libraries/util/sdk_errors.h \
+ ../../../../../../components/softdevice/s132/headers/nrf_error.h \
+ ../../../../../../components/libraries/util/app_util.h \
+ ../../../../../../components/libraries/util/sdk_macros.h \
  ../../../ble_lls.h \
  ../../../../../../components/ble/common/ble_srv_common.h \
  ../../../../../../components/softdevice/s132/headers/ble_types.h \
  ../../../../../../components/softdevice/s132/headers/ble_gap.h \
  ../../../../../../components/softdevice/s132/headers/ble_gatt.h \
  ../../../../../../components/libraries/util/app_util_bds.h \
- /opt/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/include/string.h \
- /opt/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/include/sys/string.h \
- ../../../../../../components/libraries/util/app_util.h \
- ../../../../../../components/libraries/util/nordic_common.h \
  ../../../ble_stuff_manager.h
 
 ../../../service_if.h:
@@ -152,6 +160,30 @@ _build/nrf52832_xxaa_service_if.c.o: ../../../service_if.c \
 
 /opt/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/include/machine/stdlib.h:
 
+../../../../../../components/libraries/log/nrf_log.h:
+
+../config/sdk_config.h:
+
+../../../../../../components/libraries/log/src/nrf_log_internal.h:
+
+../../../../../../components/libraries/util/sdk_common.h:
+
+/opt/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/include/string.h:
+
+/opt/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/include/sys/string.h:
+
+../../../../../../components/libraries/util/nordic_common.h:
+
+../../../../../../components/libraries/util/sdk_os.h:
+
+../../../../../../components/libraries/util/sdk_errors.h:
+
+../../../../../../components/softdevice/s132/headers/nrf_error.h:
+
+../../../../../../components/libraries/util/app_util.h:
+
+../../../../../../components/libraries/util/sdk_macros.h:
+
 ../../../ble_lls.h:
 
 ../../../../../../components/ble/common/ble_srv_common.h:
@@ -163,13 +195,5 @@ _build/nrf52832_xxaa_service_if.c.o: ../../../service_if.c \
 ../../../../../../components/softdevice/s132/headers/ble_gatt.h:
 
 ../../../../../../components/libraries/util/app_util_bds.h:
-
-/opt/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/include/string.h:
-
-/opt/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/include/sys/string.h:
-
-../../../../../../components/libraries/util/app_util.h:
-
-../../../../../../components/libraries/util/nordic_common.h:
 
 ../../../ble_stuff_manager.h:

@@ -1,4 +1,4 @@
-14:34:06 **** Build of configuration Default for project shuQi ****
+14:41:48 **** Build of configuration Default for project shuQi ****
 make VERBOSE=1 flash 
 Flashing: _build/nrf52832_xxaa.hex
 nrfjprog --program _build/nrf52832_xxaa.hex -f nrf52 --sectorerase
@@ -28,5 +28,5 @@ nrfjprog --reset -f nrf52
 Applying system reset.
 Run.
 
-14:34:09 Build Finished (took 2s.876ms)
+14:41:51 Build Finished (took 2s.670ms)
 

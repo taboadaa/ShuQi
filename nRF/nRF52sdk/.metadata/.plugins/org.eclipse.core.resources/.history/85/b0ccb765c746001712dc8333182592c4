@@ -3,7 +3,7 @@
 #include "service_if.h"
 #include <stdint.h>
 #include <stdlib.h>
-#include "nrf_log.h"
+//#include "app_trace.h"
 #include "ble_lls.h" 
 #include "ble_stuff_manager.h" 
 
@@ -26,6 +26,7 @@ static void on_lls_evt(ble_lls_t * p_lls, ble_lls_evt_t * p_evt)
     switch (p_evt->evt_type)
     { 
         case BLE_LLS_ALERT_LEVEL_EVT_WRITE:
+            //app_trace_log("[Bluetooth_IF]: LLS_ALERT_LEVEL evt WRITE. \r\n");
         	NRF_LOG_INFO("[Bluetooth_IF]: LLS_ALERT_LEVEL evt WRITE. \r\n");
             break; 
         default:
@@ -48,10 +49,10 @@ static void on_stuff_manager_evt(ble_stuff_manager_t * p_stuff_manager, ble_stuf
     switch (p_evt->evt_type)
     { 
         case BLE_STUFF_MANAGER_ENTRY_SELECTION_EVT_WRITE:
-        	NRF_LOG_INFO("[Bluetooth_IF]: STUFF_MANAGER_ENTRY_SELECTION evt WRITE. \r\n");
+            //app_trace_log("[Bluetooth_IF]: STUFF_MANAGER_ENTRY_SELECTION evt WRITE. \r\n");
             break; 
         case BLE_STUFF_MANAGER_MANAGER_MODE_EVT_WRITE:
-        	NRF_LOG_INFO("[Bluetooth_IF]: STUFF_MANAGER_MANAGER_MODE evt WRITE. \r\n");
+            //app_trace_log("[Bluetooth_IF]: STUFF_MANAGER_MANAGER_MODE evt WRITE. \r\n");
             break; 
         default:
             // No implementation needed.

@@ -3,7 +3,7 @@
 #include "service_if.h"
 #include <stdint.h>
 #include <stdlib.h>
-#include "nrf_log.h"
+//#include "app_trace.h"
 #include "ble_lls.h" 
 #include "ble_stuff_manager.h" 
 
