@@ -52,6 +52,8 @@
  * with 'YOUR_JOB' indicates where and how you can customize.
  */
 
+
+
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
@@ -78,6 +80,32 @@
 #include "nrf_log_ctrl.h"
 #include "nrf_ble_qwr.h"
 #include "app.h"
+
+
+/*******************************************************************************************************************
+ * START SPI*******************************************************************************************************
+ ******************************************************************************************************************/
+
+
+#include "nrf_drv_spi.h"
+#include "app_util_platform.h"
+#include "nrf_gpio.h"
+#include "nrf_delay.h"
+#define NRF_LOG_MODULE_NAME "APP"
+
+
+#define SPI_INSTANCE  0 /**< SPI instance index. */
+static const nrf_drv_spi_t spi = NRF_DRV_SPI_INSTANCE(SPI_INSTANCE);  /**< SPI instance. */
+static volatile bool spi_xfer_done;  /**< Flag used to indicate that SPI instance completed the transfer. */
+
+#define TEST_STRING "Nordic"
+static uint8_t       m_tx_buf[] = TEST_STRING;           /**< TX buffer. */
+static uint8_t       m_rx_buf[sizeof(TEST_STRING) + 1];    /**< RX buffer. */
+static const uint8_t m_length = sizeof(m_tx_buf);        /**< Transfer length. */
+
+/*******************************************************************************************************************
+ * END SPI   *******************************************************************************************************
+ ******************************************************************************************************************/
 
 #define IS_SRVC_CHANGED_CHARACT_PRESENT  0                                          /**< Include or not the service_changed characteristic. if not enabled, the server's database cannot be changed for the lifetime of the device*/
 
@@ -120,6 +148,67 @@
 #define RFID_ID_ARRAY_SIZE               20                                         /**< Size of rfid array. */
 
 //static uint8_array_t* rfid_ids;
+
+
+
+/*******************************************************************************************************************
+ * START SPI*******************************************************************************************************
+ ******************************************************************************************************************/
+
+/**
+ * @brief SPI user event handler.
+ * @param event
+ */
+void spi_event_handler(nrf_drv_spi_evt_t const * p_event){
+    spi_xfer_done = true;
+}
+
+/**
+ * @brief SPI user event handler.
+ * @param uint8_t r,g,b : color
+ * @param uint8_t* buffer ( buffer de 12 bytes )
+ *
+ *
+*/
+
+uint32_t data_led_rgb (uint8_t* color, uint8_t* buffer){
+   uint8_t i,j;
+   uint8_t tmp; // variable temporaire
+   uint8_t pos_buffer=0;
+
+   for ( j =0; j<3;j++){
+      for ( i =0; i<8;i+=2){
+         tmp = (color[j]>>i) & 0x03;
+
+         switch (tmp){
+          case 0 :
+             buffer[pos_buffer] = 0xCC;
+          break;
+          case 1 :
+             buffer[pos_buffer] = 0xCE;
+          break;
+
+          case 2:
+             buffer[pos_buffer] = 0xEC;
+          break;
+
+          case 3:
+             buffer[pos_buffer] = 0xEE;
+          break;
+
+          default :
+            return 1;
+         }
+         pos_buffer++;
+      }
+   }
+
+   return 0;
+
+}
+/*******************************************************************************************************************
+ * END SPI   *******************************************************************************************************
+ ******************************************************************************************************************/
 
 static uint16_t m_conn_handle = BLE_CONN_HANDLE_INVALID; /**< Handle of the current connection. */
 static nrf_ble_qwr_t m_qwr; /**< Queued Writes structure.*/
@@ -667,10 +756,43 @@ void fncdebug() {
 
 	//stuff_list_value_write();
 }
+int main_spi(void)
+{
+	 bsp_board_leds_init();
 
+	    APP_ERROR_CHECK(NRF_LOG_INIT(NULL));
+
+	    NRF_LOG_INFO("SPI example\r\n");
+
+	    nrf_drv_spi_config_t spi_config = NRF_DRV_SPI_DEFAULT_CONFIG;
+
+	    spi_config.mosi_pin = 4;
+	    spi_config.sck_pin  = 3;
+	    APP_ERROR_CHECK(nrf_drv_spi_init(&spi, &spi_config, spi_event_handler));
+
+	    while (1)
+	    {
+	        // Reset rx buffer and transfer done flag
+	        memset(m_rx_buf, 0, m_length);
+	        spi_xfer_done = false;
+
+	        APP_ERROR_CHECK(nrf_drv_spi_transfer(&spi, m_tx_buf, m_length, m_rx_buf, m_length));
+
+	        while (!spi_xfer_done)
+	        {
+	            __WFE();
+	        }
+
+	        NRF_LOG_FLUSH();
+
+	        bsp_board_led_invert(BSP_BOARD_LED_0);
+	        nrf_delay_ms(200);
+	    }
+}
 /**@brief Function for application main entry.
  */
 int main(void) {
+	main_spi();
 	uint32_t err_code;
 	bool erase_bonds;
 
