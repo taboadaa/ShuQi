@@ -658,14 +658,12 @@ static void power_manage(void) {
 }
 
 /**
- *
+ * debugdebug
  */
 void fncdebug() {
 	//debugdebug();
 
-	stuff_list_number_write(15);
-
-	//stuff_list_value_write();
+	set_stuff_manager_entry_number(42);
 }
 
 /**@brief Function for application main entry.

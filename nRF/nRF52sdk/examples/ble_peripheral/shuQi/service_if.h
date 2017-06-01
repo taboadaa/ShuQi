@@ -32,13 +32,11 @@ uint32_t bluetooth_init(void);
  */
 void bluetooth_on_ble_evt(ble_evt_t * p_ble_evt);
 
-void debugdebug();
+void set_stuff_manager_entry_number(uint16_t value);
+void set_stuff_manager_entry_value(uint8_array_t value);
 
-void stuff_list_number_write(uint16_t value);
-void stuff_list_value_write(uint8_array_t value);
-
-uint16_t stuff_list_entry_read();
-uint8_t stuff_list_readed_read();
+uint16_t get_stuff_manager_entry_selection();
+uint8_t get_stuff_manager_manager_mode();
 
 #endif // BLE_DS_IF_H__
 

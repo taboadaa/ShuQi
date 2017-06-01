@@ -35,8 +35,8 @@ SRC_FILES += \
   $(SDK_ROOT)/components/libraries/bsp/bsp_nfc.c \
   $(PROJ_DIR)/main.c \
   $(PROJ_DIR)/service_if.c \
-  $(PROJ_DIR)/ble_ias.c \
-  $(PROJ_DIR)/ble_stuff_list.c \
+  $(PROJ_DIR)/ble_lls.c \
+  $(PROJ_DIR)/ble_stuff_manager.c \
   $(PROJ_DIR)/app.c \
   $(SDK_ROOT)/external/segger_rtt/RTT_Syscalls_GCC.c \
   $(SDK_ROOT)/external/segger_rtt/SEGGER_RTT.c \
