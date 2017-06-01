@@ -12,19 +12,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "app_util.h"
-
 #include "nrf_log.h"
 #include "nrf_log_ctrl.h"
+#include "constant.h"
+#include "data_management.h"
 
-#define RFID_ID_SIZE                     96/8                                       /**< Size of rfid id. */
-#define RFID_ID_ARRAY_SIZE               20                                         /**< Size of rfid array. */
 
 uint8_array_t** rfid_ids;
-int doublon;
-
-
-void rfid_id_init(uint8_array_t** rfidIds);
-int rfid_ids_add(uint8_array_t** rfidIds, uint8_array_t* idTag);
 
 void app_init();
 

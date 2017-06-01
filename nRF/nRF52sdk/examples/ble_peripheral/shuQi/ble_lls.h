@@ -5,10 +5,12 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <string.h>
+#include "app_util.h"
+#include "app_util_bds.h"
+#include "nordic_common.h"
 #include "ble.h"
 #include "ble_srv_common.h"
-#include "app_util_bds.h"
-
 
 
 /**@brief Link Loss event type. */

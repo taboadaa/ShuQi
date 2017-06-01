@@ -108,13 +108,15 @@ _build/nrf52832_xxaa_main.c.o: ../../../main.c \
  ../../../../../../components/libraries/bsp/bsp_btn_ble.h \
  ../../../../../../components/libraries/bsp/bsp.h \
  ../../../../../../components/libraries/button/app_button.h \
- ../../../service_if.h \
+ ../../../service_if.h ../../../ble_lls.h \
+ ../../../../../../components/libraries/util/app_util_bds.h \
+ ../../../ble_stuff_manager.h \
  ../../../../../../components/libraries/log/nrf_log.h \
  ../../../../../../components/libraries/log/src/nrf_log_internal.h \
  ../../../../../../components/libraries/log/nrf_log_ctrl.h \
  ../../../../../../components/libraries/log/src/nrf_log_ctrl_internal.h \
  ../../../../../../components/ble/nrf_ble_qwr/nrf_ble_qwr.h \
- ../../../app.h
+ ../../../app.h ../../../constant.h ../../../data_management.h
 
 /opt/gcc-arm-none-eabi-6-2017-q1-update/lib/gcc/arm-none-eabi/6.3.1/include/stdint.h:
 
@@ -336,6 +338,12 @@ _build/nrf52832_xxaa_main.c.o: ../../../main.c \
 
 ../../../service_if.h:
 
+../../../ble_lls.h:
+
+../../../../../../components/libraries/util/app_util_bds.h:
+
+../../../ble_stuff_manager.h:
+
 ../../../../../../components/libraries/log/nrf_log.h:
 
 ../../../../../../components/libraries/log/src/nrf_log_internal.h:
@@ -347,3 +355,7 @@ _build/nrf52832_xxaa_main.c.o: ../../../main.c \
 ../../../../../../components/ble/nrf_ble_qwr/nrf_ble_qwr.h:
 
 ../../../app.h:
+
+../../../constant.h:
+
+../../../data_management.h:

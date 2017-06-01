@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;shuQi/app_struct&apos; to &apos;app_struct.h&apos;" description="Rename resource &apos;app_struct&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="app_struct" name="app_struct.h" stamp="1496328169767" updateReferences="true"/>
+</session>

@@ -63,7 +63,8 @@ _build/nrf52832_xxaa_app.c.o: ../../../app.c ../../../app.h \
  ../../../../../../components/softdevice/s132/headers/nrf_nvic.h \
  ../../../../../../components/libraries/util/nrf_assert.h \
  ../../../../../../components/libraries/util/app_error.h \
- ../../../../../../components/libraries/util/app_error_weak.h
+ ../../../../../../components/libraries/util/app_error_weak.h \
+ ../../../constant.h ../../../data_management.h
 
 ../../../app.h:
 
@@ -196,3 +197,7 @@ _build/nrf52832_xxaa_app.c.o: ../../../app.c ../../../app.h \
 ../../../../../../components/libraries/util/app_error.h:
 
 ../../../../../../components/libraries/util/app_error_weak.h:
+
+../../../constant.h:
+
+../../../data_management.h:

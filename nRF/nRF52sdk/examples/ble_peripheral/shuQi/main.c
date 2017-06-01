@@ -52,6 +52,8 @@
  * with 'YOUR_JOB' indicates where and how you can customize.
  */
 
+#define NRF_LOG_MODULE_NAME "MAIN"
+
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
@@ -73,11 +75,11 @@
 #include "ble_conn_state.h"
 #include "bsp_btn_ble.h"
 #include "service_if.h"
-#define NRF_LOG_MODULE_NAME "APP"
 #include "nrf_log.h"
 #include "nrf_log_ctrl.h"
 #include "nrf_ble_qwr.h"
 #include "app.h"
+#include "constant.h"
 
 #define IS_SRVC_CHANGED_CHARACT_PRESENT  0                                          /**< Include or not the service_changed characteristic. if not enabled, the server's database cannot be changed for the lifetime of the device*/
 
