@@ -96,11 +96,10 @@
 
 #define SPI_INSTANCE  0 /**< SPI instance index. */
 static const nrf_drv_spi_t spi = NRF_DRV_SPI_INSTANCE(SPI_INSTANCE);  /**< SPI instance. */
-static volatile bool spi_xfer_done;  /**< Flag used to indicate that SPI instance completed the transfer. */
+static volatile bool spi_xfer_done = true;  /**< Flag used to indicate that SPI instance completed the transfer. */
 
-#define TEST_STRING "Nordic"
-static uint8_t       m_tx_buf[] = TEST_STRING;           /**< TX buffer. */
-static uint8_t       m_rx_buf[sizeof(TEST_STRING) + 1];    /**< RX buffer. */
+static uint8_t       m_tx_buf[12+35];           /**< TX buffer. */
+static uint8_t       m_rx_buf[13];    /**< RX buffer. */
 static const uint8_t m_length = sizeof(m_tx_buf);        /**< Transfer length. */
 
 /*******************************************************************************************************************
@@ -205,6 +204,44 @@ uint32_t data_led_rgb (uint8_t* color, uint8_t* buffer){
 
    return 0;
 
+}
+
+uint32_t sk6812_init (){
+	NRF_LOG_INFO("SPI example\r\n");
+
+	nrf_drv_spi_config_t spi_config = NRF_DRV_SPI_DEFAULT_CONFIG;
+
+
+	spi_config.frequency = (0x33333300UL);
+	spi_config.mosi_pin = 4;
+	spi_config.sck_pin  = 3;
+	APP_ERROR_CHECK(nrf_drv_spi_init(&spi, &spi_config, spi_event_handler));
+	return 0;
+
+}
+
+uint32_t sk6812_set_color( uint8_t r,uint8_t g,uint8_t b){
+
+
+	static uint8_t sk6812_init_state = 0;
+	if (!(sk6812_init_state)){
+		sk6812_init ();
+		sk6812_init_state = 1;
+	}
+	if (spi_xfer_done == false){
+		return 2;
+	}
+	spi_xfer_done = false;
+	uint8_t color[3] = {r,g,b};
+	if (data_led_rgb (color, m_tx_buf)){
+	   return 1;
+	}
+
+	for(uint8_t i = 12; i<m_length;i++){
+		m_tx_buf[i] = 0;
+	}
+	APP_ERROR_CHECK(nrf_drv_spi_transfer(&spi, m_tx_buf, m_length, m_rx_buf, m_length));
+	return 0;
 }
 /*******************************************************************************************************************
  * END SPI   *******************************************************************************************************
@@ -758,36 +795,27 @@ void fncdebug() {
 }
 int main_spi(void)
 {
-	 bsp_board_leds_init();
+	bsp_board_leds_init();
 
-	    APP_ERROR_CHECK(NRF_LOG_INIT(NULL));
+	APP_ERROR_CHECK(NRF_LOG_INIT(NULL));
 
-	    NRF_LOG_INFO("SPI example\r\n");
 
-	    nrf_drv_spi_config_t spi_config = NRF_DRV_SPI_DEFAULT_CONFIG;
 
-	    spi_config.mosi_pin = 4;
-	    spi_config.sck_pin  = 3;
-	    APP_ERROR_CHECK(nrf_drv_spi_init(&spi, &spi_config, spi_event_handler));
+	while (1)
+	{
+		// Reset rx buffer and transfer done flag
 
-	    while (1)
-	    {
-	        // Reset rx buffer and transfer done flag
-	        memset(m_rx_buf, 0, m_length);
-	        spi_xfer_done = false;
+		sk6812_set_color(0x55,0x00,0xff);
+		while(spi_xfer_done == false)
+		{
+			__SEV();
+			__WFE();
+			__WFE();
+		}
 
-	        APP_ERROR_CHECK(nrf_drv_spi_transfer(&spi, m_tx_buf, m_length, m_rx_buf, m_length));
-
-	        while (!spi_xfer_done)
-	        {
-	            __WFE();
-	        }
-
-	        NRF_LOG_FLUSH();
-
-	        bsp_board_led_invert(BSP_BOARD_LED_0);
-	        nrf_delay_ms(200);
-	    }
+		LEDS_INVERT(BSP_LED_0_MASK);
+		nrf_delay_ms(200);
+	}
 }
 /**@brief Function for application main entry.
  */
