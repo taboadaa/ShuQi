@@ -28,12 +28,12 @@
 #include "fstorage.h"
 #include "ble_conn_state.h"
 #include "bsp_btn_ble.h"
-#include "service_if.h"
 #include "nrf_log.h"
 #include "nrf_log_ctrl.h"
 #include "nrf_ble_qwr.h"
-#include "app.h"
+
 #include "constant.h"
+#include "service_if.h"
 
 
 void power_manage(void);

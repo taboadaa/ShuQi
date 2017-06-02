@@ -108,15 +108,14 @@ _build/nrf52832_xxaa_init.c.o: ../../../init.c ../../../init.h \
  ../../../../../../components/libraries/bsp/bsp_btn_ble.h \
  ../../../../../../components/libraries/bsp/bsp.h \
  ../../../../../../components/libraries/button/app_button.h \
- ../../../service_if.h ../../../ble_lls.h \
- ../../../../../../components/libraries/util/app_util_bds.h \
- ../../../ble_stuff_manager.h \
  ../../../../../../components/libraries/log/nrf_log.h \
  ../../../../../../components/libraries/log/src/nrf_log_internal.h \
  ../../../../../../components/libraries/log/nrf_log_ctrl.h \
  ../../../../../../components/libraries/log/src/nrf_log_ctrl_internal.h \
  ../../../../../../components/ble/nrf_ble_qwr/nrf_ble_qwr.h \
- ../../../app.h ../../../constant.h ../../../data_management.h
+ ../../../constant.h ../../../service_if.h ../../../ble_lls.h \
+ ../../../../../../components/libraries/util/app_util_bds.h \
+ ../../../ble_stuff_manager.h
 
 ../../../init.h:
 
@@ -338,14 +337,6 @@ _build/nrf52832_xxaa_init.c.o: ../../../init.c ../../../init.h \
 
 ../../../../../../components/libraries/button/app_button.h:
 
-../../../service_if.h:
-
-../../../ble_lls.h:
-
-../../../../../../components/libraries/util/app_util_bds.h:
-
-../../../ble_stuff_manager.h:
-
 ../../../../../../components/libraries/log/nrf_log.h:
 
 ../../../../../../components/libraries/log/src/nrf_log_internal.h:
@@ -356,8 +347,12 @@ _build/nrf52832_xxaa_init.c.o: ../../../init.c ../../../init.h \
 
 ../../../../../../components/ble/nrf_ble_qwr/nrf_ble_qwr.h:
 
-../../../app.h:
-
 ../../../constant.h:
 
-../../../data_management.h:
+../../../service_if.h:
+
+../../../ble_lls.h:
+
+../../../../../../components/libraries/util/app_util_bds.h:
+
+../../../ble_stuff_manager.h:

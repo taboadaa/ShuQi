@@ -14,6 +14,7 @@
 #include "app_util.h"
 #include "nrf_log.h"
 #include "nrf_log_ctrl.h"
+
 #include "constant.h"
 
 void rfid_ids_init(uint8_array_t** rfidIds);

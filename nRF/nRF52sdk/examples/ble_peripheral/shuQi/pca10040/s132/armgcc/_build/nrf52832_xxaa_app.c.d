@@ -64,7 +64,7 @@ _build/nrf52832_xxaa_app.c.o: ../../../app.c ../../../app.h \
  ../../../../../../components/libraries/util/nrf_assert.h \
  ../../../../../../components/libraries/util/app_error.h \
  ../../../../../../components/libraries/util/app_error_weak.h \
- ../../../constant.h ../../../data_management.h ../../../init.h \
+ ../../../constant.h ../../../init.h \
  ../../../../../../components/libraries/util/nordic_common.h \
  ../../../../../../components/libraries/util/app_error.h \
  ../../../../../../components/softdevice/s132/headers/ble.h \
@@ -113,10 +113,10 @@ _build/nrf52832_xxaa_app.c.o: ../../../app.c ../../../app.h \
  ../../../../../../components/libraries/bsp/bsp_btn_ble.h \
  ../../../../../../components/libraries/bsp/bsp.h \
  ../../../../../../components/libraries/button/app_button.h \
+ ../../../../../../components/ble/nrf_ble_qwr/nrf_ble_qwr.h \
  ../../../service_if.h ../../../ble_lls.h \
  ../../../../../../components/libraries/util/app_util_bds.h \
- ../../../ble_stuff_manager.h \
- ../../../../../../components/ble/nrf_ble_qwr/nrf_ble_qwr.h
+ ../../../ble_stuff_manager.h ../../../data_management.h
 
 ../../../app.h:
 
@@ -252,8 +252,6 @@ _build/nrf52832_xxaa_app.c.o: ../../../app.c ../../../app.h \
 
 ../../../constant.h:
 
-../../../data_management.h:
-
 ../../../init.h:
 
 ../../../../../../components/libraries/util/nordic_common.h:
@@ -352,6 +350,8 @@ _build/nrf52832_xxaa_app.c.o: ../../../app.c ../../../app.h \
 
 ../../../../../../components/libraries/button/app_button.h:
 
+../../../../../../components/ble/nrf_ble_qwr/nrf_ble_qwr.h:
+
 ../../../service_if.h:
 
 ../../../ble_lls.h:
@@ -360,4 +360,4 @@ _build/nrf52832_xxaa_app.c.o: ../../../app.c ../../../app.h \
 
 ../../../ble_stuff_manager.h:
 
-../../../../../../components/ble/nrf_ble_qwr/nrf_ble_qwr.h:
+../../../data_management.h:
