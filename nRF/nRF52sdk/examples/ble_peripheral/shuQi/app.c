@@ -21,8 +21,17 @@ void app_init() {
 }
 
 
+/** @brief Function for application main entry.
+ */
+int main(void) {
+	device_init();
+	app_init();
 
-
+	// Enter main loop.
+	for (;;) {
+		power_manage();
+	}
+}
 
 
 

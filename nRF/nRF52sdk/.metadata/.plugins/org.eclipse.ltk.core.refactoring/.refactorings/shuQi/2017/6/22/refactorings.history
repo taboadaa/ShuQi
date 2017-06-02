@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;shuQi/app_struct&apos; to &apos;app_struct.h&apos;" description="Rename resource &apos;app_struct&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="app_struct" name="app_struct.h" stamp="1496328169767" updateReferences="true"/>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;shuQi/app_struct&apos; to &apos;app_struct.h&apos;" description="Rename resource &apos;app_struct&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="app_struct" name="app_struct.h" stamp="1496328169767" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;shuQi/main.c&apos; to &apos;init.c&apos;" description="Rename resource &apos;main.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="main.c" name="init.c" stamp="1496397704522" updateReferences="true"/>
 </session>

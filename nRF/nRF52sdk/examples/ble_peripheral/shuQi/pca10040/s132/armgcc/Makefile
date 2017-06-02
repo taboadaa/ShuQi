@@ -33,7 +33,7 @@ SRC_FILES += \
   $(SDK_ROOT)/components/libraries/bsp/bsp.c \
   $(SDK_ROOT)/components/libraries/bsp/bsp_btn_ble.c \
   $(SDK_ROOT)/components/libraries/bsp/bsp_nfc.c \
-  $(PROJ_DIR)/main.c \
+  $(PROJ_DIR)/init.c \
   $(PROJ_DIR)/service_if.c \
   $(PROJ_DIR)/ble_lls.c \
   $(PROJ_DIR)/ble_stuff_manager.c \

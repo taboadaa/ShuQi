@@ -64,7 +64,59 @@ _build/nrf52832_xxaa_app.c.o: ../../../app.c ../../../app.h \
  ../../../../../../components/libraries/util/nrf_assert.h \
  ../../../../../../components/libraries/util/app_error.h \
  ../../../../../../components/libraries/util/app_error_weak.h \
- ../../../constant.h ../../../data_management.h
+ ../../../constant.h ../../../data_management.h ../../../init.h \
+ ../../../../../../components/libraries/util/nordic_common.h \
+ ../../../../../../components/libraries/util/app_error.h \
+ ../../../../../../components/softdevice/s132/headers/ble.h \
+ ../../../../../../components/softdevice/s132/headers/ble_ranges.h \
+ ../../../../../../components/softdevice/s132/headers/ble_types.h \
+ ../../../../../../components/softdevice/s132/headers/ble_gap.h \
+ ../../../../../../components/softdevice/s132/headers/ble_l2cap.h \
+ ../../../../../../components/softdevice/s132/headers/ble_err.h \
+ ../../../../../../components/softdevice/s132/headers/ble_gatt.h \
+ ../../../../../../components/softdevice/s132/headers/ble_gattc.h \
+ ../../../../../../components/softdevice/s132/headers/ble_gatts.h \
+ ../../../../../../components/softdevice/s132/headers/ble_hci.h \
+ ../../../../../../components/ble/common/ble_srv_common.h \
+ ../../../../../../components/softdevice/s132/headers/ble_types.h \
+ ../../../../../../components/softdevice/s132/headers/ble_gap.h \
+ ../../../../../../components/softdevice/s132/headers/ble_gatt.h \
+ ../../../../../../components/ble/common/ble_advdata.h \
+ ../../../../../../components/ble/ble_advertising/ble_advertising.h \
+ ../../../../../../components/softdevice/s132/headers/ble_gattc.h \
+ ../../../../../../components/ble/common/ble_conn_params.h \
+ ../../../../../../components/ble/common/ble_srv_common.h \
+ ../../../../../../components/boards/boards.h \
+ ../../../../../../components/drivers_nrf/hal/nrf_gpio.h \
+ ../../../../../../components/drivers_nrf/hal/nrf_peripherals.h \
+ ../../../../../../components/device/nrf52832_peripherals.h \
+ ../../../../../../components/libraries/util/nrf_assert.h \
+ ../../../../../../components/boards/pca10040.h \
+ ../../../../../../components/softdevice/common/softdevice_handler/softdevice_handler.h \
+ ../../../../../../components/softdevice/s132/headers/nrf_sdm.h \
+ ../../../../../../components/softdevice/s132/headers/nrf_soc.h \
+ ../../../../../../components/softdevice/s132/headers/nrf_error_sdm.h \
+ ../../../../../../components/softdevice/common/softdevice_handler/ble_stack_handler_types.h \
+ ../../../../../../components/softdevice/common/softdevice_handler/ant_stack_handler_types.h \
+ ../../../../../../components/softdevice/common/softdevice_handler/app_ram_base.h \
+ ../../../../../../components/libraries/timer/app_timer.h \
+ ../../../../../../components/ble/peer_manager/peer_manager.h \
+ ../../../../../../components/ble/peer_manager/peer_manager_types.h \
+ ../../../../../../components/ble/common/ble_gatt_db.h \
+ ../../../../../../components/ble/peer_manager/peer_database.h \
+ ../../../../../../components/ble/peer_manager/peer_manager_internal.h \
+ ../../../../../../components/libraries/fds/fds.h \
+ ../../../../../../components/libraries/fstorage/fstorage.h \
+ ../../../../../../components/libraries/experimental_section_vars/section_vars.h \
+ ../../../../../../components/ble/common/ble_conn_state.h \
+ ../../../../../../components/libraries/util/sdk_mapped_flags.h \
+ ../../../../../../components/libraries/bsp/bsp_btn_ble.h \
+ ../../../../../../components/libraries/bsp/bsp.h \
+ ../../../../../../components/libraries/button/app_button.h \
+ ../../../service_if.h ../../../ble_lls.h \
+ ../../../../../../components/libraries/util/app_util_bds.h \
+ ../../../ble_stuff_manager.h \
+ ../../../../../../components/ble/nrf_ble_qwr/nrf_ble_qwr.h
 
 ../../../app.h:
 
@@ -201,3 +253,111 @@ _build/nrf52832_xxaa_app.c.o: ../../../app.c ../../../app.h \
 ../../../constant.h:
 
 ../../../data_management.h:
+
+../../../init.h:
+
+../../../../../../components/libraries/util/nordic_common.h:
+
+../../../../../../components/libraries/util/app_error.h:
+
+../../../../../../components/softdevice/s132/headers/ble.h:
+
+../../../../../../components/softdevice/s132/headers/ble_ranges.h:
+
+../../../../../../components/softdevice/s132/headers/ble_types.h:
+
+../../../../../../components/softdevice/s132/headers/ble_gap.h:
+
+../../../../../../components/softdevice/s132/headers/ble_l2cap.h:
+
+../../../../../../components/softdevice/s132/headers/ble_err.h:
+
+../../../../../../components/softdevice/s132/headers/ble_gatt.h:
+
+../../../../../../components/softdevice/s132/headers/ble_gattc.h:
+
+../../../../../../components/softdevice/s132/headers/ble_gatts.h:
+
+../../../../../../components/softdevice/s132/headers/ble_hci.h:
+
+../../../../../../components/ble/common/ble_srv_common.h:
+
+../../../../../../components/softdevice/s132/headers/ble_types.h:
+
+../../../../../../components/softdevice/s132/headers/ble_gap.h:
+
+../../../../../../components/softdevice/s132/headers/ble_gatt.h:
+
+../../../../../../components/ble/common/ble_advdata.h:
+
+../../../../../../components/ble/ble_advertising/ble_advertising.h:
+
+../../../../../../components/softdevice/s132/headers/ble_gattc.h:
+
+../../../../../../components/ble/common/ble_conn_params.h:
+
+../../../../../../components/ble/common/ble_srv_common.h:
+
+../../../../../../components/boards/boards.h:
+
+../../../../../../components/drivers_nrf/hal/nrf_gpio.h:
+
+../../../../../../components/drivers_nrf/hal/nrf_peripherals.h:
+
+../../../../../../components/device/nrf52832_peripherals.h:
+
+../../../../../../components/libraries/util/nrf_assert.h:
+
+../../../../../../components/boards/pca10040.h:
+
+../../../../../../components/softdevice/common/softdevice_handler/softdevice_handler.h:
+
+../../../../../../components/softdevice/s132/headers/nrf_sdm.h:
+
+../../../../../../components/softdevice/s132/headers/nrf_soc.h:
+
+../../../../../../components/softdevice/s132/headers/nrf_error_sdm.h:
+
+../../../../../../components/softdevice/common/softdevice_handler/ble_stack_handler_types.h:
+
+../../../../../../components/softdevice/common/softdevice_handler/ant_stack_handler_types.h:
+
+../../../../../../components/softdevice/common/softdevice_handler/app_ram_base.h:
+
+../../../../../../components/libraries/timer/app_timer.h:
+
+../../../../../../components/ble/peer_manager/peer_manager.h:
+
+../../../../../../components/ble/peer_manager/peer_manager_types.h:
+
+../../../../../../components/ble/common/ble_gatt_db.h:
+
+../../../../../../components/ble/peer_manager/peer_database.h:
+
+../../../../../../components/ble/peer_manager/peer_manager_internal.h:
+
+../../../../../../components/libraries/fds/fds.h:
+
+../../../../../../components/libraries/fstorage/fstorage.h:
+
+../../../../../../components/libraries/experimental_section_vars/section_vars.h:
+
+../../../../../../components/ble/common/ble_conn_state.h:
+
+../../../../../../components/libraries/util/sdk_mapped_flags.h:
+
+../../../../../../components/libraries/bsp/bsp_btn_ble.h:
+
+../../../../../../components/libraries/bsp/bsp.h:
+
+../../../../../../components/libraries/button/app_button.h:
+
+../../../service_if.h:
+
+../../../ble_lls.h:
+
+../../../../../../components/libraries/util/app_util_bds.h:
+
+../../../ble_stuff_manager.h:
+
+../../../../../../components/ble/nrf_ble_qwr/nrf_ble_qwr.h:

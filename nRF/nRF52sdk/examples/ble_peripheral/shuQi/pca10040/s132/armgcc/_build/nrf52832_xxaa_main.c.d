@@ -1,4 +1,4 @@
-_build/nrf52832_xxaa_main.c.o: ../../../main.c \
+_build/nrf52832_xxaa_main.c.o: ../../../main.c ../../../init.h \
  /opt/gcc-arm-none-eabi-6-2017-q1-update/lib/gcc/arm-none-eabi/6.3.1/include/stdint.h \
  /opt/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/include/stdint.h \
  /opt/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/include/machine/_default_types.h \
@@ -117,6 +117,8 @@ _build/nrf52832_xxaa_main.c.o: ../../../main.c \
  ../../../../../../components/libraries/log/src/nrf_log_ctrl_internal.h \
  ../../../../../../components/ble/nrf_ble_qwr/nrf_ble_qwr.h \
  ../../../app.h ../../../constant.h ../../../data_management.h
+
+../../../init.h:
 
 /opt/gcc-arm-none-eabi-6-2017-q1-update/lib/gcc/arm-none-eabi/6.3.1/include/stdint.h:
 
