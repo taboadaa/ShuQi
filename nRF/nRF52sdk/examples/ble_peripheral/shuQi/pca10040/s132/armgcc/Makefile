@@ -38,6 +38,7 @@ SRC_FILES += \
   $(PROJ_DIR)/ble_ias.c \
   $(PROJ_DIR)/ble_stuff_list.c \
   $(PROJ_DIR)/app.c \
+  $(PROJ_DIR)/sk6812.c \
   $(SDK_ROOT)/external/segger_rtt/RTT_Syscalls_GCC.c \
   $(SDK_ROOT)/external/segger_rtt/SEGGER_RTT.c \
   $(SDK_ROOT)/external/segger_rtt/SEGGER_RTT_printf.c \
