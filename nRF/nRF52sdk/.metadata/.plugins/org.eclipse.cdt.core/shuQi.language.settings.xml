@@ -1133,10 +1133,13 @@
 			</provider>
 			<provider id="ilg.gnuarmeclipse.managedbuild.cross.GCCBuiltinSpecsDetector">
 				<language id="org.eclipse.cdt.core.gcc">
-					<entry kind="includePath" name="/home/tab/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/include">
-						<flag value="BUILTIN|READONLY"/>
+					<entry kind="includePath" name="/shuQi/config">
+						<flag value="BUILTIN|READONLY|VALUE_WORKSPACE_PATH|RESOLVED"/>
 					</entry>
-					<entry kind="includePath" name="/home/tab/nRF52sdk/components">
+					<entry kind="includePath" name="/shuQi/components">
+						<flag value="BUILTIN|READONLY|VALUE_WORKSPACE_PATH|RESOLVED"/>
+					</entry>
+					<entry kind="includePath" name="/home/tab/gcc-arm-none-eabi-6-2017-q1-update/arm-none-eabi/include">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
 					<entry kind="includePath" name="/opt/gcc-arm-none-eabi-6-2017-q1-update/lib/gcc/arm-none-eabi/6.3.1/include">
