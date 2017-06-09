@@ -12,7 +12,6 @@
 #include "app_util_platform.h"
 #include "nrf_gpio.h"
 #include "nrf_delay.h"
-#define NRF_LOG_MODULE_NAME "APP"
 
 
 #define SPI_INSTANCE  0 /**< SPI instance index. */

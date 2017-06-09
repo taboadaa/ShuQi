@@ -8,6 +8,7 @@
 #define NRF_LOG_MODULE_NAME "       APP"
 
 #include "app.h"
+#include "sk6812.h"
 
 
 /**
@@ -52,7 +53,7 @@ int main(void) {
 	for (;;) {
 		NRF_LOG_INFO("Power manage\n\r");
 		power_manage();
-
+		sk6812_set_color( 0xf0,0x40,0x0f);
 		NRF_LOG_INFO("Exit power manage\n\r");
 	}
 }
