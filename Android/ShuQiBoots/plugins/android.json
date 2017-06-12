@@ -1,0 +1,22 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "ch.hepia.ShuQi"
+        },
+        "cordova-plugin-ble-central": {
+            "PACKAGE_NAME": "ch.hepia.ShuQi"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "ch.hepia.ShuQi"
+        }
+    }
+}

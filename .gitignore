@@ -1,2 +1,6 @@
 
 nRF/nRF52sdk/examples/ble_peripheral/shuQi/pca10040/s132/armgcc/_build/
+/Android/ShuQi/nbproject/private/
+/Android/ShuQiBoots/nbproject/private/
+/Android/ShuQiBoots/node_modules/
+/Android/HTML5Application/nbproject/private/
