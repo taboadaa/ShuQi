@@ -36,7 +36,8 @@ var StuffManager = {
 		this.setMode(ManagerMode.read);
 
 		//wait for EntryNumber to change
-		ble.read(this.deviceId, StuffManagerService.uuid, StuffManagerService.entryNumber, callbackSucess)
+		ble.read(this.deviceId, StuffManagerService.uuid, StuffManagerService.entryNumber, callbackSucess);
+
 	}
 
 };
