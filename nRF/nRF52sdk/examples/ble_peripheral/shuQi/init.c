@@ -620,13 +620,6 @@ void device_init() {
 	NRF_LOG_INFO("Start Advertising\n");
 	err_code = ble_advertising_start(BLE_ADV_MODE_FAST);
 	APP_ERROR_CHECK(err_code);
-
-	/*// Enter main loop.
-	for (;;) {
-		if (NRF_LOG_PROCESS() == false) {
-			power_manage();
-		}
-	}*/
 }
 
 /**

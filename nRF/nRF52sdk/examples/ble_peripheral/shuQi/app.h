@@ -1,8 +1,8 @@
-/*
- * app.h
- *
- *  Created on: 19 mai 2017
- *      Author: tab
+/**
+ * @name	app.h
+ * @authors	Taboada Adrien, Collet Axel
+ * @date	2017.05.30
+ * @brief	Main application.
  */
 
 #ifndef APP_H_
@@ -21,8 +21,6 @@
 #include "data_management.h"
 
 
-uint8_array_t** rfid_ids;
-
 typedef enum
 {
     STATE_SLEEP = 0,
@@ -30,6 +28,22 @@ typedef enum
 	STATE_RECOGNITION = 2,
 } enum_state_t;
 
+uint8_array_t** rfid_ids;
+enum_state_t currentState;
+
+/**
+ * @brief Change the state of the application.
+ * @param currentState Current state of the application
+ * @param mode New state to go
+ * @return Return the current state.
+ */
+enum_state_t state_change(enum_state_t currentState, enum_mode_t mode);
+
+
+
+/**
+ * @brief Function for application main entry.
+ */
 void app_init();
 
 #endif /* APP_H_ */

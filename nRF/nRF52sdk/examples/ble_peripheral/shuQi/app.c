@@ -1,8 +1,8 @@
-/*
- * app.c
- *
- *  Created on: 19 mai 2017
- *      Author: tab
+/**
+ * @name	app.c
+ * @authors	Taboada Adrien, Collet Axel
+ * @date	2017.05.30
+ * @brief	Main application.
  */
 
 #define NRF_LOG_MODULE_NAME "       APP"
@@ -11,16 +11,19 @@
 
 
 /**
- *
+ * @brief Initialize the application.
  */
 void app_init() {
 	rfid_ids = calloc(sizeof(uint8_array_t*) * RFID_ID_ARRAY_SIZE, 1);
 	rfid_ids_init(rfid_ids);
+	currentState = STATE_SLEEP;
 
 	NRF_LOG_INFO("App init\n");
 }
 
-
+/**
+ * @brief Change the state of the application.
+ */
 enum_state_t state_change(enum_state_t currentState, enum_mode_t mode) {
 	if(currentState == STATE_SLEEP) {
 		if (mode == MODE_READ) {
@@ -37,10 +40,21 @@ enum_state_t state_change(enum_state_t currentState, enum_mode_t mode) {
 			return STATE_SLEEP;
 		}
 	}
+
+	//log
+	if(currentState == STATE_READ) {
+		NRF_LOG_INFO("State READ");
+	} else if(state == STATE_RECOGNITION) {
+		NRF_LOG_INFO("State RECOGNITION");
+	} else {NRF_LOG_INFO("State SLEEP or UNKNOWN");}
+	//log
 	return currentState;
 }
 
-/** @brief Function for application main entry.
+
+
+/**
+ * @brief Function for application main entry.
  */
 int main(void) {
 	device_init();
@@ -50,9 +64,12 @@ int main(void) {
 
 	// Enter main loop.
 	for (;;) {
-		NRF_LOG_INFO("Power manage\n\r");
-		power_manage();
+		NRF_LOG_INFO("Main operation\n");
 
-		NRF_LOG_INFO("Exit power manage\n\r");
+
+
+		NRF_LOG_INFO("Power manage\n");
+		power_manage();
+		NRF_LOG_INFO("Exit power manage\n");
 	}
 }

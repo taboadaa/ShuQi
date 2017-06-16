@@ -19,6 +19,7 @@
 #include "ble.h"
 #include "nrf_log.h"
 
+#include "ble_utils.h"
 #include "ble_lls.h"
 #include "ble_stuff_manager.h"
 

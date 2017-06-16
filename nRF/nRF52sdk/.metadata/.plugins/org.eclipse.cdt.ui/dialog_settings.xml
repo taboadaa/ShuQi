@@ -4,7 +4,7 @@
 	<item value="2" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.last_focus"/>
 	<item value="211" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_y"/>
 	<item value="0" key="org.eclipse.cdt.uiformatter_page.white_space_tab_page.node"/>
-	<item value="Default C++ source template" key="LastUsedSourceTemplate"/>
+	<item value="Default C source template" key="LastUsedSourceTemplate"/>
 	<item value="1165" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_width"/>
 	<item value="737" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_height"/>
 	<item value="0" key="org.eclipse.cdt.uiformatter_page.white_space.c_view.inner"/>
@@ -27,6 +27,13 @@
 		<list key="previousPatterns">
 			<item value="fatal"/>
 		</list>
+	</section>
+	<section name="org.eclipse.cdt.internal.ui.preferences.EditTemplateDialog_dialogBounds">
+		<item value="585" key="DIALOG_WIDTH"/>
+		<item value="1|Noto Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="339" key="DIALOG_HEIGHT"/>
+		<item value="20" key="DIALOG_X_ORIGIN"/>
+		<item value="73" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="completion_proposal_size">
 	</section>

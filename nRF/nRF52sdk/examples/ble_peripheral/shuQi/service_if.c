@@ -44,11 +44,15 @@ static void on_stuff_manager_evt(ble_stuff_manager_t * p_stuff_manager, ble_stuf
     switch (p_evt->evt_type)
     { 
         case BLE_STUFF_MANAGER_ENTRY_SELECTION_EVT_WRITE:
-        	NRF_LOG_INFO("STUFF_MANAGER_ENTRY_SELECTION evt WRITE.n");
+        	NRF_LOG_INFO("STUFF_MANAGER_ENTRY_SELECTION evt WRITE.\n");
+
+        	get_rfid_id(get_stuff_manager_entry_selection());
+
             break; 
         case BLE_STUFF_MANAGER_MANAGER_MODE_EVT_WRITE:
         	NRF_LOG_INFO("STUFF_MANAGER_MANAGER_MODE evt WRITE.\n");
 
+        	state_change(currentState, get_stuff_manager_manager_mode());
 
             break; 
         default:
