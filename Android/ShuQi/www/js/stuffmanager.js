@@ -33,14 +33,55 @@ var StuffManager = {
 	},
 
 	readStuff: function() {
+		//local var
+		ii: 0;
+		nbEntry: 0;
+		//TODO Voir gestion struct du buffer
+		//fncs
+		function onEntryNumberChange(data) {
+			console.log("    EntryNumber changed!");
+			ble.read(this.deviceId, StuffManagerService.uuid, StuffManagerService.entryNumber, StuffManagerCallback);
+		}
+		
+		function onEntryNumberRead(buffer) {
+			console.log("    EntryNumber readed!");
+			data = BleUtils.decode(buffer);
+			if (data[0] !== 0) {
+				nbEntry: data;
+				ble.stopNotification(this.deviceId, StuffManagerService.uuid, StuffManagerService.entryNumber);
+				ble.write(this.deviceId, StuffManagerService.uuid, StuffManagerService.entrySelection, BleUtils.encode(""), onEntrySelectionWrite(ii));
+			}
+		}
+		
+		function onEntrySelectionWrite(data) {
+			console.log("    EntrySelection writed!");
+			
+			if (data[0] !== 0) {
+				ble.stopNotification(this.deviceId, StuffManagerService.uuid, StuffManagerService.entryNumber);
+				ble.write(this.deviceId, StuffManagerService.uuid, StuffManagerService.entrySelection, BleUtils.encode(""), onEntrySelectionWrite(ii));
+			}
+		}
+		
+		
+		//fnc main
 		this.setMode(ManagerMode.read);
 
 		//wait for EntryNumber to change
-		ble.read(this.deviceId, StuffManagerService.uuid, StuffManagerService.entryNumber, callbackSucess);
+		ble.startNotification(this.deviceId, StuffManagerService.uuid, StuffManagerService.entryNumber, onEntryNumberChange());
 
+	},
+	
+	readStuffList: function() {
+		
 	}
 
 };
+
+var StuffManagerCallback = {
+	readEntryNumber: function() {
+		
+	}
+}
 
 /**
  *
@@ -67,6 +108,7 @@ var BleUtils = {
 	 */
 	decode: function(buffer) {
 		return String.fromCharCode.apply(null, new Uint8Array(buffer));
+		//todo faire return
 	}
 }
 
