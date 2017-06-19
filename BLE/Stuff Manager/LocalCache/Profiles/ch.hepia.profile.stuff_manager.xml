@@ -5,13 +5,11 @@
   type="ch.hepia.profile.stuff_manager"
   uuid="972e2ab7-6ed9-4a89-bbbf-b19779b19a3f">
   <InformativeText>
-    <Abstract>The Stuff Manager profile enables the monitoring of some stuff. It's derivated from the Proximity profile.</Abstract>
-    <Summary>	The Proximity profile defines the behavior when a device moves away from a peer device so that the connection is dropped or the path loss increases above a preset level, causing an immediate alert. This alert can be used to notify the user that the devices have become separated. As a consequence of this alert, a device may take further action, for example to lock one of the devices so that it is no longer usable.
-	The Proximity profile can also be used to define the behavior when the two devices come closer together such that a connection is made or the path loss decreases below a preset level.
-		</Summary>
+    <Abstract>The Stuff Manager profile enables the monitoring for some stuff. It's based on a scheme Master-Slave.</Abstract>
+    <Summary>	The Stuff Manager profile defines the interactions for a device who will manage some stuff. There is two roles defined here: Master for the Client and Slave for the Server. The Master will send a command to the Slave and, depends of the mode, will send the list of the stuff or other operations.</Summary>
   </InformativeText>
   <Role
-    name="STUFF MANAGER REPORTER">
+    name="STUFF MANAGER SLAVe">
     <Service
       type="ch.hepia.service.stuff_manager">
       <Declaration>Primary</Declaration>
@@ -45,7 +43,7 @@
     </Conditional>
   </Role>
   <Role
-    name="STUFF MANAGER MONITOR">
+    name="STUFF MANAGER MASTEr">
     <Client
       type="ch.hepia.service.stuff_manager">
       <Requirement>Mandatory</Requirement>
