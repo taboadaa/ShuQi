@@ -41,6 +41,7 @@ SRC_FILES += \
   $(PROJ_DIR)/service_if.c \
   $(PROJ_DIR)/ble_stuff_manager.c \
   $(PROJ_DIR)/data_management.c \
+  $(PROJ_DIR)/ble_utils.c \
   $(SDK_ROOT)/external/segger_rtt/RTT_Syscalls_GCC.c \
   $(SDK_ROOT)/external/segger_rtt/SEGGER_RTT.c \
   $(SDK_ROOT)/external/segger_rtt/SEGGER_RTT_printf.c \

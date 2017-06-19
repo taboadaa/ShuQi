@@ -4,9 +4,9 @@
 #include "service_if.h"
 
 static ble_lls_t    m_lls; 
-static ble_stuff_manager_t    m_stuff_manager; 
+static ble_stuff_manager_t    m_stuff_manager;
 
-uint8_t m_stuff_manager_entry_value_initial_value_id_arr[1]; 
+uint8_t m_stuff_manager_entry_value_initial_value_id_arr[1];
 
 
 /**@brief Function for handling the Link Loss events.

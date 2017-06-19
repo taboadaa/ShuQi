@@ -21,14 +21,13 @@
 #include "data_management.h"
 
 
-typedef enum
-{
+typedef enum {
     STATE_SLEEP = 0,
 	STATE_READ = 1,
 	STATE_RECOGNITION = 2,
 } enum_state_t;
 
-uint8_array_t** rfid_ids;
+uint8_array_t* rfid_ids;
 enum_state_t currentState;
 
 /**

@@ -5,13 +5,13 @@
  * @brief	
  */
 
-
+#include "ble_utils.h"
 
 /**
  *
  */
-void set_state_new() {
-
+void set_mode_new(enum_mode_t mode) {
+	state_change(currentState, mode);
 }
 
 /**
@@ -20,7 +20,8 @@ void set_state_new() {
  * @return
  */
 void get_rfid_id(int entry) {
-	set_stuff_manager_entry_value(rfid_ids_get(rfid_ids, entry));
+	uint8_array_t rfidId = rfid_ids_get(rfid_ids, entry);
+	set_stuff_manager_entry_value(rfidId);
 }
 
 

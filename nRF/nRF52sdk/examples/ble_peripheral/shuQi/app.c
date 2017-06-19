@@ -44,7 +44,7 @@ enum_state_t state_change(enum_state_t currentState, enum_mode_t mode) {
 	//log
 	if(currentState == STATE_READ) {
 		NRF_LOG_INFO("State READ");
-	} else if(state == STATE_RECOGNITION) {
+	} else if(currentState == STATE_RECOGNITION) {
 		NRF_LOG_INFO("State RECOGNITION");
 	} else {NRF_LOG_INFO("State SLEEP or UNKNOWN");}
 	//log

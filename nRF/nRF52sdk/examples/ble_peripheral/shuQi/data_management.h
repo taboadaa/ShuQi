@@ -17,8 +17,8 @@
 
 #include "constant.h"
 
-void rfid_ids_init(uint8_array_t** rfidIds);
-int rfid_ids_add(uint8_array_t** rfidIds, uint8_array_t* idTag);
-uint8_array_t rfid_ids_get(uint8_array_t** rfidIds, int entry);
+void rfid_ids_init(uint8_array_t* rfidIds);
+int rfid_ids_add(uint8_array_t* rfidIds, uint8_array_t idTag);
+uint8_array_t rfid_ids_get(uint8_array_t* rfidIds, int entry);
 
 #endif /* DATA_MANAGEMENT_H_ */
