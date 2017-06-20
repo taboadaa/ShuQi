@@ -166,7 +166,9 @@ uint16_t get_stuff_manager_entry_selection() {
  * @return Return the value of the characteristic
  */
 uint8_t get_stuff_manager_manager_mode() {
-	uint8_t result = m_stuff_manager.manager_mode_handles.value_handle;
+	//uint8_t result = m_stuff_manager.manager_mode_handles.value_handle;
+	uint8_t result = p_stuff
+	NRF_LOG_INFO("managermode value: %d", result);
 	return result;
 }
 

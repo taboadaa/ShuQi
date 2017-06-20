@@ -27,26 +27,26 @@ void app_init() {
 enum_state_t state_change(enum_state_t currentState, enum_mode_t mode) {
 	if(currentState == STATE_SLEEP) {
 		if (mode == MODE_READ) {
-			return STATE_READ;
+			currentState = STATE_READ;
 		} else if(mode == MODE_RECOGNITION) {
-			return STATE_RECOGNITION;
+			currentState = STATE_RECOGNITION;
 		}
 	} else if(currentState == STATE_READ) {
 		if(mode == MODE_SLEEP) {
-			return STATE_SLEEP;
+			currentState = STATE_SLEEP;
 		}
 	} else if(currentState == STATE_RECOGNITION) {
 		if(mode == MODE_SLEEP) {
-			return STATE_SLEEP;
+			currentState = STATE_SLEEP;
 		}
 	}
 
 	//log
 	if(currentState == STATE_READ) {
-		NRF_LOG_INFO("State READ");
+		NRF_LOG_INFO("State READ\n");
 	} else if(currentState == STATE_RECOGNITION) {
-		NRF_LOG_INFO("State RECOGNITION");
-	} else {NRF_LOG_INFO("State SLEEP or UNKNOWN");}
+		NRF_LOG_INFO("State RECOGNITION\n");
+	} else {NRF_LOG_INFO("State SLEEP or UNKNOWN\n");}
 	//log
 	return currentState;
 }
