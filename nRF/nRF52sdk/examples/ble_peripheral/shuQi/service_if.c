@@ -165,10 +165,17 @@ uint16_t get_stuff_manager_entry_selection() {
  * Getter for the characteristic Manager Mode.
  * @return Return the value of the characteristic
  */
-uint8_t get_stuff_manager_manager_mode() {
-	//uint8_t result = m_stuff_manager.manager_mode_handles.value_handle;
-	uint8_t result = p_stuff
-	NRF_LOG_INFO("managermode value: %d", result);
+enum_mode_t get_stuff_manager_manager_mode() {
+	ble_stuff_manager_manager_mode_t* managerResult = NULL;// = malloc(sizeof(ble_stuff_manager_manager_mode_t*));
+	ble_stuff_manager_manager_mode_get(&m_stuff_manager, managerResult);
+
+	enum_mode_t result = managerResult->mode.mode;
+
+	#ifndef ENABLE_LOG
+	if (result == MODE_SLEEP) {
+		NRF_LOG_INFO("managermode value: SLEEP\n");
+	} //...
+	#endif
 	return result;
 }
 

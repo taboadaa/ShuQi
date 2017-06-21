@@ -8,6 +8,8 @@
 #ifndef CONSTANT_H_
 #define CONSTANT_H_
 
+#define ENABLE_LOG                       1                                          /**< Enable logs. */
+
 #define IS_SRVC_CHANGED_CHARACT_PRESENT  0                                          /**< Include or not the service_changed characteristic. if not enabled, the server's database cannot be changed for the lifetime of the device*/
 
 #if (NRF_SD_BLE_API_VERSION == 3)

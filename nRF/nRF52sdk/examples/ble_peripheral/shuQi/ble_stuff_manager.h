@@ -5,6 +5,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include <string.h>
 #include "app_util.h"
 #include "app_util_bds.h"
@@ -144,5 +145,16 @@ uint32_t ble_stuff_manager_entry_value_set(ble_stuff_manager_t * p_stuff_manager
  * @return      NRF_SUCCESS on success, otherwise an error code.
  */
 uint32_t ble_stuff_manager_entry_number_set(ble_stuff_manager_t * p_stuff_manager, ble_stuff_manager_entry_number_t * p_entry_number);
+
+/**@brief Function for getting the Manager Mode.
+ *
+ * @details Read the value of Manager Mode.
+ *
+ * @param[in]   p_stuff_manager                 Stuff Manager Service structure.
+ * @param[in]   p_manager_mode  Manager Mode value.
+ *
+ * @return      NRF_SUCCESS on success, otherwise an error code.
+ */
+uint32_t ble_stuff_manager_manager_mode_get(ble_stuff_manager_t * p_stuff_manager, ble_stuff_manager_manager_mode_t * p_manager_mode);
 
 #endif //_BLE_STUFF_MANAGER_H__

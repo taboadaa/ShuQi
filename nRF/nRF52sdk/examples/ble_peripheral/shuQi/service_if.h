@@ -43,7 +43,7 @@ void set_stuff_manager_entry_number(uint16_t value);
 void set_stuff_manager_entry_value(uint8_array_t value);
 
 uint16_t get_stuff_manager_entry_selection();
-uint8_t get_stuff_manager_manager_mode();
+enum_mode_t get_stuff_manager_manager_mode();
 
 #endif // BLE_DS_IF_H__
 
