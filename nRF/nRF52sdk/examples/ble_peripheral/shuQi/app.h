@@ -11,6 +11,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "app_util.h"
 #include "nrf_log.h"
 #include "nrf_log_ctrl.h"
@@ -20,15 +21,8 @@
 #include "service_if.h"
 #include "data_management.h"
 
-
-typedef enum {
-    STATE_SLEEP = 0,
-	STATE_READ = 1,
-	STATE_RECOGNITION = 2,
-} enum_state_t;
-
-uint8_array_t* rfid_ids;
-enum_state_t currentState;
+static uint8_array_t rfid_ids[RFID_ID_ARRAY_SIZE];
+enum_state_t current_state;
 
 /**
  * @brief Change the state of the application.
@@ -36,7 +30,7 @@ enum_state_t currentState;
  * @param mode New state to go
  * @return Return the current state.
  */
-enum_state_t state_change(enum_state_t currentState, enum_mode_t mode);
+void state_change(enum_state_t currentState, enum_mode_t mode);
 
 
 

@@ -10,19 +10,19 @@
 /**
  *
  */
-void set_mode_new(enum_mode_t mode) {
-	state_change(currentState, mode);
-}
+/*void set_mode_new(enum_mode_t mode) {
+	state_change(current_state, mode);
+}*/
 
 /**
  *
  * @param entry
  * @return
  */
-void get_rfid_id(int entry) {
+/*void get_rfid_id(int entry) {
 	uint8_array_t rfidId = rfid_ids_get(rfid_ids, entry);
 	set_stuff_manager_entry_value(rfidId);
-}
+}*/
 
 
 

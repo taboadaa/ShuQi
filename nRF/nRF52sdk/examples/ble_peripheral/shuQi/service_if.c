@@ -46,13 +46,15 @@ static void on_stuff_manager_evt(ble_stuff_manager_t * p_stuff_manager, ble_stuf
         case BLE_STUFF_MANAGER_ENTRY_SELECTION_EVT_WRITE:
         	NRF_LOG_INFO("STUFF_MANAGER_ENTRY_SELECTION evt WRITE.\n");
 
-        	get_rfid_id(get_stuff_manager_entry_selection());
+        	entry_selection = p_evt->params.entry_selection.entry_number;
+        	ble_entry_selection_write = true;
 
             break; 
         case BLE_STUFF_MANAGER_MANAGER_MODE_EVT_WRITE:
         	NRF_LOG_INFO("STUFF_MANAGER_MANAGER_MODE evt WRITE.\n");
 
-        	state_change(currentState, get_stuff_manager_manager_mode());
+        	//manager_mode = p_evt->params.manager_mode.mode; //todo faire le get ici
+        	ble_manager_mode_write = true;
 
             break; 
         default:
@@ -105,6 +107,10 @@ uint32_t bluetooth_init(void)
     {
         return err_code;
     } 
+
+    // Initialize variables
+    manager_mode = MODE_SLEEP;
+    entry_selection = 0;
 
     return NRF_SUCCESS;
 }
@@ -166,16 +172,10 @@ uint16_t get_stuff_manager_entry_selection() {
  * @return Return the value of the characteristic
  */
 enum_mode_t get_stuff_manager_manager_mode() {
-	ble_stuff_manager_manager_mode_t* managerResult = NULL;// = malloc(sizeof(ble_stuff_manager_manager_mode_t*));
+	ble_stuff_manager_manager_mode_t* managerResult = NULL;
 	ble_stuff_manager_manager_mode_get(&m_stuff_manager, managerResult);
 
 	enum_mode_t result = managerResult->mode.mode;
-
-	#ifndef ENABLE_LOG
-	if (result == MODE_SLEEP) {
-		NRF_LOG_INFO("managermode value: SLEEP\n");
-	} //...
-	#endif
 	return result;
 }
 

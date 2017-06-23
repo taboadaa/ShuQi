@@ -11,13 +11,10 @@
  *
  * @param rfidId
  */
-void rfid_ids_init(uint8_array_t* rfidIds) {
-	rfidIds = calloc(sizeof(uint8_array_t) * RFID_ID_ARRAY_SIZE, 1);
-
-	/*for (int ii = 0; ii < RFID_ID_ARRAY_SIZE; ++ii) {
-		rfidIds[ii] = NULL;
-	}*/
-}
+/*void rfid_ids_init(uint8_array_t* rfidIds) {
+	//rfidIds = memset(&rfidIds, 0, (sizeof(uint8_array_t)*RFID_ID_ARRAY_SIZE));
+	//todo faire les malloc en statique
+}*/
 
 /**
  *
@@ -68,7 +65,7 @@ int rfid_ids_add(uint8_array_t* rfidIds, uint8_array_t idTag) {
  * @param entry
  * @return
  */
-uint8_array_t rfid_ids_get(uint8_array_t* rfidIds, int entry) {
+/*uint8_array_t rfid_ids_get(uint8_array_t* rfidIds, int entry) {
 	return rfidIds[entry];
-}
+}*/
 

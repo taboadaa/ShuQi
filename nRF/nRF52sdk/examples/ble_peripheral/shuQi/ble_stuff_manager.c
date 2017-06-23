@@ -363,12 +363,12 @@ uint32_t ble_stuff_manager_entry_number_set(ble_stuff_manager_t * p_stuff_manage
 
 /**@brief Function for getting the Manager Mode. */
 uint32_t ble_stuff_manager_manager_mode_get(ble_stuff_manager_t * p_stuff_manager, ble_stuff_manager_manager_mode_t * p_manager_mode) {
-	ble_gatts_value_t gatts_value;
+	ble_gatts_value_t* gatts_value = NULL;
 	ble_stuff_manager_manager_mode_t* decoded_value = NULL;
 
-	uint8_t get_result = sd_ble_gatts_value_get(p_stuff_manager->conn_handle, p_stuff_manager->entry_number_handles.value_handle, &gatts_value);
+	uint8_t get_result = sd_ble_gatts_value_get(p_stuff_manager->conn_handle, p_stuff_manager->entry_number_handles.value_handle, gatts_value); //todo hardfault car appel trop haut niveau. Essayer de récup la valeur dans l'IRQ.
 
-	manager_mode_decode(gatts_value.len, gatts_value.p_value, decoded_value);
+	manager_mode_decode(gatts_value->len, gatts_value->p_value, decoded_value);
 	p_manager_mode = decoded_value;
 
 	return get_result;

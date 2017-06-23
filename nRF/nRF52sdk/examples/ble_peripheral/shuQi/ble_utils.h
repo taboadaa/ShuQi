@@ -11,8 +11,8 @@
 #include <stdlib.h>
 
 #include "constant.h"
-#include "app.h"
 #include "data_management.h"
+#include "service_if.h"
 
 //enum_state_t state_change(enum_state_t currentState, enum_mode_t mode);
 
