@@ -22,7 +22,13 @@
 #include "data_management.h"
 
 static uint8_array_t rfid_ids[RFID_ID_ARRAY_SIZE];
+uint16_t nb_rfid_ids;
 enum_state_t current_state;
+
+/**
+ * @brief Function for application main entry.
+ */
+void app_init();
 
 /**
  * @brief Change the state of the application.
@@ -30,13 +36,16 @@ enum_state_t current_state;
  * @param mode New state to go
  * @return Return the current state.
  */
-void state_change(enum_state_t currentState, enum_mode_t mode);
-
-
+enum_state_t state_change(enum_state_t currentState, enum_mode_t mode);
 
 /**
- * @brief Function for application main entry.
+ * @brief Read tags
  */
-void app_init();
+void read_tags();
+
+/**
+ * @brief Update the Entry Value.
+ */
+void update_tags();
 
 #endif /* APP_H_ */

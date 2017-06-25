@@ -2,70 +2,29 @@
  * @name	data_management.h
  * @authors	Taboada Adrien, Collet Axel
  * @date	2017.05.30
- * @brief	Data management.
  */
 
 #include "data_management.h"
 
 /**
- *
- * @param rfidId
+ * @brief Initialize the variable who store the tags.
  */
-/*void rfid_ids_init(uint8_array_t* rfidIds) {
-	//rfidIds = memset(&rfidIds, 0, (sizeof(uint8_array_t)*RFID_ID_ARRAY_SIZE));
-	//todo faire les malloc en statique
-}*/
-
-/**
- *
- * @param idTag
- * @return
- */
-int rfid_ids_add(uint8_array_t* rfidIds, uint8_array_t idTag) {
-	int ii = 0;
-	bool same = false;
-
-	uint8_array_t temp = rfidIds[ii];
-
-	// 96 bits idTag (96/8=12)
-	if (idTag.size == RFID_ID_SIZE) {
-		// Check every entry if tag is already here
-		while (temp.size != 0) {
-			temp = rfidIds[ii];
-			same = true;
-
-			// Check every byte of tag
-			for (int jj = 0; jj < RFID_ID_SIZE; ++jj) {
-				if (temp.p_data[jj] != idTag.p_data[ii]) {
-					same = false;
-					break;
-				}
-			}
-
-			if (same == true) {
-				break;
-			} else {
-				ii++;
-			}
-		}
-	}
-
-	if (same == true) {
-		return -1;
-	} else {
-		rfidIds[ii] = idTag;
-
-		return ii;
+void rfid_ids_init(uint8_array_t* rfidIds) {
+	for (int ii = 0; ii < RFID_ID_ARRAY_SIZE; ++ii) {
+		rfidIds[ii].size = RFID_ID_SIZE;
+		rfidIds[ii].p_data = calloc(sizeof(uint8_t)*RFID_ID_SIZE, 1);
 	}
 }
 
 /**
- *
- * @param rfidIds
- * @param entry
- * @return
+ * @brief Add a tag to the variable who store the tags.
  */
-/*uint8_array_t rfid_ids_get(uint8_array_t* rfidIds, int entry) {
-	return rfidIds[entry];
-}*/
+uint16_t rfid_ids_add(uint8_array_t* rfidIds, uint16_t nbRfidIds, uint8_array_t idTag) {
+	rfidIds[nbRfidIds].size = idTag.size;
 
+	for (int ii = 0; ii < idTag.size; ++ii) {
+		rfidIds[nbRfidIds].p_data[ii] = idTag.p_data[ii];
+	}
+
+	return nbRfidIds;
+}

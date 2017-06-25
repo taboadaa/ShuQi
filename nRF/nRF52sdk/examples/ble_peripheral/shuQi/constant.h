@@ -1,13 +1,12 @@
-/*
- * constant.h
- *
- *  Created on: 1 juin 2017
- *      Author: tab
+/**
+ * @name	constant.h
+ * @authors	Taboada Adrien, Collet Axel
+ * @date	2017.05.30
+ * @brief	Constants and structures for the application.
  */
 
 #ifndef CONSTANT_H_
 #define CONSTANT_H_
-
 
 #define IS_SRVC_CHANGED_CHARACT_PRESENT  0                                          /**< Include or not the service_changed characteristic. if not enabled, the server's database cannot be changed for the lifetime of the device*/
 
@@ -49,12 +48,9 @@
 #define RFID_ID_SIZE                     96/8                                       /**< Size of rfid id. */
 #define RFID_ID_ARRAY_SIZE               20                                         /**< Size of rfid array. */
 
-
 //State machine
 typedef enum {
-    STATE_SLEEP = 0,
-	STATE_READ = 1,
-	STATE_RECOGNITION = 2,
+	STATE_SLEEP = 0, STATE_READ = 1, STATE_RECOGNITION = 2,
 } enum_state_t;
 
 #endif /* CONSTANT_H_ */
