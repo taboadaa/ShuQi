@@ -20,6 +20,10 @@
 #include "service_if.h"
 #include "data_management.h"
 
+#include "nrf_delay.h"
+#include "nrf_gpio.h"
+
+#include "app_uart.h"
 
 uint8_array_t** rfid_ids;
 

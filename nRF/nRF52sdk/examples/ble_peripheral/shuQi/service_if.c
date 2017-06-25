@@ -153,8 +153,8 @@ void set_stuff_manager_entry_value(uint8_array_t value) {
  * @return Return the value of the characteristic
  */
 uint16_t get_stuff_manager_entry_selection() {
-	uint16_t result = m_stuff_manager.entry_selection_handles.value_handle;
-	return result;
+	//uint16_t result = m_stuff_manager.entry_selection_handles.value_handle;
+	return 0;
 }
 
 /**
@@ -162,8 +162,8 @@ uint16_t get_stuff_manager_entry_selection() {
  * @return Return the value of the characteristic
  */
 uint8_t get_stuff_manager_manager_mode() {
-	uint8_t result = m_stuff_manager.manager_mode_handles.value_handle;
-	return result;
+	//uint8_t result = m_stuff_manager.manager_mode_handles.value_handle;
+	return 0;
 }
 
 

@@ -13,6 +13,8 @@
 #ifndef NRF_DRV_CONFIG_H
 #define NRF_DRV_CONFIG_H
 
+#error "NRF_DRV_CONFIG_H use"
+
 /**
  * Provide a non-zero value here in applications that need to use several
  * peripherals with the same ID that are sharing certain resources
@@ -267,20 +269,20 @@
 
 #define SPIS2_INSTANCE_INDEX (SPIS0_ENABLED + SPIS1_ENABLED)
 #endif
-
 #define SPIS_COUNT   (SPIS0_ENABLED + SPIS1_ENABLED + SPIS2_ENABLED)
 
 /* UART */
 #define UART0_ENABLED 0
 
+
 #if (UART0_ENABLED == 1)
 #define UART0_CONFIG_HWFC         NRF_UART_HWFC_DISABLED
 #define UART0_CONFIG_PARITY       NRF_UART_PARITY_EXCLUDED
-#define UART0_CONFIG_BAUDRATE     NRF_UART_BAUDRATE_38400
-#define UART0_CONFIG_PSEL_TXD     0
-#define UART0_CONFIG_PSEL_RXD     0
-#define UART0_CONFIG_PSEL_CTS     0
-#define UART0_CONFIG_PSEL_RTS     0
+#define UART0_CONFIG_BAUDRATE     NRF_UART_BAUDRATE_115200
+#define UART0_CONFIG_PSEL_TXD     6
+#define UART0_CONFIG_PSEL_RXD     8
+#define UART0_CONFIG_PSEL_CTS     10
+#define UART0_CONFIG_PSEL_RTS     9
 #define UART0_CONFIG_IRQ_PRIORITY APP_IRQ_PRIORITY_LOW
 #ifdef NRF52
 #define UART0_CONFIG_USE_EASY_DMA false

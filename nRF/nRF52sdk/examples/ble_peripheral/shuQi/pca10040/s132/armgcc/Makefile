@@ -25,6 +25,7 @@ SRC_FILES += \
   $(SDK_ROOT)/components/libraries/util/nrf_assert.c \
   $(SDK_ROOT)/components/libraries/util/sdk_errors.c \
   $(SDK_ROOT)/components/libraries/util/sdk_mapped_flags.c \
+  $(SDK_ROOT)/components/libraries/uart/app_uart.c \
   $(SDK_ROOT)/components/boards/boards.c \
   $(SDK_ROOT)/components/drivers_nrf/clock/nrf_drv_clock.c \
   $(SDK_ROOT)/components/drivers_nrf/common/nrf_drv_common.c \
@@ -170,6 +171,7 @@ INC_FOLDERS += \
   $(SDK_ROOT)/components/softdevice/common/softdevice_handler \
   $(SDK_ROOT)/components/ble/ble_services/ble_hrs \
   $(SDK_ROOT)/components/libraries/log/src \
+  $(SDK_ROOT)/components/libraries/fifo
 
 # Libraries common to all targets
 LIB_FILES += \
@@ -179,7 +181,7 @@ CFLAGS += -DNRF52
 CFLAGS += -DNRF52_PAN_36
 CFLAGS += -DNRF52_PAN_64
 CFLAGS += -DSOFTDEVICE_PRESENT
-CFLAGS += -DBOARD_PCA10040
+CFLAGS += -DBOARD_CUSTOM
 CFLAGS += -DNRF52832
 CFLAGS += -DNRF52_PAN_12
 CFLAGS += -DNRF52_PAN_58
@@ -197,7 +199,7 @@ CFLAGS += -DNRF52_PAN_55
 CFLAGS += -DS132
 CFLAGS += -mcpu=cortex-m4
 CFLAGS += -mthumb -mabi=aapcs
-CFLAGS +=  -Wall -Werror -O0 -g3 -std=c99
+CFLAGS +=  -Wall -O0 -g3 -std=c99
 CFLAGS += -mfloat-abi=hard -mfpu=fpv4-sp-d16
 # keep every function in separate section, this allows linker to discard unused ones
 CFLAGS += -ffunction-sections -fdata-sections -fno-strict-aliasing
@@ -212,7 +214,7 @@ ASMFLAGS += -DNRF52
 ASMFLAGS += -DNRF52_PAN_36
 ASMFLAGS += -DNRF52_PAN_64
 ASMFLAGS += -DSOFTDEVICE_PRESENT
-ASMFLAGS += -DBOARD_PCA10040
+ASMFLAGS += -DBOARD_CUSTOM
 ASMFLAGS += -DNRF52832
 ASMFLAGS += -DNRF52_PAN_12
 ASMFLAGS += -DNRF52_PAN_58

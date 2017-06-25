@@ -20,6 +20,9 @@ static volatile bool spi_xfer_done = true;  /**< Flag used to indicate that SPI 
 
 static uint8_t       m_tx_buf[12+35];           /**< TX buffer. */
 static const uint8_t m_length = sizeof(m_tx_buf);        /**< Transfer length. */
+static uint8_t mode =0 ; // 0 = one color // 1 = blue effect up // 2 = blue effect down
+
+static uint8_t blue_level =0 ;
 
 
 /**
@@ -41,5 +44,7 @@ uint32_t data_led_rgb (uint8_t* color, uint8_t* buffer);
 uint32_t sk6812_init ();
 
 uint32_t sk6812_set_color( uint8_t r,uint8_t g,uint8_t b);
+
+uint32_t change_mode(uint8_t new_mode);
 
 #endif /* SK6812_H_ */
