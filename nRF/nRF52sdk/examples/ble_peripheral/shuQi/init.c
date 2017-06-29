@@ -1,4 +1,11 @@
 /**
+ * @name	init.c
+ * @authors	Nordic Seminconductor ASA, Taboada Adrien, Collet Axel
+ * @date	2017.05.30
+ * @copyright	Copyright (c) 2015 - 2017, Nordic Semiconductor ASA
+ */
+
+/**
  * Copyright (c) 2015 - 2017, Nordic Semiconductor ASA
  * 
  * All rights reserved.
@@ -38,20 +45,6 @@
  * 
  */
 
-/** @file
- *
- * @defgroup ble_sdk_bluetooth_template_main main.c
- * @{
- * @ingroup bluetooth_template
- * @brief bluetooth_template main file.
- *
- * This file contains a template for creating a new application using Bluetooth Developper Studio generated code.
- * It has the code necessary to wakeup from button, advertise, get a connection restart advertising on disconnect and if no new
- * connection created go back to system-off mode.
- * It can easily be used as a starting point for creating a new application, the comments identified
- * with 'YOUR_JOB' indicates where and how you can customize.
- */
-
 #define NRF_LOG_MODULE_NAME "INIT"
 
 #include "init.h"
@@ -62,7 +55,6 @@ static nrf_ble_qwr_t m_qwr; /**< Queued Writes structure.*/
 // TODO YOUR_JOB: Use UUIDs for service(s) used in your application.
 static ble_uuid_t m_adv_uuids[] = { { BLE_UUID_DEVICE_INFORMATION_SERVICE,
 BLE_UUID_TYPE_BLE } }; /**< Universally unique service identifiers. */
-
 
 /**@brief Callback function for asserts in the SoftDevice.
  *
@@ -420,7 +412,7 @@ void bsp_event_handler(bsp_event_t event) {
 static void pm_evt_handler(pm_evt_t const * p_evt) {
 	ret_code_t err_code;
 
-	NRF_LOG_INFO("Function for handling Peer Manager events (483)");//debug
+	NRF_LOG_INFO("Function for handling Peer Manager events (483)");	//debug
 
 	switch (p_evt->evt_id) {
 	case PM_EVT_BONDED_PEER_CONNECTED: {
@@ -429,8 +421,8 @@ static void pm_evt_handler(pm_evt_t const * p_evt) {
 		break;
 
 	case PM_EVT_CONN_SEC_SUCCEEDED: {
-		NRF_LOG_INFO("Connection secured. Role: %d. conn_handle: %d, Procedure: %d\r\n",
-				ble_conn_state_role(p_evt->conn_handle), p_evt->conn_handle, p_evt->params.conn_sec_succeeded.procedure);
+		NRF_LOG_INFO("Connection secured. Role: %d. conn_handle: %d, Procedure: %d\r\n", ble_conn_state_role(p_evt->conn_handle),
+				p_evt->conn_handle, p_evt->params.conn_sec_succeeded.procedure);
 	}
 		break;
 
@@ -576,8 +568,7 @@ static void advertising_init(void) {
 static void buttons_leds_init(bool * p_erase_bonds) {
 	bsp_event_t startup_event;
 
-	uint32_t err_code = bsp_init(BSP_INIT_LED | BSP_INIT_BUTTONS, APP_TIMER_TICKS(100, APP_TIMER_PRESCALER),
-			bsp_event_handler);
+	uint32_t err_code = bsp_init(BSP_INIT_LED | BSP_INIT_BUTTONS, APP_TIMER_TICKS(100, APP_TIMER_PRESCALER), bsp_event_handler);
 	APP_ERROR_CHECK(err_code);
 
 	err_code = bsp_btn_ble_init(NULL, &startup_event);
@@ -589,8 +580,10 @@ static void buttons_leds_init(bool * p_erase_bonds) {
 /**@brief Function for the Power manager.
  */
 void power_manage(void) {
+	NRF_LOG_INFO("Power manage enter");
 	uint32_t err_code = sd_app_evt_wait();
 	APP_ERROR_CHECK(err_code);
+	NRF_LOG_INFO("Power manage exit\n");
 }
 
 /**@brief Function for application main entry.
@@ -621,7 +614,3 @@ void device_init() {
 	err_code = ble_advertising_start(BLE_ADV_MODE_FAST);
 	APP_ERROR_CHECK(err_code);
 }
-
-/**
- * @}
- */
