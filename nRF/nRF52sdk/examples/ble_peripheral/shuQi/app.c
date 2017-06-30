@@ -10,6 +10,7 @@
 #include "app.h"
 #include "sk6812.h"
 #include "app_uart.h"
+#include "nrf_drv_uart.h"
 #include "app_error.h"
 #include "nrf_delay.h"
 #include "nrf.h"
@@ -21,16 +22,22 @@
 #endif
 
 #define MAX_TEST_DATA_BYTES     (15U)                /**< max number of test bytes to be used for tx and rx. */
-#define UART_TX_BUF_SIZE 32                         /**< UART TX buffer size. */
-#define UART_RX_BUF_SIZE 256*8                           /**< UART RX buffer size. */
+#define SIZE_BUFFER_UART 32
 
 #define ERR_NO_DATA 1
 #define ERR_DATA_FALSE 2
 #define ERR_SIZE_EPC_ID 3
+#define DATA_FINISH 0
+#define MALLOC_ERROR 4
+#define YR903_ERROR_BUFFER_IS_EMPTY 0x38
 
 
-uint8_t  tx_data_start_inventory[5] =("\xA0\x04\x80\xFF\xDD");
 
+
+uint32_t err_code;
+
+
+bool flag_data_receive= false;
 /**
  * @struct structure d'un tag UHF
  * @brief stock les informations PC, EPC, CRC, RSSI
@@ -56,14 +63,60 @@ struct TagUHF_t
 typedef struct Buffer_t Buffer_t;
 struct Buffer_t
 {
-		TagUHF_t tagUHF[10];
-		uint16_t nmb_tag;
+	TagUHF_t tagUHF[10];
+	uint16_t nmb_tag;
 };
 
+typedef struct uart_buffer_t uart_buffer_t;
+struct uart_buffer_t
+{
+	uint8_t i ;
+	uint8_t size_data;
+	uint8_t data[SIZE_BUFFER_UART];
+};
+uart_buffer_t* uart_buffer_rx;
+uart_buffer_t uart_buffer_tx;
+
+void uart_send_next_byte(uart_buffer_t* buffer){
+	if ( buffer->i <buffer->size_data ){
+		app_uart_put(buffer->data[buffer->i]);
+		buffer->i++;
+		NRF_LOG_INFO("uart  tx : ");
+		NRF_LOG_HEXDUMP_INFO(&buffer->data[buffer->i], 1);
+	}
+}
+uint8_t uart_receive_byte(uart_buffer_t* buffer, uint8_t data){
+	buffer->data[buffer->i] = data;
+	if ( buffer->i ==0 ){
+		if (data != 0xA0 ){
+			return ERR_DATA_FALSE;
+		}
+	}else if ( buffer->i ==1 ){
+		buffer->size_data = data+1;
+	}else if ( buffer->i < buffer->size_data ){
+		//nothing
+	}else if ( buffer->i == buffer->size_data ){
+		uint8_t check =0;
+		for( uint8_t i; i<( buffer->size_data+1);i++){
+			check += buffer->data[i];
+		}
+		buffer->i = 0;
+		if (check){
+			return ERR_DATA_FALSE;
+		}else{
+			// data correct
+			return DATA_FINISH;
+		}
+
+	}else{
+		return ERR_DATA_FALSE;
+	}
+	buffer->i++;
+	return -1;
+}
 
 
-
-void uart_error_handle(app_uart_evt_t * p_event)
+void uart_handle(app_uart_evt_t * p_event)
 {
     if (p_event->evt_type == APP_UART_COMMUNICATION_ERROR)
     {
@@ -72,7 +125,21 @@ void uart_error_handle(app_uart_evt_t * p_event)
     else if (p_event->evt_type == APP_UART_FIFO_ERROR)
     {
         APP_ERROR_HANDLER(p_event->data.error_code);
-    }
+    }else if (p_event->evt_type == APP_UART_DATA){
+
+    	uint8_t data = p_event->data.value;
+    	uint8_t err_code = uart_receive_byte(uart_buffer_rx,data);
+    	if (err_code >0 ){
+    		// erreur
+    		nrf_gpio_pin_set(LED_TOP);
+    	}else if ( err_code == DATA_FINISH){
+    		flag_data_receive = true;
+    		nrf_gpio_pin_clear(LED_TOP);
+    	}
+	}else if (APP_UART_TX_EMPTY){
+		 uart_send_next_byte(&uart_buffer_tx);
+
+	}
 }
 void clean_fifo_rx(void){
 	uint8_t data;
@@ -93,7 +160,7 @@ uint8_t read_data(uint8_t* data){
 	uint8_t i =0;
 
 
-	while (app_uart_get(data[i]) == NRF_SUCCESS){
+	while (app_uart_get(&data[i]) == NRF_SUCCESS){
 		i++;
 	}
 	header = data[i-1];
@@ -218,21 +285,32 @@ uint8_t analyse_buffer(Buffer_t* buffer){
  * @param uint32_t nmb : taille de la chaine hexadécimal à envoyer
  *
  */
-static void send_data(uint8_t* data, uint32_t nmb)
+static void send_data(uint8_t* data, uint32_t nmb,uart_buffer_t* buffer)
 {
 
 	uint8_t check = 0;
-	for (uint32_t i = 0; i < nmb; i++)
+	uint32_t i ;
+	for (i = 0; i < nmb; i++)
 	{
 		check =(uint8_t)(check +data[i]);
-		while(app_uart_put(data[i]) != NRF_SUCCESS);
-
+		buffer->data[i]= data[i];
 	}
 
-	check = (~check)+1;
-	while(app_uart_put(check) != NRF_SUCCESS);
 
+	buffer->size_data = nmb+1; // taille des donnée + check byte
+	buffer->data[nmb] = (~check)+1;
+	buffer->i = 0;
+	uart_send_next_byte(buffer);
 }
+uart_buffer_t* allocate_buffer_uart(){
+
+	uart_buffer_t* p = (uart_buffer_t*)malloc (sizeof(uart_buffer_t));
+	if (p != NULL){
+		p->i = 0;
+	}
+	return p;
+}
+
 
 
 /**
@@ -249,29 +327,70 @@ uint32_t inventaire(Buffer_t *buffer, bool reset)
 {
 	clean_fifo_rx();
 //   uint8_t tx_data[UART_TX_BUF_SIZE] ;
-	static uint8_t data[20];
-	send_data((uint8_t*)"\xA0\x04\x01\x80\x01", 5);
-	nrf_delay_ms(300);
-	if (read_data(data)){
-		nrf_gpio_pin_set(LED_TOP);
-		return 1;
+	uart_buffer_rx = (uart_buffer_t*)malloc (sizeof(uart_buffer_t));
+	if (uart_buffer_rx ==NULL){
+		while(1){
+			nrf_gpio_pin_set(LED_TOP);
+		}
 	}
+	uart_buffer_rx->i=0;
+	for (uint8_t i =0; i< 10;i++){
+		send_data((uint8_t*)"\xA0\x04\x01\x80\x01", 5,&uart_buffer_tx);
+		while (!(flag_data_receive));
+		flag_data_receive =0;
+	}
+
+
 
 	if (reset){
-		send_data((uint8_t*)"\xA0\x03\x01\x91", 4);
+		send_data((uint8_t*)"\xA0\x03\x01\x91", 4,&uart_buffer_tx);
 	}else{
-		send_data((uint8_t*)"\xA0\x03\x01\x90", 4);
+		send_data((uint8_t*)"\xA0\x03\x01\x90", 4,&uart_buffer_tx);
+	}
+	while (!(flag_data_receive));
+	flag_data_receive =0;
+
+
+
+	// how many tag ?
+	// 0 tag ?
+	uint16_t nmb_tag;
+	if (uart_buffer_rx->size_data == 0x05){
+		uint8_t erreur_code_yr903 = uart_buffer_rx->data[5];
+		if (erreur_code_yr903 == YR903_ERROR_BUFFER_IS_EMPTY){
+			nmb_tag = 0;
+		}
+	}else{
+		nmb_tag =( uart_buffer_rx->data[4]<<8 )+ uart_buffer_rx->data[5];
+		// allocate memory
+		uart_buffer_t* tab_uart_buffer_rx[nmb_tag];
+		tab_uart_buffer_rx[0] = uart_buffer_rx;
+		for(uint16_t i =1; i< nmb_tag;i++){
+			if ((tab_uart_buffer_rx[i] =allocate_buffer_uart()) == NULL){
+				// error
+				change_mode(BLUE_EFFECT);
+				while (1){
+					nrf_gpio_pin_set(LED_TOP);
+				}
+				// free all tab
+				return MALLOC_ERROR;
+			}
+		}
+		for(uint16_t i =1; i< nmb_tag;i++){
+			uart_buffer_rx = tab_uart_buffer_rx[i];
+			while (!(flag_data_receive));
+			flag_data_receive =0;
+
+		}
 	}
 
 
 
-	nrf_delay_ms(40);
+	// read all tag
 
 
-	if (analyse_buffer(buffer)){
-		nrf_gpio_pin_set(LED_TOP);
-		return 2;
-	}
+
+	nrf_delay_ms(400);
 	return 0;
 }
 
@@ -286,24 +405,24 @@ int main(void) {
 
 	nrf_gpio_cfg_output(LED_TOP);
 	nrf_gpio_pin_clear(LED_TOP);
-    uint32_t err_code;
-    const app_uart_comm_params_t comm_params =
-      {
-          RX_PIN_NUMBER,
-          TX_PIN_NUMBER,
-          RTS_PIN_NUMBER,
-          CTS_PIN_NUMBER,
-          APP_UART_FLOW_CONTROL_DISABLED,
-          false,
-          UART_BAUDRATE_BAUDRATE_Baud115200
-      };
 
-    APP_UART_FIFO_INIT(&comm_params,
-						 UART_RX_BUF_SIZE,
-						 UART_TX_BUF_SIZE,
-						 uart_error_handle,
-						 APP_IRQ_PRIORITY_LOW,
-						 err_code);
+
+    const app_uart_comm_params_t comm_params =
+          {
+              RX_PIN_NUMBER,
+              TX_PIN_NUMBER,
+              RTS_PIN_NUMBER,
+              CTS_PIN_NUMBER,
+              APP_UART_FLOW_CONTROL_DISABLED,
+              false,
+              UART_BAUDRATE_BAUDRATE_Baud115200
+          };
+
+    app_uart_init(&comm_params,NULL,uart_handle,APP_IRQ_PRIORITY_LOW );
+    //UART RX is enabled
+
+
+
 
     APP_ERROR_CHECK(err_code);
 
@@ -325,7 +444,7 @@ int main(void) {
 		}else{
 			reset = false;
 		}
-        inventaire(buffer,reset);
+        inventaire(buffer,true);
 
 
 		free(buffer);

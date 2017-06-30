@@ -15,6 +15,7 @@
 
 
 #define SPI_INSTANCE  0 /**< SPI instance index. */
+#define BLUE_EFFECT 1
 static const nrf_drv_spi_t spi = NRF_DRV_SPI_INSTANCE(SPI_INSTANCE);  /**< SPI instance. */
 static volatile bool spi_xfer_done = true;  /**< Flag used to indicate that SPI instance completed the transfer. */
 
