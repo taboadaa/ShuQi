@@ -38,6 +38,7 @@ SRC_FILES += \
   $(PROJ_DIR)/service_if.c \
   $(PROJ_DIR)/ble_lls.c \
   $(PROJ_DIR)/app.c \
+  $(PROJ_DIR)/rfid.c \
   $(PROJ_DIR)/sk6812.c \
   $(PROJ_DIR)/service_if.c \
   $(PROJ_DIR)/ble_stuff_manager.c \

@@ -15,12 +15,13 @@
 #include "nrf_delay.h"
 #include "nrf.h"
 #include "bsp.h"
-
+#include "rfid.h"
 
 #if defined(BOARD_PCA10040)
 #error "PCA10040"
 #endif
 
+uint32_t err_code;
 
 /** @brief Function for application main entry.
  */
@@ -34,19 +35,10 @@ int main(void) {
 	nrf_gpio_cfg_output(LED_TOP);
 	nrf_gpio_pin_clear(LED_TOP);
 
+	init_rfid();
 
-    const app_uart_comm_params_t comm_params =
-          {
-              RX_PIN_NUMBER,
-              TX_PIN_NUMBER,
-              RTS_PIN_NUMBER,
-              CTS_PIN_NUMBER,
-              APP_UART_FLOW_CONTROL_DISABLED,
-              false,
-              UART_BAUDRATE_BAUDRATE_Baud115200
-          };
 
-    app_uart_init(&comm_params,NULL,uart_handle,APP_IRQ_PRIORITY_LOW );
+
     //UART RX is enabled
 
 
@@ -55,13 +47,13 @@ int main(void) {
     APP_ERROR_CHECK(err_code);
 
 
-		Buffer_t* buffer;
-		uint8_t i = 0;
-		bool reset;
+    Buffer_tag_UHF_t* Buffer_tag_UHF;
+	uint8_t i = 0;
+	bool reset;
     for (;;) {
 
-		buffer = (Buffer_t*) malloc(sizeof(Buffer_t));
-		if (buffer == NULL){
+    	Buffer_tag_UHF = (Buffer_tag_UHF_t*) malloc(sizeof(Buffer_tag_UHF_t));
+		if (Buffer_tag_UHF == NULL){
 			nrf_gpio_pin_set(LED_TOP);
 			while(1);
 		}
@@ -72,10 +64,10 @@ int main(void) {
 		}else{
 			reset = false;
 		}
-        inventaire(buffer,true);
+        inventaire(Buffer_tag_UHF,true);
 
-
-		free(buffer);
+        free(Buffer_tag_UHF->TagUHF);
+		free(Buffer_tag_UHF);
     }
 
 

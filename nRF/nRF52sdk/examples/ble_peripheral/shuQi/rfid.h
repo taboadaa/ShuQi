@@ -7,6 +7,7 @@
 
 #ifndef RFID_H_
 #define RFID_H_
+
 #define ERR_NO_DATA 1
 #define ERR_DATA_FALSE 2
 #define ERR_SIZE_EPC_ID 3
@@ -21,6 +22,9 @@
 #include "app_error.h"
 #include "nrf_delay.h"
 #include "nrf.h"
+#include "app_util.h"
+#include "boards.h"
+
 
 #define MAX_TEST_DATA_BYTES     (15U)                /**< max number of test bytes to be used for tx and rx. */
 #define SIZE_BUFFER_UART 32
@@ -38,7 +42,7 @@
 #define YR903_ERROR_BUFFER_IS_EMPTY 0x38
 #define YR903_ERROR_UNKNOWN -1
 
-bool flag_data_receive= false;
+bool flag_data_receive ;
 /**
  * @struct structure d'un tag UHF
  * @brief stock les informations PC, EPC, CRC, RSSI
@@ -52,7 +56,22 @@ struct uart_buffer_t
 	uint8_t size_data;
 	uint8_t data[SIZE_BUFFER_UART];
 };
+typedef struct TagUHF_t TagUHF_t;
 
+struct TagUHF_t
+{
+	uint16_t PC;
+	uint8_t EPC[12];
+	uint16_t CRC;
+	uint16_t RSSI;
+};
+typedef struct Buffer_tag_UHF_t Buffer_tag_UHF_t;
+
+struct Buffer_tag_UHF_t
+{
+	TagUHF_t* TagUHF;
+	uint8_t size;
+};
 
 uart_buffer_t* uart_buffer_rx;
 uart_buffer_t uart_buffer_tx;
@@ -60,7 +79,6 @@ uart_buffer_t uart_buffer_tx;
 void uart_send_next_byte(uart_buffer_t* buffer);
 
 uint8_t uart_receive_byte(uart_buffer_t* buffer, uint8_t data);
-
 
 void uart_handle(app_uart_evt_t * p_event);
 
@@ -93,16 +111,7 @@ uint8_t read_tag(uint8_t* data, TagUHF_t* tag);
  * @param uint32_t EPC2 4 premiers byte de l'id EPC (LSB)
  * @return true si le tag est présent , false si le tag n'est pas présent
  */
-bool tag_present ( Buffer_t* buffer, uint32_t EPC0,uint32_t EPC1,uint32_t EPC2);
-
-/**
- * @fn uint8_t analyse_buffer(Buffer_t* buffer)
- * @brief analyse le buffer du YR903,ce buffer inclus l'ensemble des tags lues
- *
- * @param Buffer_t* buffer poiteur sur un buffer à remplir (ensemble des tags lus)
- * @return 0 si tout c'est bien passé
- */
-uint8_t analyse_buffer(Buffer_t* buffer);
+bool tag_present (Buffer_tag_UHF_t* buffer, uint8_t* EPC);
 
 
 /**
@@ -113,7 +122,7 @@ uint8_t analyse_buffer(Buffer_t* buffer);
  * @param uint32_t nmb : taille de la chaine hexadécimal à envoyer
  *
  */
-static void send_data(uint8_t* data, uint32_t nmb,uart_buffer_t* buffer);
+void send_data(uint8_t* data, uint32_t nmb,uart_buffer_t* buffer);
 
 
 uart_buffer_t* allocate_buffer_uart();
@@ -130,6 +139,8 @@ uart_buffer_t* allocate_buffer_uart();
  *
  * @param Buffer_t *buffer pointeur sur un buffer
  */
-uint32_t inventaire(Buffer_t *buffer, bool reset);
+uint32_t inventaire(Buffer_tag_UHF_t *buffer, bool reset);
+
+void init_rfid();
 
 #endif /* RFID_H_ */

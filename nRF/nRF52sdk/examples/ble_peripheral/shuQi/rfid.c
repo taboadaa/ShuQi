@@ -86,28 +86,15 @@ uint8_t read_tag(uint8_t* data, TagUHF_t* tag){
 
 	tag->PC = (data[7]<<8) + data[8];
 
-	tag->EPC[0] = (data[9]<<24) + (data[10]<<16) + (data[11]<<8) + data[12];
-	tag->EPC[1] = (data[13]<<24) + (data[14]<<16) + (data[15]<<8) + data[16];
-	tag->EPC[2] = (data[17]<<24) + (data[18]<<16) + (data[19]<<8) + data[20];
+
+	// les tag sont recu avec le MSB en premier et sont transmit au smartphone avec le LSB en premier
+	for (uint8_t i=0;i<12;i++){
+		tag->EPC[11-i]= data[9+i];
+	}
 
 	tag->CRC = (data[21] <<8) + data[22];
 	tag->RSSI = data[23];
-
 	return 0;
-}
-/**
- * @fn tag_present ( Buffer_t* buffer, uint32_t EPC0,uint32_t EPC1,uint32_t EPC2)
- * @brief regarde si un id epc est présent dans le buffer
- *
- * @param Buffer_t* buffer poiteur sur un buffer à remplir (ensemble des tags lus)
- * @param uint32_t EPC0 4 premiers byte de l'id EPC (MSB)
- * @param uint32_t EPC1 4 bytes suivant
- * @param uint32_t EPC2 4 premiers byte de l'id EPC (LSB)
- * @return true si le tag est présent , false si le tag n'est pas présent
- */
-bool tag_present ( Buffer_t* buffer, uint32_t EPC0,uint32_t EPC1,uint32_t EPC2){
-
-	return false;
 }
 
 /**
@@ -118,7 +105,7 @@ bool tag_present ( Buffer_t* buffer, uint32_t EPC0,uint32_t EPC1,uint32_t EPC2){
  * @param uint32_t nmb : taille de la chaine hexadécimal à envoyer
  *
  */
-static void send_data(uint8_t* data, uint32_t nmb,uart_buffer_t* buffer)
+void send_data(uint8_t* data, uint32_t nmb,uart_buffer_t* buffer)
 {
 
 	uint8_t check = 0;
@@ -165,6 +152,8 @@ uint32_t free_buffer_uart(uart_buffer_t* p){
 void scan_buffer(uint8_t nmb_scan){
 	for (uint8_t i =0; i< nmb_scan;i++){
 		send_data((uint8_t*)"\xA0\x04\x01\x80\x01", 5,&uart_buffer_tx);
+
+		wait_flag(&flag_data_receive);
 	}
 }
 
@@ -183,6 +172,7 @@ void yr903_cmd_name_get_inventory_buffer(bool reset){
 
 
 uint16_t nmb_tag_in_the_buffer(uart_buffer_t* uart_buffer){
+	uint16_t nmb_tag;
 	if (uart_buffer_rx->size_data == 0x05){
 		uint8_t erreur_code_yr903 = uart_buffer_rx->data[5];
 		if (erreur_code_yr903 == YR903_ERROR_BUFFER_IS_EMPTY){
@@ -195,9 +185,8 @@ uint16_t nmb_tag_in_the_buffer(uart_buffer_t* uart_buffer){
 	}
 	return nmb_tag;
 }
-uint32_t inventaire(Buffer_t *buffer, bool reset)
+uint32_t inventaire(Buffer_tag_UHF_t *buffer_tag_uhf, bool reset)
 {
-	clean_fifo_rx();
 //   uint8_t tx_data[UART_TX_BUF_SIZE] ;
 	uart_buffer_rx = allocate_buffer_uart();
 	if (uart_buffer_rx ==NULL){
@@ -210,13 +199,14 @@ uint32_t inventaire(Buffer_t *buffer, bool reset)
 
 	yr903_cmd_name_get_inventory_buffer(reset);
 
-	wait_flag(&flag_data_receive);
 
 
 
 	// how many tag ?
 	// 0 tag ?
-	uint16_t nmb_tag = free_buffer_uart(tab_uart_buffer_rx[i]);
+	wait_flag(&flag_data_receive);
+
+	uint16_t nmb_tag =  nmb_tag_in_the_buffer(uart_buffer_rx );
 
 	// allocate memory
 	uart_buffer_t* tab_uart_buffer_rx[nmb_tag];
@@ -240,10 +230,18 @@ uint32_t inventaire(Buffer_t *buffer, bool reset)
 	}
 
 
+	// allouer buffer_tag rfid
+	buffer_tag_uhf->size = nmb_tag;
+	buffer_tag_uhf->TagUHF = (TagUHF_t*)malloc(sizeof(TagUHF_t));
+	if ( buffer_tag_uhf->TagUHF == NULL){
+		return MALLOC_ERROR;
+	}
 
 
 	// analyse buffer
-
+	for(uint16_t i =0; i< nmb_tag;i++){
+		read_tag(tab_uart_buffer_rx[i]->data, &buffer_tag_uhf->TagUHF[i]);
+	}
 
 
 	// free buffer
@@ -252,11 +250,23 @@ uint32_t inventaire(Buffer_t *buffer, bool reset)
 		free_buffer_uart(tab_uart_buffer_rx[i]);
 	}
 
-
-
-
-
-
-	nrf_delay_ms(400);
 	return 0;
+}
+
+void init_rfid(){
+
+	flag_data_receive= false;
+	const app_uart_comm_params_t comm_params =
+		   {
+			   RX_PIN_NUMBER,
+			   TX_PIN_NUMBER,
+			   RTS_PIN_NUMBER,
+			   CTS_PIN_NUMBER,
+			   APP_UART_FLOW_CONTROL_DISABLED,
+			   false,
+			   UART_BAUDRATE_BAUDRATE_Baud115200
+		   };
+
+	 app_uart_init(&comm_params,NULL,uart_handle,APP_IRQ_PRIORITY_LOW );
+
 }
