@@ -33,6 +33,7 @@
 #define ERR_DATA_FALSE 2
 #define ERR_SIZE_EPC_ID 3
 #define MALLOC_ERROR 4
+#define ERR_BUFFER_TAILLE 5
 
 #define DATA_FINISH 0
 #define RECEIVE_IN_PROGRESS -1
@@ -142,5 +143,7 @@ uart_buffer_t* allocate_buffer_uart();
 uint32_t inventaire(Buffer_tag_UHF_t *buffer, bool reset);
 
 void init_rfid();
+uint32_t add_tag_buffer_ble(uint8_t* buffer_ble,TagUHF_t *tag);
+uint32_t tag_rfid_to_format_ble(uint8_array_t* buffer_ble,Buffer_tag_UHF_t *buffer_tag_uhf);
 
 #endif /* RFID_H_ */

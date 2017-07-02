@@ -115,10 +115,12 @@ uint32_t sk6812_set_color( uint8_t r,uint8_t g,uint8_t b){
 	APP_ERROR_CHECK(nrf_drv_spi_transfer(&spi, m_tx_buf, m_length,NULL, m_length));
 	return 0;
 }
+
 uint32_t change_mode(uint8_t new_mode){
 	if (new_mode == 0){
 		mode = 0;
 	}else if(new_mode ==1){
+
 		mode =1;
 		blue_level  = 0;
 	}else{

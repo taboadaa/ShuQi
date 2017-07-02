@@ -13,6 +13,8 @@
 #include "nrf_gpio.h"
 #include "nrf_delay.h"
 
+#include "app_timer.h"
+
 
 #define SPI_INSTANCE  0 /**< SPI instance index. */
 #define BLUE_EFFECT 1

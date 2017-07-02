@@ -22,6 +22,7 @@
 #endif
 
 uint32_t err_code;
+uint8_array_t buffer_ble;
 
 /** @brief Function for application main entry.
  */
@@ -66,6 +67,13 @@ int main(void) {
 		}
         inventaire(Buffer_tag_UHF,true);
 
+
+
+        free(buffer_ble.p_data);
+        buffer_ble.size = 12 * Buffer_tag_UHF->size;
+        buffer_ble.p_data = (uint8_t*)malloc(sizeof(uint8_t)* buffer_ble.size);
+
+        tag_rfid_to_format_ble (&buffer_ble,Buffer_tag_UHF);
         free(Buffer_tag_UHF->TagUHF);
 		free(Buffer_tag_UHF);
     }

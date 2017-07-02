@@ -87,9 +87,8 @@ uint8_t read_tag(uint8_t* data, TagUHF_t* tag){
 	tag->PC = (data[7]<<8) + data[8];
 
 
-	// les tag sont recu avec le MSB en premier et sont transmit au smartphone avec le LSB en premier
 	for (uint8_t i=0;i<12;i++){
-		tag->EPC[11-i]= data[9+i];
+		tag->EPC[i]= data[9+i];
 	}
 
 	tag->CRC = (data[21] <<8) + data[22];
@@ -269,4 +268,22 @@ void init_rfid(){
 
 	 app_uart_init(&comm_params,NULL,uart_handle,APP_IRQ_PRIORITY_LOW );
 
+}
+uint32_t add_tag_buffer_ble(uint8_t* buffer_ble,TagUHF_t *tag){
+
+	for(uint8_t i =0; i<12;i++){
+		// le format de tag est stocker en MSB en premier mais est envoyé par BLE avec LSB en premier
+		buffer_ble[i]= tag->EPC[11-i];
+	}
+	return 0;
+}
+uint32_t tag_rfid_to_format_ble(uint8_array_t* buffer_ble,Buffer_tag_UHF_t *buffer_tag_uhf){
+
+	if((buffer_tag_uhf->size *12 != buffer_ble->size )|| (buffer_ble->p_data == NULL)){
+		return ERR_BUFFER_TAILLE;
+	}
+	for (uint8_t i =0; i< buffer_tag_uhf->size; i++){
+		add_tag_buffer_ble(&buffer_ble->p_data[12*i],&buffer_tag_uhf->TagUHF[i]);
+	}
+	return 0;
 }
