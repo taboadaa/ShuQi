@@ -142,6 +142,7 @@ uart_buffer_t* allocate_buffer_uart();
  */
 uint32_t inventaire(Buffer_tag_UHF_t *buffer, bool reset);
 
+void wait_flag ( bool* flag);
 void init_rfid();
 uint32_t add_tag_buffer_ble(uint8_t* buffer_ble,TagUHF_t *tag);
 uint32_t tag_rfid_to_format_ble(uint8_array_t* buffer_ble,Buffer_tag_UHF_t *buffer_tag_uhf);

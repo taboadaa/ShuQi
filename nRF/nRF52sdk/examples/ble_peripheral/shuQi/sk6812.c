@@ -13,24 +13,7 @@
 void spi_event_handler(nrf_drv_spi_evt_t const * p_event){
     spi_xfer_done = true;
 
-    if (mode == 1){
-    	if( blue_level == 254){
-    		mode = 2;
-    	}
-    	blue_level++;
-    	sk6812_set_color( 20,20,blue_level);
-    	nrf_delay_ms(3);
 
-
-
-    }else if (mode == 2){
-    	if( blue_level <20){
-			mode = 1;
-		}
-		blue_level -=2;
-		nrf_delay_ms(3);
-		sk6812_set_color( 20,20,blue_level);
-    }
 
 }
 
@@ -88,6 +71,9 @@ uint32_t sk6812_init (){
 	spi_config.mosi_pin = 17;
 	spi_config.sck_pin  = 27;
 	APP_ERROR_CHECK(nrf_drv_spi_init(&spi, &spi_config, spi_event_handler));
+
+	init_timer ();
+	nrf_drv_timer_disable(&TIMER);
 	return 0;
 
 }
@@ -116,16 +102,64 @@ uint32_t sk6812_set_color( uint8_t r,uint8_t g,uint8_t b){
 	return 0;
 }
 
-uint32_t change_mode(uint8_t new_mode){
+void timer_handler(nrf_timer_event_t event_type, void* p_context)
+{
+    switch (event_type)
+    {
+        case NRF_TIMER_EVENT_COMPARE0:
+            if (mode == 1){
+            	if( blue_level == 254){
+            		mode = 2;
+            	}
+            	blue_level++;
+            	sk6812_set_color( 20,20,blue_level);
+            	nrf_delay_ms(3);
+
+
+
+            }else if (mode == 2){
+            	if( blue_level <20){
+        			mode = 1;
+        		}
+        		blue_level -=2;
+        		nrf_delay_ms(3);
+        		sk6812_set_color( 20,20,blue_level);
+            }
+            break;
+
+        default:
+            //Do nothing.
+            break;
+    }
+}
+
+
+uint32_t init_timer (){
+	uint32_t err_code;
+	nrf_drv_timer_config_t timer_cfg = NRF_DRV_TIMER_DEFAULT_CONFIG;
+	err_code = nrf_drv_timer_init(&TIMER, &timer_cfg,timer_handler);
+	APP_ERROR_CHECK(err_code);
+
+	uint32_t time_ticks = nrf_drv_timer_ms_to_ticks(&TIMER,2);
+
+	nrf_drv_timer_extended_compare(
+		 &TIMER, NRF_TIMER_CC_CHANNEL0, time_ticks, NRF_TIMER_SHORT_COMPARE0_CLEAR_MASK, true);
+
+	return err_code;
+}
+uint32_t  sk6812_change_mode(uint8_t new_mode){
+	sk6812_set_color( 0,0,0);
 	if (new_mode == 0){
 		mode = 0;
+		nrf_drv_timer_disable(&TIMER);
 	}else if(new_mode ==1){
 
 		mode =1;
 		blue_level  = 0;
+		nrf_drv_timer_enable(&TIMER);
 	}else{
 		return 1;
 	}
-	sk6812_set_color( 0,0,0);
+
 	return 0;
 }

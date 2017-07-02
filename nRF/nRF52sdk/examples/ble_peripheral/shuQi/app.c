@@ -51,6 +51,12 @@ int main(void) {
     Buffer_tag_UHF_t* Buffer_tag_UHF;
 	uint8_t i = 0;
 	bool reset;
+
+	sk6812_set_color( 255,0,0);
+
+	nrf_delay_ms(500);
+
+	sk6812_change_mode(BLUE_EFFECT);
     for (;;) {
 
     	Buffer_tag_UHF = (Buffer_tag_UHF_t*) malloc(sizeof(Buffer_tag_UHF_t));
