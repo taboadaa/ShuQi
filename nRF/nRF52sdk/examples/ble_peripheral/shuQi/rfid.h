@@ -24,6 +24,7 @@
 #include "nrf.h"
 #include "app_util.h"
 #include "boards.h"
+#include "sk6812.h"
 
 
 #define MAX_TEST_DATA_BYTES     (15U)                /**< max number of test bytes to be used for tx and rx. */
@@ -84,43 +85,43 @@ uint8_t uart_receive_byte(uart_buffer_t* buffer, uint8_t data);
 void uart_handle(app_uart_evt_t * p_event);
 
 
-/** @brief récupère une trame de donnée dans le fifo
+/** @brief rï¿½cupï¿½re une trame de donnï¿½e dans le fifo
  *
  * @fn uint8_t * read_data(uint8_t* data){
- * @param uint8_t* data : pointeur sur les donnée à remplire
+ * @param uint8_t* data : pointeur sur les donnï¿½e ï¿½ remplire
  *
  */
 uint8_t read_data(uint8_t* data);
 /**
  * @fn uint8_t read_tag(uint8_t* data, TagUHF_t* tag){
- * @brief récupere un tags a partir des donnée récupérée
+ * @brief rï¿½cupere un tags a partir des donnï¿½e rï¿½cupï¿½rï¿½e
  *
  * @param uint8_t* data : une trame binaire recu du moduel YR903
  * @param TagUHF_t* tag : pointeur vers le tags, sera remplis selon les informations de la trame
  *
  * @return return 0 si aucune erreur
- * @note prévu pour un tag epc de 96 bits
+ * @note prï¿½vu pour un tag epc de 96 bits
  */
 uint8_t read_tag(uint8_t* data, TagUHF_t* tag);
 /**
  * @fn tag_present ( Buffer_t* buffer, uint32_t EPC0,uint32_t EPC1,uint32_t EPC2)
- * @brief regarde si un id epc est présent dans le buffer
+ * @brief regarde si un id epc est prï¿½sent dans le buffer
  *
- * @param Buffer_t* buffer poiteur sur un buffer à remplir (ensemble des tags lus)
+ * @param Buffer_t* buffer poiteur sur un buffer ï¿½ remplir (ensemble des tags lus)
  * @param uint32_t EPC0 4 premiers byte de l'id EPC (MSB)
  * @param uint32_t EPC1 4 bytes suivant
  * @param uint32_t EPC2 4 premiers byte de l'id EPC (LSB)
- * @return true si le tag est présent , false si le tag n'est pas présent
+ * @return true si le tag est prï¿½sent , false si le tag n'est pas prï¿½sent
  */
 bool tag_present (Buffer_tag_UHF_t* buffer, uint8_t* EPC);
 
 
 /**
  * @fn send_data(uint8_t* data, uint32_t nmb)
- * @brief enveoi la trame data en uart, utilise le fifo. Gère la checksum
+ * @brief enveoi la trame data en uart, utilise le fifo. Gï¿½re la checksum
  *
- * @param data : chaine hexadécimal à envoyé
- * @param uint32_t nmb : taille de la chaine hexadécimal à envoyer
+ * @param data : chaine hexadï¿½cimal ï¿½ envoyï¿½
+ * @param uint32_t nmb : taille de la chaine hexadï¿½cimal ï¿½ envoyer
  *
  */
 void send_data(uint8_t* data, uint32_t nmb,uart_buffer_t* buffer);
@@ -132,10 +133,10 @@ uart_buffer_t* allocate_buffer_uart();
 
 /**
  * @fn inventaire(Buffer_t *buffer)
- * @brief éxecute en boucle :
+ * @brief ï¿½xecute en boucle :
 									- commande pour lecture RFID par le module YR903
 									- lecture et reset du buffer du module YR903
-									- décodage des trames reçu pour lister les tags RFID
+									- dï¿½codage des trames reï¿½u pour lister les tags RFID
  *
  *
  * @param Buffer_t *buffer pointeur sur un buffer
@@ -146,5 +147,7 @@ void wait_flag ( bool* flag);
 void init_rfid();
 uint32_t add_tag_buffer_ble(uint8_t* buffer_ble,TagUHF_t *tag);
 uint32_t tag_rfid_to_format_ble(uint8_array_t* buffer_ble,Buffer_tag_UHF_t *buffer_tag_uhf);
+
+void read_tags(uint8_array_t buffer_ble);
 
 #endif /* RFID_H_ */

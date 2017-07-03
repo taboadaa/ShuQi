@@ -72,13 +72,13 @@ void uart_handle(app_uart_evt_t * p_event)
 
 /**
  * @fn uint8_t read_tag(uint8_t* data, TagUHF_t* tag){
- * @brief récupere un tags a partir des donnée récupérée
+ * @brief rï¿½cupere un tags a partir des donnï¿½e rï¿½cupï¿½rï¿½e
  *
  * @param uint8_t* data : une trame binaire recu du moduel YR903
  * @param TagUHF_t* tag : pointeur vers le tags, sera remplis selon les informations de la trame
  *
  * @return return 0 si aucune erreur
- * @note prévu pour un tag epc de 96 bits
+ * @note prï¿½vu pour un tag epc de 96 bits
  */
 uint8_t read_tag(uint8_t* data, TagUHF_t* tag){
 	if (data[6] != 0x10 )
@@ -98,10 +98,10 @@ uint8_t read_tag(uint8_t* data, TagUHF_t* tag){
 
 /**
  * @fn send_data(uint8_t* data, uint32_t nmb)
- * @brief enveoi la trame data en uart, utilise le fifo. Gère la checksum
+ * @brief enveoi la trame data en uart, utilise le fifo. Gï¿½re la checksum
  *
- * @param data : chaine hexadécimal à envoyé
- * @param uint32_t nmb : taille de la chaine hexadécimal à envoyer
+ * @param data : chaine hexadï¿½cimal ï¿½ envoyï¿½
+ * @param uint32_t nmb : taille de la chaine hexadï¿½cimal ï¿½ envoyer
  *
  */
 void send_data(uint8_t* data, uint32_t nmb,uart_buffer_t* buffer)
@@ -116,7 +116,7 @@ void send_data(uint8_t* data, uint32_t nmb,uart_buffer_t* buffer)
 	}
 
 
-	buffer->size_data = nmb+1; // taille des donnée + check byte
+	buffer->size_data = nmb+1; // taille des donnï¿½e + check byte
 	buffer->data[nmb] = (~check)+1;
 	buffer->i = 0;
 	uart_send_next_byte(buffer);
@@ -140,10 +140,10 @@ uint32_t free_buffer_uart(uart_buffer_t* p){
 
 /**
  * @fn inventaire(Buffer_t *buffer)
- * @brief éxecute en boucle :
+ * @brief ï¿½xecute en boucle :
 									- commande pour lecture RFID par le module YR903
 									- lecture et reset du buffer du module YR903
-									- décodage des trames reçu pour lister les tags RFID
+									- dï¿½codage des trames reï¿½u pour lister les tags RFID
  *
  *
  * @param Buffer_t *buffer pointeur sur un buffer
@@ -211,7 +211,7 @@ uint32_t inventaire(Buffer_tag_UHF_t *buffer_tag_uhf, bool reset)
 	uart_buffer_t* tab_uart_buffer_rx[nmb_tag];
 	tab_uart_buffer_rx[0] = uart_buffer_rx;
 
-	// allouer le nombre nécessaire pour la réception des messages du buffer uart
+	// allouer le nombre nï¿½cessaire pour la rï¿½ception des messages du buffer uart
 	for(uint16_t i =1; i< nmb_tag;i++){
 		if ((tab_uart_buffer_rx[i] =allocate_buffer_uart()) == NULL){
 			// free all tab
@@ -222,7 +222,7 @@ uint32_t inventaire(Buffer_tag_UHF_t *buffer_tag_uhf, bool reset)
 		}
 	}
 
-	// attendre la réception des paquets du module RFID (1 paquet par tag )
+	// attendre la rï¿½ception des paquets du module RFID (1 paquet par tag )
 	for(uint16_t i =1; i< nmb_tag;i++){
 		uart_buffer_rx = tab_uart_buffer_rx[i];
 		wait_flag(&flag_data_receive);
@@ -244,7 +244,7 @@ uint32_t inventaire(Buffer_tag_UHF_t *buffer_tag_uhf, bool reset)
 
 
 	// free buffer
-	free_buffer_uart(tab_uart_buffer_rx[0]); // existe même si aucun TAG
+	free_buffer_uart(tab_uart_buffer_rx[0]); // existe mï¿½me si aucun TAG
 	for(uint16_t i =1; i< nmb_tag;i++){
 		free_buffer_uart(tab_uart_buffer_rx[i]);
 	}
@@ -272,7 +272,7 @@ void init_rfid(){
 uint32_t add_tag_buffer_ble(uint8_t* buffer_ble,TagUHF_t *tag){
 
 	for(uint8_t i =0; i<12;i++){
-		// le format de tag est stocker en MSB en premier mais est envoyé par BLE avec LSB en premier
+		// le format de tag est stocker en MSB en premier mais est envoyï¿½ par BLE avec LSB en premier
 		buffer_ble[i]= tag->EPC[11-i];
 	}
 	return 0;
@@ -286,4 +286,30 @@ uint32_t tag_rfid_to_format_ble(uint8_array_t* buffer_ble,Buffer_tag_UHF_t *buff
 		add_tag_buffer_ble(&buffer_ble->p_data[12*i],&buffer_tag_uhf->TagUHF[i]);
 	}
 	return 0;
+}
+
+
+void read_tags(uint8_array_t buffer_ble) {
+	Buffer_tag_UHF_t* Buffer_tag_UHF = (Buffer_tag_UHF_t*)malloc(sizeof(Buffer_tag_UHF_t*));
+	/*if (Buffer_tag_UHF == NULL){
+		sk6812_change_mode(0);
+		sk6812_set_color( 0,255,255);
+	}*/
+
+	if (inventaire(Buffer_tag_UHF,true)){
+		sk6812_change_mode(0);
+		sk6812_set_color(255,255,255);
+	}
+
+	free(buffer_ble.p_data);
+	buffer_ble.size = 12 * Buffer_tag_UHF->size;
+	buffer_ble.p_data = (uint8_t*)malloc(sizeof(uint8_t)* buffer_ble.size);
+	if (buffer_ble.p_data== NULL){
+		sk6812_change_mode(0);
+		sk6812_set_color( 255,255,0);
+	}
+
+	tag_rfid_to_format_ble (&buffer_ble,Buffer_tag_UHF);
+	free(Buffer_tag_UHF->TagUHF);
+	free(Buffer_tag_UHF);
 }
