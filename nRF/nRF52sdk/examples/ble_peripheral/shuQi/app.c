@@ -61,8 +61,8 @@ int main(void) {
 
     	Buffer_tag_UHF = (Buffer_tag_UHF_t*) malloc(sizeof(Buffer_tag_UHF_t));
 		if (Buffer_tag_UHF == NULL){
-			nrf_gpio_pin_set(LED_TOP);
-			while(1);
+			sk6812_change_mode(0);
+			sk6812_set_color( 0,255,255);
 		}
 		i++;
 		if ( i >8){
@@ -71,13 +71,22 @@ int main(void) {
 		}else{
 			reset = false;
 		}
-        inventaire(Buffer_tag_UHF,true);
+        if (inventaire(Buffer_tag_UHF,true)){
+        	sk6812_change_mode(0);
+        	sk6812_set_color( 255,255,255);
+
+
+        }
 
 
 
         free(buffer_ble.p_data);
         buffer_ble.size = 12 * Buffer_tag_UHF->size;
         buffer_ble.p_data = (uint8_t*)malloc(sizeof(uint8_t)* buffer_ble.size);
+        if (buffer_ble.p_data== NULL){
+			sk6812_change_mode(0);
+			sk6812_set_color( 255,255,0);
+		}
 
         tag_rfid_to_format_ble (&buffer_ble,Buffer_tag_UHF);
         free(Buffer_tag_UHF->TagUHF);

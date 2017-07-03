@@ -12,9 +12,6 @@
  */
 void spi_event_handler(nrf_drv_spi_evt_t const * p_event){
     spi_xfer_done = true;
-
-
-
 }
 
 /**
@@ -112,18 +109,15 @@ void timer_handler(nrf_timer_event_t event_type, void* p_context)
             		mode = 2;
             	}
             	blue_level++;
-            	sk6812_set_color( 20,20,blue_level);
-            	nrf_delay_ms(3);
-
+            	sk6812_set_color( 0,0,blue_level);
 
 
             }else if (mode == 2){
-            	if( blue_level <20){
+            	if( blue_level <33){
         			mode = 1;
         		}
-        		blue_level -=2;
-        		nrf_delay_ms(3);
-        		sk6812_set_color( 20,20,blue_level);
+        		blue_level -=1;
+        		sk6812_set_color( 0,0,blue_level);
             }
             break;
 
@@ -140,7 +134,7 @@ uint32_t init_timer (){
 	err_code = nrf_drv_timer_init(&TIMER, &timer_cfg,timer_handler);
 	APP_ERROR_CHECK(err_code);
 
-	uint32_t time_ticks = nrf_drv_timer_ms_to_ticks(&TIMER,2);
+	uint32_t time_ticks = nrf_drv_timer_ms_to_ticks(&TIMER,TIME_MS);
 
 	nrf_drv_timer_extended_compare(
 		 &TIMER, NRF_TIMER_CC_CHANNEL0, time_ticks, NRF_TIMER_SHORT_COMPARE0_CLEAR_MASK, true);

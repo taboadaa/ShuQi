@@ -231,7 +231,7 @@ uint32_t inventaire(Buffer_tag_UHF_t *buffer_tag_uhf, bool reset)
 
 	// allouer buffer_tag rfid
 	buffer_tag_uhf->size = nmb_tag;
-	buffer_tag_uhf->TagUHF = (TagUHF_t*)malloc(sizeof(TagUHF_t));
+	buffer_tag_uhf->TagUHF = (TagUHF_t*)malloc(sizeof(TagUHF_t)*nmb_tag);
 	if ( buffer_tag_uhf->TagUHF == NULL){
 		return MALLOC_ERROR;
 	}

@@ -17,6 +17,8 @@
 
 #define SPI_INSTANCE  0 /**< SPI instance index. */
 #define BLUE_EFFECT 1
+#define WHITE_LEVEL_MINIMUM 10
+#define TIME_MS 3
 static const nrf_drv_timer_t TIMER =  NRF_DRV_TIMER_INSTANCE(1);
 
 
