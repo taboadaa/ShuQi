@@ -575,10 +575,10 @@ static void buttons_leds_init(bool * p_erase_bonds) {
 /**@brief Function for the Power manager.
  */
 void power_manage(void) {
-	NRF_LOG_INFO("Power manage enter");
+	//NRF_LOG_INFO("<Power");
 	uint32_t err_code = sd_app_evt_wait();
 	APP_ERROR_CHECK(err_code);
-	NRF_LOG_INFO("Power manage exit\n");
+	//NRF_LOG_INFO("/>\n");
 }
 
 /**@brief Function for application main entry.

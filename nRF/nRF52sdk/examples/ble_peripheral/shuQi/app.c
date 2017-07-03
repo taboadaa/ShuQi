@@ -7,14 +7,6 @@
 #define NRF_LOG_MODULE_NAME "  APP"
 
 #include "app.h"
-#include "sk6812.h"
-#include "app_uart.h"
-#include "nrf_drv_uart.h"
-#include "app_error.h"
-#include "nrf_delay.h"
-#include "nrf.h"
-#include "bsp.h"
-#include "rfid.h"
 
 #if defined(BOARD_PCA10040)
 #error "PCA10040"
@@ -82,7 +74,7 @@ enum_state_t state_change(enum_state_t currentState, enum_mode_t mode) {
  * @brief Read tags
  */
 void read_tags() {
-	debugdebug(); //todo enable and scan RFID tags
+	nb_rfid_ids = rfid_read_tags(rfid_ids);
 
 	ble_set_stuff_manager_entry_number(nb_rfid_ids);
 
@@ -108,19 +100,17 @@ int main(void) {
 	device_init();
 	app_init();
 
+	//current_state = STATE_READ; //debug purpose
+
 	NRF_LOG_INFO("Init complete\n");
 
-nrf_gpio_cfg_output(RFID_ENABLE_PIN_NUMBER);
+	nrf_gpio_cfg_output(RFID_ENABLE_PIN_NUMBER);
 	nrf_gpio_pin_set(RFID_ENABLE_PIN_NUMBER);
 
 	nrf_gpio_cfg_output(LED_TOP);
 	nrf_gpio_pin_clear(LED_TOP);
 
-    //UART RX is enabled
-
-    Buffer_tag_UHF_t* Buffer_tag_UHF;
-
-	sk6812_set_color(255,0,0);
+	sk6812_set_color(255, 0, 0);
 
 	nrf_delay_ms(500);
 
@@ -136,8 +126,8 @@ nrf_gpio_cfg_output(RFID_ENABLE_PIN_NUMBER);
 
 		//State operation
 		if (current_state == STATE_SLEEP) {
+			rfid_ids_clear(rfid_ids, nb_rfid_ids);
 			nb_rfid_ids = 0;
-			//todo delete rfid_ids
 		} else if (current_state == STATE_READ) {
 			if (nb_rfid_ids == 0) {
 				read_tags();
