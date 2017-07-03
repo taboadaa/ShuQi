@@ -21,6 +21,9 @@
 #include "service_if.h"
 #include "data_management.h"
 
+#include "nrf_delay.h"
+#include "nrf_gpio.h"
+
 static uint8_array_t rfid_ids[RFID_ID_ARRAY_SIZE];
 uint16_t nb_rfid_ids;
 enum_state_t current_state;

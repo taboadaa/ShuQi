@@ -7,6 +7,18 @@
 #define NRF_LOG_MODULE_NAME "  APP"
 
 #include "app.h"
+#include "sk6812.h"
+#include "app_uart.h"
+#include "nrf_drv_uart.h"
+#include "app_error.h"
+#include "nrf_delay.h"
+#include "nrf.h"
+#include "bsp.h"
+#include "rfid.h"
+
+#if defined(BOARD_PCA10040)
+#error "PCA10040"
+#endif
 
 //dbg
 void debugdebug() {
@@ -97,6 +109,22 @@ int main(void) {
 	app_init();
 
 	NRF_LOG_INFO("Init complete\n");
+
+nrf_gpio_cfg_output(RFID_ENABLE_PIN_NUMBER);
+	nrf_gpio_pin_set(RFID_ENABLE_PIN_NUMBER);
+
+	nrf_gpio_cfg_output(LED_TOP);
+	nrf_gpio_pin_clear(LED_TOP);
+
+    //UART RX is enabled
+
+    Buffer_tag_UHF_t* Buffer_tag_UHF;
+
+	sk6812_set_color(255,0,0);
+
+	nrf_delay_ms(500);
+
+	sk6812_change_mode(BLUE_EFFECT);
 
 	// Enter main loop.
 	for (;;) {
