@@ -2297,7 +2297,7 @@
 // <e> TIMER_ENABLED - nrf_drv_timer - TIMER periperal driver
 //==========================================================
 #ifndef TIMER_ENABLED
-#define TIMER_ENABLED 0
+#define TIMER_ENABLED 1
 #endif
 #if  TIMER_ENABLED
 // <o> TIMER_DEFAULT_CONFIG_FREQUENCY  - Timer frequency if in Timer mode
@@ -2365,7 +2365,7 @@
  
 
 #ifndef TIMER1_ENABLED
-#define TIMER1_ENABLED 0
+#define TIMER1_ENABLED 1
 #endif
 
 // <q> TIMER2_ENABLED  - Enable TIMER2 instance
@@ -2789,7 +2789,7 @@
  
 
 #ifndef UART_EASY_DMA_SUPPORT
-#define UART_EASY_DMA_SUPPORT 1
+#define UART_EASY_DMA_SUPPORT 0
 #endif
 
 // <q> UART_LEGACY_SUPPORT  - Driver supporting Legacy mode
@@ -2809,7 +2809,7 @@
  
 
 #ifndef UART0_CONFIG_USE_EASY_DMA
-#define UART0_CONFIG_USE_EASY_DMA 1
+#define UART0_CONFIG_USE_EASY_DMA 0
 #endif
 
 #endif //UART0_ENABLED
@@ -2818,7 +2818,7 @@
 // <e> UART_CONFIG_LOG_ENABLED - Enables logging in the module.
 //==========================================================
 #ifndef UART_CONFIG_LOG_ENABLED
-#define UART_CONFIG_LOG_ENABLED 0
+#define UART_CONFIG_LOG_ENABLED 1
 #endif
 #if  UART_CONFIG_LOG_ENABLED
 // <o> UART_CONFIG_LOG_LEVEL  - Default Severity level
@@ -2830,7 +2830,7 @@
 // <4=> Debug 
 
 #ifndef UART_CONFIG_LOG_LEVEL
-#define UART_CONFIG_LOG_LEVEL 3
+#define UART_CONFIG_LOG_LEVEL 2
 #endif
 
 // <o> UART_CONFIG_INFO_COLOR  - ANSI escape code prefix.
@@ -2846,7 +2846,7 @@
 // <8=> White 
 
 #ifndef UART_CONFIG_INFO_COLOR
-#define UART_CONFIG_INFO_COLOR 0
+#define UART_CONFIG_INFO_COLOR 4
 #endif
 
 // <o> UART_CONFIG_DEBUG_COLOR  - ANSI escape code prefix.
@@ -3072,7 +3072,7 @@
 // <e> APP_UART_ENABLED - app_uart - UART driver
 //==========================================================
 #ifndef APP_UART_ENABLED
-#define APP_UART_ENABLED 0
+#define APP_UART_ENABLED 1
 #endif
 #if  APP_UART_ENABLED
 // <o> APP_UART_DRIVER_INSTANCE  - UART instance used
@@ -3120,7 +3120,6 @@
 #ifndef APP_USBD_HID_MOUSE_ENABLED
 #define APP_USBD_HID_MOUSE_ENABLED 0
 #endif
-
 // <q> BUTTON_ENABLED  - app_button - buttons handling module
  
 

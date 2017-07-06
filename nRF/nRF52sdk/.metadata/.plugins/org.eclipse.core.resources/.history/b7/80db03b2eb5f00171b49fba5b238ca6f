@@ -1,0 +1,65 @@
+/*
+ * app.c
+ *
+ *  Created on: 19 mai 2017
+ *      Author: tab
+ */
+
+#define NRF_LOG_MODULE_NAME "       APP"
+
+#include "app.h"
+#include "sk6812.h"
+#include "app_uart.h"
+#include "nrf_drv_uart.h"
+#include "app_error.h"
+#include "nrf_delay.h"
+#include "nrf.h"
+#include "bsp.h"
+#include "rfid.h"
+
+#if defined(BOARD_PCA10040)
+#error "PCA10040"
+#endif
+
+uint32_t err_code;
+uint8_array_t buffer_ble;
+
+/** @brief Function for application main entry.
+ */
+int main(void) {
+    device_init();
+
+    //app_init();
+	nrf_gpio_cfg_output(RFID_ENABLE_PIN_NUMBER);
+	nrf_gpio_pin_set(RFID_ENABLE_PIN_NUMBER);
+
+	nrf_gpio_cfg_output(LED_TOP);
+	nrf_gpio_pin_clear(LED_TOP);
+
+
+
+    //UART RX is enabled
+
+
+
+
+    //APP_ERROR_CHECK(err_code);
+
+
+    Buffer_tag_UHF_t* Buffer_tag_UHF;
+
+	sk6812_set_color(255,0,0);
+
+	nrf_delay_ms(500);
+
+	sk6812_change_mode(BLUE_EFFECT);
+
+    // Enter main loop.
+	for (;;) {
+		read_tags(buffer_ble);
+		NRF_LOG_INFO("Power manage\n\r");
+		power_manage();
+
+		NRF_LOG_INFO("Exit power manage\n\r");
+	}
+}

@@ -8,6 +8,10 @@
 
 #include "app.h"
 
+#if defined(BOARD_PCA10040)
+#error "PCA10040"
+#endif
+
 //dbg
 void debugdebug() {
 	nb_rfid_ids = 7;
@@ -70,7 +74,7 @@ enum_state_t state_change(enum_state_t currentState, enum_mode_t mode) {
  * @brief Read tags
  */
 void read_tags() {
-	debugdebug(); //todo enable and scan RFID tags
+	nb_rfid_ids = rfid_read_tags(rfid_ids);
 
 	ble_set_stuff_manager_entry_number(nb_rfid_ids);
 
@@ -96,7 +100,21 @@ int main(void) {
 	device_init();
 	app_init();
 
+	//current_state = STATE_READ; //debug purpose
+
 	NRF_LOG_INFO("Init complete\n");
+
+	nrf_gpio_cfg_output(RFID_ENABLE_PIN_NUMBER);
+	nrf_gpio_pin_set(RFID_ENABLE_PIN_NUMBER);
+
+	nrf_gpio_cfg_output(LED_TOP);
+	nrf_gpio_pin_clear(LED_TOP);
+
+	sk6812_set_color(255, 0, 0);
+
+	nrf_delay_ms(500);
+
+	sk6812_change_mode(BLUE_EFFECT);
 
 	// Enter main loop.
 	for (;;) {
@@ -108,8 +126,8 @@ int main(void) {
 
 		//State operation
 		if (current_state == STATE_SLEEP) {
+			rfid_ids_clear(rfid_ids, nb_rfid_ids);
 			nb_rfid_ids = 0;
-			//todo delete rfid_ids
 		} else if (current_state == STATE_READ) {
 			if (nb_rfid_ids == 0) {
 				read_tags();

@@ -19,18 +19,25 @@
 
 
 /**
- * @brief Initialize the variable who store the tags.
+ * @brief Initialize the array who store tags.
  * @param rfidIds	Variable to initialize
  */
 void rfid_ids_init(uint8_array_t* rfidIds);
 
 /**
- * @brief Add a tag to the variable who store the tags.
- * @param rfidIds	Variable who's storing the tags
+ * @brief Add a tag to the array who store tags.
+ * @param rfidIds	Variable storing tags
  * @param nbRfidIds	Number of tags saved
  * @param idTag		New tag to add
  * @return Return the number of tags stored.
  */
 uint16_t rfid_ids_add(uint8_array_t* rfidIds, uint16_t nbRfidIds, uint8_array_t idTag);
+
+/**
+ * @brief Clear the array who store tags.
+ * @param rfidIds	Variable storing tags
+ * @param nbRfidIds	Number of tags saved
+ */
+void rfid_ids_clear(uint8_array_t* rfidIds, uint16_t nbRfidIds);
 
 #endif /* DATA_MANAGEMENT_H_ */

@@ -198,12 +198,7 @@ static void conn_params_init(void) {
 
 /**@brief Function for starting timers.
  */
-static void application_timers_start(void) {
-	/* TODO YOUR_JOB: Start your timers. below is an example of how to start a timer.
-	 uint32_t err_code;
-	 err_code = app_timer_start(m_app_timer_id, TIMER_INTERVAL, NULL);
-	 APP_ERROR_CHECK(err_code); */
-}
+
 
 /**@brief Function for putting the chip into sleep mode.
  *
@@ -580,10 +575,10 @@ static void buttons_leds_init(bool * p_erase_bonds) {
 /**@brief Function for the Power manager.
  */
 void power_manage(void) {
-	NRF_LOG_INFO("Power manage enter");
+	//NRF_LOG_INFO("<Power");
 	uint32_t err_code = sd_app_evt_wait();
 	APP_ERROR_CHECK(err_code);
-	NRF_LOG_INFO("Power manage exit\n");
+	//NRF_LOG_INFO("/>\n");
 }
 
 /**@brief Function for application main entry.
@@ -607,9 +602,9 @@ void device_init() {
 	advertising_init();
 	services_init();
 	conn_params_init();
+	init_rfid();
 
 	// Start execution.
-	application_timers_start();
 	NRF_LOG_INFO("Start Advertising\n");
 	err_code = ble_advertising_start(BLE_ADV_MODE_FAST);
 	APP_ERROR_CHECK(err_code);

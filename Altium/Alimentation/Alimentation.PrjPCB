@@ -327,10 +327,6 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=HTCPXBUO
 
-[GeneratedDocument1]
-DocumentPath=..\..\..\..\Documents\hepia\PROJECT_CHINA\Altium\Alimentation\Project Outputs for Alimentation\Alimentation.REP
-DItemRevisionGUID=
-
 [SearchPath1]
 Path=C:\Users\taboadaa\OneDrive\CHINA_PROJECT\Altium\*.PcbLib
 IncludeSubFolders=1

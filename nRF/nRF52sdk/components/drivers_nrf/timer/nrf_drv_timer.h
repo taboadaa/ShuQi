@@ -57,7 +57,7 @@ typedef struct
 /**
  * @brief Macro for creating a timer driver instance.
  */
-#define NRF_DRV_TIMER_INSTANCE(id) \
+#define NRF_DRV_TIMER_INSTANCE(id) 						      \
 {                                                             \
     .p_reg            = CONCAT_2(NRF_TIMER, id),              \
     .instance_id      = CONCAT_3(TIMER, id, _INSTANCE_INDEX), \

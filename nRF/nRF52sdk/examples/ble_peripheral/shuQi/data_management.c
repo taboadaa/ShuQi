@@ -7,7 +7,7 @@
 #include "data_management.h"
 
 /**
- * @brief Initialize the variable who store the tags.
+ * @brief Initialize the variable who store tags.
  */
 void rfid_ids_init(uint8_array_t* rfidIds) {
 	for (int ii = 0; ii < RFID_ID_ARRAY_SIZE; ++ii) {
@@ -17,7 +17,7 @@ void rfid_ids_init(uint8_array_t* rfidIds) {
 }
 
 /**
- * @brief Add a tag to the variable who store the tags.
+ * @brief Add a tag to the variable who store tags.
  */
 uint16_t rfid_ids_add(uint8_array_t* rfidIds, uint16_t nbRfidIds, uint8_array_t idTag) {
 	rfidIds[nbRfidIds].size = idTag.size;
@@ -27,4 +27,14 @@ uint16_t rfid_ids_add(uint8_array_t* rfidIds, uint16_t nbRfidIds, uint8_array_t 
 	}
 
 	return nbRfidIds;
+}
+
+/**
+ * @brief Clear the array who store tags.
+ */
+void rfid_ids_clear(uint8_array_t* rfidIds, uint16_t nbRfidIds) {
+	for (int ii = 0; ii < nbRfidIds; ++ii) {
+		free(rfidIds->p_data);
+		rfidIds->size = 0;
+	}
 }

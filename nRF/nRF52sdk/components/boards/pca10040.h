@@ -12,6 +12,7 @@
 #ifndef PCA10040_H
 #define PCA10040_H
 
+#error "PCA10040 déclarer"
 #ifdef __cplusplus
 extern "C" {
 #endif

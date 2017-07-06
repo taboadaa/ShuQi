@@ -306,8 +306,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -629,8 +637,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -952,8 +968,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -1275,8 +1299,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -1598,8 +1630,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -1921,8 +1961,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -2244,8 +2292,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -2567,8 +2623,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -2890,8 +2954,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -3213,8 +3285,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -3536,8 +3616,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -3859,8 +3947,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -4307,8 +4403,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -4328,7 +4432,11 @@
 						<entry kind="macro" name="SWI_DISABLE0" value=""/>
 						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
 					</resource>
+<<<<<<< HEAD
 					<resource project-relative-path="components/libraries/bsp/bsp_nfc.c">
+=======
+					<resource project-relative-path="components/libraries/uart/app_uart.c">
+>>>>>>> RFIDV2
 						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
@@ -4630,8 +4738,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -4651,7 +4767,11 @@
 						<entry kind="macro" name="SWI_DISABLE0" value=""/>
 						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
 					</resource>
+<<<<<<< HEAD
 					<resource project-relative-path="components/ble/peer_manager/id_manager.c">
+=======
+					<resource project-relative-path="components/libraries/bsp/bsp_nfc.c">
+>>>>>>> RFIDV2
 						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
@@ -4953,8 +5073,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -4974,7 +5102,11 @@
 						<entry kind="macro" name="SWI_DISABLE0" value=""/>
 						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
 					</resource>
+<<<<<<< HEAD
 					<resource project-relative-path="components/boards/boards.c">
+=======
+					<resource project-relative-path="components/ble/peer_manager/id_manager.c">
+>>>>>>> RFIDV2
 						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
@@ -5276,8 +5408,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -5297,7 +5437,11 @@
 						<entry kind="macro" name="SWI_DISABLE0" value=""/>
 						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
 					</resource>
+<<<<<<< HEAD
 					<resource project-relative-path="components/ble/peer_manager/security_manager.c">
+=======
+					<resource project-relative-path="components/boards/boards.c">
+>>>>>>> RFIDV2
 						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
@@ -5599,8 +5743,348 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
+						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
+						<entry kind="macro" name="NRF52" value=""/>
+						<entry kind="macro" name="NRF52832" value=""/>
+						<entry kind="macro" name="NRF52_PAN_12" value=""/>
+						<entry kind="macro" name="NRF52_PAN_15" value=""/>
+						<entry kind="macro" name="NRF52_PAN_20" value=""/>
+						<entry kind="macro" name="NRF52_PAN_31" value=""/>
+						<entry kind="macro" name="NRF52_PAN_36" value=""/>
+						<entry kind="macro" name="NRF52_PAN_51" value=""/>
+						<entry kind="macro" name="NRF52_PAN_54" value=""/>
+						<entry kind="macro" name="NRF52_PAN_55" value=""/>
+						<entry kind="macro" name="NRF52_PAN_58" value=""/>
+						<entry kind="macro" name="NRF52_PAN_64" value=""/>
+						<entry kind="macro" name="NRF_SD_BLE_API_VERSION" value="3"/>
+						<entry kind="macro" name="S132" value=""/>
+						<entry kind="macro" name="SOFTDEVICE_PRESENT" value=""/>
+						<entry kind="macro" name="SWI_DISABLE0" value=""/>
+						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
+					</resource>
+<<<<<<< HEAD
+					<resource project-relative-path="components/ble/peer_manager/peer_data.c">
+=======
+					<resource project-relative-path="components/ble/peer_manager/security_manager.c">
+>>>>>>> RFIDV2
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/twi_master">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ancs_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ias_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/pwm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/softdevice/s132/headers/nrf52">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/cdc/acm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/generic">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/msc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/log">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_gls">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fstorage">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/i2s">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/gpiote">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/gpiote">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/boards">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/common">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_advertising">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/adc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_bas_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hrs_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/queue">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_dtm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/toolchain/cmsis/include">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_rscs_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/uart">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/common">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lls">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/wdt">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/bsp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_bas">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/experimental_section_vars">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/softdevice/s132/headers">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ans_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/slip">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/mem_manager">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/external/segger_rtt"/>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/csense_drv">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/hal">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_nus_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/rtc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ias">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/mouse">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/ppi">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_dfu">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/twis_slave">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/scheduler">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lbs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hts">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/delay">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/crc16">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/timer">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/util">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/pwm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/pca10040/s132/config">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/cdc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/csense">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/rng">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/low_power_pwm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/hardfault">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_cscs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/uart">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/hci">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/kbd">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/spi_slave">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/lpcomp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/timer">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/power">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/config">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/toolchain">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/led_softblink">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/qdec">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_cts_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/spi_master">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_nus">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hids">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/pdm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/crc32">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/audio">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/peer_manager">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/swi">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_tps">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_dis">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/device">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/nrf_ble_qwr">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/button">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/saadc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lbs_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_racp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/toolchain/gcc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fds">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/twi">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/clock">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_rscs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/usbd">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/softdevice/common/softdevice_handler">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hrs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+<<<<<<< HEAD
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -5922,8 +6406,11 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
-						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -6245,6 +6732,463 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
+						<entry kind="macro" name="NRF52" value=""/>
+						<entry kind="macro" name="NRF52832" value=""/>
+						<entry kind="macro" name="NRF52_PAN_12" value=""/>
+						<entry kind="macro" name="NRF52_PAN_15" value=""/>
+						<entry kind="macro" name="NRF52_PAN_20" value=""/>
+						<entry kind="macro" name="NRF52_PAN_31" value=""/>
+						<entry kind="macro" name="NRF52_PAN_36" value=""/>
+						<entry kind="macro" name="NRF52_PAN_51" value=""/>
+						<entry kind="macro" name="NRF52_PAN_54" value=""/>
+						<entry kind="macro" name="NRF52_PAN_55" value=""/>
+						<entry kind="macro" name="NRF52_PAN_58" value=""/>
+						<entry kind="macro" name="NRF52_PAN_64" value=""/>
+						<entry kind="macro" name="NRF_SD_BLE_API_VERSION" value="3"/>
+						<entry kind="macro" name="S132" value=""/>
+						<entry kind="macro" name="SOFTDEVICE_PRESENT" value=""/>
+						<entry kind="macro" name="SWI_DISABLE0" value=""/>
+						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
+					</resource>
+					<resource project-relative-path="ble_ias.c">
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/comp"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/twi_master"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_ancs_c"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_ias_c"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/pwm"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/softdevice/s132/headers/nrf52"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/usbd/class/cdc/acm"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/usbd/class/hid/generic"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/usbd/class/msc"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/usbd/class/hid"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/log"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_gls"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/fstorage"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/i2s"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/gpiote"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/gpiote"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/boards"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/common"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_advertising"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/adc"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_bas_c"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_hrs_c"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/queue"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_dtm"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/toolchain/cmsis/include"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_rscs_c"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/uart"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/common"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_lls"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/wdt"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/bsp"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_bas"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/experimental_section_vars"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/softdevice/s132/headers"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_ans_c"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/slip"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/mem_manager"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/external/segger_rtt"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/csense_drv"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/hal"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_nus_c"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/rtc"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_ias"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/usbd/class/hid/mouse"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/ppi"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_dfu"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/twis_slave"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/scheduler"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_lbs"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_hts"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/delay"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/crc16"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/timer"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/util"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/pwm"/>
+						<entry kind="includePath" name="/${ProjName}/pca10040/s132/config">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/usbd/class/cdc"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/csense"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/rng"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/low_power_pwm"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/hardfault"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_cscs"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/uart"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/hci"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/usbd/class/hid/kbd"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/spi_slave"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/lpcomp"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/timer"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/power"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/usbd/config"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/toolchain"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/led_softblink"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/qdec"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_cts_c"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/spi_master"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_nus"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_hids"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/pdm"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/crc32"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/usbd/class/audio"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/peer_manager"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/swi"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_tps"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_dis"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/device"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/nrf_ble_qwr"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/button"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/usbd"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/saadc"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_lbs_c"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_racp"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/toolchain/gcc"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/fds"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/twi"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/clock"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_rscs"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/drivers_nrf/usbd"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/softdevice/common/softdevice_handler"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/ble/ble_services/ble_hrs"/>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/log/src"/>
+>>>>>>> RFIDV2
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
+						<entry kind="macro" name="NRF52" value=""/>
+						<entry kind="macro" name="NRF52832" value=""/>
+						<entry kind="macro" name="NRF52_PAN_12" value=""/>
+						<entry kind="macro" name="NRF52_PAN_15" value=""/>
+						<entry kind="macro" name="NRF52_PAN_20" value=""/>
+						<entry kind="macro" name="NRF52_PAN_31" value=""/>
+						<entry kind="macro" name="NRF52_PAN_36" value=""/>
+						<entry kind="macro" name="NRF52_PAN_51" value=""/>
+						<entry kind="macro" name="NRF52_PAN_54" value=""/>
+						<entry kind="macro" name="NRF52_PAN_55" value=""/>
+						<entry kind="macro" name="NRF52_PAN_58" value=""/>
+						<entry kind="macro" name="NRF52_PAN_64" value=""/>
+						<entry kind="macro" name="NRF_SD_BLE_API_VERSION" value="3"/>
+						<entry kind="macro" name="S132" value=""/>
+						<entry kind="macro" name="SOFTDEVICE_PRESENT" value=""/>
+						<entry kind="macro" name="SWI_DISABLE0" value=""/>
+						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
+					</resource>
+<<<<<<< HEAD
+					<resource project-relative-path="components/ble/peer_manager/peer_database.c">
+=======
+					<resource project-relative-path="components/libraries/fstorage/fstorage.c">
+>>>>>>> RFIDV2
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/twi_master">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ancs_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ias_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/pwm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/softdevice/s132/headers/nrf52">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/cdc/acm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/generic">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/msc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/log">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_gls">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fstorage">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/i2s">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/gpiote">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/gpiote">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/boards">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/common">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_advertising">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/adc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_bas_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hrs_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/queue">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_dtm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/toolchain/cmsis/include">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_rscs_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/uart">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/common">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lls">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/wdt">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/bsp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_bas">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/experimental_section_vars">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/softdevice/s132/headers">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ans_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/slip">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/mem_manager">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/external/segger_rtt"/>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/csense_drv">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/hal">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_nus_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/rtc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ias">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/mouse">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/ppi">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_dfu">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/twis_slave">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/scheduler">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lbs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hts">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/delay">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/crc16">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/timer">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/util">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/pwm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/pca10040/s132/config">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/cdc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/csense">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/rng">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/low_power_pwm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/hardfault">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_cscs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/uart">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/hci">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/kbd">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/spi_slave">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/lpcomp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/timer">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/power">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/config">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/toolchain">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/led_softblink">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/qdec">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_cts_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/spi_master">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_nus">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hids">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/pdm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/crc32">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/audio">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/peer_manager">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/swi">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_tps">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_dis">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/device">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/nrf_ble_qwr">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/button">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/saadc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lbs_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_racp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/toolchain/gcc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fds">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/twi">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/clock">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_rscs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/usbd">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/softdevice/common/softdevice_handler">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hrs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
@@ -6372,6 +7316,13 @@
 						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/components/libraries/log/src"/>
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -6391,330 +7342,11 @@
 						<entry kind="macro" name="SWI_DISABLE0" value=""/>
 						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
 					</resource>
+<<<<<<< HEAD
 					<resource project-relative-path="components/libraries/fstorage/fstorage.c">
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/twi_master">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ancs_c">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ias_c">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/pwm">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/softdevice/s132/headers/nrf52">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/cdc/acm">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/generic">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/msc">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/log">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_gls">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/fstorage">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/i2s">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/gpiote">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/gpiote">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/boards">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/common">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_advertising">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/adc">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_bas_c">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hrs_c">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/queue">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_dtm">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/toolchain/cmsis/include">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_rscs_c">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/uart">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/common">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lls">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/wdt">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/bsp">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_bas">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/experimental_section_vars">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/softdevice/s132/headers">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ans_c">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/slip">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/mem_manager">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/external/segger_rtt"/>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/csense_drv">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/hal">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_nus_c">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/rtc">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ias">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/mouse">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/ppi">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_dfu">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/twis_slave">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/scheduler">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lbs">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hts">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/delay">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/crc16">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/timer">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/util">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/pwm">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/pca10040/s132/config">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/cdc">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/csense">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/rng">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/low_power_pwm">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/hardfault">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_cscs">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/uart">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/hci">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/kbd">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/spi_slave">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/lpcomp">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/timer">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/power">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/config">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/toolchain">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/led_softblink">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/qdec">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_cts_c">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/spi_master">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_nus">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hids">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/pdm">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/crc32">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/audio">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/peer_manager">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/swi">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_tps">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_dis">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/device">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/nrf_ble_qwr">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/button">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/saadc">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lbs_c">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_racp">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/toolchain/gcc">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/fds">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/twi">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/clock">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_rscs">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/usbd">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/softdevice/common/softdevice_handler">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hrs">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
-						<entry kind="macro" name="BOARD_PCA10040" value=""/>
-						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
-						<entry kind="macro" name="NRF52" value=""/>
-						<entry kind="macro" name="NRF52832" value=""/>
-						<entry kind="macro" name="NRF52_PAN_12" value=""/>
-						<entry kind="macro" name="NRF52_PAN_15" value=""/>
-						<entry kind="macro" name="NRF52_PAN_20" value=""/>
-						<entry kind="macro" name="NRF52_PAN_31" value=""/>
-						<entry kind="macro" name="NRF52_PAN_36" value=""/>
-						<entry kind="macro" name="NRF52_PAN_51" value=""/>
-						<entry kind="macro" name="NRF52_PAN_54" value=""/>
-						<entry kind="macro" name="NRF52_PAN_55" value=""/>
-						<entry kind="macro" name="NRF52_PAN_58" value=""/>
-						<entry kind="macro" name="NRF52_PAN_64" value=""/>
-						<entry kind="macro" name="NRF_SD_BLE_API_VERSION" value="3"/>
-						<entry kind="macro" name="S132" value=""/>
-						<entry kind="macro" name="SOFTDEVICE_PRESENT" value=""/>
-						<entry kind="macro" name="SWI_DISABLE0" value=""/>
-						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
-					</resource>
+=======
 					<resource project-relative-path="ble_stuff_manager.c">
+>>>>>>> RFIDV2
 						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
@@ -7016,8 +7648,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -7037,7 +7677,11 @@
 						<entry kind="macro" name="SWI_DISABLE0" value=""/>
 						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
 					</resource>
+<<<<<<< HEAD
+					<resource project-relative-path="ble_stuff_manager.c">
+=======
 					<resource project-relative-path="components/ble/ble_advertising/ble_advertising.c">
+>>>>>>> RFIDV2
 						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
@@ -7339,8 +7983,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -7360,7 +8012,11 @@
 						<entry kind="macro" name="SWI_DISABLE0" value=""/>
 						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
 					</resource>
+<<<<<<< HEAD
+					<resource project-relative-path="components/ble/ble_advertising/ble_advertising.c">
+=======
 					<resource project-relative-path="components/ble/peer_manager/peer_id.c">
+>>>>>>> RFIDV2
 						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
@@ -7662,8 +8318,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -7683,7 +8347,11 @@
 						<entry kind="macro" name="SWI_DISABLE0" value=""/>
 						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
 					</resource>
+<<<<<<< HEAD
+					<resource project-relative-path="components/ble/peer_manager/peer_id.c">
+=======
 					<resource project-relative-path="components/libraries/fds/fds.c">
+>>>>>>> RFIDV2
 						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
@@ -7985,8 +8653,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -8006,330 +8682,11 @@
 						<entry kind="macro" name="SWI_DISABLE0" value=""/>
 						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
 					</resource>
-					<resource project-relative-path="ble_utils.c">
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/twi_master">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ancs_c">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ias_c">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/pwm">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/softdevice/s132/headers/nrf52">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/cdc/acm">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/generic">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/msc">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/log">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_gls">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/fstorage">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/i2s">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/gpiote">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/gpiote">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/boards">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/common">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_advertising">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/adc">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_bas_c">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hrs_c">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/queue">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_dtm">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/toolchain/cmsis/include">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_rscs_c">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/uart">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/common">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lls">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/wdt">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/bsp">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_bas">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/experimental_section_vars">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/softdevice/s132/headers">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ans_c">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/slip">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/mem_manager">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/external/segger_rtt"/>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/csense_drv">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/hal">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_nus_c">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/rtc">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ias">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/mouse">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/ppi">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_dfu">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/twis_slave">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/scheduler">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lbs">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hts">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/delay">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/crc16">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/timer">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/util">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/pwm">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/pca10040/s132/config">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/cdc">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/csense">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/rng">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/low_power_pwm">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/hardfault">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_cscs">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/uart">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/hci">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/kbd">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/spi_slave">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/lpcomp">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/timer">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/power">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/config">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/toolchain">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/led_softblink">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/qdec">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_cts_c">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/spi_master">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_nus">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hids">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/pdm">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/crc32">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/audio">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/peer_manager">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/swi">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_tps">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_dis">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/device">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/nrf_ble_qwr">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/button">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/saadc">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lbs_c">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_racp">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/toolchain/gcc">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/fds">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/twi">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/clock">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_rscs">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/usbd">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/softdevice/common/softdevice_handler">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hrs">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
-							<flag value="VALUE_WORKSPACE_PATH"/>
-						</entry>
-						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
-						<entry kind="macro" name="BOARD_PCA10040" value=""/>
-						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
-						<entry kind="macro" name="NRF52" value=""/>
-						<entry kind="macro" name="NRF52832" value=""/>
-						<entry kind="macro" name="NRF52_PAN_12" value=""/>
-						<entry kind="macro" name="NRF52_PAN_15" value=""/>
-						<entry kind="macro" name="NRF52_PAN_20" value=""/>
-						<entry kind="macro" name="NRF52_PAN_31" value=""/>
-						<entry kind="macro" name="NRF52_PAN_36" value=""/>
-						<entry kind="macro" name="NRF52_PAN_51" value=""/>
-						<entry kind="macro" name="NRF52_PAN_54" value=""/>
-						<entry kind="macro" name="NRF52_PAN_55" value=""/>
-						<entry kind="macro" name="NRF52_PAN_58" value=""/>
-						<entry kind="macro" name="NRF52_PAN_64" value=""/>
-						<entry kind="macro" name="NRF_SD_BLE_API_VERSION" value="3"/>
-						<entry kind="macro" name="S132" value=""/>
-						<entry kind="macro" name="SOFTDEVICE_PRESENT" value=""/>
-						<entry kind="macro" name="SWI_DISABLE0" value=""/>
-						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
-					</resource>
+<<<<<<< HEAD
+					<resource project-relative-path="components/libraries/fds/fds.c">
+=======
 					<resource project-relative-path="components/drivers_nrf/common/nrf_drv_common.c">
+>>>>>>> RFIDV2
 						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
@@ -8631,8 +8988,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -8652,7 +9017,11 @@
 						<entry kind="macro" name="SWI_DISABLE0" value=""/>
 						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
 					</resource>
+<<<<<<< HEAD
+					<resource project-relative-path="ble_utils.c">
+=======
 					<resource project-relative-path="data_management.c">
+>>>>>>> RFIDV2
 						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
@@ -8954,8 +9323,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -8975,7 +9352,11 @@
 						<entry kind="macro" name="SWI_DISABLE0" value=""/>
 						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
 					</resource>
+<<<<<<< HEAD
+					<resource project-relative-path="components/drivers_nrf/common/nrf_drv_common.c">
+=======
 					<resource project-relative-path="components/libraries/util/sdk_mapped_flags.c">
+>>>>>>> RFIDV2
 						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
@@ -9277,8 +9658,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -9298,7 +9687,346 @@
 						<entry kind="macro" name="SWI_DISABLE0" value=""/>
 						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
 					</resource>
+<<<<<<< HEAD
+					<resource project-relative-path="data_management.c">
+=======
+					<resource project-relative-path="components/drivers_nrf/timer/nrf_drv_timer.c">
+>>>>>>> RFIDV2
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/twi_master">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ancs_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ias_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/pwm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/softdevice/s132/headers/nrf52">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/cdc/acm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/generic">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/msc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/log">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_gls">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fstorage">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/i2s">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/gpiote">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/gpiote">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/boards">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/common">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_advertising">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/adc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_bas_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hrs_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/queue">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_dtm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/toolchain/cmsis/include">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_rscs_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/uart">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/common">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lls">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/wdt">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/bsp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_bas">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/experimental_section_vars">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/softdevice/s132/headers">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ans_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/slip">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/mem_manager">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/external/segger_rtt"/>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/csense_drv">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/hal">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_nus_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/rtc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ias">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/mouse">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/ppi">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_dfu">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/twis_slave">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/scheduler">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lbs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hts">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/delay">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/crc16">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/timer">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/util">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/pwm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/pca10040/s132/config">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/cdc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/csense">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/rng">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/low_power_pwm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/hardfault">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_cscs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/uart">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/hci">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/kbd">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/spi_slave">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/lpcomp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/timer">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/power">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/config">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/toolchain">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/led_softblink">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/qdec">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_cts_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/spi_master">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_nus">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hids">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/pdm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/crc32">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/audio">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/peer_manager">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/swi">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_tps">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_dis">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/device">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/nrf_ble_qwr">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/button">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/saadc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lbs_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_racp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/toolchain/gcc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fds">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/twi">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/clock">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_rscs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/usbd">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/softdevice/common/softdevice_handler">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hrs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+<<<<<<< HEAD
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
+						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
+						<entry kind="macro" name="NRF52" value=""/>
+						<entry kind="macro" name="NRF52832" value=""/>
+						<entry kind="macro" name="NRF52_PAN_12" value=""/>
+						<entry kind="macro" name="NRF52_PAN_15" value=""/>
+						<entry kind="macro" name="NRF52_PAN_20" value=""/>
+						<entry kind="macro" name="NRF52_PAN_31" value=""/>
+						<entry kind="macro" name="NRF52_PAN_36" value=""/>
+						<entry kind="macro" name="NRF52_PAN_51" value=""/>
+						<entry kind="macro" name="NRF52_PAN_54" value=""/>
+						<entry kind="macro" name="NRF52_PAN_55" value=""/>
+						<entry kind="macro" name="NRF52_PAN_58" value=""/>
+						<entry kind="macro" name="NRF52_PAN_64" value=""/>
+						<entry kind="macro" name="NRF_SD_BLE_API_VERSION" value="3"/>
+						<entry kind="macro" name="S132" value=""/>
+						<entry kind="macro" name="SOFTDEVICE_PRESENT" value=""/>
+						<entry kind="macro" name="SWI_DISABLE0" value=""/>
+						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
+					</resource>
+<<<<<<< HEAD
+					<resource project-relative-path="components/libraries/util/sdk_mapped_flags.c">
+=======
 					<resource project-relative-path="sk6812.c">
+>>>>>>> RFIDV2
 						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
@@ -9600,8 +10328,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -9621,7 +10357,11 @@
 						<entry kind="macro" name="SWI_DISABLE0" value=""/>
 						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
 					</resource>
+<<<<<<< HEAD
+					<resource project-relative-path="sk6812.c">
+=======
 					<resource project-relative-path="components/libraries/util/app_util_platform.c">
+>>>>>>> RFIDV2
 						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
@@ -9923,8 +10663,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -9944,7 +10692,11 @@
 						<entry kind="macro" name="SWI_DISABLE0" value=""/>
 						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
 					</resource>
+<<<<<<< HEAD
+					<resource project-relative-path="components/libraries/util/app_util_platform.c">
+=======
 					<resource project-relative-path="components/ble/common/ble_srv_common.c">
+>>>>>>> RFIDV2
 						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
@@ -10246,8 +10998,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -10267,7 +11027,11 @@
 						<entry kind="macro" name="SWI_DISABLE0" value=""/>
 						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
 					</resource>
+<<<<<<< HEAD
+					<resource project-relative-path="components/ble/common/ble_srv_common.c">
+=======
 					<resource project-relative-path="components/libraries/timer/app_timer.c">
+>>>>>>> RFIDV2
 						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
@@ -10569,8 +11333,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -10590,7 +11362,11 @@
 						<entry kind="macro" name="SWI_DISABLE0" value=""/>
 						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
 					</resource>
+<<<<<<< HEAD
+					<resource project-relative-path="components/libraries/timer/app_timer.c">
+=======
 					<resource project-relative-path="components/ble/peer_manager/gatt_cache_manager.c">
+>>>>>>> RFIDV2
 						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
@@ -10892,8 +11668,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -10913,7 +11697,11 @@
 						<entry kind="macro" name="SWI_DISABLE0" value=""/>
 						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
 					</resource>
+<<<<<<< HEAD
+					<resource project-relative-path="components/ble/peer_manager/gatt_cache_manager.c">
+=======
 					<resource project-relative-path="components/ble/peer_manager/pm_buffer.c">
+>>>>>>> RFIDV2
 						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
@@ -11215,8 +12003,351 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
+						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
+						<entry kind="macro" name="NRF52" value=""/>
+						<entry kind="macro" name="NRF52832" value=""/>
+						<entry kind="macro" name="NRF52_PAN_12" value=""/>
+						<entry kind="macro" name="NRF52_PAN_15" value=""/>
+						<entry kind="macro" name="NRF52_PAN_20" value=""/>
+						<entry kind="macro" name="NRF52_PAN_31" value=""/>
+						<entry kind="macro" name="NRF52_PAN_36" value=""/>
+						<entry kind="macro" name="NRF52_PAN_51" value=""/>
+						<entry kind="macro" name="NRF52_PAN_54" value=""/>
+						<entry kind="macro" name="NRF52_PAN_55" value=""/>
+						<entry kind="macro" name="NRF52_PAN_58" value=""/>
+						<entry kind="macro" name="NRF52_PAN_64" value=""/>
+						<entry kind="macro" name="NRF_SD_BLE_API_VERSION" value="3"/>
+						<entry kind="macro" name="S132" value=""/>
+						<entry kind="macro" name="SOFTDEVICE_PRESENT" value=""/>
+						<entry kind="macro" name="SWI_DISABLE0" value=""/>
+						<entry kind="macro" name="__HEAP_SIZE" value="0"/>
+					</resource>
+<<<<<<< HEAD
+					<resource project-relative-path="components/ble/peer_manager/pm_buffer.c">
+=======
+					<resource project-relative-path="rfid.c">
+>>>>>>> RFIDV2
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/comp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/twi_master">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ancs_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ias_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/pwm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/softdevice/s132/headers/nrf52">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/cdc/acm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/generic">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/msc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/log">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_gls">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fstorage">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/i2s">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/gpiote">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/gpiote">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/boards">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/common">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_advertising">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/adc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_bas_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hrs_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/queue">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_dtm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/toolchain/cmsis/include">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_rscs_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/uart">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/common">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lls">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/wdt">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/bsp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_bas">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/experimental_section_vars">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/softdevice/s132/headers">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ans_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/slip">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/mem_manager">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/home/tab/smart_bag/nRF/nRF52sdk/external/segger_rtt"/>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/csense_drv">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/hal">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_nus_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/rtc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_ias">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/mouse">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/ppi">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_dfu">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/twis_slave">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/scheduler">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lbs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hts">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/delay">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/crc16">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/timer">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/util">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/pwm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/pca10040/s132/config">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/cdc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/csense">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/rng">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/low_power_pwm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/hardfault">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_cscs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/uart">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/hci">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/kbd">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/spi_slave">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/lpcomp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/timer">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/power">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/config">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/toolchain">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/led_softblink">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/qdec">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_cts_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/spi_master">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_nus">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hids">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/pdm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/crc32">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/audio">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/peer_manager">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/swi">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_tps">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_dis">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/device">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/nrf_ble_qwr">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/button">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/saadc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lbs_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_racp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/toolchain/gcc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fds">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/twi">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/clock">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_rscs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/usbd">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/softdevice/common/softdevice_handler">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hrs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+<<<<<<< HEAD
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -11538,8 +12669,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -11861,8 +13000,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -12184,8 +13331,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -12507,8 +13662,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -12830,8 +13993,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -13278,8 +14449,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -13601,8 +14780,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -13924,8 +15111,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -14247,8 +15442,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -14570,8 +15773,16 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
 						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -14893,8 +16104,14 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
-						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -15216,8 +16433,14 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
-						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -15539,8 +16762,14 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
-						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -15725,6 +16954,7 @@
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
 						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/pwm">
+<<<<<<< HEAD
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
 						<entry kind="includePath" name="/${ProjName}/pca10040/s132/config">
@@ -15862,8 +17092,150 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+=======
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/pca10040/s132/config">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/cdc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/csense">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/rng">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/low_power_pwm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/hardfault">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_cscs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/uart">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/hci">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/kbd">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/spi_slave">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/lpcomp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/timer">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/power">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/config">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/toolchain">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/led_softblink">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/qdec">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_cts_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/spi_master">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_nus">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hids">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/pdm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/crc32">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/audio">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/peer_manager">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/swi">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_tps">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_dis">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/device">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/nrf_ble_qwr">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/button">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/saadc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lbs_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_racp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/toolchain/gcc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fds">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/twi">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/clock">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_rscs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/usbd">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/softdevice/common/softdevice_handler">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hrs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
-						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -16185,8 +17557,14 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
-						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -16508,8 +17886,14 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+<<<<<<< HEAD
+=======
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
-						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>
@@ -16694,6 +18078,7 @@
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
 						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/pwm">
+<<<<<<< HEAD
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
 						<entry kind="includePath" name="/${ProjName}/pca10040/s132/config">
@@ -16831,8 +18216,150 @@
 						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
 							<flag value="VALUE_WORKSPACE_PATH"/>
 						</entry>
+=======
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/pca10040/s132/config">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/cdc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/csense">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/rng">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/low_power_pwm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/hardfault">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_cscs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/uart">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/hci">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/hid/kbd">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/spi_slave">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/lpcomp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/timer">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/power">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/config">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/toolchain">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/led_softblink">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/qdec">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_cts_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/spi_master">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_nus">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hids">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/pdm">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/crc32">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd/class/audio">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/peer_manager">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/swi">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_tps">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_dis">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/device">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/nrf_ble_qwr">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/button">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/usbd">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/saadc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_lbs_c">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_racp">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/toolchain/gcc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fds">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/twi">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/clock">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_rscs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/drivers_nrf/usbd">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/softdevice/common/softdevice_handler">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/ble/ble_services/ble_hrs">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/log/src">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/components/libraries/fifo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+>>>>>>> RFIDV2
 						<entry kind="macro" name="BLE_STACK_SUPPORT_REQD" value=""/>
-						<entry kind="macro" name="BOARD_PCA10040" value=""/>
+						<entry kind="macro" name="BOARD_CUSTOM" value=""/>
 						<entry kind="macro" name="CONFIG_GPIO_AS_PINRESET" value=""/>
 						<entry kind="macro" name="NRF52" value=""/>
 						<entry kind="macro" name="NRF52832" value=""/>

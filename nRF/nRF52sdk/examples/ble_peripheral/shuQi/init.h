@@ -34,6 +34,7 @@
 
 #include "constant.h"
 #include "service_if.h"
+#include "rfid.h"
 
 /**@brief Function for the Power manager.
  */

@@ -12,16 +12,23 @@
 #include "app_util_platform.h"
 #include "nrf_gpio.h"
 #include "nrf_delay.h"
-#define NRF_LOG_MODULE_NAME "APP"
 
+#include "nrf_drv_timer.h"
 
 #define SPI_INSTANCE  0 /**< SPI instance index. */
-static const nrf_drv_spi_t spi = NRF_DRV_SPI_INSTANCE(SPI_INSTANCE);  /**< SPI instance. */
-static volatile bool spi_xfer_done = true;  /**< Flag used to indicate that SPI instance completed the transfer. */
+#define BLUE_EFFECT 1
+#define WHITE_LEVEL_MINIMUM 10
+#define TIME_MS 3
+static const nrf_drv_timer_t TIMER =  NRF_DRV_TIMER_INSTANCE(1);
 
-static uint8_t       m_tx_buf[12+35];           /**< TX buffer. */
-static const uint8_t m_length = sizeof(m_tx_buf);        /**< Transfer length. */
+static const nrf_drv_spi_t spi = NRF_DRV_SPI_INSTANCE(SPI_INSTANCE); /**< SPI instance. */
+static volatile bool spi_xfer_done = true; /**< Flag used to indicate that SPI instance completed the transfer. */
 
+static uint8_t m_tx_buf[12 + 35]; /**< TX buffer. */
+static const uint8_t m_length = sizeof(m_tx_buf); /**< Transfer length. */
+static uint8_t mode = 0; // 0 = one color // 1 = blue effect up // 2 = blue effect down
+
+static uint8_t blue_level = 0;
 
 /**
  * @brief SPI user event handler.
@@ -35,12 +42,15 @@ void spi_event_handler(nrf_drv_spi_evt_t const * p_event);
  * @param uint8_t* buffer ( buffer de 12 bytes )
  *
  *
-*/
+ */
 
-uint32_t data_led_rgb (uint8_t* color, uint8_t* buffer);
+uint32_t data_led_rgb(uint8_t* color, uint8_t* buffer);
 
-uint32_t sk6812_init ();
+uint32_t sk6812_init();
 
-uint32_t sk6812_set_color( uint8_t r,uint8_t g,uint8_t b);
+uint32_t sk6812_set_color(uint8_t r, uint8_t g, uint8_t b);
+
+uint32_t sk6812_change_mode(uint8_t new_mode);
+uint32_t init_timer();
 
 #endif /* SK6812_H_ */
