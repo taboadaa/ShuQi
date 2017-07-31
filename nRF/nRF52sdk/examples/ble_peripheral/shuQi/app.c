@@ -89,6 +89,9 @@ int main(void) {
 		}
 
         tag_rfid_to_format_ble (&buffer_ble,Buffer_tag_UHF);
+        set_stuff_manager_entry_value(buffer_ble);
+        set_stuff_manager_entry_number(1);
+
         free(Buffer_tag_UHF->TagUHF);
 		free(Buffer_tag_UHF);
     }
