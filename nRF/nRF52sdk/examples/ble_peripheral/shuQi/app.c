@@ -21,10 +21,36 @@
 #error "PCA10040"
 #endif
 
+
+#define TAILLE_ID_EPC_BYTE 12 // une id epx fait 12 byte
+
+#define BUFFER_BLE_MALLOC_ERROR  1
+#define BUFFER_BLE_MALLOC_SUCCESFULL 0
 uint32_t err_code;
-uint8_array_t buffer_ble;
+uint8_array_t buffer_ble[MAX_TAGS];
+
+uint32_t init_buffer_ble(void){
+	for (uint32_t i =0;i<MAX_TAGS;i++){
+		buffer_ble[i].size = TAILLE_ID_EPC_BYTE;
+		buffer_ble[i].p_data =(uint8_t *) malloc(sizeof(uint8_t ) * TAILLE_ID_EPC_BYTE);
+
+		if (buffer_ble[i].p_data== NULL){
+			return BUFFER_BLE_MALLOC_ERROR;
+		}
+	}
+	return BUFFER_BLE_MALLOC_SUCCESFULL;
+}
+uint32_t uninit_buffer_ble(void){
+
+	for (uint32_t i =0;i<MAX_TAGS;i++){
+		free(buffer_ble[i].p_data);
+	}
+	return 0;
+}
 
 /** @brief Function for application main entry.
+ *
+ *
  */
 int main(void) {
     device_init();
@@ -38,9 +64,10 @@ int main(void) {
 
 	init_rfid();
 
-
-
-    //UART RX is enabled
+	if ( init_buffer_ble() != BUFFER_BLE_MALLOC_SUCCESFULL){
+		sk6812_set_color( 255,255,255);
+		while(1);
+	}
 
 
 
@@ -48,7 +75,7 @@ int main(void) {
     APP_ERROR_CHECK(err_code);
 
 
-    Buffer_tag_UHF_t* Buffer_tag_UHF;
+    Buffer_tag_UHF_t Buffer_tag_UHF;
 	uint8_t i = 0;
 	bool reset;
 
@@ -59,11 +86,6 @@ int main(void) {
 	sk6812_change_mode(BLUE_EFFECT);
     for (;;) {
 
-    	Buffer_tag_UHF = (Buffer_tag_UHF_t*) malloc(sizeof(Buffer_tag_UHF_t));
-		if (Buffer_tag_UHF == NULL){
-			sk6812_change_mode(0);
-			sk6812_set_color( 0,255,255);
-		}
 		i++;
 		if ( i >8){
 			reset = true;
@@ -71,29 +93,26 @@ int main(void) {
 		}else{
 			reset = false;
 		}
-        if (inventaire(Buffer_tag_UHF,true)){
+
+        nrf_gpio_pin_clear(LED_TOP);
+
+        if (inventaire(&Buffer_tag_UHF,true)){
         	sk6812_change_mode(0);
         	sk6812_set_color( 255,255,255);
 
 
         }
+        nrf_gpio_pin_set(LED_TOP);
 
 
-
-        free(buffer_ble.p_data);
-        buffer_ble.size = 12 * Buffer_tag_UHF->size;
-        buffer_ble.p_data = (uint8_t*)malloc(sizeof(uint8_t)* buffer_ble.size);
-        if (buffer_ble.p_data== NULL){
-			sk6812_change_mode(0);
-			sk6812_set_color( 255,255,0);
-		}
-
-        tag_rfid_to_format_ble (&buffer_ble,Buffer_tag_UHF);
-        set_stuff_manager_entry_value(buffer_ble);
+        tag_rfid_to_format_ble (buffer_ble,&Buffer_tag_UHF);
+        set_stuff_manager_entry_value(buffer_ble[0]);
         set_stuff_manager_entry_number(1);
 
-        free(Buffer_tag_UHF->TagUHF);
-		free(Buffer_tag_UHF);
+
+        nrf_delay_ms(1000);
+
+
     }
 
 

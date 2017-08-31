@@ -24,26 +24,40 @@
 #include "nrf.h"
 #include "app_util.h"
 #include "boards.h"
+#include "sk6812.h"
 
 
 #define MAX_TEST_DATA_BYTES     (15U)                /**< max number of test bytes to be used for tx and rx. */
 #define SIZE_BUFFER_UART 32
+#define MAX_TAGS 10
+
 
 #define ERR_NO_DATA 1
 #define ERR_DATA_FALSE 2
 #define ERR_SIZE_EPC_ID 3
 #define MALLOC_ERROR 4
 #define ERR_BUFFER_TAILLE 5
+#define ERR_COMMUNICATION_UART 6
 
 #define DATA_FINISH 0
 #define RECEIVE_IN_PROGRESS -1
-#define NMB_SCAN_BEFORE_READ_BUFFER_YR903 20
+#define NMB_SCAN_BEFORE_READ_BUFFER_YR903 5
 
 
 #define YR903_ERROR_BUFFER_IS_EMPTY 0x38
 #define YR903_ERROR_UNKNOWN -1
 
+#define UART_CORRECT 0
+#define UART_ERREUR_FIFO 1
+#define UART_COMMUNICATION_ERROR 2
+#define UART_ERREUR_UNKNOWN 3
+
+
+
 bool flag_data_receive ;
+
+uint32_t uart_communication_status;
+
 /**
  * @struct structure d'un tag UHF
  * @brief stock les informations PC, EPC, CRC, RSSI
@@ -75,6 +89,7 @@ struct Buffer_tag_UHF_t
 };
 
 uart_buffer_t* uart_buffer_rx;
+uart_buffer_t tab_uart_buffer_rx[MAX_TAGS];
 uart_buffer_t uart_buffer_tx;
 
 void uart_send_next_byte(uart_buffer_t* buffer);

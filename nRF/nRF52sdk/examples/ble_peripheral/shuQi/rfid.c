@@ -48,10 +48,12 @@ void uart_handle(app_uart_evt_t * p_event)
 {
     if (p_event->evt_type == APP_UART_COMMUNICATION_ERROR)
     {
+    	uart_communication_status = UART_COMMUNICATION_ERROR;
         APP_ERROR_HANDLER(p_event->data.error_communication);
     }
     else if (p_event->evt_type == APP_UART_FIFO_ERROR)
     {
+    	uart_communication_status = UART_ERREUR_FIFO;
         APP_ERROR_HANDLER(p_event->data.error_code);
     }else if (p_event->evt_type == APP_UART_DATA){
 
@@ -67,6 +69,8 @@ void uart_handle(app_uart_evt_t * p_event)
 	}else if (APP_UART_TX_EMPTY){
 		 uart_send_next_byte(&uart_buffer_tx);
 
+	}else{
+		uart_communication_status = UART_ERREUR_UNKNOWN;
 	}
 }
 
@@ -156,9 +160,15 @@ void scan_buffer(uint8_t nmb_scan){
 	}
 }
 
-void wait_flag ( bool* flag){
-	while (*flag == false);
+void wait_flag (bool* flag){
+	sk6812_change_mode(0);
+	while (*flag == false){
+		if (  uart_communication_status != UART_CORRECT){
+			break;
+		}
+	}
 	*flag = false;
+	sk6812_change_mode(1);
 }
 
 void yr903_cmd_name_get_inventory_buffer(bool reset){
@@ -173,7 +183,7 @@ void yr903_cmd_name_get_inventory_buffer(bool reset){
 uint16_t nmb_tag_in_the_buffer(uart_buffer_t* uart_buffer){
 	uint16_t nmb_tag;
 	if (uart_buffer_rx->size_data == 0x05){
-		uint8_t erreur_code_yr903 = uart_buffer_rx->data[5];
+		uint8_t erreur_code_yr903 = uart_buffer_rx->data[4];
 		if (erreur_code_yr903 == YR903_ERROR_BUFFER_IS_EMPTY){
 			nmb_tag = 0;
 		}else{
@@ -187,7 +197,7 @@ uint16_t nmb_tag_in_the_buffer(uart_buffer_t* uart_buffer){
 uint32_t inventaire(Buffer_tag_UHF_t *buffer_tag_uhf, bool reset)
 {
 //   uint8_t tx_data[UART_TX_BUF_SIZE] ;
-	uart_buffer_rx = allocate_buffer_uart();
+	uart_buffer_rx = &tab_uart_buffer_rx[0];
 	if (uart_buffer_rx ==NULL){
 		return MALLOC_ERROR;
 	}
@@ -205,27 +215,19 @@ uint32_t inventaire(Buffer_tag_UHF_t *buffer_tag_uhf, bool reset)
 	// 0 tag ?
 	wait_flag(&flag_data_receive);
 
-	uint16_t nmb_tag =  nmb_tag_in_the_buffer(uart_buffer_rx );
+	int16_t nmb_tag =  nmb_tag_in_the_buffer(uart_buffer_rx );
 
-	// allocate memory
-	uart_buffer_t* tab_uart_buffer_rx[nmb_tag];
-	tab_uart_buffer_rx[0] = uart_buffer_rx;
 
-	// allouer le nombre nécessaire pour la réception des messages du buffer uart
-	for(uint16_t i =1; i< nmb_tag;i++){
-		if ((tab_uart_buffer_rx[i] =allocate_buffer_uart()) == NULL){
-			// free all tab
-			for(uint16_t j =0; j< i;j++){
-				free_buffer_uart(tab_uart_buffer_rx[j]);
-			}
-			return MALLOC_ERROR;
-		}
-	}
+
 
 	// attendre la réception des paquets du module RFID (1 paquet par tag )
 	for(uint16_t i =1; i< nmb_tag;i++){
-		uart_buffer_rx = tab_uart_buffer_rx[i];
+		uart_buffer_rx = &tab_uart_buffer_rx[i];
 		wait_flag(&flag_data_receive);
+		if ( uart_communication_status != UART_CORRECT){
+			return ERR_COMMUNICATION_UART;
+		}
+
 	}
 
 
@@ -239,15 +241,9 @@ uint32_t inventaire(Buffer_tag_UHF_t *buffer_tag_uhf, bool reset)
 
 	// analyse buffer
 	for(uint16_t i =0; i< nmb_tag;i++){
-		read_tag(tab_uart_buffer_rx[i]->data, &buffer_tag_uhf->TagUHF[i]);
+		read_tag(tab_uart_buffer_rx[i].data, &buffer_tag_uhf->TagUHF[i]);
 	}
 
-
-	// free buffer
-	free_buffer_uart(tab_uart_buffer_rx[0]); // existe même si aucun TAG
-	for(uint16_t i =1; i< nmb_tag;i++){
-		free_buffer_uart(tab_uart_buffer_rx[i]);
-	}
 
 	return 0;
 }
@@ -268,22 +264,27 @@ void init_rfid(){
 
 	 app_uart_init(&comm_params,NULL,uart_handle,APP_IRQ_PRIORITY_LOW );
 
+	nrf_gpio_cfg_input(RX_PIN_NUMBER, NRF_GPIO_PIN_PULLUP);
+	nrf_gpio_cfg_input(TX_PIN_NUMBER, NRF_GPIO_PIN_PULLUP);
+
 }
 uint32_t add_tag_buffer_ble(uint8_t* buffer_ble,TagUHF_t *tag){
 
 	for(uint8_t i =0; i<12;i++){
 		// le format de tag est stocker en MSB en premier mais est envoyé par BLE avec LSB en premier
-		buffer_ble[i]= tag->EPC[11-i];
+		buffer_ble[i]= tag->EPC[i];
 	}
 	return 0;
 }
+
 uint32_t tag_rfid_to_format_ble(uint8_array_t* buffer_ble,Buffer_tag_UHF_t *buffer_tag_uhf){
 
-	if((buffer_tag_uhf->size *12 != buffer_ble->size )|| (buffer_ble->p_data == NULL)){
+	if ( buffer_tag_uhf->size > 10){
 		return ERR_BUFFER_TAILLE;
 	}
+
 	for (uint8_t i =0; i< buffer_tag_uhf->size; i++){
-		add_tag_buffer_ble(&buffer_ble->p_data[12*i],&buffer_tag_uhf->TagUHF[i]);
+		add_tag_buffer_ble(buffer_ble[i].p_data,&buffer_tag_uhf->TagUHF[i]);
 	}
 	return 0;
 }
