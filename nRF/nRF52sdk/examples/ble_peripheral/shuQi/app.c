@@ -60,7 +60,8 @@ int main(void) {
 
     //app_init();
 	nrf_gpio_cfg_output(RFID_ENABLE_PIN_NUMBER);
-	nrf_gpio_pin_set(RFID_ENABLE_PIN_NUMBER);
+	//nrf_gpio_pin_set(RFID_ENABLE_PIN_NUMBER);
+
 
 	nrf_gpio_pin_dir_set(BUTTON_1, NRF_GPIO_PIN_DIR_INPUT);
 
@@ -99,6 +100,8 @@ int main(void) {
     	button_state = nrf_gpio_pin_read(BUTTON_1);
 
     	if ( (button_state == 1) && (old_button_state== 0)){
+    		nrf_gpio_pin_set(RFID_ENABLE_PIN_NUMBER);
+    		nrf_delay_ms(300);
 			nrf_gpio_pin_clear(LED_TOP);
 			uint32_t err_code_inv = inventaire(&Buffer_tag_UHF,true);
 			if (err_code_inv != 0){
@@ -114,10 +117,11 @@ int main(void) {
 			tag_rfid_to_format_ble (buffer_ble,&Buffer_tag_UHF);
 			set_stuff_manager_entry_value(buffer_ble[0]);
 			set_stuff_manager_entry_number(1);
+			nrf_gpio_pin_clear(RFID_ENABLE_PIN_NUMBER);
     	}
 
 
-        nrf_delay_ms(50);
+    	 nrf_delay_ms(50);
 
 
     }
