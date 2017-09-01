@@ -39,6 +39,7 @@
 #define ERR_BUFFER_TAILLE 5
 #define ERR_COMMUNICATION_UART 6
 
+
 #define DATA_FINISH 0
 #define RECEIVE_IN_PROGRESS -1
 #define NMB_SCAN_BEFORE_READ_BUFFER_YR903 5
@@ -51,10 +52,15 @@
 #define UART_ERREUR_FIFO 1
 #define UART_COMMUNICATION_ERROR 2
 #define UART_ERREUR_UNKNOWN 3
+static const nrf_drv_timer_t TIMER_2 =  NRF_DRV_TIMER_INSTANCE(2);
+#define TIME_MS_COMMUNICATION_TIME_OUT 3000
+
+
 
 
 
 bool flag_data_receive ;
+bool flag_communication_time_out;
 
 uint32_t uart_communication_status;
 
@@ -156,10 +162,15 @@ uart_buffer_t* allocate_buffer_uart();
  * @param Buffer_t *buffer pointeur sur un buffer
  */
 uint32_t inventaire(Buffer_tag_UHF_t *buffer, bool reset);
-
-void wait_flag ( bool* flag);
+uint32_t wait_flag ( bool* flag);
 void init_rfid();
 uint32_t add_tag_buffer_ble(uint8_t* buffer_ble,TagUHF_t *tag);
 uint32_t tag_rfid_to_format_ble(uint8_array_t* buffer_ble,Buffer_tag_UHF_t *buffer_tag_uhf);
+
+uint32_t init_timer_2 ();
+void timer_2_handler(nrf_timer_event_t event_type, void* p_context);
+
+uint32_t scan_buffer(uint8_t nmb_scan);
+
 
 #endif /* RFID_H_ */

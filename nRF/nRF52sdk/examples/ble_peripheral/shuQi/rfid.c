@@ -13,6 +13,33 @@ void uart_send_next_byte(uart_buffer_t* buffer){
 	}
 }
 
+void timer_2_handler(nrf_timer_event_t event_type, void* p_context)
+{
+    switch (event_type)
+    {
+        case NRF_TIMER_EVENT_COMPARE0:
+        	flag_communication_time_out = true;
+        	break;
+        default:
+            //Do nothing.
+        break;
+    }
+}
+
+uint32_t init_timer_2 (){
+	uint32_t err_code;
+	nrf_drv_timer_config_t timer_cfg = NRF_DRV_TIMER_DEFAULT_CONFIG;
+	err_code = nrf_drv_timer_init(&TIMER_2, &timer_cfg,timer_2_handler);
+	APP_ERROR_CHECK(err_code);
+
+	uint32_t time_ticks = nrf_drv_timer_ms_to_ticks(&TIMER_2,TIME_MS_COMMUNICATION_TIME_OUT);
+
+	nrf_drv_timer_extended_compare(
+		 &TIMER_2, NRF_TIMER_CC_CHANNEL0, time_ticks, NRF_TIMER_SHORT_COMPARE0_CLEAR_MASK, true);
+
+	return err_code;
+}
+
 uint8_t uart_receive_byte(uart_buffer_t* buffer, uint8_t data){
 	buffer->data[buffer->i] = data;
 	if ( buffer->i ==0 ){
@@ -152,23 +179,35 @@ uint32_t free_buffer_uart(uart_buffer_t* p){
  *
  * @param Buffer_t *buffer pointeur sur un buffer
  */
-void scan_buffer(uint8_t nmb_scan){
+uint32_t scan_buffer(uint8_t nmb_scan){
 	for (uint8_t i =0; i< nmb_scan;i++){
 		send_data((uint8_t*)"\xA0\x04\x01\x80\x01", 5,&uart_buffer_tx);
 
-		wait_flag(&flag_data_receive);
+		if ( wait_flag(&flag_data_receive) != 0 ){
+			return ERR_COMMUNICATION_UART;
+		}
 	}
+	return 0;
 }
 
-void wait_flag (bool* flag){
+uint32_t wait_flag (bool* flag){
+	nrf_drv_timer_clear(&TIMER_2);
+	nrf_drv_timer_enable(&TIMER_2);
+	flag_communication_time_out = false;
 	sk6812_change_mode(0);
 	while (*flag == false){
 		if (  uart_communication_status != UART_CORRECT){
+			return 1;
+			break;
+		}else if ( flag_communication_time_out == true){
+			return 2;
 			break;
 		}
 	}
 	*flag = false;
 	sk6812_change_mode(1);
+
+	return 0;
 }
 
 void yr903_cmd_name_get_inventory_buffer(bool reset){
@@ -203,7 +242,9 @@ uint32_t inventaire(Buffer_tag_UHF_t *buffer_tag_uhf, bool reset)
 	}
 
 
-	scan_buffer(NMB_SCAN_BEFORE_READ_BUFFER_YR903);
+	if (scan_buffer(NMB_SCAN_BEFORE_READ_BUFFER_YR903) ){
+		return ERR_COMMUNICATION_UART;
+	}
 
 
 	yr903_cmd_name_get_inventory_buffer(reset);
@@ -213,7 +254,11 @@ uint32_t inventaire(Buffer_tag_UHF_t *buffer_tag_uhf, bool reset)
 
 	// how many tag ?
 	// 0 tag ?
-	wait_flag(&flag_data_receive);
+	if ( wait_flag(&flag_data_receive) != 0 ){
+		return ERR_COMMUNICATION_UART;
+	}
+
+
 
 	int16_t nmb_tag =  nmb_tag_in_the_buffer(uart_buffer_rx );
 
@@ -223,9 +268,9 @@ uint32_t inventaire(Buffer_tag_UHF_t *buffer_tag_uhf, bool reset)
 	// attendre la réception des paquets du module RFID (1 paquet par tag )
 	for(uint16_t i =1; i< nmb_tag;i++){
 		uart_buffer_rx = &tab_uart_buffer_rx[i];
-		wait_flag(&flag_data_receive);
-		if ( uart_communication_status != UART_CORRECT){
+		if ( wait_flag(&flag_data_receive) != 0 ){
 			return ERR_COMMUNICATION_UART;
+
 		}
 
 	}
@@ -266,6 +311,8 @@ void init_rfid(){
 
 	nrf_gpio_cfg_input(RX_PIN_NUMBER, NRF_GPIO_PIN_PULLUP);
 	nrf_gpio_cfg_input(TX_PIN_NUMBER, NRF_GPIO_PIN_PULLUP);
+
+	init_timer_2 (); // for communication timeout
 
 }
 uint32_t add_tag_buffer_ble(uint8_t* buffer_ble,TagUHF_t *tag){

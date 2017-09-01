@@ -29,6 +29,9 @@
 uint32_t err_code;
 uint8_array_t buffer_ble[MAX_TAGS];
 
+uint32_t old_button_state;
+uint32_t button_state;
+
 uint32_t init_buffer_ble(void){
 	for (uint32_t i =0;i<MAX_TAGS;i++){
 		buffer_ble[i].size = TAILLE_ID_EPC_BYTE;
@@ -59,6 +62,12 @@ int main(void) {
 	nrf_gpio_cfg_output(RFID_ENABLE_PIN_NUMBER);
 	nrf_gpio_pin_set(RFID_ENABLE_PIN_NUMBER);
 
+	nrf_gpio_pin_dir_set(BUTTON_1, NRF_GPIO_PIN_DIR_INPUT);
+
+
+	button_state = nrf_gpio_pin_read(BUTTON_1);
+	old_button_state = button_state;
+
 	nrf_gpio_cfg_output(LED_TOP);
 	nrf_gpio_pin_clear(LED_TOP);
 
@@ -84,33 +93,31 @@ int main(void) {
 	nrf_delay_ms(500);
 
 	sk6812_change_mode(BLUE_EFFECT);
+
     for (;;) {
+    	old_button_state = button_state;
+    	button_state = nrf_gpio_pin_read(BUTTON_1);
 
-		i++;
-		if ( i >8){
-			reset = true;
-			i = 0;
-		}else{
-			reset = false;
-		}
-
-        nrf_gpio_pin_clear(LED_TOP);
-
-        if (inventaire(&Buffer_tag_UHF,true)){
-        	sk6812_change_mode(0);
-        	sk6812_set_color( 255,255,255);
+    	if ( (button_state == 1) && (old_button_state== 0)){
+			nrf_gpio_pin_clear(LED_TOP);
+			uint32_t err_code_inv = inventaire(&Buffer_tag_UHF,true);
+			if (err_code_inv != 0){
+				sk6812_change_mode(0);
+				sk6812_set_color( 255,255,255);
+				nrf_delay_ms(4500);
 
 
-        }
-        nrf_gpio_pin_set(LED_TOP);
+			}
+			nrf_gpio_pin_set(LED_TOP);
 
 
-        tag_rfid_to_format_ble (buffer_ble,&Buffer_tag_UHF);
-        set_stuff_manager_entry_value(buffer_ble[0]);
-        set_stuff_manager_entry_number(1);
+			tag_rfid_to_format_ble (buffer_ble,&Buffer_tag_UHF);
+			set_stuff_manager_entry_value(buffer_ble[0]);
+			set_stuff_manager_entry_number(1);
+    	}
 
 
-        nrf_delay_ms(1000);
+        nrf_delay_ms(50);
 
 
     }
